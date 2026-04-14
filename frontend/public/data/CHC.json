@@ -1,7 +1,7 @@
 {
   "meta": {
     "client_code": "CHC",
-    "generated_at": "2026-04-14T01:58:12.691738Z",
+    "generated_at": "2026-04-14T03:21:02.571851Z",
     "months_available": [
       "2025-11",
       "2025-12",
@@ -221,6 +221,9 @@
         "highlights": [],
         "concerns": [],
         "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
       }
     },
     "2025-12": {
@@ -493,6 +496,9 @@
         "highlights": [],
         "concerns": [],
         "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
       }
     },
     "2026-01": {
@@ -755,6 +761,9 @@
         "highlights": [],
         "concerns": [],
         "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
       }
     },
     "2026-02": {
@@ -803,34 +812,6 @@
           "mom_deltas": {},
           "vs_company": {},
           "outlier_flags": []
-        },
-        {
-          "location": "Global Avg",
-          "scheduler_compliance_avg": 76.73,
-          "scheduler_compliance_median": null,
-          "avg_delay_avg": 11.68,
-          "avg_delay_median": null,
-          "chair_utilization_avg": 67.95,
-          "chair_utilization_median": null,
-          "tx_past_close_avg": 1.06,
-          "tx_past_close_median": null,
-          "tx_mins_past_close_avg": 19.03,
-          "tx_mins_past_close_median": null,
-          "mom_deltas": {},
-          "vs_company": {
-            "avg_chair_utilization": "below",
-            "avg_delay_mins": "below",
-            "avg_treatment_mins_per_patient": "below",
-            "avg_treatments_per_day": "below",
-            "scheduler_compliance": "above",
-            "avg_chairs_per_nurse": "below",
-            "avg_nurse_to_patient_chair_time": "below",
-            "avg_patients_per_nurse": "below",
-            "iassign_utilization": "above"
-          },
-          "outlier_flags": [
-            "avg_treatment_mins_per_patient"
-          ]
         },
         {
           "location": "Green Pod",
@@ -978,31 +959,6 @@
           "outlier_flags": []
         },
         {
-          "location": "Global Avg",
-          "iassign_utilization_avg": 95.06,
-          "patients_per_nurse_avg": 5.84,
-          "patients_per_nurse_median": null,
-          "chairs_per_nurse_avg": 3.59,
-          "chairs_per_nurse_median": null,
-          "nurse_utilization_avg": 53.91,
-          "nurse_utilization_median": null,
-          "mom_deltas": {},
-          "vs_company": {
-            "avg_chair_utilization": "below",
-            "avg_delay_mins": "below",
-            "avg_treatment_mins_per_patient": "below",
-            "avg_treatments_per_day": "below",
-            "scheduler_compliance": "above",
-            "avg_chairs_per_nurse": "below",
-            "avg_nurse_to_patient_chair_time": "below",
-            "avg_patients_per_nurse": "below",
-            "iassign_utilization": "above"
-          },
-          "outlier_flags": [
-            "avg_treatment_mins_per_patient"
-          ]
-        },
-        {
           "location": "LHCP",
           "iassign_utilization_avg": 74.07,
           "patients_per_nurse_avg": 8.58,
@@ -1089,6 +1045,9 @@
         "recommendations": [
           "We recommend Blue Pod conduct a structured audit of its iOptimize scheduling template compliance and nurse-to-chair assignment workflow in the next 30 days, with specific focus on slot-fill sequencing and real-time delay flagging during peak hours. Given that Blue Pod's scheduler compliance stands at 73.5%\u20143.4 percentage points above company average\u2014but delay sits 73% above benchmark, the gap is not adherence to recommendations but rather the recommendations themselves or their execution; a joint session with iOptimize support to pilot workflow adjustments will clarify whether template updates or on-site coaching is the right lever."
         ]
+      },
+      "ml_analytics": {
+        "locations": {}
       }
     },
     "2026-03": {
@@ -1109,44 +1068,6 @@
           "mom_deltas": {},
           "vs_company": {},
           "outlier_flags": []
-        },
-        {
-          "location": "Global Avg",
-          "scheduler_compliance_avg": 83.55,
-          "scheduler_compliance_median": null,
-          "avg_delay_avg": 11.9,
-          "avg_delay_median": null,
-          "chair_utilization_avg": 68.45,
-          "chair_utilization_median": null,
-          "tx_past_close_avg": 1.23,
-          "tx_past_close_median": null,
-          "tx_mins_past_close_avg": 19.45,
-          "tx_mins_past_close_median": null,
-          "mom_deltas": {
-            "avg_chair_utilization": 0.5,
-            "avg_delay_mins": 0.22,
-            "avg_treatment_mins_per_patient": 0.42,
-            "avg_treatments_per_day": 0.17,
-            "scheduler_compliance": 6.82,
-            "avg_chairs_per_nurse": 0.66,
-            "avg_nurse_to_patient_chair_time": 2.91,
-            "avg_patients_per_nurse": -0.56,
-            "iassign_utilization": 0.49
-          },
-          "vs_company": {
-            "avg_chair_utilization": "below",
-            "avg_delay_mins": "below",
-            "avg_treatment_mins_per_patient": "below",
-            "avg_treatments_per_day": "below",
-            "scheduler_compliance": "above",
-            "avg_chairs_per_nurse": "above",
-            "avg_nurse_to_patient_chair_time": "below",
-            "avg_patients_per_nurse": "below",
-            "iassign_utilization": "above"
-          },
-          "outlier_flags": [
-            "avg_treatment_mins_per_patient"
-          ]
         },
         {
           "location": "LHCP",
@@ -1304,41 +1225,6 @@
           "outlier_flags": []
         },
         {
-          "location": "Global Avg",
-          "iassign_utilization_avg": 95.55,
-          "patients_per_nurse_avg": 5.28,
-          "patients_per_nurse_median": null,
-          "chairs_per_nurse_avg": 4.25,
-          "chairs_per_nurse_median": null,
-          "nurse_utilization_avg": 56.82,
-          "nurse_utilization_median": null,
-          "mom_deltas": {
-            "avg_chair_utilization": 0.5,
-            "avg_delay_mins": 0.22,
-            "avg_treatment_mins_per_patient": 0.42,
-            "avg_treatments_per_day": 0.17,
-            "scheduler_compliance": 6.82,
-            "avg_chairs_per_nurse": 0.66,
-            "avg_nurse_to_patient_chair_time": 2.91,
-            "avg_patients_per_nurse": -0.56,
-            "iassign_utilization": 0.49
-          },
-          "vs_company": {
-            "avg_chair_utilization": "below",
-            "avg_delay_mins": "below",
-            "avg_treatment_mins_per_patient": "below",
-            "avg_treatments_per_day": "below",
-            "scheduler_compliance": "above",
-            "avg_chairs_per_nurse": "above",
-            "avg_nurse_to_patient_chair_time": "below",
-            "avg_patients_per_nurse": "below",
-            "iassign_utilization": "above"
-          },
-          "outlier_flags": [
-            "avg_treatment_mins_per_patient"
-          ]
-        },
-        {
           "location": "LHCP",
           "iassign_utilization_avg": 70.97,
           "patients_per_nurse_avg": 8.33,
@@ -1415,16 +1301,320 @@
         "onco_benchmark": {}
       },
       "ai_insights": {
-        "executive_summary": "CHC delivered mixed progress in March 2026, with Muskegon showing strong operational discipline while LHCP continues to face patient flow challenges. Muskegon's Performance Score of 41 out of 100 (where 50 represents the network average) reflects solid scheduling compliance at 73.4% and exemplary average delay of 10.3 minutes\u2014well below the company average of 22.78 minutes\u2014yet is offset by a concerning five-month upward trend in overtime minutes per patient. LHCP's composite score of 18 out of 100 masks a polarized picture: the Red location performs at network level (53/100) with strong compliance at 90.5%, while Blue struggles significantly with patient delays averaging 43.2 minutes against the company average of 22.78 minutes.",
+        "executive_summary": "CHC delivered mixed results in March 2026, with Muskegon showing strong operational momentum while LHCP and its sub-clinics remain below the network average performance score of 50. Muskegon's treatments past closing fell 54.8% from 3.3 in February to 1.5 in March, and chair utilization rose 8.4% from 75.8% to 82.1%, yet nurse utilization declined across a consistent five-month downward trend. LHCP's scheduler compliance improved 6.2% from 71.3% in February to 75.7% in March, but the network still faces a critical patient delay challenge, particularly at LHCP-Blue.",
         "highlights": [
-          "Muskegon achieved a meaningful reduction in treatments running past closing time, declining from 3.3 per day in February 2026 to 1.5 per day in March 2026, a 54.8% improvement that signals better scheduling discipline. Concurrently, chair utilization at Muskegon rose from 75.8% in February 2026 to 82.1% in March 2026, an 8.4% gain that demonstrates healthier asset deployment and sits above the company average of 75.77%. LHCP's scheduler compliance improved from 71.3% in February 2026 to 75.7% in March 2026, a 6.2% month-over-month gain aligned with a three-month upward trend (R\u00b2=0.98) that brings the clinic closer to company-average compliance of 74.75%."
+          "Muskegon achieved a 54.8% reduction in daily treatments running past closing, dropping from 3.3 in February to 1.5 in March, demonstrating improved scheduling discipline and patient flow management. Chair utilization at Muskegon climbed 8.4% from 75.8% in February to 82.1% in March, now exceeding the company average of 75.77% and reflecting more effective asset deployment. LHCP's scheduler compliance rose 6.2% from 71.3% in February to 75.7% in March, aligning closely with the company average of 74.75% and marking the third consecutive month of improvement at that clinic."
         ],
         "concerns": [
-          "We noticed that Muskegon's minutes past closing per patient have climbed from 32.7 in February 2026 to 41.8 in March 2026\u2014a 27.8% increase\u2014and this pattern is consistent, with a five-month declining trend in nurse utilization (R\u00b2=0.94) now at 70.2% and a four-month decline in the chair-to-nurse ratio. This pairing of metrics suggests worth exploring whether the clinic's current staffing model can sustain the gains in chair utilization without creating bottlenecks in treatment completion. Additionally, LHCP-Red is running 3.0 treatments past closing per day, which is 1.8 standard deviations above the CHC group mean of 1.7 and represents a discrete operational stress point that warrants attention."
+          "We noticed that Muskegon's minutes past close per patient rose 27.8% from 32.7 in February to 41.8 in March, even as the number of treatments running late declined, suggesting treatments that do extend past closing are taking longer to complete. This metric, alongside a 5-month declining trend in nurse utilization (3-month average 73.1%), warrants exploration of whether staffing levels are optimally matched to the current treatment volume. LHCP-Blue presents the most pressing opportunity: its average patient delay stands at 43.2 minutes against the company average of 22.78 minutes, a gap of approximately 90%, and we would benefit from a collaborative review of how iAssign assignments align with actual chair and nurse capacity at that location."
         ],
         "recommendations": [
-          "We recommend that LHCP-Blue conduct an urgent review of its scheduling template assignments and nurse-to-chair pairing logic within iOptimize, given the clinic's average patient delay of 43.2 minutes versus the company average of 22.78 minutes\u2014a 90% performance gap that is the largest variance across CHC. A targeted audit of how treatment sequences are being assigned to chairs and whether nurse capacity is being matched to chair availability at time of booking would provide actionable insight into whether the issue stems from scheduling logic, staffing allocation, or both."
+          "We recommend prioritizing a scheduling template audit at LHCP-Blue to investigate why average delays are nearly double the company benchmark of 22.78 minutes. Specifically, we suggest reviewing how iAssign recommendations are being followed in practice and whether the current nurse-to-chair ratio (not provided for the sub-clinic) may be creating bottlenecks; this targeted review will help us unlock meaningful improvements in patient flow without requiring significant resource investment."
         ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "Global Avg": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.000743,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": 0.0178,
+            "lag_sc_to_chair_n": 8,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "LHCP": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.066796,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.024081,
+            "lag_sc_to_chair_r": 0.0178,
+            "lag_sc_to_chair_n": 8,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 69.9167,
+                "lower_95": 68.0455,
+                "upper_95": 71.7879,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 35.2833,
+                "lower_95": 33.7053,
+                "upper_95": 36.8614,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 39.76,
+                "lower_95": 38.7814,
+                "upper_95": 40.7386,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.9533,
+                "lower_95": 1.4097,
+                "upper_95": 2.497,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 71.7967,
+                "lower_95": 64.7037,
+                "upper_95": 78.8896,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "LHCP - Blue": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.012377,
+            "is_anomaly_network": true,
+            "anomaly_score_network": -0.034513,
+            "lag_sc_to_chair_r": 0.0178,
+            "lag_sc_to_chair_n": 8,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 70.64,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 43.21,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 47.3,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.97,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 81.18,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "LHCP - Green": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.058533,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.065577,
+            "lag_sc_to_chair_r": 0.0178,
+            "lag_sc_to_chair_n": 8,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 65.86,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 30.98,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 33.97,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.73,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 90.86,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "LHCP - Red": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.006229,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.03783,
+            "lag_sc_to_chair_r": 0.0178,
+            "lag_sc_to_chair_n": 8,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 85.52,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 31.71,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 36.95,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 2.95,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 90.48,
+                "lower_95": null,
+                "upper_95": null,
+                "n_months": 1,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Muskegon": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.010404,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.093282,
+            "lag_sc_to_chair_r": 0.0178,
+            "lag_sc_to_chair_n": 8,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 80.6433,
+                "lower_95": 72.1556,
+                "upper_95": 89.131,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 10.88,
+                "lower_95": 9.3735,
+                "upper_95": 12.3865,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 34.8433,
+                "lower_95": 22.763,
+                "upper_95": 46.9236,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 2.1767,
+                "lower_95": 0.2251,
+                "upper_95": 4.1283,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 68.3633,
+                "lower_95": 55.733,
+                "upper_95": 80.9936,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
       }
     }
   },

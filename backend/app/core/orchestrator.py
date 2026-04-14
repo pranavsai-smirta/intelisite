@@ -22,6 +22,7 @@ class PipelineOrchestrator:
             'kpis_parsed': 0,
             'kpis_warnings': 0,
             'comparisons': 0,
+            'ml_rows': 0,
             'correlations': 0,
             'insights': 0,
             'emails': 0,
@@ -35,8 +36,9 @@ class PipelineOrchestrator:
         ))
         self._step(1, "Fetch GitHub issues",   self._fetch_github_data)
         self._step(2, "Parse & store KPIs",    self._parse_kpis)
-        self._step(3, "Run comparisons",        self._run_comparisons)
-        self._step(4, "Detect correlations",    self._detect_correlations)
+        self._step(3,   "Run comparisons",        self._run_comparisons)
+        self._step(3.5, "ML analytics",           self._run_ml_analytics)
+        self._step(4,   "Detect correlations",    self._detect_correlations)
         self._step(5, "Generate AI insights",   self._generate_insights)
         self._step(6, "Draft emails + charts",  self._generate_emails)
         self._step(7, "Export JSON for React",  self._export_json)
@@ -179,6 +181,17 @@ class PipelineOrchestrator:
         self.stats['comparisons'] = total
         console.print(f"  [green]✓ {total} comparison rows computed[/green]")
 
+    # ── Step 3.5 ──────────────────────────────────────────────────────
+    def _run_ml_analytics(self):
+        from app.db.session import get_session
+        from app.engine.ml_engine import run_ml_analytics
+
+        with get_session() as session:
+            total = run_ml_analytics(session, self.run_month, self.run_id)
+
+        self.stats['ml_rows'] = total
+        console.print(f"  [green]\u2713 {total} ML analytics rows written[/green]")
+
     # ── Step 4 ────────────────────────────────────────────────────────
     def _detect_correlations(self):
         from app.db.session import get_session
@@ -255,6 +268,7 @@ class PipelineOrchestrator:
         t.add_row("KPIs stored",     str(self.stats['kpis_parsed']))
         t.add_row("Parse warnings",  str(self.stats['kpis_warnings']))
         t.add_row("Comparisons",     str(self.stats['comparisons']))
+        t.add_row("ML analytics rows", str(self.stats['ml_rows']))
         t.add_row("Correlations",    str(self.stats['correlations']))
         t.add_row("AI insights",     str(self.stats['insights']))
         t.add_row("Emails generated",str(self.stats['emails']))
@@ -268,10 +282,37 @@ def _parse_client_from_title(title: str):
 
 
 def _resolve_row_type(location_name: str):
+    """
+    Classify a location row from the GitHub issue into its RowType.
+
+    Ordering matters: check most-specific patterns first.
+      - 'Company Avg'  → COMPANY_AVG
+      - 'Onco …'       → ONCO
+      - 'Global Avg', 'Network Avg', 'Overall', 'Total', 'Grand Total',
+        'All Clinics'  → COMPANY_AVG  (network-wide aggregates, not real clinics)
+      - anything else  → CLINIC
+    """
     from app.db.models import RowType
     loc = location_name.lower().strip()
+
     if 'company' in loc:
         return RowType.COMPANY_AVG
+
     if 'onco' in loc:
         return RowType.ONCO
+
+    # Network/global aggregate rows submitted inside some client issues.
+    # These must NOT be stored as RowType.CLINIC or they pollute the
+    # json_exporter location lists and composite score calculations.
+    _AGGREGATE_KEYWORDS = (
+        'global avg', 'global average',
+        'network avg', 'network average',
+        'all clinic',    # covers "All Clinics", "All Clinic Avg", etc.
+        'grand total',
+        'overall',
+        'total',         # bare "Total" row
+    )
+    if any(kw in loc for kw in _AGGREGATE_KEYWORDS):
+        return RowType.COMPANY_AVG
+
     return RowType.CLINIC

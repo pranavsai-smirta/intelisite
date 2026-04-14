@@ -17,7 +17,8 @@ from typing import Any, Dict, List, Optional
 from sqlalchemy.orm import Session
 
 from app.db.models import (
-    ChrAiInsight, ChrComparisonResult, ChrKpiWide, KpiSource, RowType,
+    ChrAiInsight, ChrComparisonResult, ChrKpiWide, ChrMLAnalytics,
+    KpiSource, RowType,
 )
 from app.engine.demo_injector import (
     inject_demo_practice, DEMO_CODE, DEMO_DISPLAY_NAME, KEEP_LOCATIONS,
@@ -30,6 +31,18 @@ NON_CLINIC_NAMES = {
     'onco avg', 'onco average', 'oncosmart avg', 'oncosmart average',
     'company avg', 'company average', 'all clinics',
     'onco', 'total', 'grand total', 'overall',
+}
+
+# Names that should never appear as individual location rows in the JSON output.
+# This is a superset of NON_CLINIC_NAMES that also excludes the "Company Avg"
+# row — wait, no: "Company Avg" IS intentionally exported as a benchmark row.
+# We only need to purge network/global aggregates that leaked in as RowType.CLINIC
+# before the _resolve_row_type() fix.
+_AGGREGATE_LOCATION_NAMES = {
+    'global avg', 'global average',
+    'network avg', 'network average',
+    'all clinics', 'all clinic',
+    'total', 'grand total', 'overall',
 }
 
 KPI_DEFINITIONS: Dict[str, Any] = {
@@ -158,6 +171,9 @@ def _ioptimize_rows(session: Session, client_name: str, month: str) -> List[Dict
         .order_by(ChrKpiWide.location_name)
         .all()
     )
+    # Purge global/network aggregate rows that may have been stored with the wrong
+    # RowType before the _resolve_row_type() fix (defense-in-depth guard).
+    rows = [r for r in rows if r.location_name.lower().strip() not in _AGGREGATE_LOCATION_NAMES]
     return [
         {
             "location": _clean(r.location_name),
@@ -191,6 +207,8 @@ def _iassign_rows(session: Session, client_name: str, month: str) -> List[Dict]:
         .order_by(ChrKpiWide.location_name)
         .all()
     )
+    # Same defense-in-depth guard as ioptimize_rows.
+    rows = [r for r in rows if r.location_name.lower().strip() not in _AGGREGATE_LOCATION_NAMES]
     return [
         {
             "location": _clean(r.location_name),
@@ -358,6 +376,81 @@ def _historical_kpis(
     ]
 
 
+def _ml_analytics(session: Session, client_name: str, month: str) -> Dict:
+    """
+    Return the ML analytics payload for one client/month.
+
+    Structure:
+      {
+        "locations": {
+          "<location_name>": {
+            "is_anomaly_client":    bool|null,
+            "anomaly_score_client": float|null,
+            "is_anomaly_network":   bool|null,
+            "anomaly_score_network": float|null,
+            "lag_sc_to_chair_r":    float|null,
+            "lag_sc_to_chair_n":    int|null,
+            "forecasts": {
+              "<kpi_name>": {
+                "forecast": float|null,
+                "lower_95": float|null,
+                "upper_95": float|null,
+                "n_months": int|null,
+                "method":   "arima"|"moving_avg"|null,
+                "converged": bool|null
+              }, ...
+            }
+          }, ...
+        }
+      }
+    """
+    rows = (
+        session.query(ChrMLAnalytics)
+        .filter(
+            ChrMLAnalytics.client_name == client_name,
+            ChrMLAnalytics.run_month   == month,
+        )
+        .order_by(ChrMLAnalytics.location_name, ChrMLAnalytics.kpi_name)
+        .all()
+    )
+
+    payload: Dict[str, Any] = {"locations": {}}
+
+    for row in rows:
+        loc = _clean(row.location_name)
+        if loc not in payload["locations"]:
+            payload["locations"][loc] = {
+                "is_anomaly_client":     None,
+                "anomaly_score_client":  None,
+                "is_anomaly_network":    None,
+                "anomaly_score_network": None,
+                "lag_sc_to_chair_r":     None,
+                "lag_sc_to_chair_n":     None,
+                "forecasts":             {},
+            }
+
+        if row.kpi_name == "_anomaly":
+            payload["locations"][loc].update({
+                "is_anomaly_client":     row.is_anomaly_client,
+                "anomaly_score_client":  _r(row.anomaly_score_client, 6),
+                "is_anomaly_network":    row.is_anomaly_network,
+                "anomaly_score_network": _r(row.anomaly_score_network, 6),
+                "lag_sc_to_chair_r":     _r(row.lag_sc_to_chair_r, 4),
+                "lag_sc_to_chair_n":     row.lag_sc_to_chair_n,
+            })
+        else:
+            payload["locations"][loc]["forecasts"][row.kpi_name] = {
+                "forecast": _r(row.arima_forecast, 4),
+                "lower_95": _r(row.arima_lower_95, 4),
+                "upper_95": _r(row.arima_upper_95, 4),
+                "n_months": row.arima_n_months,
+                "method":   row.arima_method,
+                "converged": row.arima_converged,
+            }
+
+    return payload
+
+
 def build_client_json(
     session: Session, client_name: str, run_month: str
 ) -> Dict:
@@ -371,10 +464,11 @@ def build_client_json(
         _enrich(session, client_name, month, iopt, iasg)
         months_data[month] = {
             "composite_score": _composite_score(session, client_name, month),
-            "ioptimize": iopt,
-            "iassign": iasg,
-            "benchmarks": _benchmarks(session, client_name, month),
-            "ai_insights": _ai_insights(session, client_name, month),
+            "ioptimize":       iopt,
+            "iassign":         iasg,
+            "benchmarks":      _benchmarks(session, client_name, month),
+            "ai_insights":     _ai_insights(session, client_name, month),
+            "ml_analytics":    _ml_analytics(session, client_name, month),
         }
 
     return {

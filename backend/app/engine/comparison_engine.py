@@ -23,6 +23,7 @@ Key design principles:
     any per-location comparisons so every location sees the same reference numbers.
   - Statistical meaningfulness threshold prevents noise from being reported as signal.
 """
+import difflib
 import logging
 import statistics
 import json
@@ -994,10 +995,47 @@ def _get_prior_month(session, client_name, run_month):
     return result[0] if result else None
 
 def _get_prior_value(session, client_name, location_name, source, kpi_name, prior_month):
+    """
+    Fetch the prior-month KPI row for this location.
+
+    Strategy:
+      1. Exact match on location_name (fast path, covers 95% of cases).
+      2. Fuzzy match via difflib if the exact name changed between months
+         (e.g. "Blue Pod" in Feb → "LHCP - Blue" in Mar).
+         Requires similarity >= 0.72 to reduce false positives.
+    """
     if not prior_month:
         return None
-    from app.db.models import ChrKpiValue
-    return session.query(ChrKpiValue).filter_by(
+    from app.db.models import ChrKpiValue, RowType
+
+    # ── Fast path: exact name match ──────────────────────────────────
+    result = session.query(ChrKpiValue).filter_by(
         run_month=prior_month, client_name=client_name,
         location_name=location_name, source=source, kpi_name=kpi_name,
+    ).first()
+    if result:
+        return result
+
+    # ── Fuzzy path: location was renamed between months ───────────────
+    prior_locs = [
+        r[0] for r in session.query(ChrKpiValue.location_name).filter_by(
+            run_month=prior_month, client_name=client_name,
+            source=source, row_type=RowType.CLINIC,
+        ).distinct().all()
+    ]
+    if not prior_locs:
+        return None
+
+    matches = difflib.get_close_matches(location_name, prior_locs, n=1, cutoff=0.72)
+    if not matches:
+        return None
+
+    fuzzy_name = matches[0]
+    log.debug(
+        "Fuzzy location match: '%s' → '%s' (%s / %s)",
+        location_name, fuzzy_name, client_name, prior_month
+    )
+    return session.query(ChrKpiValue).filter_by(
+        run_month=prior_month, client_name=client_name,
+        location_name=fuzzy_name, source=source, kpi_name=kpi_name,
     ).first()

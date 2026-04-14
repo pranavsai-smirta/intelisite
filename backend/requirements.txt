@@ -22,3 +22,10 @@ plotly==5.24.0
 
 # AI (for Phase 3)
 anthropic==0.39.0
+
+# Machine Learning (for ML engine — Step 3.5)
+scikit-learn>=1.4.0
+statsmodels>=0.14.0
+
+# Database migrations
+alembic>=1.13.0

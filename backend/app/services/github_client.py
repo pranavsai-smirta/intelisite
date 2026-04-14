@@ -139,32 +139,40 @@ def parse_issue_title(title: str, issue_number: int = 0) -> Tuple[Optional[str],
     """
     raw = title.strip()
 
+    # ── Shared fragment: "Clinic health report(s) for" — the 's' is optional
+    #   because many older issues use the plural form:
+    #   "Clinic Health Reports for October 2025"
+    _CHR_CORE = r'Clinic\s+health\s+reports?\s+for'
+
     # ── Pattern A: both client and month in brackets (standard + most variants)
     #   [NYOH] Clinic health report for [January-2026]
+    #   [NYOH] Clinic Health Reports for [January-2026]
     pat_both = re.match(
-        r'^\[([^\]]+)\]\s+Clinic health report for\s+\[([^\]]+)\]',
+        rf'^\[([^\]]+)\]\s+{_CHR_CORE}\s+\[([^\]]+)\]',
         raw, re.IGNORECASE
     )
 
     # ── Pattern B: client WITHOUT brackets, month WITH brackets (old Jul 2025)
     #   CCI Clinic health report for [July-2025]
+    #   CCI Clinic Health Reports for [July-2025]
     pat_no_client_bracket = re.match(
-        r'^([A-Z][A-Z0-9\-]+)\s+Clinic health report for\s+\[([^\]]+)\]',
+        rf'^([A-Z][A-Z0-9\-]+)\s+{_CHR_CORE}\s+\[([^\]]+)\]',
         raw, re.IGNORECASE
     )
 
     # ── Pattern C: client WITH brackets, month WITHOUT brackets (Feb–Jun 2025)
     #   [TNO] Clinic health report for June 2025
-    #   [LOA] Clinic health report for February 2025
+    #   [LOA] Clinic Health Reports for February 2025
     pat_no_month_bracket = re.match(
-        r'^\[([^\]]+)\]\s+Clinic health report for\s+([A-Za-z]+\s+\d{4})\s*$',
+        rf'^\[([^\]]+)\]\s+{_CHR_CORE}\s+([A-Za-z]+\s+\d{{4}})\s*$',
         raw, re.IGNORECASE
     )
 
     # ── Pattern D: neither has brackets (edge case)
     #   CCI Clinic health report for July 2025
+    #   CCI Clinic Health Reports for July 2025
     pat_no_brackets = re.match(
-        r'^([A-Z][A-Z0-9\-]+)\s+Clinic health report for\s+([A-Za-z]+\s+\d{4})\s*$',
+        rf'^([A-Z][A-Z0-9\-]+)\s+{_CHR_CORE}\s+([A-Za-z]+\s+\d{{4}})\s*$',
         raw, re.IGNORECASE
     )
 

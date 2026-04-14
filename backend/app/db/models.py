@@ -398,6 +398,63 @@ class ChrEmailDraft(Base):
 # Purpose: Track all generated files (PDFs, charts, etc.)
 # ─────────────────────────────────────────────────────────────
 
+class ChrMLAnalytics(Base):
+    """
+    Stores per-location ML analytics computed in Step 3.5.
+
+    Row types (distinguished by kpi_name):
+      kpi_name = '_anomaly'     — Isolation Forest scores (location-level)
+                                  + lag cross-correlation (client-level, repeated per location)
+      kpi_name = <actual name>  — ARIMA forecast for that KPI at this location
+
+    Both types share the same table for chatbot simplicity: one JOIN retrieves
+    all ML context for a location in a single query.
+    """
+    __tablename__ = "chr_ml_analytics"
+
+    id            = Column(Integer, primary_key=True)
+
+    # Identity
+    run_month     = Column(String(7),   nullable=False, index=True)
+    client_name   = Column(String(100), nullable=False, index=True)
+    location_name = Column(String(100), nullable=False, index=True)
+    kpi_name      = Column(String(100), nullable=False, index=True)
+    # '_anomaly' for location-level IF scores; actual kpi name for ARIMA rows
+
+    # ── Isolation Forest (populated only when kpi_name = '_anomaly') ──
+    is_anomaly_client    = Column(Boolean,  nullable=True)
+    anomaly_score_client = Column(Float,    nullable=True)
+    # Negative score = more anomalous (sklearn convention: -1 to 0)
+    is_anomaly_network   = Column(Boolean,  nullable=True)
+    anomaly_score_network = Column(Float,   nullable=True)
+
+    # ── ARIMA forecast (populated only when kpi_name = <actual KPI>) ──
+    arima_forecast   = Column(Float,   nullable=True)   # point estimate for next month
+    arima_lower_95   = Column(Float,   nullable=True)   # 95% confidence interval lower
+    arima_upper_95   = Column(Float,   nullable=True)   # 95% confidence interval upper
+    arima_n_months   = Column(Integer, nullable=True)   # months of history used
+    arima_method     = Column(String(20), nullable=True)  # 'arima' | 'moving_avg'
+    arima_converged  = Column(Boolean, nullable=True)
+
+    # ── Lag cross-correlation (populated only when kpi_name = '_anomaly') ──
+    # Tests: does scheduler_compliance(T-1) predict chair_utilization(T)?
+    lag_sc_to_chair_r = Column(Float,   nullable=True)  # Pearson r (null if < 4 pairs)
+    lag_sc_to_chair_n = Column(Integer, nullable=True)  # number of (T-1, T) data pairs used
+
+    # Traceability
+    run_id      = Column(String(50), nullable=False)
+    computed_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "run_month", "client_name", "location_name", "kpi_name",
+            name="uq_ml_month_client_loc_kpi"
+        ),
+        Index("ix_ml_client_month",  "client_name", "run_month"),
+        Index("ix_ml_anomaly_flags", "is_anomaly_client", "is_anomaly_network", "run_month"),
+    )
+
+
 class ChrReportArtifact(Base):
     """Tracks all generated files — PDFs, charts, JSON exports."""
     __tablename__ = "chr_report_artifact"
