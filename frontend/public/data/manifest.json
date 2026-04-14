@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-04-14T01:58:12.956810Z",
+  "latest_month": "2026-03",
+  "clients": [
+    {
+      "code": "NCS",
+      "display_name": "NCS",
+      "latest_month": "2026-03",
+      "location_count": 3,
+      "composite_score": 76.6,
+      "mom_trend": "up"
+    },
+    {
+      "code": "NWMS",
+      "display_name": "NWMS",
+      "latest_month": "2026-03",
+      "location_count": 6,
+      "composite_score": 71.6,
+      "mom_trend": "flat"
+    },
+    {
+      "code": "PCI",
+      "display_name": "PCI",
+      "latest_month": "2026-03",
+      "location_count": 8,
+      "composite_score": 64.8,
+      "mom_trend": "up"
+    },
+    {
+      "code": "TNO",
+      "display_name": "TNO",
+      "latest_month": "2026-03",
+      "location_count": 32,
+      "composite_score": 60.7,
+      "mom_trend": "up"
+    },
+    {
+      "code": "CCI",
+      "display_name": "CCI",
+      "latest_month": "2026-03",
+      "location_count": 10,
+      "composite_score": 59.8,
+      "mom_trend": "flat"
+    },
+    {
+      "code": "MOASD",
+      "display_name": "MOASD",
+      "latest_month": "2026-03",
+      "location_count": 3,
+      "composite_score": 57.9,
+      "mom_trend": "down"
+    },
+    {
+      "code": "PCC",
+      "display_name": "PCC",
+      "latest_month": "2026-03",
+      "location_count": 2,
+      "composite_score": 53.7,
+      "mom_trend": "down"
+    },
+    {
+      "code": "NMCC",
+      "display_name": "NMCC",
+      "latest_month": "2026-03",
+      "location_count": 2,
+      "composite_score": 51.1,
+      "mom_trend": "down"
+    },
+    {
+      "code": "HOGONC",
+      "display_name": "HOGONC",
+      "latest_month": "2026-03",
+      "location_count": 5,
+      "composite_score": 42.0,
+      "mom_trend": "flat"
+    },
+    {
+      "code": "DEMO",
+      "display_name": "Demo Practice",
+      "latest_month": "2026-03",
+      "location_count": 4,
+      "composite_score": 42.0,
+      "mom_trend": "flat"
+    },
+    {
+      "code": "CHC",
+      "display_name": "CHC",
+      "latest_month": "2026-03",
+      "location_count": 6,
+      "composite_score": 38.2,
+      "mom_trend": "flat"
+    },
+    {
+      "code": "AON",
+      "display_name": "AON",
+      "latest_month": "2026-03",
+      "location_count": 3,
+      "composite_score": 37.2,
+      "mom_trend": "flat"
+    },
+    {
+      "code": "NYOH",
+      "display_name": "NYOH",
+      "latest_month": "2026-03",
+      "location_count": 8,
+      "composite_score": 36.6,
+      "mom_trend": "down"
+    },
+    {
+      "code": "CCBD",
+      "display_name": "CCBD",
+      "latest_month": "2026-03",
+      "location_count": 6,
+      "composite_score": 36.5,
+      "mom_trend": "up"
+    },
+    {
+      "code": "LOA",
+      "display_name": "LOA",
+      "latest_month": "2026-03",
+      "location_count": 5,
+      "composite_score": 24.0,
+      "mom_trend": "up"
+    }
+  ],
+  "network_summary": {
+    "avg_composite_score": 50.8,
+    "top_performer": "NCS",
+    "most_improved": "NCS"
+  }
+}

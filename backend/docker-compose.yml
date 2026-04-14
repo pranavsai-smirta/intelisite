@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: chr_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: chr_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - chr_pgdata:/var/lib/postgresql/data
+      - ./docker/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    restart: always
+
+volumes:
+  chr_pgdata:

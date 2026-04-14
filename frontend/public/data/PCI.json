@@ -1,0 +1,2677 @@
+{
+  "meta": {
+    "client_code": "PCI",
+    "generated_at": "2026-04-14T01:58:12.932607Z",
+    "months_available": [
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-10": {
+      "composite_score": 59.1,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.76,
+          "avg_delay_median": 13.38,
+          "chair_utilization_avg": 82.4,
+          "chair_utilization_median": 80.81,
+          "tx_past_close_avg": null,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": 13.56,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Fayatteville - SI",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.91,
+          "avg_delay_median": 8.58,
+          "chair_utilization_avg": 108.15,
+          "chair_utilization_median": 87.06,
+          "tx_past_close_avg": 0.34,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 19.37,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.12,
+          "avg_delay_median": 14.32,
+          "chair_utilization_avg": 85.06,
+          "chair_utilization_median": 83.92,
+          "tx_past_close_avg": 2.78,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 24.08,
+          "tx_mins_past_close_median": 21.3,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 22.15,
+          "avg_delay_median": 21.55,
+          "chair_utilization_avg": 76.99,
+          "chair_utilization_median": 78.13,
+          "tx_past_close_avg": 0.57,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 11.31,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Pci LocustGrove",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.69,
+          "avg_delay_median": 6.8,
+          "chair_utilization_avg": 42.68,
+          "chair_utilization_median": 42.97,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 0.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "Pcinewnan",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.74,
+          "avg_delay_median": 11.14,
+          "chair_utilization_avg": 110.8,
+          "chair_utilization_median": 110.12,
+          "tx_past_close_avg": 0.43,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.3,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciSandySprings",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.62,
+          "avg_delay_median": 13.71,
+          "chair_utilization_avg": 43.84,
+          "chair_utilization_median": 48.14,
+          "tx_past_close_avg": 0.3,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.0,
+          "tx_mins_past_close_median": 13.71,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 18.15,
+          "avg_delay_median": 17.39,
+          "chair_utilization_avg": 90.12,
+          "chair_utilization_median": 90.23,
+          "tx_past_close_avg": 0.35,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.88,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 13.76,
+          "chair_utilization_avg": 82.4,
+          "tx_past_close_avg": null
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2025-11": {
+      "composite_score": 64.0,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.2,
+          "avg_delay_median": 12.77,
+          "chair_utilization_avg": 81.51,
+          "chair_utilization_median": 78.37,
+          "tx_past_close_avg": 0.64,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.57,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Fayatteville - SI",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.67,
+          "avg_delay_median": 7.12,
+          "chair_utilization_avg": 110.27,
+          "chair_utilization_median": 90.96,
+          "tx_past_close_avg": 0.83,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 20.2,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.12,
+            "avg_delay_mins": -1.24,
+            "avg_treatment_mins_per_patient": 0.83,
+            "avg_treatments_per_day": 0.49
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.45,
+          "avg_delay_median": 15.96,
+          "chair_utilization_avg": 86.78,
+          "chair_utilization_median": 89.56,
+          "tx_past_close_avg": 2.78,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 26.08,
+          "tx_mins_past_close_median": 20.94,
+          "mom_deltas": {
+            "avg_chair_utilization": 1.72,
+            "avg_delay_mins": 0.33,
+            "avg_treatment_mins_per_patient": 2.0,
+            "avg_treatments_per_day": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 19.48,
+          "avg_delay_median": 19.26,
+          "chair_utilization_avg": 72.62,
+          "chair_utilization_median": 73.29,
+          "tx_past_close_avg": null,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": 12.5,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.37,
+            "avg_delay_mins": -2.67,
+            "avg_treatment_mins_per_patient": 1.19
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci LocustGrove",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.08,
+          "avg_delay_median": 3.6,
+          "chair_utilization_avg": 47.6,
+          "chair_utilization_median": 44.28,
+          "tx_past_close_avg": 0.06,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 21.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.92,
+            "avg_delay_mins": -2.61,
+            "avg_treatment_mins_per_patient": 21.0,
+            "avg_treatments_per_day": 0.06
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pcinewnan",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 9.72,
+          "avg_delay_median": 9.01,
+          "chair_utilization_avg": 111.47,
+          "chair_utilization_median": 111.02,
+          "tx_past_close_avg": 0.22,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 7.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.67,
+            "avg_delay_mins": -2.02,
+            "avg_treatment_mins_per_patient": -2.55,
+            "avg_treatments_per_day": -0.21
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciSandySprings",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 10.29,
+          "avg_delay_median": 9.87,
+          "chair_utilization_avg": 38.88,
+          "chair_utilization_median": 41.66,
+          "tx_past_close_avg": 0.11,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 7.5,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.96,
+            "avg_delay_mins": -3.33,
+            "avg_treatment_mins_per_patient": -6.5,
+            "avg_treatments_per_day": -0.19
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 18.75,
+          "avg_delay_median": 18.4,
+          "chair_utilization_avg": 87.55,
+          "chair_utilization_median": 89.09,
+          "tx_past_close_avg": 0.39,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.57,
+            "avg_delay_mins": 0.6,
+            "avg_treatment_mins_per_patient": -1.88,
+            "avg_treatments_per_day": 0.04
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.16,
+          "patients_per_nurse_median": 6.15,
+          "chairs_per_nurse_avg": 3.0,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 62.9,
+          "nurse_utilization_median": 62.38,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.85,
+          "patients_per_nurse_median": 6.76,
+          "chairs_per_nurse_avg": 3.18,
+          "chairs_per_nurse_median": 3.1,
+          "nurse_utilization_avg": 65.32,
+          "nurse_utilization_median": 64.33,
+          "mom_deltas": {
+            "avg_chair_utilization": 1.72,
+            "avg_delay_mins": 0.33,
+            "avg_treatment_mins_per_patient": 2.0,
+            "avg_treatments_per_day": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.03,
+          "patients_per_nurse_median": 5.93,
+          "chairs_per_nurse_avg": 2.74,
+          "chairs_per_nurse_median": 2.78,
+          "nurse_utilization_avg": 60.62,
+          "nurse_utilization_median": 61.72,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.37,
+            "avg_delay_mins": -2.67,
+            "avg_treatment_mins_per_patient": 1.19
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pcinewnan",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.8,
+          "patients_per_nurse_median": 5.73,
+          "chairs_per_nurse_avg": 2.67,
+          "chairs_per_nurse_median": 2.5,
+          "nurse_utilization_avg": 62.06,
+          "nurse_utilization_median": 62.13,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.67,
+            "avg_delay_mins": -2.02,
+            "avg_treatment_mins_per_patient": -2.55,
+            "avg_treatments_per_day": -0.21
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.99,
+          "patients_per_nurse_median": 5.75,
+          "chairs_per_nurse_avg": 3.41,
+          "chairs_per_nurse_median": 3.75,
+          "nurse_utilization_avg": 63.77,
+          "nurse_utilization_median": 60.85,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.57,
+            "avg_delay_mins": 0.6,
+            "avg_treatment_mins_per_patient": -1.88,
+            "avg_treatments_per_day": 0.04
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 12.2,
+          "chair_utilization_avg": 81.51,
+          "tx_past_close_avg": 0.64
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2025-12": {
+      "composite_score": 62.7,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.84,
+          "avg_delay_median": 13.44,
+          "chair_utilization_avg": 83.82,
+          "chair_utilization_median": 89.28,
+          "tx_past_close_avg": 0.54,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 13.07,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Fayatteville - SI",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.77,
+          "avg_delay_median": 9.25,
+          "chair_utilization_avg": 114.14,
+          "chair_utilization_median": 94.87,
+          "tx_past_close_avg": 0.71,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 21.46,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.87,
+            "avg_delay_mins": 1.1,
+            "avg_treatment_mins_per_patient": 1.26,
+            "avg_treatments_per_day": -0.12
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 16.73,
+          "avg_delay_median": 16.69,
+          "chair_utilization_avg": 81.72,
+          "chair_utilization_median": 81.94,
+          "tx_past_close_avg": 1.73,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.26,
+          "tx_mins_past_close_median": 5.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -5.06,
+            "avg_delay_mins": 1.28,
+            "avg_treatment_mins_per_patient": -8.82,
+            "avg_treatments_per_day": -1.05,
+            "avg_chairs_per_nurse": 0.05,
+            "avg_nurse_to_patient_chair_time": -2.88,
+            "avg_patients_per_nurse": -0.47,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 20.44,
+          "avg_delay_median": 19.33,
+          "chair_utilization_avg": 79.81,
+          "chair_utilization_median": 81.57,
+          "tx_past_close_avg": 0.55,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 14.25,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 7.19,
+            "avg_delay_mins": 0.96,
+            "avg_treatment_mins_per_patient": 1.75,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": 3.3,
+            "avg_patients_per_nurse": 0.21,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci LocustGrove",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.18,
+          "avg_delay_median": 3.89,
+          "chair_utilization_avg": 57.7,
+          "chair_utilization_median": 53.39,
+          "tx_past_close_avg": 0.05,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 6.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 10.1,
+            "avg_delay_mins": 0.1,
+            "avg_treatment_mins_per_patient": -15.0,
+            "avg_treatments_per_day": -0.01
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pcinewnan",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.15,
+          "avg_delay_median": 10.84,
+          "chair_utilization_avg": 113.89,
+          "chair_utilization_median": 118.46,
+          "tx_past_close_avg": 0.14,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.42,
+            "avg_delay_mins": 1.43,
+            "avg_treatment_mins_per_patient": 2.58,
+            "avg_treatments_per_day": -0.08,
+            "avg_chairs_per_nurse": 0.06,
+            "avg_nurse_to_patient_chair_time": 3.46,
+            "avg_patients_per_nurse": 0.19,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciSandySprings",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 10.43,
+          "avg_delay_median": 9.42,
+          "chair_utilization_avg": 44.02,
+          "chair_utilization_median": 43.98,
+          "tx_past_close_avg": 0.18,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": null,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {
+            "avg_chair_utilization": 5.14,
+            "avg_delay_mins": 0.14,
+            "avg_treatments_per_day": 0.07
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 18.18,
+          "avg_delay_median": 18.66,
+          "chair_utilization_avg": 79.38,
+          "chair_utilization_median": 81.04,
+          "tx_past_close_avg": 0.45,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 12.2,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -8.17,
+            "avg_delay_mins": -0.57,
+            "avg_treatment_mins_per_patient": -1.8,
+            "avg_treatments_per_day": 0.06,
+            "avg_chairs_per_nurse": 0.15,
+            "avg_nurse_to_patient_chair_time": -0.6,
+            "avg_patients_per_nurse": 0.06,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.16,
+          "patients_per_nurse_median": 6.25,
+          "chairs_per_nurse_avg": 3.05,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 63.64,
+          "nurse_utilization_median": 63.4,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.38,
+          "patients_per_nurse_median": 6.47,
+          "chairs_per_nurse_avg": 3.23,
+          "chairs_per_nurse_median": 3.38,
+          "nurse_utilization_avg": 62.44,
+          "nurse_utilization_median": 62.1,
+          "mom_deltas": {
+            "avg_chair_utilization": -5.06,
+            "avg_delay_mins": 1.28,
+            "avg_treatment_mins_per_patient": -8.82,
+            "avg_treatments_per_day": -1.05,
+            "avg_chairs_per_nurse": 0.05,
+            "avg_nurse_to_patient_chair_time": -2.88,
+            "avg_patients_per_nurse": -0.47,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.24,
+          "patients_per_nurse_median": 6.35,
+          "chairs_per_nurse_avg": 2.69,
+          "chairs_per_nurse_median": 2.5,
+          "nurse_utilization_avg": 63.92,
+          "nurse_utilization_median": 64.5,
+          "mom_deltas": {
+            "avg_chair_utilization": 7.19,
+            "avg_delay_mins": 0.96,
+            "avg_treatment_mins_per_patient": 1.75,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": 3.3,
+            "avg_patients_per_nurse": 0.21,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pcinewnan",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.99,
+          "patients_per_nurse_median": 6.1,
+          "chairs_per_nurse_avg": 2.73,
+          "chairs_per_nurse_median": 2.76,
+          "nurse_utilization_avg": 65.52,
+          "nurse_utilization_median": 67.27,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.42,
+            "avg_delay_mins": 1.43,
+            "avg_treatment_mins_per_patient": 2.58,
+            "avg_treatments_per_day": -0.08,
+            "avg_chairs_per_nurse": 0.06,
+            "avg_nurse_to_patient_chair_time": 3.46,
+            "avg_patients_per_nurse": 0.19,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.05,
+          "patients_per_nurse_median": 6.23,
+          "chairs_per_nurse_avg": 3.56,
+          "chairs_per_nurse_median": 3.75,
+          "nurse_utilization_avg": 63.17,
+          "nurse_utilization_median": 60.4,
+          "mom_deltas": {
+            "avg_chair_utilization": -8.17,
+            "avg_delay_mins": -0.57,
+            "avg_treatment_mins_per_patient": -1.8,
+            "avg_treatments_per_day": 0.06,
+            "avg_chairs_per_nurse": 0.15,
+            "avg_nurse_to_patient_chair_time": -0.6,
+            "avg_patients_per_nurse": 0.06,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 12.84,
+          "chair_utilization_avg": 83.82,
+          "tx_past_close_avg": 0.54
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2026-01": {
+      "composite_score": 59.6,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 61.61,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.67,
+          "avg_delay_median": 15.29,
+          "chair_utilization_avg": 79.83,
+          "chair_utilization_median": 74.14,
+          "tx_past_close_avg": 0.48,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.17,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Fayatteville - SI",
+          "scheduler_compliance_avg": 54.48,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 9.12,
+          "avg_delay_median": 8.12,
+          "chair_utilization_avg": 84.36,
+          "chair_utilization_median": 88.17,
+          "tx_past_close_avg": 0.42,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.87,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -29.78,
+            "avg_delay_mins": 0.35,
+            "avg_treatment_mins_per_patient": -5.59,
+            "avg_treatments_per_day": -0.29
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "scheduler_compliance_avg": 61.28,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 17.6,
+          "avg_delay_median": 16.65,
+          "chair_utilization_avg": 77.13,
+          "chair_utilization_median": 82.47,
+          "tx_past_close_avg": 1.9,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 22.79,
+          "tx_mins_past_close_median": 18.4,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.59,
+            "avg_delay_mins": 0.87,
+            "avg_treatment_mins_per_patient": 5.53,
+            "avg_treatments_per_day": 0.17,
+            "avg_chairs_per_nurse": 0.02,
+            "avg_nurse_to_patient_chair_time": -4.11,
+            "avg_patients_per_nurse": -0.17,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "scheduler_compliance_avg": 59.0,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 23.58,
+          "avg_delay_median": 23.09,
+          "chair_utilization_avg": 78.37,
+          "chair_utilization_median": 82.19,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 6.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.44,
+            "avg_delay_mins": 3.14,
+            "avg_treatment_mins_per_patient": -7.58,
+            "avg_treatments_per_day": -0.55,
+            "avg_chairs_per_nurse": -0.18,
+            "avg_nurse_to_patient_chair_time": -5.76,
+            "avg_patients_per_nurse": -0.36,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci LocustGrove",
+          "scheduler_compliance_avg": 87.69,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.68,
+          "avg_delay_median": 4.8,
+          "chair_utilization_avg": 42.84,
+          "chair_utilization_median": 41.67,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 0.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -14.86,
+            "avg_delay_mins": 1.5,
+            "avg_treatment_mins_per_patient": -6.0,
+            "avg_treatments_per_day": -0.05
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "Pcinewnan",
+          "scheduler_compliance_avg": 52.47,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.01,
+          "avg_delay_median": 13.93,
+          "chair_utilization_avg": 116.85,
+          "chair_utilization_median": 121.43,
+          "tx_past_close_avg": 0.35,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 12.14,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.96,
+            "avg_delay_mins": 2.86,
+            "avg_treatment_mins_per_patient": 1.81,
+            "avg_treatments_per_day": 0.21,
+            "avg_chairs_per_nurse": -0.12,
+            "avg_nurse_to_patient_chair_time": 0.61,
+            "avg_patients_per_nurse": 0.12,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "PciSandySprings",
+          "scheduler_compliance_avg": 83.27,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.7,
+          "avg_delay_median": 13.6,
+          "chair_utilization_avg": 39.62,
+          "chair_utilization_median": 39.82,
+          "tx_past_close_avg": 0.2,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 19.5,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.4,
+            "avg_delay_mins": 3.27,
+            "avg_treatments_per_day": 0.02
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "scheduler_compliance_avg": 72.22,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 19.0,
+          "avg_delay_median": 18.5,
+          "chair_utilization_avg": 83.05,
+          "chair_utilization_median": 85.06,
+          "tx_past_close_avg": 0.2,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 22.25,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.67,
+            "avg_delay_mins": 0.82,
+            "avg_treatment_mins_per_patient": 10.05,
+            "avg_treatments_per_day": -0.25,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": -0.93,
+            "avg_patients_per_nurse": -0.11,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.03,
+          "patients_per_nurse_median": 6.12,
+          "chairs_per_nurse_avg": 2.95,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 60.41,
+          "nurse_utilization_median": 61.8,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Pci - Atlanta",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.21,
+          "patients_per_nurse_median": 6.41,
+          "chairs_per_nurse_avg": 3.25,
+          "chairs_per_nurse_median": 3.28,
+          "nurse_utilization_avg": 58.33,
+          "nurse_utilization_median": 59.29,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.59,
+            "avg_delay_mins": 0.87,
+            "avg_treatment_mins_per_patient": 5.53,
+            "avg_treatments_per_day": 0.17,
+            "avg_chairs_per_nurse": 0.02,
+            "avg_nurse_to_patient_chair_time": -4.11,
+            "avg_patients_per_nurse": -0.17,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.88,
+          "patients_per_nurse_median": 6.0,
+          "chairs_per_nurse_avg": 2.51,
+          "chairs_per_nurse_median": 2.5,
+          "nurse_utilization_avg": 58.16,
+          "nurse_utilization_median": 58.66,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.44,
+            "avg_delay_mins": 3.14,
+            "avg_treatment_mins_per_patient": -7.58,
+            "avg_treatments_per_day": -0.55,
+            "avg_chairs_per_nurse": -0.18,
+            "avg_nurse_to_patient_chair_time": -5.76,
+            "avg_patients_per_nurse": -0.36,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Pcinewnan",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.11,
+          "patients_per_nurse_median": 6.25,
+          "chairs_per_nurse_avg": 2.61,
+          "chairs_per_nurse_median": 2.5,
+          "nurse_utilization_avg": 66.13,
+          "nurse_utilization_median": 68.21,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.96,
+            "avg_delay_mins": 2.86,
+            "avg_treatment_mins_per_patient": 1.81,
+            "avg_treatments_per_day": 0.21,
+            "avg_chairs_per_nurse": -0.12,
+            "avg_nurse_to_patient_chair_time": 0.61,
+            "avg_patients_per_nurse": 0.12,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "PciStockbridge",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.94,
+          "patients_per_nurse_median": 6.1,
+          "chairs_per_nurse_avg": 3.46,
+          "chairs_per_nurse_median": 3.75,
+          "nurse_utilization_avg": 62.24,
+          "nurse_utilization_median": 60.95,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.67,
+            "avg_delay_mins": 0.82,
+            "avg_treatment_mins_per_patient": 10.05,
+            "avg_treatments_per_day": -0.25,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": -0.93,
+            "avg_patients_per_nurse": -0.11,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 61.61,
+          "avg_delay_avg": 14.67,
+          "chair_utilization_avg": 79.83,
+          "tx_past_close_avg": 0.48
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2026-02": {
+      "composite_score": 58.9,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 77.84,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.18,
+          "avg_delay_median": 12.94,
+          "chair_utilization_avg": 83.57,
+          "chair_utilization_median": 74.38,
+          "tx_past_close_avg": 0.64,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 13.6,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Fayatteville - SI",
+          "scheduler_compliance_avg": 78.06,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 10.41,
+          "avg_delay_median": 9.29,
+          "chair_utilization_avg": 102.51,
+          "chair_utilization_median": 107.14,
+          "tx_past_close_avg": 0.42,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 19.5,
+          "tx_mins_past_close_median": 9.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 18.15,
+            "avg_delay_mins": 1.29,
+            "avg_treatment_mins_per_patient": 3.63,
+            "avg_treatments_per_day": 0.0,
+            "scheduler_compliance": 23.58
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "scheduler_compliance_avg": 76.73,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.68,
+          "avg_delay_median": null,
+          "chair_utilization_avg": 67.95,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.06,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": 19.03,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization",
+            "avg_nurse_to_patient_chair_time"
+          ]
+        },
+        {
+          "location": "Pci - Atlanta",
+          "scheduler_compliance_avg": 80.18,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 16.54,
+          "avg_delay_median": 16.53,
+          "chair_utilization_avg": 81.19,
+          "chair_utilization_median": 79.43,
+          "tx_past_close_avg": 2.21,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 21.12,
+          "tx_mins_past_close_median": 15.0,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.31,
+            "avg_delay_mins": -1.06,
+            "avg_treatment_mins_per_patient": -1.67,
+            "scheduler_compliance": 18.9,
+            "avg_chair_utilization": 4.06,
+            "avg_patients_per_nurse": 0.06,
+            "avg_chairs_per_nurse": -0.06,
+            "avg_nurse_to_patient_chair_time": 2.42,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "scheduler_compliance": "above",
+            "avg_chair_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "scheduler_compliance_avg": 74.23,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 22.39,
+          "avg_delay_median": 23.36,
+          "chair_utilization_avg": 77.58,
+          "chair_utilization_median": 77.04,
+          "tx_past_close_avg": 0.68,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.54,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_treatment_mins_per_patient": 3.87,
+            "avg_chair_utilization": -0.79,
+            "scheduler_compliance": 15.23,
+            "avg_delay_mins": -1.19,
+            "avg_treatments_per_day": 0.68,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.12,
+            "avg_chairs_per_nurse": 0.12,
+            "avg_nurse_to_patient_chair_time": 2.63
+          },
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Pci LocustGrove",
+          "scheduler_compliance_avg": 95.28,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.92,
+          "avg_delay_median": 4.62,
+          "chair_utilization_avg": 45.09,
+          "chair_utilization_median": 29.95,
+          "tx_past_close_avg": 0.05,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 7.59,
+            "avg_treatments_per_day": 0.05,
+            "avg_delay_mins": -0.76,
+            "avg_treatment_mins_per_patient": 15.0,
+            "avg_chair_utilization": 2.25
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_treatments_per_day": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Pcinewnan",
+          "scheduler_compliance_avg": 68.9,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.25,
+          "avg_delay_median": 12.6,
+          "chair_utilization_avg": 122.99,
+          "chair_utilization_median": 113.7,
+          "tx_past_close_avg": 0.74,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 12.57,
+          "tx_mins_past_close_median": 8.0,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.39,
+            "avg_chair_utilization": 6.14,
+            "avg_delay_mins": -0.76,
+            "avg_treatment_mins_per_patient": 0.43,
+            "scheduler_compliance": 16.43,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": 0.09,
+            "avg_nurse_to_patient_chair_time": -1.72
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "scheduler_compliance": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "PciSandySprings",
+          "scheduler_compliance_avg": 95.43,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 10.15,
+          "avg_delay_median": 9.08,
+          "chair_utilization_avg": 41.71,
+          "chair_utilization_median": 38.89,
+          "tx_past_close_avg": 0.21,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.09,
+            "scheduler_compliance": 12.16,
+            "avg_delay_mins": -3.55,
+            "avg_treatments_per_day": 0.01,
+            "avg_treatment_mins_per_patient": -8.75
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "scheduler_compliance_avg": 87.22,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.66,
+          "avg_delay_median": 15.33,
+          "chair_utilization_avg": 87.41,
+          "chair_utilization_median": 76.15,
+          "tx_past_close_avg": 0.21,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 5.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": -4.34,
+            "avg_chair_utilization": 4.36,
+            "avg_treatments_per_day": 0.01,
+            "avg_treatment_mins_per_patient": -16.5,
+            "scheduler_compliance": 15.0,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.44,
+            "avg_chairs_per_nurse": 0.26,
+            "avg_nurse_to_patient_chair_time": 4.93
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_chair_utilization": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "scheduler_compliance": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.17,
+          "patients_per_nurse_median": 6.11,
+          "chairs_per_nurse_avg": 3.06,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 62.36,
+          "nurse_utilization_median": 62.25,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "iassign_utilization_avg": 95.06,
+          "patients_per_nurse_avg": 5.84,
+          "patients_per_nurse_median": null,
+          "chairs_per_nurse_avg": 3.59,
+          "chairs_per_nurse_median": null,
+          "nurse_utilization_avg": 53.91,
+          "nurse_utilization_median": null,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization",
+            "avg_nurse_to_patient_chair_time"
+          ]
+        },
+        {
+          "location": "Pci - Atlanta",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.27,
+          "patients_per_nurse_median": 6.07,
+          "chairs_per_nurse_avg": 3.19,
+          "chairs_per_nurse_median": 3.09,
+          "nurse_utilization_avg": 60.75,
+          "nurse_utilization_median": 61.49,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.31,
+            "avg_delay_mins": -1.06,
+            "avg_treatment_mins_per_patient": -1.67,
+            "scheduler_compliance": 18.9,
+            "avg_chair_utilization": 4.06,
+            "avg_patients_per_nurse": 0.06,
+            "avg_chairs_per_nurse": -0.06,
+            "avg_nurse_to_patient_chair_time": 2.42,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "scheduler_compliance": "above",
+            "avg_chair_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.0,
+          "patients_per_nurse_median": 5.95,
+          "chairs_per_nurse_avg": 2.63,
+          "chairs_per_nurse_median": 2.64,
+          "nurse_utilization_avg": 60.79,
+          "nurse_utilization_median": 60.86,
+          "mom_deltas": {
+            "avg_treatment_mins_per_patient": 3.87,
+            "avg_chair_utilization": -0.79,
+            "scheduler_compliance": 15.23,
+            "avg_delay_mins": -1.19,
+            "avg_treatments_per_day": 0.68,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.12,
+            "avg_chairs_per_nurse": 0.12,
+            "avg_nurse_to_patient_chair_time": 2.63
+          },
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Pcinewnan",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.06,
+          "patients_per_nurse_median": 6.18,
+          "chairs_per_nurse_avg": 2.7,
+          "chairs_per_nurse_median": 2.5,
+          "nurse_utilization_avg": 64.41,
+          "nurse_utilization_median": 63.87,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.39,
+            "avg_chair_utilization": 6.14,
+            "avg_delay_mins": -0.76,
+            "avg_treatment_mins_per_patient": 0.43,
+            "scheduler_compliance": 16.43,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": 0.09,
+            "avg_nurse_to_patient_chair_time": -1.72
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "scheduler_compliance": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "PciStockbridge",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.38,
+          "patients_per_nurse_median": 6.5,
+          "chairs_per_nurse_avg": 3.72,
+          "chairs_per_nurse_median": 3.75,
+          "nurse_utilization_avg": 67.17,
+          "nurse_utilization_median": 64.06,
+          "mom_deltas": {
+            "avg_delay_mins": -4.34,
+            "avg_chair_utilization": 4.36,
+            "avg_treatments_per_day": 0.01,
+            "avg_treatment_mins_per_patient": -16.5,
+            "scheduler_compliance": 15.0,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.44,
+            "avg_chairs_per_nurse": 0.26,
+            "avg_nurse_to_patient_chair_time": 4.93
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_chair_utilization": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "scheduler_compliance": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 77.84,
+          "avg_delay_avg": 13.18,
+          "chair_utilization_avg": 83.57,
+          "tx_past_close_avg": 0.64
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "PCI's February 2026 performance reflects strong underlying discipline with meaningful month-over-month gains across scheduling compliance and patient flow, though asset utilization remains unevenly distributed across the five-clinic footprint. Scheduler Compliance improved sharply at four clinics\u2014Fayatteville-SI gained 23.6 points from 54.5% in January to 78.1% in February, Pcinewnan gained 16.4 points from 52.5% to 68.9%, and Pci-Atlanta gained 18.9 points from 61.3% to 80.2%\u2014bringing these sites closer to the company average of 77.84%. However, the portfolio's Performance Score distribution (ranging from 38 to 75 out of 100, where 50 is network average) signals pockets of operational friction that warrant targeted attention.",
+        "highlights": [
+          "PciStockbridge delivered the strongest absolute performance with a score of 75 out of 100, anchored by Scheduler Compliance of 87.2% (9.4 points above company average) and a dramatic 74.2% reduction in minutes past close per patient, falling from 22.2 minutes in January to 5.8 minutes in February. PciSandySprings and PciLocustGrove both demonstrated exceptional patient flow discipline: SandySprings reduced average patient delay from 13.7 minutes in January to 10.2 minutes in February (a 25.9% improvement), while LocustGrove achieved the portfolio's lowest delay at 4.9 minutes against the company average of 13.18 minutes, positioning both as benchmarks for scheduling execution."
+        ],
+        "concerns": [
+          "We noticed Pci Fayatteville is running 22.4 minutes of average patient delay compared to the company average of 13.18 minutes, a 70% gap that represents the largest outlier in the network (1.8 standard deviations above the mean). Concurrent with this, Pci-Atlanta is finishing 2.2 treatments past closing daily against a portfolio average of 0.7, suggesting flow breakdowns in the late-shift window. We also observed that Pci-Atlanta's nurse utilization has declined over two consecutive months (3-month average: 60.5%) despite 100% iAssign adoption, which may indicate a mismatch between assignment protocols and actual staffing capacity that warrants a closer look at the nurse-to-chair assignment audit trail."
+        ],
+        "recommendations": [
+          "We recommend that Pci Fayatteville conduct a structured review of its scheduling templates and chair-assignment sequencing to address the 22.4-minute average patient delay\u2014the single largest performance gap in the network. A concrete starting point would be to audit the clinic's current iOptimize recommendation adherence (currently 74.2%) against actual scheduled slot patterns for the next two weeks, comparing how many recommendations were overridden and why, so we can identify whether the gap stems from template misalignment, patient no-show absorption, or chair capacity constraints. This targeted exercise should surface the root cause and unlock faster movement toward the company average."
+        ]
+      }
+    },
+    "2026-03": {
+      "composite_score": 64.8,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 92.87,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.65,
+          "avg_delay_median": 13.32,
+          "chair_utilization_avg": 80.44,
+          "chair_utilization_median": 77.26,
+          "tx_past_close_avg": 0.43,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 12.52,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Fayatteville - SI",
+          "scheduler_compliance_avg": 90.88,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.53,
+          "avg_delay_median": 7.1,
+          "chair_utilization_avg": 108.95,
+          "chair_utilization_median": 109.89,
+          "tx_past_close_avg": 0.4,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 23.22,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 12.82,
+            "avg_delay_mins": -2.88,
+            "avg_treatments_per_day": -0.02,
+            "avg_treatment_mins_per_patient": 3.72,
+            "avg_chair_utilization": 6.44
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "Global Avg",
+          "scheduler_compliance_avg": 83.55,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.9,
+          "avg_delay_median": null,
+          "chair_utilization_avg": 68.45,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.23,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": 19.45,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {
+            "scheduler_compliance": 6.82,
+            "avg_delay_mins": 0.22,
+            "avg_treatments_per_day": 0.17,
+            "avg_treatment_mins_per_patient": 0.42,
+            "avg_chair_utilization": 0.5,
+            "iassign_utilization": 0.49,
+            "avg_patients_per_nurse": -0.56,
+            "avg_chairs_per_nurse": 0.66,
+            "avg_nurse_to_patient_chair_time": 2.91
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization",
+            "avg_patients_per_nurse",
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Pci - Atlanta",
+          "scheduler_compliance_avg": 89.63,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.42,
+          "avg_delay_median": 14.06,
+          "chair_utilization_avg": 80.41,
+          "chair_utilization_median": 81.5,
+          "tx_past_close_avg": 1.5,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 19.24,
+          "tx_mins_past_close_median": 17.5,
+          "mom_deltas": {
+            "scheduler_compliance": 9.45,
+            "avg_delay_mins": -2.12,
+            "avg_treatments_per_day": -0.71,
+            "avg_treatment_mins_per_patient": -1.88,
+            "avg_chair_utilization": -0.78
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Pci Fayatteville",
+          "scheduler_compliance_avg": 87.31,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 22.45,
+          "avg_delay_median": 22.8,
+          "chair_utilization_avg": 74.68,
+          "chair_utilization_median": 75.0,
+          "tx_past_close_avg": 0.23,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 8.8,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 13.08,
+            "avg_delay_mins": 0.06,
+            "avg_treatments_per_day": -0.45,
+            "avg_treatment_mins_per_patient": -1.74,
+            "avg_chair_utilization": -2.9
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Pci LocustGrove",
+          "scheduler_compliance_avg": 100.0,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.85,
+          "avg_delay_median": 3.79,
+          "chair_utilization_avg": 33.61,
+          "chair_utilization_median": 31.25,
+          "tx_past_close_avg": 0.14,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 9.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 4.72,
+            "avg_delay_mins": -0.07,
+            "avg_treatments_per_day": 0.09,
+            "avg_treatment_mins_per_patient": -5.33,
+            "avg_chair_utilization": -11.48
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "Pcinewnan",
+          "scheduler_compliance_avg": 80.69,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.02,
+          "avg_delay_median": 12.9,
+          "chair_utilization_avg": 114.47,
+          "chair_utilization_median": 115.18,
+          "tx_past_close_avg": 0.14,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 7.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 11.79,
+            "avg_delay_mins": -0.23,
+            "avg_treatments_per_day": -0.6,
+            "avg_treatment_mins_per_patient": -4.9,
+            "avg_chair_utilization": -8.52
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciSandySprings",
+          "scheduler_compliance_avg": 100.0,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 9.93,
+          "avg_delay_median": 9.66,
+          "chair_utilization_avg": 44.84,
+          "chair_utilization_median": 48.15,
+          "tx_past_close_avg": 0.05,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 8.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 4.57,
+            "avg_delay_mins": -0.22,
+            "avg_treatments_per_day": -0.16,
+            "avg_treatment_mins_per_patient": -2.75,
+            "avg_chair_utilization": 3.13
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PciStockbridge",
+          "scheduler_compliance_avg": 92.87,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 16.38,
+          "avg_delay_median": 17.07,
+          "chair_utilization_avg": 89.89,
+          "chair_utilization_median": 91.38,
+          "tx_past_close_avg": 0.55,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 11.08,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 5.65,
+            "avg_delay_mins": 1.72,
+            "avg_treatments_per_day": 0.34,
+            "avg_treatment_mins_per_patient": 5.33,
+            "avg_chair_utilization": 2.48
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.31,
+          "patients_per_nurse_median": 6.4,
+          "chairs_per_nurse_avg": 3.0,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 63.25,
+          "nurse_utilization_median": 64.14,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "iassign_utilization_avg": 95.55,
+          "patients_per_nurse_avg": 5.28,
+          "patients_per_nurse_median": null,
+          "chairs_per_nurse_avg": 4.25,
+          "chairs_per_nurse_median": null,
+          "nurse_utilization_avg": 56.82,
+          "nurse_utilization_median": null,
+          "mom_deltas": {
+            "scheduler_compliance": 6.82,
+            "avg_delay_mins": 0.22,
+            "avg_treatments_per_day": 0.17,
+            "avg_treatment_mins_per_patient": 0.42,
+            "avg_chair_utilization": 0.5,
+            "iassign_utilization": 0.49,
+            "avg_patients_per_nurse": -0.56,
+            "avg_chairs_per_nurse": 0.66,
+            "avg_nurse_to_patient_chair_time": 2.91
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization",
+            "avg_patients_per_nurse",
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "PCI Atlanta",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.43,
+          "patients_per_nurse_median": 6.4,
+          "chairs_per_nurse_avg": 3.18,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 59.59,
+          "nurse_utilization_median": 60.27,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PCI Fayetteville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.26,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 2.76,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 64.28,
+          "nurse_utilization_median": 66.91,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PCI Newman",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.23,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 2.68,
+          "chairs_per_nurse_median": 2.78,
+          "nurse_utilization_avg": 65.27,
+          "nurse_utilization_median": 67.03,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "PCI Stockbridge",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.32,
+          "patients_per_nurse_median": 6.5,
+          "chairs_per_nurse_avg": 3.39,
+          "chairs_per_nurse_median": 3.38,
+          "nurse_utilization_avg": 66.39,
+          "nurse_utilization_median": 70.33,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 92.87,
+          "avg_delay_avg": 12.65,
+          "chair_utilization_avg": 80.44,
+          "tx_past_close_avg": 0.43
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "PCI delivered solid operational momentum in March 2026, with five clinics showing consistent three-month improvements in scheduler compliance and seven clinics reducing treatments running past closing time. The network's composite performance reflects mixed outcomes: while LocustGrove (69/100), Stockbridge (72/100), and Fayatteville-SI (83/100) all exceeded the network average of 50/100, three clinics remain at or near that midpoint, anchored primarily by scheduling and patient flow challenges rather than systemic breakdowns.",
+        "highlights": [
+          "Pci Fayatteville demonstrated the most dramatic operational turnaround in closing-time management, reducing treatments past closing from 0.7 daily in February 2026 to 0.2 in March 2026, an 66.2% improvement. Fayatteville-SI continues to lead the network with a performance score of 83/100 (33 points above the network average of 50/100) and delivered a 27.7% reduction in average patient delay from 10.4 minutes in February 2026 to 7.5 minutes in March 2026, well below the company benchmark of 12.65 minutes. Scheduler compliance is advancing across the board: Pci Fayatteville's compliance climbed from 73.5% three-month average to 87.3% this month, and Fayatteville-SI's compliance rose to 90.9%, both showing sustained momentum over three consecutive months with R\u00b2 values above 0.96."
+        ],
+        "concerns": [
+          "Pci Fayatteville's average patient delay of 22.4 minutes represents a significant outlier, sitting 77% above the company average of 12.65 minutes and 1.8 standard deviations above the group mean\u2014we noticed this gap persists despite strong scheduler compliance improvements, suggesting the constraint may lie in chair-to-nurse assignment fluidity or treatment duration variability rather than scheduling discipline alone. Pci-Atlanta's closure-time pressure remains elevated at 1.5 treatments running past closing daily (248.8% above the group mean of 0.5), and while this clinic shows three-month improvement in scheduler compliance (now 89.6%, up from a 77.0% three-month average), the operational bottleneck has not yet coincided with corresponding relief in daily overtime; we should explore whether current iAssign adoption rates or nurse utilization levels are constraining throughput. Additionally, Pci LocustGrove's chair utilization sits at 33.6%, representing a 58.2% shortfall below the group mean of 76.9%\u2014this under-deployment deserves investigation into patient volume patterns, scheduling template assumptions, or potential capacity misalignment relative to regional demand."
+        ],
+        "recommendations": [
+          "We recommend that Pci Fayatteville pilot a structured audit of nurse-to-chair assignments and treatment sequencing workflows, beginning with a one-week shadow review of morning and afternoon chair rotations to identify whether average delay stems from pre-treatment prep time, assessment bottlenecks, or downstream scheduling gaps between consecutive patients. Given the clinic's strong scheduler compliance at 87.3% alongside the outsized 22.4-minute delay versus the 12.65-minute company benchmark, the root cause most likely resides in operational execution rather than appointment adherence\u2014this targeted review will clarify whether iAssign adoption acceleration or nurse-shift realignment could unlock the efficiency gain needed to bring delay in line with network peers."
+        ]
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-10",
+        "location": "Fayatteville - SI",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 8.91,
+        "chair_utilization_avg": 108.15,
+        "tx_past_close_avg": 0.34
+      },
+      {
+        "month": "2025-10",
+        "location": "Pci - Atlanta",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 15.12,
+        "chair_utilization_avg": 85.06,
+        "tx_past_close_avg": 2.78
+      },
+      {
+        "month": "2025-10",
+        "location": "Pci Fayatteville",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 22.15,
+        "chair_utilization_avg": 76.99,
+        "tx_past_close_avg": 0.57
+      },
+      {
+        "month": "2025-10",
+        "location": "Pci LocustGrove",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.69,
+        "chair_utilization_avg": 42.68,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2025-10",
+        "location": "Pcinewnan",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 11.74,
+        "chair_utilization_avg": 110.8,
+        "tx_past_close_avg": 0.43
+      },
+      {
+        "month": "2025-10",
+        "location": "PciSandySprings",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 13.62,
+        "chair_utilization_avg": 43.84,
+        "tx_past_close_avg": 0.3
+      },
+      {
+        "month": "2025-10",
+        "location": "PciStockbridge",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 18.15,
+        "chair_utilization_avg": 90.12,
+        "tx_past_close_avg": 0.35
+      },
+      {
+        "month": "2025-11",
+        "location": "Fayatteville - SI",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 7.67,
+        "chair_utilization_avg": 110.27,
+        "tx_past_close_avg": 0.83
+      },
+      {
+        "month": "2025-11",
+        "location": "Pci - Atlanta",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 15.45,
+        "chair_utilization_avg": 86.78,
+        "tx_past_close_avg": 2.78
+      },
+      {
+        "month": "2025-11",
+        "location": "Pci Fayatteville",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 19.48,
+        "chair_utilization_avg": 72.62,
+        "tx_past_close_avg": null
+      },
+      {
+        "month": "2025-11",
+        "location": "Pci LocustGrove",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.08,
+        "chair_utilization_avg": 47.6,
+        "tx_past_close_avg": 0.06
+      },
+      {
+        "month": "2025-11",
+        "location": "Pcinewnan",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 9.72,
+        "chair_utilization_avg": 111.47,
+        "tx_past_close_avg": 0.22
+      },
+      {
+        "month": "2025-11",
+        "location": "PciSandySprings",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 10.29,
+        "chair_utilization_avg": 38.88,
+        "tx_past_close_avg": 0.11
+      },
+      {
+        "month": "2025-11",
+        "location": "PciStockbridge",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 18.75,
+        "chair_utilization_avg": 87.55,
+        "tx_past_close_avg": 0.39
+      },
+      {
+        "month": "2025-12",
+        "location": "Fayatteville - SI",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 8.77,
+        "chair_utilization_avg": 114.14,
+        "tx_past_close_avg": 0.71
+      },
+      {
+        "month": "2025-12",
+        "location": "Pci - Atlanta",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 16.73,
+        "chair_utilization_avg": 81.72,
+        "tx_past_close_avg": 1.73
+      },
+      {
+        "month": "2025-12",
+        "location": "Pci Fayatteville",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 20.44,
+        "chair_utilization_avg": 79.81,
+        "tx_past_close_avg": 0.55
+      },
+      {
+        "month": "2025-12",
+        "location": "Pci LocustGrove",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.18,
+        "chair_utilization_avg": 57.7,
+        "tx_past_close_avg": 0.05
+      },
+      {
+        "month": "2025-12",
+        "location": "Pcinewnan",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 11.15,
+        "chair_utilization_avg": 113.89,
+        "tx_past_close_avg": 0.14
+      },
+      {
+        "month": "2025-12",
+        "location": "PciSandySprings",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 10.43,
+        "chair_utilization_avg": 44.02,
+        "tx_past_close_avg": 0.18
+      },
+      {
+        "month": "2025-12",
+        "location": "PciStockbridge",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 18.18,
+        "chair_utilization_avg": 79.38,
+        "tx_past_close_avg": 0.45
+      },
+      {
+        "month": "2026-01",
+        "location": "Fayatteville - SI",
+        "scheduler_compliance_avg": 54.48,
+        "avg_delay_avg": 9.12,
+        "chair_utilization_avg": 84.36,
+        "tx_past_close_avg": 0.42
+      },
+      {
+        "month": "2026-01",
+        "location": "Pci - Atlanta",
+        "scheduler_compliance_avg": 61.28,
+        "avg_delay_avg": 17.6,
+        "chair_utilization_avg": 77.13,
+        "tx_past_close_avg": 1.9
+      },
+      {
+        "month": "2026-01",
+        "location": "Pci Fayatteville",
+        "scheduler_compliance_avg": 59.0,
+        "avg_delay_avg": 23.58,
+        "chair_utilization_avg": 78.37,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2026-01",
+        "location": "Pci LocustGrove",
+        "scheduler_compliance_avg": 87.69,
+        "avg_delay_avg": 5.68,
+        "chair_utilization_avg": 42.84,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2026-01",
+        "location": "Pcinewnan",
+        "scheduler_compliance_avg": 52.47,
+        "avg_delay_avg": 14.01,
+        "chair_utilization_avg": 116.85,
+        "tx_past_close_avg": 0.35
+      },
+      {
+        "month": "2026-01",
+        "location": "PciSandySprings",
+        "scheduler_compliance_avg": 83.27,
+        "avg_delay_avg": 13.7,
+        "chair_utilization_avg": 39.62,
+        "tx_past_close_avg": 0.2
+      },
+      {
+        "month": "2026-01",
+        "location": "PciStockbridge",
+        "scheduler_compliance_avg": 72.22,
+        "avg_delay_avg": 19.0,
+        "chair_utilization_avg": 83.05,
+        "tx_past_close_avg": 0.2
+      },
+      {
+        "month": "2026-02",
+        "location": "Fayatteville - SI",
+        "scheduler_compliance_avg": 78.06,
+        "avg_delay_avg": 10.41,
+        "chair_utilization_avg": 102.51,
+        "tx_past_close_avg": 0.42
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "Pci - Atlanta",
+        "scheduler_compliance_avg": 80.18,
+        "avg_delay_avg": 16.54,
+        "chair_utilization_avg": 81.19,
+        "tx_past_close_avg": 2.21
+      },
+      {
+        "month": "2026-02",
+        "location": "Pci Fayatteville",
+        "scheduler_compliance_avg": 74.23,
+        "avg_delay_avg": 22.39,
+        "chair_utilization_avg": 77.58,
+        "tx_past_close_avg": 0.68
+      },
+      {
+        "month": "2026-02",
+        "location": "Pci LocustGrove",
+        "scheduler_compliance_avg": 95.28,
+        "avg_delay_avg": 4.92,
+        "chair_utilization_avg": 45.09,
+        "tx_past_close_avg": 0.05
+      },
+      {
+        "month": "2026-02",
+        "location": "Pcinewnan",
+        "scheduler_compliance_avg": 68.9,
+        "avg_delay_avg": 13.25,
+        "chair_utilization_avg": 122.99,
+        "tx_past_close_avg": 0.74
+      },
+      {
+        "month": "2026-02",
+        "location": "PciSandySprings",
+        "scheduler_compliance_avg": 95.43,
+        "avg_delay_avg": 10.15,
+        "chair_utilization_avg": 41.71,
+        "tx_past_close_avg": 0.21
+      },
+      {
+        "month": "2026-02",
+        "location": "PciStockbridge",
+        "scheduler_compliance_avg": 87.22,
+        "avg_delay_avg": 14.66,
+        "chair_utilization_avg": 87.41,
+        "tx_past_close_avg": 0.21
+      },
+      {
+        "month": "2026-03",
+        "location": "Fayatteville - SI",
+        "scheduler_compliance_avg": 90.88,
+        "avg_delay_avg": 7.53,
+        "chair_utilization_avg": 108.95,
+        "tx_past_close_avg": 0.4
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "Pci - Atlanta",
+        "scheduler_compliance_avg": 89.63,
+        "avg_delay_avg": 14.42,
+        "chair_utilization_avg": 80.41,
+        "tx_past_close_avg": 1.5
+      },
+      {
+        "month": "2026-03",
+        "location": "Pci Fayatteville",
+        "scheduler_compliance_avg": 87.31,
+        "avg_delay_avg": 22.45,
+        "chair_utilization_avg": 74.68,
+        "tx_past_close_avg": 0.23
+      },
+      {
+        "month": "2026-03",
+        "location": "Pci LocustGrove",
+        "scheduler_compliance_avg": 100.0,
+        "avg_delay_avg": 4.85,
+        "chair_utilization_avg": 33.61,
+        "tx_past_close_avg": 0.14
+      },
+      {
+        "month": "2026-03",
+        "location": "Pcinewnan",
+        "scheduler_compliance_avg": 80.69,
+        "avg_delay_avg": 13.02,
+        "chair_utilization_avg": 114.47,
+        "tx_past_close_avg": 0.14
+      },
+      {
+        "month": "2026-03",
+        "location": "PciSandySprings",
+        "scheduler_compliance_avg": 100.0,
+        "avg_delay_avg": 9.93,
+        "chair_utilization_avg": 44.84,
+        "tx_past_close_avg": 0.05
+      },
+      {
+        "month": "2026-03",
+        "location": "PciStockbridge",
+        "scheduler_compliance_avg": 92.87,
+        "avg_delay_avg": 16.38,
+        "chair_utilization_avg": 89.89,
+        "tx_past_close_avg": 0.55
+      }
+    ]
+  }
+}

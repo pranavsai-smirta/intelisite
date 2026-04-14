@@ -1,0 +1,23 @@
+# Comparison Engine Rules
+
+# Outlier detection settings
+outlier_detection:
+  method: "mad"  # Median Absolute Deviation
+  mad_z_threshold: 3.5
+  min_samples: 3  # Minimum number of clinics needed to compute outliers
+
+# Global baseline calculation
+global_baseline:
+  method: "median"  # Use median across all clinics
+  exclude_special_rows: true  # Don't include "Company Avg", "Onco" in calculations
+
+# Month-over-Month comparison
+mom_comparison:
+  enabled: true
+  require_prior_month: false  # Don't fail if no prior month data exists
+
+# Thresholds for highlighting significant changes
+significance_thresholds:
+  high: 15.0    # Changes >= 15% are considered highly significant
+  medium: 10.0  # Changes >= 10% are considered moderately significant
+  low: 5.0      # Changes >= 5% are considered slightly significant

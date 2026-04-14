@@ -1,0 +1,2292 @@
+{
+  "meta": {
+    "client_code": "NWMS",
+    "generated_at": "2026-04-14T01:58:12.872123Z",
+    "months_available": [
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-11": {
+      "composite_score": 61.1,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.85,
+          "avg_delay_median": 4.67,
+          "chair_utilization_avg": 57.25,
+          "chair_utilization_median": 50.77,
+          "tx_past_close_avg": 0.75,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 30.31,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 2.41,
+          "avg_delay_median": 4.8,
+          "chair_utilization_avg": 29.73,
+          "chair_utilization_median": 54.24,
+          "tx_past_close_avg": 0.73,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 22.13,
+          "tx_mins_past_close_median": 17.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.5,
+          "avg_delay_median": 3.13,
+          "chair_utilization_avg": 42.62,
+          "chair_utilization_median": 36.28,
+          "tx_past_close_avg": 0.22,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 8.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Olympia",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.49,
+          "avg_delay_median": 3.41,
+          "chair_utilization_avg": 48.58,
+          "chair_utilization_median": 44.18,
+          "tx_past_close_avg": 0.93,
+          "tx_past_close_median": 0.9,
+          "tx_mins_past_close_avg": 37.46,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Puyallup",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.21,
+          "avg_delay_median": 4.23,
+          "chair_utilization_avg": 68.92,
+          "chair_utilization_median": 50.9,
+          "tx_past_close_avg": 1.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 45.28,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_nurse_to_patient_chair_time",
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "Tacoma",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.65,
+          "avg_delay_median": 4.67,
+          "chair_utilization_avg": 55.67,
+          "chair_utilization_median": 50.77,
+          "tx_past_close_avg": 0.89,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": null,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 64.55,
+          "patients_per_nurse_avg": 6.47,
+          "patients_per_nurse_median": 6.75,
+          "chairs_per_nurse_avg": 2.66,
+          "chairs_per_nurse_median": 2.38,
+          "nurse_utilization_avg": 67.89,
+          "nurse_utilization_median": 65.1,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "iassign_utilization_avg": 27.27,
+          "patients_per_nurse_avg": 5.75,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 3.75,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 49.56,
+          "nurse_utilization_median": 55.56,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "iassign_utilization_avg": 55.55,
+          "patients_per_nurse_avg": 5.85,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 2.05,
+          "chairs_per_nurse_median": 2.33,
+          "nurse_utilization_avg": 53.26,
+          "nurse_utilization_median": 52.76,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Olympia",
+          "iassign_utilization_avg": 42.85,
+          "patients_per_nurse_avg": 6.56,
+          "patients_per_nurse_median": 7.64,
+          "chairs_per_nurse_avg": 2.63,
+          "chairs_per_nurse_median": 2.57,
+          "nurse_utilization_avg": 60.67,
+          "nurse_utilization_median": 62.7,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Puyallup",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.44,
+          "patients_per_nurse_median": 7.49,
+          "chairs_per_nurse_avg": 2.59,
+          "chairs_per_nurse_median": 2.44,
+          "nurse_utilization_avg": 85.71,
+          "nurse_utilization_median": 81.92,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_nurse_to_patient_chair_time",
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "Tacoma",
+          "iassign_utilization_avg": 77.77,
+          "patients_per_nurse_avg": 5.75,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 2.29,
+          "chairs_per_nurse_median": 2.33,
+          "nurse_utilization_avg": 51.91,
+          "nurse_utilization_median": 52.08,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 4.85,
+          "chair_utilization_avg": 57.25,
+          "tx_past_close_avg": 0.75
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 13.76,
+          "chair_utilization_avg": 71.91,
+          "tx_past_close_avg": 1.48
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2025-12": {
+      "composite_score": 58.6,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.37,
+          "avg_delay_median": 4.44,
+          "chair_utilization_avg": 46.58,
+          "chair_utilization_median": 58.19,
+          "tx_past_close_avg": 0.77,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 24.92,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 2.59,
+          "avg_delay_median": 1.62,
+          "chair_utilization_avg": 45.88,
+          "chair_utilization_median": 38.22,
+          "tx_past_close_avg": 0.92,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.08,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 16.15,
+            "avg_delay_mins": 0.18,
+            "avg_treatment_mins_per_patient": -7.05,
+            "avg_treatments_per_day": 0.19
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.07,
+          "avg_delay_median": 2.88,
+          "chair_utilization_avg": 54.41,
+          "chair_utilization_median": 52.45,
+          "tx_past_close_avg": 0.27,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 7.83,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 11.79,
+            "avg_delay_mins": -0.43,
+            "avg_treatment_mins_per_patient": -0.92,
+            "avg_treatments_per_day": 0.05,
+            "avg_chairs_per_nurse": 0.22,
+            "avg_nurse_to_patient_chair_time": 3.94,
+            "avg_patients_per_nurse": 0.38,
+            "iassign_utilization": 39.9
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Olympia",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.94,
+          "avg_delay_median": 3.17,
+          "chair_utilization_avg": 65.63,
+          "chair_utilization_median": 70.2,
+          "tx_past_close_avg": 1.35,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 28.74,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 17.05,
+            "avg_delay_mins": 1.45,
+            "avg_treatment_mins_per_patient": -8.72,
+            "avg_treatments_per_day": 0.42,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 6.2,
+            "avg_patients_per_nurse": 0.73,
+            "iassign_utilization": 10.09
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Puyallup",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.63,
+          "avg_delay_median": 5.67,
+          "chair_utilization_avg": 64.97,
+          "chair_utilization_median": 63.42,
+          "tx_past_close_avg": 0.86,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 38.16,
+          "tx_mins_past_close_median": 7.5,
+          "mom_deltas": {
+            "avg_chair_utilization": -3.95,
+            "avg_delay_mins": 0.42,
+            "avg_treatment_mins_per_patient": -7.12,
+            "avg_treatments_per_day": -0.14,
+            "avg_chairs_per_nurse": 0.03,
+            "avg_nurse_to_patient_chair_time": -4.73,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Tacoma",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.64,
+          "avg_delay_median": 7.27,
+          "chair_utilization_avg": 61.9,
+          "chair_utilization_median": 61.97,
+          "tx_past_close_avg": 0.45,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 34.8,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 6.23,
+            "avg_delay_mins": 0.99,
+            "avg_treatments_per_day": -0.44,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": 2.73,
+            "avg_patients_per_nurse": 0.06,
+            "iassign_utilization": 22.23
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 87.1,
+          "patients_per_nurse_avg": 6.94,
+          "patients_per_nurse_median": 6.73,
+          "chairs_per_nurse_avg": 2.42,
+          "chairs_per_nurse_median": 2.44,
+          "nurse_utilization_avg": 66.05,
+          "nurse_utilization_median": 61.8,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Gig Harbour",
+          "iassign_utilization_avg": 95.45,
+          "patients_per_nurse_avg": 6.23,
+          "patients_per_nurse_median": 6.5,
+          "chairs_per_nurse_avg": 2.27,
+          "chairs_per_nurse_median": 2.0,
+          "nurse_utilization_avg": 57.2,
+          "nurse_utilization_median": 56.94,
+          "mom_deltas": {
+            "avg_chair_utilization": 11.79,
+            "avg_delay_mins": -0.43,
+            "avg_treatment_mins_per_patient": -0.92,
+            "avg_treatments_per_day": 0.05,
+            "avg_chairs_per_nurse": 0.22,
+            "avg_nurse_to_patient_chair_time": 3.94,
+            "avg_patients_per_nurse": 0.38,
+            "iassign_utilization": 39.9
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Olympia",
+          "iassign_utilization_avg": 52.94,
+          "patients_per_nurse_avg": 7.29,
+          "patients_per_nurse_median": 7.33,
+          "chairs_per_nurse_avg": 2.63,
+          "chairs_per_nurse_median": 2.33,
+          "nurse_utilization_avg": 66.87,
+          "nurse_utilization_median": 66.66,
+          "mom_deltas": {
+            "avg_chair_utilization": 17.05,
+            "avg_delay_mins": 1.45,
+            "avg_treatment_mins_per_patient": -8.72,
+            "avg_treatments_per_day": 0.42,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 6.2,
+            "avg_patients_per_nurse": 0.73,
+            "iassign_utilization": 10.09
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Puyallup",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.44,
+          "patients_per_nurse_median": 8.47,
+          "chairs_per_nurse_avg": 2.62,
+          "chairs_per_nurse_median": 2.62,
+          "nurse_utilization_avg": 80.98,
+          "nurse_utilization_median": 82.45,
+          "mom_deltas": {
+            "avg_chair_utilization": -3.95,
+            "avg_delay_mins": 0.42,
+            "avg_treatment_mins_per_patient": -7.12,
+            "avg_treatments_per_day": -0.14,
+            "avg_chairs_per_nurse": 0.03,
+            "avg_nurse_to_patient_chair_time": -4.73,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Tacoma",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.81,
+          "patients_per_nurse_median": 5.83,
+          "chairs_per_nurse_avg": 2.19,
+          "chairs_per_nurse_median": 2.14,
+          "nurse_utilization_avg": 54.64,
+          "nurse_utilization_median": 53.19,
+          "mom_deltas": {
+            "avg_chair_utilization": 6.23,
+            "avg_delay_mins": 0.99,
+            "avg_treatments_per_day": -0.44,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": 2.73,
+            "avg_patients_per_nurse": 0.06,
+            "iassign_utilization": 22.23
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 5.37,
+          "chair_utilization_avg": 46.58,
+          "tx_past_close_avg": 0.77
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2026-01": {
+      "composite_score": 71.9,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 80.33,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.1,
+          "avg_delay_median": 4.0,
+          "chair_utilization_avg": 67.87,
+          "chair_utilization_median": 64.04,
+          "tx_past_close_avg": 1.06,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 30.13,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "scheduler_compliance_avg": 93.28,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 1.72,
+          "avg_delay_median": 1.65,
+          "chair_utilization_avg": 45.63,
+          "chair_utilization_median": 46.56,
+          "tx_past_close_avg": 1.08,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 42.23,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.25,
+            "avg_delay_mins": -0.87,
+            "avg_treatment_mins_per_patient": 27.15,
+            "avg_treatments_per_day": 0.16
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization",
+            "avg_delay_mins",
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "scheduler_compliance_avg": 80.88,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.92,
+          "avg_delay_median": 3.18,
+          "chair_utilization_avg": 64.09,
+          "chair_utilization_median": 63.58,
+          "tx_past_close_avg": 0.38,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 28.25,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 9.68,
+            "avg_delay_mins": 0.85,
+            "avg_treatment_mins_per_patient": 20.42,
+            "avg_treatments_per_day": 0.11,
+            "avg_chairs_per_nurse": -0.06,
+            "avg_nurse_to_patient_chair_time": 1.19,
+            "avg_patients_per_nurse": 0.3,
+            "iassign_utilization": 4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Olympia",
+          "scheduler_compliance_avg": 91.58,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.88,
+          "avg_delay_median": 4.0,
+          "chair_utilization_avg": 77.88,
+          "chair_utilization_median": 78.82,
+          "tx_past_close_avg": 1.29,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 20.23,
+          "tx_mins_past_close_median": 8.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 12.25,
+            "avg_delay_mins": -0.06,
+            "avg_treatment_mins_per_patient": -8.51,
+            "avg_treatments_per_day": -0.06,
+            "avg_chairs_per_nurse": 0.17,
+            "avg_nurse_to_patient_chair_time": 3.05,
+            "avg_patients_per_nurse": 0.17,
+            "iassign_utilization": 29.41
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Puyallup",
+          "scheduler_compliance_avg": 75.77,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.5,
+          "avg_delay_median": 4.67,
+          "chair_utilization_avg": 66.91,
+          "chair_utilization_median": 66.5,
+          "tx_past_close_avg": 1.76,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 33.78,
+          "tx_mins_past_close_median": 13.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 1.94,
+            "avg_delay_mins": -1.13,
+            "avg_treatment_mins_per_patient": -4.38,
+            "avg_treatments_per_day": 0.9,
+            "avg_chairs_per_nurse": -0.16,
+            "avg_nurse_to_patient_chair_time": -7.06,
+            "avg_patients_per_nurse": -0.56,
+            "iassign_utilization": -4.76
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Tacoma",
+          "scheduler_compliance_avg": 86.37,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.5,
+          "avg_delay_median": 6.75,
+          "chair_utilization_avg": 65.82,
+          "chair_utilization_median": 4.39,
+          "tx_past_close_avg": 0.81,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 26.06,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.92,
+            "avg_delay_mins": -0.14,
+            "avg_treatment_mins_per_patient": -8.74,
+            "avg_treatments_per_day": 0.36,
+            "avg_chairs_per_nurse": -0.11,
+            "avg_nurse_to_patient_chair_time": -0.81,
+            "avg_patients_per_nurse": -0.12,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 92.18,
+          "patients_per_nurse_avg": 6.76,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 2.65,
+          "chairs_per_nurse_median": 2.44,
+          "nurse_utilization_avg": 63.05,
+          "nurse_utilization_median": 63.8,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "iassign_utilization_avg": 83.33,
+          "patients_per_nurse_avg": 6.26,
+          "patients_per_nurse_median": 6.0,
+          "chairs_per_nurse_avg": 3.7,
+          "chairs_per_nurse_median": 3.33,
+          "nurse_utilization_avg": 57.97,
+          "nurse_utilization_median": 55.64,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.25,
+            "avg_delay_mins": -0.87,
+            "avg_treatment_mins_per_patient": 27.15,
+            "avg_treatments_per_day": 0.16
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization",
+            "avg_delay_mins",
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.53,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 2.21,
+          "chairs_per_nurse_median": 2.0,
+          "nurse_utilization_avg": 58.39,
+          "nurse_utilization_median": 57.11,
+          "mom_deltas": {
+            "avg_chair_utilization": 9.68,
+            "avg_delay_mins": 0.85,
+            "avg_treatment_mins_per_patient": 20.42,
+            "avg_treatments_per_day": 0.11,
+            "avg_chairs_per_nurse": -0.06,
+            "avg_nurse_to_patient_chair_time": 1.19,
+            "avg_patients_per_nurse": 0.3,
+            "iassign_utilization": 4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Olympia",
+          "iassign_utilization_avg": 82.35,
+          "patients_per_nurse_avg": 7.46,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 2.8,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 69.92,
+          "nurse_utilization_median": 79.86,
+          "mom_deltas": {
+            "avg_chair_utilization": 12.25,
+            "avg_delay_mins": -0.06,
+            "avg_treatment_mins_per_patient": -8.51,
+            "avg_treatments_per_day": -0.06,
+            "avg_chairs_per_nurse": 0.17,
+            "avg_nurse_to_patient_chair_time": 3.05,
+            "avg_patients_per_nurse": 0.17,
+            "iassign_utilization": 29.41
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Puyallup",
+          "iassign_utilization_avg": 95.24,
+          "patients_per_nurse_avg": 7.88,
+          "patients_per_nurse_median": 8.0,
+          "chairs_per_nurse_avg": 2.46,
+          "chairs_per_nurse_median": 2.44,
+          "nurse_utilization_avg": 73.92,
+          "nurse_utilization_median": 73.78,
+          "mom_deltas": {
+            "avg_chair_utilization": 1.94,
+            "avg_delay_mins": -1.13,
+            "avg_treatment_mins_per_patient": -4.38,
+            "avg_treatments_per_day": 0.9,
+            "avg_chairs_per_nurse": -0.16,
+            "avg_nurse_to_patient_chair_time": -7.06,
+            "avg_patients_per_nurse": -0.56,
+            "iassign_utilization": -4.76
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Tacoma",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.69,
+          "patients_per_nurse_median": 5.43,
+          "chairs_per_nurse_avg": 2.08,
+          "chairs_per_nurse_median": 2.03,
+          "nurse_utilization_avg": 53.83,
+          "nurse_utilization_median": 52.77,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.92,
+            "avg_delay_mins": -0.14,
+            "avg_treatment_mins_per_patient": -8.74,
+            "avg_treatments_per_day": 0.36,
+            "avg_chairs_per_nurse": -0.11,
+            "avg_nurse_to_patient_chair_time": -0.81,
+            "avg_patients_per_nurse": -0.12,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 80.33,
+          "avg_delay_avg": 5.1,
+          "chair_utilization_avg": 67.87,
+          "tx_past_close_avg": 1.06
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      }
+    },
+    "2026-02": {
+      "composite_score": 72.4,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 89.32,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.68,
+          "avg_delay_median": 5.97,
+          "chair_utilization_avg": 64.13,
+          "chair_utilization_median": 63.58,
+          "tx_past_close_avg": 1.09,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 27.84,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "scheduler_compliance_avg": 95.45,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.41,
+          "avg_delay_median": 2.83,
+          "chair_utilization_avg": 51.87,
+          "chair_utilization_median": 52.16,
+          "tx_past_close_avg": 0.5,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 16.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_treatment_mins_per_patient": -25.9,
+            "avg_chair_utilization": 6.24,
+            "iassign_utilization": 16.67,
+            "avg_patients_per_nurse": 1.09,
+            "avg_nurse_to_patient_chair_time": 8.72,
+            "avg_chairs_per_nurse": 0.31,
+            "scheduler_compliance": 2.17,
+            "avg_delay_mins": 1.69,
+            "avg_treatments_per_day": -0.58
+          },
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chairs_per_nurse": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "scheduler_compliance_avg": 90.76,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.52,
+          "avg_delay_median": 3.29,
+          "chair_utilization_avg": 64.14,
+          "chair_utilization_median": 64.66,
+          "tx_past_close_avg": 0.26,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.4,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 9.88,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.27,
+            "avg_chairs_per_nurse": 0.17,
+            "avg_nurse_to_patient_chair_time": 2.65,
+            "avg_delay_mins": 0.6,
+            "avg_treatments_per_day": -0.12,
+            "avg_treatment_mins_per_patient": -12.85,
+            "avg_chair_utilization": 0.05
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "scheduler_compliance_avg": 76.73,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.68,
+          "avg_delay_median": null,
+          "chair_utilization_avg": 67.95,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.06,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": 19.03,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "scheduler_compliance"
+          ]
+        },
+        {
+          "location": "Olympia",
+          "scheduler_compliance_avg": 89.13,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.38,
+          "avg_delay_median": 6.49,
+          "chair_utilization_avg": 80.05,
+          "chair_utilization_median": 81.29,
+          "tx_past_close_avg": 3.25,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 37.77,
+          "tx_mins_past_close_median": 17.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.17,
+            "avg_treatment_mins_per_patient": 17.54,
+            "iassign_utilization": -1.1,
+            "avg_patients_per_nurse": 0.17,
+            "avg_chairs_per_nurse": 0.04,
+            "avg_nurse_to_patient_chair_time": 5.17,
+            "scheduler_compliance": -2.45,
+            "avg_delay_mins": 2.5,
+            "avg_treatments_per_day": 1.96
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization",
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Puyallup",
+          "scheduler_compliance_avg": 86.2,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.62,
+          "avg_delay_median": 6.97,
+          "chair_utilization_avg": 65.37,
+          "chair_utilization_median": 65.66,
+          "tx_past_close_avg": 1.16,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 55.23,
+          "tx_mins_past_close_median": 11.0,
+          "mom_deltas": {
+            "iassign_utilization": -53.13,
+            "avg_patients_per_nurse": -0.01,
+            "avg_chairs_per_nurse": 0.04,
+            "avg_nurse_to_patient_chair_time": 3.47,
+            "scheduler_compliance": 10.43,
+            "avg_delay_mins": 2.12,
+            "avg_treatments_per_day": -0.6,
+            "avg_treatment_mins_per_patient": 21.45,
+            "avg_chair_utilization": -1.54
+          },
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "iassign_utilization",
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "Tacoma",
+          "scheduler_compliance_avg": 93.75,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.51,
+          "avg_delay_median": 6.5,
+          "chair_utilization_avg": 54.79,
+          "chair_utilization_median": 56.04,
+          "tx_past_close_avg": 0.32,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.5,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": 1.01,
+            "scheduler_compliance": 7.38,
+            "avg_treatments_per_day": -0.49,
+            "avg_treatment_mins_per_patient": -11.56,
+            "avg_chair_utilization": -11.03,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.21,
+            "avg_chairs_per_nurse": 0.27,
+            "avg_nurse_to_patient_chair_time": 0.85
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "scheduler_compliance": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 85.0,
+          "patients_per_nurse_avg": 7.11,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 2.81,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 63.63,
+          "nurse_utilization_median": 63.19,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.35,
+          "patients_per_nurse_median": 8.0,
+          "chairs_per_nurse_avg": 4.01,
+          "chairs_per_nurse_median": 5.0,
+          "nurse_utilization_avg": 66.69,
+          "nurse_utilization_median": 69.44,
+          "mom_deltas": {
+            "avg_treatment_mins_per_patient": -25.9,
+            "avg_chair_utilization": 6.24,
+            "iassign_utilization": 16.67,
+            "avg_patients_per_nurse": 1.09,
+            "avg_nurse_to_patient_chair_time": 8.72,
+            "avg_chairs_per_nurse": 0.31,
+            "scheduler_compliance": 2.17,
+            "avg_delay_mins": 1.69,
+            "avg_treatments_per_day": -0.58
+          },
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chairs_per_nurse": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.8,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 2.38,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 61.04,
+          "nurse_utilization_median": 59.72,
+          "mom_deltas": {
+            "scheduler_compliance": 9.88,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.27,
+            "avg_chairs_per_nurse": 0.17,
+            "avg_nurse_to_patient_chair_time": 2.65,
+            "avg_delay_mins": 0.6,
+            "avg_treatments_per_day": -0.12,
+            "avg_treatment_mins_per_patient": -12.85,
+            "avg_chair_utilization": 0.05
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "iassign_utilization_avg": 95.06,
+          "patients_per_nurse_avg": 5.84,
+          "patients_per_nurse_median": null,
+          "chairs_per_nurse_avg": 3.59,
+          "chairs_per_nurse_median": null,
+          "nurse_utilization_avg": 53.91,
+          "nurse_utilization_median": null,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "scheduler_compliance"
+          ]
+        },
+        {
+          "location": "Olympia",
+          "iassign_utilization_avg": 81.25,
+          "patients_per_nurse_avg": 7.63,
+          "patients_per_nurse_median": 7.67,
+          "chairs_per_nurse_avg": 2.84,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 75.09,
+          "nurse_utilization_median": 73.37,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.17,
+            "avg_treatment_mins_per_patient": 17.54,
+            "iassign_utilization": -1.1,
+            "avg_patients_per_nurse": 0.17,
+            "avg_chairs_per_nurse": 0.04,
+            "avg_nurse_to_patient_chair_time": 5.17,
+            "scheduler_compliance": -2.45,
+            "avg_delay_mins": 2.5,
+            "avg_treatments_per_day": 1.96
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization",
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Puyallup",
+          "iassign_utilization_avg": 42.11,
+          "patients_per_nurse_avg": 7.87,
+          "patients_per_nurse_median": 7.75,
+          "chairs_per_nurse_avg": 2.5,
+          "chairs_per_nurse_median": 2.44,
+          "nurse_utilization_avg": 77.39,
+          "nurse_utilization_median": 80.44,
+          "mom_deltas": {
+            "iassign_utilization": -53.13,
+            "avg_patients_per_nurse": -0.01,
+            "avg_chairs_per_nurse": 0.04,
+            "avg_nurse_to_patient_chair_time": 3.47,
+            "scheduler_compliance": 10.43,
+            "avg_delay_mins": 2.12,
+            "avg_treatments_per_day": -0.6,
+            "avg_treatment_mins_per_patient": 21.45,
+            "avg_chair_utilization": -1.54
+          },
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "iassign_utilization",
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "Tacoma",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.9,
+          "patients_per_nurse_median": 6.0,
+          "chairs_per_nurse_avg": 2.35,
+          "chairs_per_nurse_median": 2.29,
+          "nurse_utilization_avg": 54.68,
+          "nurse_utilization_median": 53.12,
+          "mom_deltas": {
+            "avg_delay_mins": 1.01,
+            "scheduler_compliance": 7.38,
+            "avg_treatments_per_day": -0.49,
+            "avg_treatment_mins_per_patient": -11.56,
+            "avg_chair_utilization": -11.03,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.21,
+            "avg_chairs_per_nurse": 0.27,
+            "avg_nurse_to_patient_chair_time": 0.85
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "scheduler_compliance": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 89.32,
+          "avg_delay_avg": 6.68,
+          "chair_utilization_avg": 64.13,
+          "tx_past_close_avg": 1.09
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "The NWMS network delivered mixed results in February 2026, with an average Performance Score of 72.6 out of 100 (where 50 represents the network average). Closing-time compliance improved markedly across four clinics, yet we continue to see variability in scheduling discipline and nurse-to-chair efficiency that warrants attention. Gig Harbour stands out as the highest performer at 79/100, while Puyallup and Olympia each registered 68\u201369/100 and present distinct operational challenges.",
+        "highlights": [
+          "Tacoma reduced treatments running past closing from 0.8 per day in January to 0.3 in February\u2014a 60.5% improvement\u2014while also lowering minutes past close per patient from 26.1 to 14.5 minutes across the same period. Federal Way achieved an even sharper reduction in closing-time overruns, with minutes past close per patient dropping 61.3% from 42.2 in January to 16.3 in February, alongside a 15.0% gain in nurse utilization from 58.0% to 66.7%, demonstrating tangible progress in operational discipline."
+        ],
+        "concerns": [
+          "We noticed Puyallup's iAssign utilization has declined consistently over three months to 42.1%\u2014roughly half the company average of 86.4%\u2014and this underadoption may be associated with the clinic's elevated minutes past close per patient (49.2 minutes, roughly double the company benchmark of 26.4 minutes). Similarly, Olympia's chair utilization remains elevated at 80.0%, and despite improvements in the past four months, the clinic is averaging 3.2 treatments past closing daily\u2014nearly three times the network typical of 1.1\u2014suggesting capacity constraints and scheduling friction that merit exploration of assignment workflow and template alignment."
+        ],
+        "recommendations": [
+          "Tacoma presents the clearest performance gap: average patient delay of 8.5 minutes exceeds the company average of 6.68 minutes by 27%, even as the clinic's closing-time compliance has improved sharply. We recommend auditing Tacoma's scheduling templates and appointment-spacing intervals against iOptimize recommendations to identify whether current slot definitions are allowing adequate buffer time; this targeted review may unlock further gains in on-time starts without operational strain."
+        ]
+      }
+    },
+    "2026-03": {
+      "composite_score": 71.6,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 88.2,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.58,
+          "avg_delay_median": 4.61,
+          "chair_utilization_avg": 67.5,
+          "chair_utilization_median": 65.28,
+          "tx_past_close_avg": 0.94,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 27.23,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "scheduler_compliance_avg": 97.08,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 1.92,
+          "avg_delay_median": 1.54,
+          "chair_utilization_avg": 47.89,
+          "chair_utilization_median": 53.02,
+          "tx_past_close_avg": 0.23,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 16.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 1.63,
+            "iassign_utilization": -7.69,
+            "avg_patients_per_nurse": -1.05,
+            "avg_chairs_per_nurse": -0.37,
+            "avg_nurse_to_patient_chair_time": -8.59,
+            "avg_delay_mins": -1.49,
+            "avg_treatments_per_day": -0.27,
+            "avg_treatment_mins_per_patient": 0.0,
+            "avg_chair_utilization": -3.98
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "scheduler_compliance_avg": 94.77,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.87,
+          "avg_delay_median": 2.68,
+          "chair_utilization_avg": 68.81,
+          "chair_utilization_median": 65.2,
+          "tx_past_close_avg": 0.23,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 7.4,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "avg_chairs_per_nurse": -0.28,
+            "avg_nurse_to_patient_chair_time": 0.35,
+            "scheduler_compliance": 4.01,
+            "avg_delay_mins": -1.65,
+            "avg_treatments_per_day": -0.03,
+            "avg_treatment_mins_per_patient": -8.0,
+            "avg_chair_utilization": 4.67
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "scheduler_compliance_avg": 83.55,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.9,
+          "avg_delay_median": null,
+          "chair_utilization_avg": 68.45,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.23,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": 19.45,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {
+            "scheduler_compliance": 6.82,
+            "avg_delay_mins": 0.22,
+            "avg_treatments_per_day": 0.17,
+            "avg_treatment_mins_per_patient": 0.42,
+            "avg_chair_utilization": 0.5,
+            "iassign_utilization": 0.49,
+            "avg_patients_per_nurse": -0.56,
+            "avg_chairs_per_nurse": 0.66,
+            "avg_nurse_to_patient_chair_time": 2.91
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins",
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Olympia",
+          "scheduler_compliance_avg": 97.4,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.45,
+          "avg_delay_median": 4.61,
+          "chair_utilization_avg": 85.84,
+          "chair_utilization_median": 88.67,
+          "tx_past_close_avg": 2.76,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 45.89,
+          "tx_mins_past_close_median": 13.0,
+          "mom_deltas": {
+            "scheduler_compliance": 8.27,
+            "avg_delay_mins": 0.07,
+            "iassign_utilization": 6.98,
+            "avg_patients_per_nurse": 1.18,
+            "avg_chairs_per_nurse": 0.08,
+            "avg_nurse_to_patient_chair_time": 3.02,
+            "avg_treatments_per_day": -0.49,
+            "avg_treatment_mins_per_patient": 8.12,
+            "avg_chair_utilization": 5.79
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse",
+            "avg_treatments_per_day",
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "Puyallup",
+          "scheduler_compliance_avg": 83.97,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.58,
+          "avg_delay_median": 6.4,
+          "chair_utilization_avg": 66.32,
+          "chair_utilization_median": 63.56,
+          "tx_past_close_avg": 0.95,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 42.86,
+          "tx_mins_past_close_median": 13.75,
+          "mom_deltas": {
+            "avg_treatment_mins_per_patient": -12.37,
+            "avg_chair_utilization": 0.95,
+            "iassign_utilization": -37.56,
+            "avg_patients_per_nurse": -1.38,
+            "avg_chairs_per_nurse": -0.49,
+            "avg_nurse_to_patient_chair_time": -2.04,
+            "scheduler_compliance": -2.23,
+            "avg_delay_mins": -1.04,
+            "avg_treatments_per_day": -0.21
+          },
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "Tacoma",
+          "scheduler_compliance_avg": 95.33,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.08,
+          "avg_delay_median": 5.74,
+          "chair_utilization_avg": 61.86,
+          "chair_utilization_median": 61.35,
+          "tx_past_close_avg": 0.55,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 23.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 1.58,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": -0.17,
+            "avg_nurse_to_patient_chair_time": 1.11,
+            "avg_delay_mins": -1.43,
+            "avg_treatments_per_day": 0.23,
+            "avg_treatment_mins_per_patient": 9.17,
+            "avg_chair_utilization": 7.07
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 77.02,
+          "patients_per_nurse_avg": 6.85,
+          "patients_per_nurse_median": 6.5,
+          "chairs_per_nurse_avg": 2.57,
+          "chairs_per_nurse_median": 2.29,
+          "nurse_utilization_avg": 60.54,
+          "nurse_utilization_median": 60.76,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Federal Way",
+          "iassign_utilization_avg": 92.31,
+          "patients_per_nurse_avg": 6.3,
+          "patients_per_nurse_median": 6.0,
+          "chairs_per_nurse_avg": 3.64,
+          "chairs_per_nurse_median": 3.33,
+          "nurse_utilization_avg": 58.1,
+          "nurse_utilization_median": 54.65,
+          "mom_deltas": {
+            "scheduler_compliance": 1.63,
+            "iassign_utilization": -7.69,
+            "avg_patients_per_nurse": -1.05,
+            "avg_chairs_per_nurse": -0.37,
+            "avg_nurse_to_patient_chair_time": -8.59,
+            "avg_delay_mins": -1.49,
+            "avg_treatments_per_day": -0.27,
+            "avg_treatment_mins_per_patient": 0.0,
+            "avg_chair_utilization": -3.98
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "Gig Harbour",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.8,
+          "patients_per_nurse_median": 6.63,
+          "chairs_per_nurse_avg": 2.1,
+          "chairs_per_nurse_median": 2.0,
+          "nurse_utilization_avg": 61.39,
+          "nurse_utilization_median": 61.19,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "avg_chairs_per_nurse": -0.28,
+            "avg_nurse_to_patient_chair_time": 0.35,
+            "scheduler_compliance": 4.01,
+            "avg_delay_mins": -1.65,
+            "avg_treatments_per_day": -0.03,
+            "avg_treatment_mins_per_patient": -8.0,
+            "avg_chair_utilization": 4.67
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Global Avg",
+          "iassign_utilization_avg": 95.55,
+          "patients_per_nurse_avg": 5.28,
+          "patients_per_nurse_median": null,
+          "chairs_per_nurse_avg": 4.25,
+          "chairs_per_nurse_median": null,
+          "nurse_utilization_avg": 56.82,
+          "nurse_utilization_median": null,
+          "mom_deltas": {
+            "scheduler_compliance": 6.82,
+            "avg_delay_mins": 0.22,
+            "avg_treatments_per_day": 0.17,
+            "avg_treatment_mins_per_patient": 0.42,
+            "avg_chair_utilization": 0.5,
+            "iassign_utilization": 0.49,
+            "avg_patients_per_nurse": -0.56,
+            "avg_chairs_per_nurse": 0.66,
+            "avg_nurse_to_patient_chair_time": 2.91
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins",
+            "avg_chairs_per_nurse"
+          ]
+        },
+        {
+          "location": "Olympia",
+          "iassign_utilization_avg": 88.23,
+          "patients_per_nurse_avg": 8.81,
+          "patients_per_nurse_median": 9.0,
+          "chairs_per_nurse_avg": 2.92,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 78.11,
+          "nurse_utilization_median": 77.77,
+          "mom_deltas": {
+            "scheduler_compliance": 8.27,
+            "avg_delay_mins": 0.07,
+            "iassign_utilization": 6.98,
+            "avg_patients_per_nurse": 1.18,
+            "avg_chairs_per_nurse": 0.08,
+            "avg_nurse_to_patient_chair_time": 3.02,
+            "avg_treatments_per_day": -0.49,
+            "avg_treatment_mins_per_patient": 8.12,
+            "avg_chair_utilization": 5.79
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse",
+            "avg_treatments_per_day",
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "Puyallup",
+          "iassign_utilization_avg": 4.55,
+          "patients_per_nurse_avg": 6.49,
+          "patients_per_nurse_median": 6.49,
+          "chairs_per_nurse_avg": 2.01,
+          "chairs_per_nurse_median": 2.01,
+          "nurse_utilization_avg": 75.35,
+          "nurse_utilization_median": 75.35,
+          "mom_deltas": {
+            "avg_treatment_mins_per_patient": -12.37,
+            "avg_chair_utilization": 0.95,
+            "iassign_utilization": -37.56,
+            "avg_patients_per_nurse": -1.38,
+            "avg_chairs_per_nurse": -0.49,
+            "avg_nurse_to_patient_chair_time": -2.04,
+            "scheduler_compliance": -2.23,
+            "avg_delay_mins": -1.04,
+            "avg_treatments_per_day": -0.21
+          },
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "Tacoma",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.85,
+          "patients_per_nurse_median": 5.86,
+          "chairs_per_nurse_avg": 2.18,
+          "chairs_per_nurse_median": 2.29,
+          "nurse_utilization_avg": 55.79,
+          "nurse_utilization_median": 56.29,
+          "mom_deltas": {
+            "scheduler_compliance": 1.58,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": -0.17,
+            "avg_nurse_to_patient_chair_time": 1.11,
+            "avg_delay_mins": -1.43,
+            "avg_treatments_per_day": 0.23,
+            "avg_treatment_mins_per_patient": 9.17,
+            "avg_chair_utilization": 7.07
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 88.2,
+          "avg_delay_avg": 5.58,
+          "chair_utilization_avg": 67.5,
+          "tx_past_close_avg": 0.94
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "NWMS delivered solid operational performance in March 2026, with a network-wide performance score averaging 71.6 out of 100 (where 50 represents the network average). Four of five clinics scored above the midpoint, and month-over-month improvements in patient delay and after-hours treatments suggest our scheduling discipline is beginning to yield measurable gains. One significant outlier\u2014Olympia's patient delay of 8.4 minutes, sitting 51% above the company average of 5.6 minutes\u2014warrants targeted attention.",
+        "highlights": [
+          "Federal Way and Gig Harbour both posted month-over-month gains in patient flow. Federal Way's average delay fell from 3.4 minutes in February to 1.9 minutes in March, a 43.7% improvement, while simultaneously reducing treatments running past closing time from 0.5 to 0.2 per day. Gig Harbour mirrored this momentum, with average delay declining from 5.5 minutes in February to 3.9 minutes in March\u2014a 29.9% improvement\u2014alongside a 52% reduction in time per patient past closing. Both clinics now sit meaningfully below the company average delay of 5.6 minutes, signaling that our scheduling workflows are maturing."
+        ],
+        "concerns": [
+          "We noticed Olympia presents a dual challenge: chair utilization stands at 85.8%, meaningfully above the company average of 67.5%, yet average patient delay persists at 8.4 minutes\u2014the widest gap in the network. This pattern suggests chair availability alone is not resolving wait times, and a three-month linear trend shows delay climbing from 7.0 minutes in January to 8.4 minutes in March. Separately, Puyallup's iAssign utilization remains critically low at 4.5%, sitting more than 2 standard deviations below the group mean of 80.1%, despite modest gains in delay and after-hours treatments. The four-month declining trend in Puyallup's iAssign adoption (from higher baseline) is worth understanding."
+        ],
+        "recommendations": [
+          "We recommend Olympia conduct an audit of nurse-to-chair assignment workflows and scheduling templates to understand why elevated chair utilization is not translating to reduced delays. Simultaneously, we recommend Puyallup's leadership meet with the scheduling and nursing teams to identify barriers to iAssign adoption\u2014whether training, tool familiarity, or workflow friction\u2014since manual scheduling at this scale may be constraining further gains in operational efficiency."
+        ]
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-11",
+        "location": "Federal Way",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 2.41,
+        "chair_utilization_avg": 29.73,
+        "tx_past_close_avg": 0.73
+      },
+      {
+        "month": "2025-11",
+        "location": "Gig Harbour",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.5,
+        "chair_utilization_avg": 42.62,
+        "tx_past_close_avg": 0.22
+      },
+      {
+        "month": "2025-11",
+        "location": "Olympia",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.49,
+        "chair_utilization_avg": 48.58,
+        "tx_past_close_avg": 0.93
+      },
+      {
+        "month": "2025-11",
+        "location": "Puyallup",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.21,
+        "chair_utilization_avg": 68.92,
+        "tx_past_close_avg": 1.0
+      },
+      {
+        "month": "2025-11",
+        "location": "Tacoma",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.65,
+        "chair_utilization_avg": 55.67,
+        "tx_past_close_avg": 0.89
+      },
+      {
+        "month": "2025-12",
+        "location": "Federal Way",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 2.59,
+        "chair_utilization_avg": 45.88,
+        "tx_past_close_avg": 0.92
+      },
+      {
+        "month": "2025-12",
+        "location": "Gig Harbour",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.07,
+        "chair_utilization_avg": 54.41,
+        "tx_past_close_avg": 0.27
+      },
+      {
+        "month": "2025-12",
+        "location": "Olympia",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 5.94,
+        "chair_utilization_avg": 65.63,
+        "tx_past_close_avg": 1.35
+      },
+      {
+        "month": "2025-12",
+        "location": "Puyallup",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.63,
+        "chair_utilization_avg": 64.97,
+        "tx_past_close_avg": 0.86
+      },
+      {
+        "month": "2025-12",
+        "location": "Tacoma",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 7.64,
+        "chair_utilization_avg": 61.9,
+        "tx_past_close_avg": 0.45
+      },
+      {
+        "month": "2026-01",
+        "location": "Federal Way",
+        "scheduler_compliance_avg": 93.28,
+        "avg_delay_avg": 1.72,
+        "chair_utilization_avg": 45.63,
+        "tx_past_close_avg": 1.08
+      },
+      {
+        "month": "2026-01",
+        "location": "Gig Harbour",
+        "scheduler_compliance_avg": 80.88,
+        "avg_delay_avg": 4.92,
+        "chair_utilization_avg": 64.09,
+        "tx_past_close_avg": 0.38
+      },
+      {
+        "month": "2026-01",
+        "location": "Olympia",
+        "scheduler_compliance_avg": 91.58,
+        "avg_delay_avg": 5.88,
+        "chair_utilization_avg": 77.88,
+        "tx_past_close_avg": 1.29
+      },
+      {
+        "month": "2026-01",
+        "location": "Puyallup",
+        "scheduler_compliance_avg": 75.77,
+        "avg_delay_avg": 5.5,
+        "chair_utilization_avg": 66.91,
+        "tx_past_close_avg": 1.76
+      },
+      {
+        "month": "2026-01",
+        "location": "Tacoma",
+        "scheduler_compliance_avg": 86.37,
+        "avg_delay_avg": 7.5,
+        "chair_utilization_avg": 65.82,
+        "tx_past_close_avg": 0.81
+      },
+      {
+        "month": "2026-02",
+        "location": "Federal Way",
+        "scheduler_compliance_avg": 95.45,
+        "avg_delay_avg": 3.41,
+        "chair_utilization_avg": 51.87,
+        "tx_past_close_avg": 0.5
+      },
+      {
+        "month": "2026-02",
+        "location": "Gig Harbour",
+        "scheduler_compliance_avg": 90.76,
+        "avg_delay_avg": 5.52,
+        "chair_utilization_avg": 64.14,
+        "tx_past_close_avg": 0.26
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "Olympia",
+        "scheduler_compliance_avg": 89.13,
+        "avg_delay_avg": 8.38,
+        "chair_utilization_avg": 80.05,
+        "tx_past_close_avg": 3.25
+      },
+      {
+        "month": "2026-02",
+        "location": "Puyallup",
+        "scheduler_compliance_avg": 86.2,
+        "avg_delay_avg": 7.62,
+        "chair_utilization_avg": 65.37,
+        "tx_past_close_avg": 1.16
+      },
+      {
+        "month": "2026-02",
+        "location": "Tacoma",
+        "scheduler_compliance_avg": 93.75,
+        "avg_delay_avg": 8.51,
+        "chair_utilization_avg": 54.79,
+        "tx_past_close_avg": 0.32
+      },
+      {
+        "month": "2026-03",
+        "location": "Federal Way",
+        "scheduler_compliance_avg": 97.08,
+        "avg_delay_avg": 1.92,
+        "chair_utilization_avg": 47.89,
+        "tx_past_close_avg": 0.23
+      },
+      {
+        "month": "2026-03",
+        "location": "Gig Harbour",
+        "scheduler_compliance_avg": 94.77,
+        "avg_delay_avg": 3.87,
+        "chair_utilization_avg": 68.81,
+        "tx_past_close_avg": 0.23
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "Olympia",
+        "scheduler_compliance_avg": 97.4,
+        "avg_delay_avg": 8.45,
+        "chair_utilization_avg": 85.84,
+        "tx_past_close_avg": 2.76
+      },
+      {
+        "month": "2026-03",
+        "location": "Puyallup",
+        "scheduler_compliance_avg": 83.97,
+        "avg_delay_avg": 6.58,
+        "chair_utilization_avg": 66.32,
+        "tx_past_close_avg": 0.95
+      },
+      {
+        "month": "2026-03",
+        "location": "Tacoma",
+        "scheduler_compliance_avg": 95.33,
+        "avg_delay_avg": 7.08,
+        "chair_utilization_avg": 61.86,
+        "tx_past_close_avg": 0.55
+      }
+    ]
+  }
+}

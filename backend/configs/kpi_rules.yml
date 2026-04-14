@@ -1,0 +1,116 @@
+# CHR KPI Rules Configuration
+# Maps raw column headers from GitHub issues → canonical KPI names
+# Built from real issue data (NYOH Jan 2026)
+
+# Rows that are NOT individual clinics - treated as special aggregate rows
+# These are matched case-insensitively with leading/trailing whitespace stripped.
+# "Global Avg" appears in many GitHub issues as a network-wide benchmark row.
+special_rows:
+  - "Company Avg"
+  - "Company Average"
+  - "Onco"
+  - "Onco Average"
+  - "Global Avg"
+  - "Global Average"
+  - "Network Avg"
+  - "Network Average"
+  - "OncoSmart Avg"
+  - "All Clinics"
+  - "Total"
+  - "Grand Total"
+  - "Overall"
+
+sources:
+  iOptimize:
+    kpis:
+      scheduler_compliance:
+        display_name: "Scheduler Compliance"
+        aliases:
+          - "scheduler compliance"
+          - "scheduler complaince"
+          - "Scheduler Complaince"
+        unit: "%"
+        higher_is_better: true
+        description: "Percentage of appointments scheduled per iOptimize recommendations"
+
+      avg_delay_mins:
+        display_name: "Avg delay in mins/day (Median)"
+        aliases:
+          - "avg delay in mins/day"
+          - "avg delay"
+          - "delay in mins"
+        unit: "mins"
+        higher_is_better: false
+        description: "Average daily schedule delay in minutes (with median)"
+
+      avg_treatments_per_day:
+        display_name: "Avg # treatments/day past Tx close (Median) (Overime patients per day)"
+        aliases:
+          - "avg # treatments/day"
+          - "treatments/day"
+          - "avg # treatments"
+          - "overtime patients per day"
+        unit: "count"
+        higher_is_better: false
+        description: "Average treatments per day past treatment close (overtime patients)"
+
+      avg_treatment_mins_per_patient:
+        display_name: "Avg treatment mins/day/patient past Tx close (Median)(Overtime per patient)"
+        aliases:
+          - "avg treatment mins/day/patient"
+          - "treatment mins/day/patient"
+          - "overtime per patient"
+        unit: "mins"
+        higher_is_better: false
+        description: "Average treatment minutes per patient past treatment close"
+
+      avg_chair_utilization:
+        display_name: "Avg chair utilization (Median)"
+        aliases:
+          - "avg chair utilization"
+          - "chair utilization"
+        unit: "%"
+        higher_is_better: true
+        description: "Average chair utilization rate"
+
+  iAssign:
+    kpis:
+      iassign_utilization:
+        display_name: "iAssign utilization"
+        aliases:
+          - "iassign utilization"
+          - "iassign util"
+        unit: "%"
+        higher_is_better: true
+        description: "Percentage of assignments done via iAssign"
+
+      avg_patients_per_nurse:
+        display_name: "Avg patients/nurse/day (Median)"
+        aliases:
+          - "avg patients/nurse/day"
+          - "patients/nurse/day"
+          - "patients per nurse"
+        unit: "count"
+        higher_is_better: null  # context-dependent
+        description: "Average patients per nurse per day"
+
+      avg_chairs_per_nurse:
+        display_name: "Avg chairs/nurse (Median)"
+        aliases:
+          - "avg chairs/nurse"
+          - "chairs/nurse"
+          - "chairs per nurse"
+        unit: "count"
+        higher_is_better: null
+        description: "Average chairs assigned per nurse"
+
+      avg_nurse_to_patient_chair_time:
+        display_name: "Avg nurse-to-patient in chair time/day (Median) (Nurse Util)"
+        aliases:
+          - "avg nurse-to-patient in chair time"
+          - "nurse-to-patient in chair time"
+          - "nurse util"
+          - "nurse utilization"
+        unit: "%"
+        higher_is_better: true
+        description: "Average nurse-to-patient time in chair per day (nurse utilization)"
