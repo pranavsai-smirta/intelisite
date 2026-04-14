@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { useAi } from '../contexts/AiContext'
-import { streamChat, buildSystemPrompt } from '../lib/anthropic'
+import { streamChat } from '../lib/anthropic'
 
 const FAQ_CHIPS = [
   'What is the single biggest thing to fix?',
@@ -401,8 +401,6 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
   const [input, setInput] = useState('')
   const [streaming, setStreaming] = useState(false)
   const [error, setError] = useState(null)
-  const [apiKey, setApiKey] = useState(() => localStorage.getItem('anthropic_api_key') ?? '')
-  const [keyInput, setKeyInput] = useState('')
 
   // Scroll the overflow container directly — avoids scrollIntoView jank
   const scrollContainerRef = useRef(null)
@@ -421,23 +419,11 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
   const msgCount = messages.length
   useEffect(() => { autoScroll() }, [msgCount])
 
-  useEffect(() => { inputRef.current?.focus() }, [!!apiKey])
-
-  function saveApiKey() {
-    const k = keyInput.trim()
-    if (!k) return
-    localStorage.setItem('anthropic_api_key', k)
-    setApiKey(k)
-    setKeyInput('')
-  }
-
-  function handleKeyFieldKeyDown(e) {
-    if (e.key === 'Enter') { e.preventDefault(); saveApiKey() }
-  }
+  useEffect(() => { inputRef.current?.focus() }, [])
 
   async function handleSend(overrideText) {
     const text = (overrideText ?? input).trim()
-    if (!text || streaming || !apiKey) return
+    if (!text || streaming) return
     setInput('')
     setError(null)
 
@@ -468,10 +454,9 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
     }
 
     try {
-      const systemPrompt = buildSystemPrompt(chatbotContext, currentMonthData)
       const apiMessages = nextMessages.map(m => ({ role: m.role, content: m.content }))
 
-      for await (const chunk of streamChat(apiMessages, systemPrompt)) {
+      for await (const chunk of streamChat(apiMessages, clinicName, activeMonth)) {
         accumulated += chunk
         // Schedule a single flush for this animation frame; ignore further
         // chunks until the frame fires — they'll be included in `accumulated`
@@ -495,10 +480,6 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
     } catch (err) {
       if (rafId !== null) cancelAnimationFrame(rafId)
-      if (err.message.includes('401') || err.message.toLowerCase().includes('api key')) {
-        localStorage.removeItem('anthropic_api_key')
-        setApiKey('')
-      }
       setError(err.message)
       setMessages(prev => prev.filter((_, i) => i !== assistantIdx))
     } finally {
@@ -542,20 +523,13 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
       >
         <div className="max-w-4xl mx-auto px-6 py-6">
 
-          {messages.length === 0 && apiKey && (
+          {messages.length === 0 && (
             <div className="text-center py-12">
               <div className="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
                 style={{ background: 'rgba(13,148,136,0.12)', border: '1px solid rgba(13,148,136,0.2)' }}>
                 <span style={{ fontSize: '20px' }}>{'\u2726'}</span>
               </div>
               <p className="text-slate-500 text-sm">Select a question below or type your own.</p>
-            </div>
-          )}
-
-          {!apiKey && (
-            <div className="text-center py-12">
-              <p className="text-slate-400 text-sm font-medium mb-1">API key required</p>
-              <p className="text-slate-600 text-xs">Enter your Anthropic API key below to begin.</p>
             </div>
           )}
 
@@ -576,7 +550,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
       </div>
 
       {/* FAQ chips */}
-      {messages.length === 0 && apiKey && (
+      {messages.length === 0 && (
         <div className="flex-shrink-0" style={{ background: '#0B1220', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
           <div className="max-w-4xl mx-auto px-6 py-4">
             <p className="text-xs text-slate-600 font-medium uppercase tracking-wider mb-3">Suggested questions</p>
@@ -592,46 +566,23 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         style={{ background: 'rgba(15,23,42,0.95)', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
         <div className="max-w-4xl mx-auto">
           <div className="flex gap-3 items-end">
-            {!apiKey ? (
-              <>
-                <input ref={inputRef} type="password" value={keyInput}
-                  onChange={e => setKeyInput(e.target.value)}
-                  onKeyDown={handleKeyFieldKeyDown}
-                  placeholder="Enter your Anthropic API key to begin\u2026"
-                  className="flex-1 text-slate-100 text-sm rounded-xl px-4 py-3 outline-none placeholder-slate-600 transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
-                  onFocus={e => (e.currentTarget.style.border = '1px solid rgba(13,148,136,0.5)')}
-                  onBlur={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.10)')} />
-                <button onClick={saveApiKey} disabled={!keyInput.trim()}
-                  className="text-sm px-5 py-3 rounded-xl font-medium transition-all flex-shrink-0"
-                  style={{
-                    background: keyInput.trim() ? 'linear-gradient(135deg, #0D9488, #0F766E)' : 'rgba(255,255,255,0.08)',
-                    color: keyInput.trim() ? 'white' : 'rgba(255,255,255,0.3)',
-                  }}>
-                  Save {'\u2192'}
-                </button>
-              </>
-            ) : (
-              <>
-                <textarea ref={inputRef} value={input}
-                  onChange={e => setInput(e.target.value)}
-                  onKeyDown={handleChatKeyDown}
-                  rows={1} disabled={streaming}
-                  placeholder="Ask about performance data, trends, or benchmarks\u2026"
-                  className="flex-1 text-slate-100 text-sm rounded-xl px-4 py-3 resize-none outline-none placeholder-slate-600 transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
-                  onFocus={e => (e.currentTarget.style.border = '1px solid rgba(13,148,136,0.5)')}
-                  onBlur={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.10)')} />
-                <button onClick={() => handleSend()} disabled={!input.trim() || streaming}
-                  className="text-sm px-5 py-3 rounded-xl font-medium transition-all flex-shrink-0"
-                  style={{
-                    background: !input.trim() || streaming ? 'rgba(255,255,255,0.08)' : 'linear-gradient(135deg, #0D9488, #0F766E)',
-                    color: !input.trim() || streaming ? 'rgba(255,255,255,0.3)' : 'white',
-                  }}>
-                  {streaming ? '\u22ef' : '\u2191'}
-                </button>
-              </>
-            )}
+            <textarea ref={inputRef} value={input}
+              onChange={e => setInput(e.target.value)}
+              onKeyDown={handleChatKeyDown}
+              rows={1} disabled={streaming}
+              placeholder="Ask about performance data, trends, or benchmarks\u2026"
+              className="flex-1 text-slate-100 text-sm rounded-xl px-4 py-3 resize-none outline-none placeholder-slate-600 transition-colors"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
+              onFocus={e => (e.currentTarget.style.border = '1px solid rgba(13,148,136,0.5)')}
+              onBlur={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.10)')} />
+            <button onClick={() => handleSend()} disabled={!input.trim() || streaming}
+              className="text-sm px-5 py-3 rounded-xl font-medium transition-all flex-shrink-0"
+              style={{
+                background: !input.trim() || streaming ? 'rgba(255,255,255,0.08)' : 'linear-gradient(135deg, #0D9488, #0F766E)',
+                color: !input.trim() || streaming ? 'rgba(255,255,255,0.3)' : 'white',
+              }}>
+              {streaming ? '\u22ef' : '\u2191'}
+            </button>
           </div>
           {error && <p className="mt-2 text-xs text-red-400">{error}</p>}
         </div>

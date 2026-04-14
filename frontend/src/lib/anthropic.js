@@ -176,30 +176,24 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
   ].join('\n')
 }
 
-export async function* streamChat(messages, systemPrompt) {
-  const apiKey = localStorage.getItem('anthropic_api_key')
-  if (!apiKey) throw new Error('No API key found. Please enter your Anthropic API key.')
-
-  const resp = await fetch(API_URL, {
+// streamChat — routes through the FastAPI backend RAG endpoint.
+// The backend queries PostgreSQL (KPIs + ML analytics), builds the system prompt
+// server-side, calls Anthropic, and forwards the SSE stream.
+// No API key required on the client; credentials stay server-side.
+export async function* streamChat(messages, clientCode, activeMonth) {
+  const resp = await fetch('/api/chat', {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
+    headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
-      model: MODEL,
-      max_tokens: 1500,
-      stream: true,
-      system: systemPrompt,
       messages,
+      client_code: clientCode,
+      run_month: activeMonth || null,
     }),
   })
 
   if (!resp.ok) {
     const text = await resp.text()
-    throw new Error(`Anthropic API error ${resp.status}: ${text}`)
+    throw new Error(`API error ${resp.status}: ${text}`)
   }
 
   const reader = resp.body.getReader()

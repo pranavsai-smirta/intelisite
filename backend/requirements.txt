@@ -29,3 +29,7 @@ statsmodels>=0.14.0
 
 # Database migrations
 alembic>=1.13.0
+
+# HTTP API server (chatbot RAG endpoint)
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
