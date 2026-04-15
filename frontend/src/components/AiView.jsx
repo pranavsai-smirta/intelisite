@@ -8,6 +8,7 @@ import {
 } from 'recharts'
 import { useAi } from '../contexts/AiContext'
 import { streamChat, buildSystemPrompt } from '../lib/anthropic'
+import ApiKeyModal from './ApiKeyModal'
 
 const FAQ_CHIPS = [
   'What is the single biggest thing to fix?',
@@ -401,6 +402,13 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
   const [input, setInput] = useState('')
   const [streaming, setStreaming] = useState(false)
   const [error, setError] = useState(null)
+  const [hasApiKey, setHasApiKey] = useState(() => {
+    try {
+      return !!localStorage.getItem('anthropic_api_key')
+    } catch {
+      return false
+    }
+  })
 
   // Scroll the overflow container directly — avoids scrollIntoView jank
   const scrollContainerRef = useRef(null)
@@ -501,6 +509,8 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
     : 'Network Overview'
 
   return (
+    <>
+      {!hasApiKey && <ApiKeyModal onSubmit={() => setHasApiKey(true)} />}
     <div className="flex-1 flex flex-col min-h-0" style={{ animation: 'aiViewFadeIn 0.2s ease-out' }}>
 
       {/* Hero header */}
@@ -592,6 +602,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         </div>
       </div>
     </div>
+    </>
   )
 }
 
