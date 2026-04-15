@@ -37,7 +37,7 @@ class _Msg(BaseModel):
 
 class ChatRequest(BaseModel):
     messages: list[_Msg]
-    client_code: str
+    client_code: Optional[str] = None
     run_month: Optional[str] = None
 
 
@@ -50,14 +50,12 @@ def _f(v) -> str:
 
 # ─── DB context builder ───────────────────────────────────────────────────────
 
-def _latest_run_month(session, client_code: str) -> Optional[str]:
+def _latest_run_month(session, client_code: Optional[str]) -> Optional[str]:
     from app.db.models import ChrKpiWide
-    row = (
-        session.query(ChrKpiWide.run_month)
-        .filter(ChrKpiWide.client_name == client_code)
-        .order_by(ChrKpiWide.run_month.desc())
-        .first()
-    )
+    q = session.query(ChrKpiWide.run_month).order_by(ChrKpiWide.run_month.desc())
+    if client_code:
+        q = q.filter(ChrKpiWide.client_name == client_code)
+    row = q.first()
     return row[0] if row else None
 
 
@@ -235,15 +233,128 @@ def _build_db_context(session, client_code: str, run_month: str) -> str:
     return "\n\n".join(sections) if sections else "(no data found in database for this client/month)"
 
 
+# ─── Network-wide context builder (client_code=None) ─────────────────────────
+
+def _build_network_context(session, run_month: str) -> str:
+    from app.db.models import (
+        ChrKpiWide, ChrMLAnalytics, ChrComparisonResult, RowType,
+    )
+
+    sections: list[str] = []
+
+    # ── 1. Per-client company averages ──────────────────────────────────
+    client_avg_rows = (
+        session.query(ChrKpiWide)
+        .filter(
+            ChrKpiWide.run_month == run_month,
+            ChrKpiWide.row_type == RowType.COMPANY_AVG,
+        )
+        .order_by(ChrKpiWide.client_name)
+        .all()
+    )
+
+    if client_avg_rows:
+        lines = [f"## NETWORK CLIENT AVERAGES \u2014 {run_month}"]
+        lines.append(
+            "Client | SC% | AvgDelay | CU% | iAssign% | PtsPerNurse | NurseUtil%"
+        )
+        for r in client_avg_rows:
+            lines.append(
+                f"{r.client_name} | {_f(r.scheduler_compliance)} | "
+                f"{_f(r.delay_avg)} | {_f(r.chair_util_avg)} | "
+                f"{_f(r.iassign_utilization)} | {_f(r.patients_per_nurse_avg)} | "
+                f"{_f(r.nurse_util_avg)}"
+            )
+        sections.append("\n".join(lines))
+
+    # ── 2. Onco benchmark row (any client — value is global, identical) ──
+    onco_row = (
+        session.query(ChrKpiWide)
+        .filter(
+            ChrKpiWide.run_month == run_month,
+            ChrKpiWide.row_type == RowType.ONCO,
+        )
+        .first()
+    )
+
+    if onco_row:
+        lines = ["## ONCO NETWORK BENCHMARK"]
+        lines.append(
+            f"SC={_f(onco_row.scheduler_compliance)}% | "
+            f"Delay={_f(onco_row.delay_avg)} min | "
+            f"CU={_f(onco_row.chair_util_avg)}% | "
+            f"iAssign={_f(onco_row.iassign_utilization)}%"
+        )
+        sections.append("\n".join(lines))
+
+    # ── 3. Top cross-network statistical outliers ────────────────────────
+    network_outliers = (
+        session.query(ChrComparisonResult)
+        .filter(
+            ChrComparisonResult.run_month == run_month,
+            ChrComparisonResult.is_outlier == True,
+        )
+        .order_by(ChrComparisonResult.z_score.desc())
+        .limit(25)
+        .all()
+    )
+
+    if network_outliers:
+        lines = ["## TOP NETWORK STATISTICAL OUTLIERS (MAD z-score)"]
+        lines.append("Client | Location | KPI | z-score | Percentile | Reason")
+        for r in network_outliers:
+            z = f"{r.z_score:.2f}" if r.z_score is not None else "\u2014"
+            pct = f"{r.percentile_rank:.0f}th" if r.percentile_rank is not None else "\u2014"
+            lines.append(
+                f"{r.client_name} | {r.location_name} | {r.kpi_name} | "
+                f"z={z} | {pct} | {r.outlier_reason or '\u2014'}"
+            )
+        sections.append("\n".join(lines))
+
+    # ── 4. Highest network-level Isolation Forest anomalies ──────────────
+    network_anomaly_rows = (
+        session.query(ChrMLAnalytics)
+        .filter(
+            ChrMLAnalytics.run_month == run_month,
+            ChrMLAnalytics.kpi_name == "_anomaly",
+            ChrMLAnalytics.is_anomaly_network == True,
+        )
+        .order_by(ChrMLAnalytics.anomaly_score_network)   # most negative = most anomalous
+        .limit(15)
+        .all()
+    )
+
+    if network_anomaly_rows:
+        lines = ["## HIGHEST NETWORK ANOMALIES (Isolation Forest)"]
+        lines.append(
+            "Client | Location | NetworkScore | ClientAnomaly | ClientScore"
+        )
+        for r in network_anomaly_rows:
+            ca = "YES" if r.is_anomaly_client else ("no" if r.is_anomaly_client is False else "\u2014")
+            cs = f"{r.anomaly_score_client:.4f}" if r.anomaly_score_client is not None else "\u2014"
+            ns = f"{r.anomaly_score_network:.4f}" if r.anomaly_score_network is not None else "\u2014"
+            lines.append(
+                f"{r.client_name} | {r.location_name} | {ns} | {ca} | {cs}"
+            )
+        sections.append("\n".join(lines))
+
+    return "\n\n".join(sections) if sections else "(no network data found for this month)"
+
+
 # ─── System prompt builder ────────────────────────────────────────────────────
 
-def _build_system_prompt(client_code: str, run_month: str, db_context: str) -> str:
+def _build_system_prompt(client_code: Optional[str], run_month: str, db_context: str) -> str:
+    scope_line = (
+        f"SCOPE: Full network overview | REPORTING MONTH: {run_month}"
+        if client_code is None
+        else f"CLIENT: {client_code} | REPORTING MONTH: {run_month}"
+    )
     return "\n".join([
         "You are an elite Oncology Clinic Operations AI with access to real-time, mathematically verified clinic performance data.",
         "Answer ONLY using the data in the DATABASE CONTEXT section below. Do not hallucinate numbers, locations, or metrics not present there.",
         "If a value shows '\u2014', it is NULL or unavailable \u2014 state that explicitly. Never impute or interpolate.",
         "",
-        f"CLIENT: {client_code} | REPORTING MONTH: {run_month}",
+        scope_line,
         "",
         "## RESPONSE STYLE",
         "Lead with the finding. No greetings, no meta-commentary, no closings.",
@@ -304,22 +415,28 @@ async def _sse_stream(
 ) -> AsyncIterator[str]:
     import anthropic
 
-    client = anthropic.AsyncAnthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    try:
+        client = anthropic.AsyncAnthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
-    async with client.messages.stream(
-        model=_MODEL,
-        max_tokens=_MAX_TOKENS,
-        system=system_prompt,
-        messages=messages,
-    ) as stream:
-        async for text in stream.text_stream:
-            payload = json.dumps({
-                "type": "content_block_delta",
-                "delta": {"type": "text_delta", "text": text},
-            })
-            yield f"data: {payload}\n\n"
+        async with client.messages.stream(
+            model=_MODEL,
+            max_tokens=_MAX_TOKENS,
+            system=system_prompt,
+            messages=messages,
+        ) as stream:
+            async for text in stream.text_stream:
+                payload = json.dumps({
+                    "type": "content_block_delta",
+                    "delta": {"type": "text_delta", "text": text},
+                })
+                yield f"data: {payload}\n\n"
 
-    yield "data: [DONE]\n\n"
+        yield "data: [DONE]\n\n"
+
+    except Exception as exc:
+        payload = json.dumps({"type": "error", "message": str(exc)})
+        yield f"data: {payload}\n\n"
+        yield "data: [DONE]\n\n"
 
 
 # ─── Endpoint ─────────────────────────────────────────────────────────────────
@@ -331,11 +448,16 @@ async def chat_endpoint(req: ChatRequest):
     with get_session() as session:
         run_month = req.run_month or _latest_run_month(session, req.client_code)
         if not run_month:
-            raise HTTPException(
-                status_code=404,
-                detail=f"No data found in database for client '{req.client_code}'.",
+            detail = (
+                "No data found in database."
+                if req.client_code is None
+                else f"No data found in database for client '{req.client_code}'."
             )
-        db_context = _build_db_context(session, req.client_code, run_month)
+            raise HTTPException(status_code=404, detail=detail)
+        if req.client_code:
+            db_context = _build_db_context(session, req.client_code, run_month)
+        else:
+            db_context = _build_network_context(session, run_month)
 
     system_prompt = _build_system_prompt(req.client_code, run_month, db_context)
     api_messages = [{"role": m.role, "content": m.content} for m in req.messages]

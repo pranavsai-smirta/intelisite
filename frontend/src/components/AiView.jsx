@@ -471,6 +471,9 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         cancelAnimationFrame(rafId)
         rafId = null
       }
+      if (!accumulated.trim()) {
+        throw new Error('The server returned an empty response. Please try again.')
+      }
       setMessages(prev => {
         const updated = [...prev]
         updated[assistantIdx] = { role: 'assistant', content: accumulated }

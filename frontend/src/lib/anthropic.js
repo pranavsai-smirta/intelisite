@@ -181,43 +181,67 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
 // server-side, calls Anthropic, and forwards the SSE stream.
 // No API key required on the client; credentials stay server-side.
 export async function* streamChat(messages, clientCode, activeMonth) {
-  const resp = await fetch('/api/chat', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({
-      messages,
-      client_code: clientCode,
-      run_month: activeMonth || null,
-    }),
-  })
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), 30000)
+
+  let resp
+  try {
+    resp = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        messages,
+        client_code: clientCode,
+        run_month: activeMonth || null,
+      }),
+      signal: controller.signal,
+    })
+  } catch (err) {
+    clearTimeout(timeoutId)
+    if (err.name === 'AbortError') throw new Error('Request timed out — the server did not respond.')
+    throw err
+  }
 
   if (!resp.ok) {
+    clearTimeout(timeoutId)
     const text = await resp.text()
-    throw new Error(`API error ${resp.status}: ${text}`)
+    throw new Error(`Server error ${resp.status}: ${text}`)
   }
 
   const reader = resp.body.getReader()
   const decoder = new TextDecoder()
   let buf = ''
 
-  while (true) {
-    const { done, value } = await reader.read()
-    if (done) break
-    buf += decoder.decode(value, { stream: true })
-    const lines = buf.split('\n')
-    buf = lines.pop()
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue
-      const json = line.slice(6).trim()
-      if (json === '[DONE]') return
-      try {
-        const event = JSON.parse(json)
+  try {
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      buf += decoder.decode(value, { stream: true })
+      const lines = buf.split('\n')
+      buf = lines.pop()
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue
+        const raw = line.slice(6).trim()
+        if (raw === '[DONE]') return
+        let event
+        try {
+          event = JSON.parse(raw)
+        } catch {
+          continue
+        }
+        if (event.type === 'error') {
+          throw new Error(event.message || 'The server encountered an error.')
+        }
         if (event.type === 'content_block_delta' && event.delta?.type === 'text_delta') {
           yield event.delta.text
         }
-      } catch {
-        // ignore malformed SSE lines
       }
     }
+  } catch (err) {
+    reader.cancel()
+    if (err.name === 'AbortError') throw new Error('Request timed out — the server did not respond.')
+    throw err
+  } finally {
+    clearTimeout(timeoutId)
   }
 }
