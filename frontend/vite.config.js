@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/intellisite/',
+  base: '/intelisite/',
   server: {
     proxy: {
       '/api': 'http://localhost:8000',
