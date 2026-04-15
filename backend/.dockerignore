@@ -1,0 +1,27 @@
+# Secrets — must never be baked into the image
+.env
+.env.*
+
+# Virtual environment (large, not needed in image)
+.venv/
+venv/
+
+# Byte-compiled / optimised / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Test / dev artefacts
+.pytest_cache/
+tests/
+artifacts/
+
+# Docs & project files not needed at runtime
+docs/
+README.md
+ARCHITECTURE.md
+DEPLOYMENT_INSTRUCTIONS.md
+
+# Existing dev compose (separate from the monorepo compose)
+docker-compose.yml
+docker/

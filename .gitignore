@@ -23,5 +23,14 @@ backend/artifacts/
 *.p12
 *.pfx
 
+# Docker runtime secrets
+.env.docker
+
+# Certbot — keep directory structure, ignore actual cert contents
+certbot/conf/*
+!certbot/conf/.gitkeep
+certbot/www/*
+!certbot/www/.gitkeep
+
 # macOS
 .DS_Store

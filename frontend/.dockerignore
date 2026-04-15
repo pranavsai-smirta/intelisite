@@ -1,0 +1,12 @@
+# Dependencies — npm ci re-installs from scratch inside the builder stage
+node_modules/
+
+# Previous build output
+dist/
+
+# Secrets
+.env
+.env.*
+
+# Misc
+README.md
