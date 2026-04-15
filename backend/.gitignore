@@ -46,6 +46,12 @@ artifacts/*/
 # Logs
 *.log
 
+# Certificates / private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
 # OS
 .DS_Store
 Thumbs.db
