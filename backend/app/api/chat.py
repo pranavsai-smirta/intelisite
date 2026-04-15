@@ -24,6 +24,12 @@ load_dotenv(os.path.join(os.path.dirname(__file__), "..", "..", ".env"))
 
 app = FastAPI(title="CHR Analytics API", docs_url=None, redoc_url=None)
 
+
+@app.get("/api/healthz", include_in_schema=False)
+async def health_check():
+    return {"status": "ok"}
+
+
 _MODEL = "claude-sonnet-4-6"
 _MAX_TOKENS = 2000
 

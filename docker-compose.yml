@@ -1,0 +1,88 @@
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: intellisite_postgres
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - intellisite-net
+
+  # ── FastAPI backend ─────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+    container_name: intellisite_backend
+    restart: unless-stopped
+    env_file:
+      - .env.docker
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - intellisite-net
+
+  # ── React frontend ──────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+    container_name: intellisite_frontend
+    restart: unless-stopped
+    networks:
+      - intellisite-net
+
+  # ── Nginx reverse proxy (public entry point) ────────────────────────────────
+  # Run `scripts/certbot-bootstrap.sh` once after DNS is live before starting
+  # this service — it needs TLS certs in ./certbot/conf to load the HTTPS block.
+  nginx-proxy:
+    image: nginx:1.27-alpine
+    container_name: intellisite_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/default-http-only.conf:/etc/nginx/default-http-only.conf:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - intellisite-net
+
+  # ── Certbot (auto-renewal daemon) ───────────────────────────────────────────
+  certbot:
+    image: certbot/certbot:latest
+    container_name: intellisite_certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    restart: unless-stopped
+
+# ── Volumes ─────────────────────────────────────────────────────────────────
+volumes:
+  postgres_data:
+
+# ── Networks ─────────────────────────────────────────────────────────────────
+networks:
+  intellisite-net:
+    driver: bridge
