@@ -176,36 +176,48 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
   ].join('\n')
 }
 
-// streamChat — routes through the FastAPI backend RAG endpoint.
-// The backend queries PostgreSQL (KPIs + ML analytics), builds the system prompt
-// server-side, calls Anthropic, and forwards the SSE stream.
-// No API key required on the client; credentials stay server-side.
-export async function* streamChat(messages, clientCode, activeMonth) {
+// BYOK: reads the key from localStorage and calls Anthropic directly.
+// Set it once in the browser devtools console before using the chatbot:
+//   localStorage.setItem('anthropic_api_key', 'sk-ant-...')
+// The key never leaves the browser and is never committed to git.
+export async function* streamChat(messages, systemPrompt) {
+  const apiKey = localStorage.getItem('anthropic_api_key')
+  if (!apiKey) {
+    throw new Error('No API key found. Set localStorage.anthropic_api_key to your Anthropic key.')
+  }
+
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), 30000)
 
   let resp
   try {
-    resp = await fetch('/api/chat', {
+    resp = await fetch(API_URL, {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
       body: JSON.stringify({
+        model: MODEL,
+        max_tokens: 1500,
+        stream: true,
+        system: systemPrompt,
         messages,
-        client_code: clientCode,
-        run_month: activeMonth || null,
       }),
       signal: controller.signal,
     })
   } catch (err) {
     clearTimeout(timeoutId)
-    if (err.name === 'AbortError') throw new Error('Request timed out — the server did not respond.')
+    if (err.name === 'AbortError') throw new Error('Request timed out — Anthropic did not respond.')
     throw err
   }
 
   if (!resp.ok) {
     clearTimeout(timeoutId)
-    yield '**System Update:** The OncoSmart AI engine is currently being migrated to our new AWS production infrastructure. Full capabilities will be restored shortly.'
-    return
+    const text = await resp.text()
+    throw new Error(`Anthropic API error ${resp.status}: ${text}`)
   }
 
   const reader = resp.body.getReader()
@@ -230,7 +242,7 @@ export async function* streamChat(messages, clientCode, activeMonth) {
           continue
         }
         if (event.type === 'error') {
-          throw new Error(event.message || 'The server encountered an error.')
+          throw new Error(event.message || 'Anthropic returned a stream error.')
         }
         if (event.type === 'content_block_delta' && event.delta?.type === 'text_delta') {
           yield event.delta.text
@@ -239,7 +251,7 @@ export async function* streamChat(messages, clientCode, activeMonth) {
     }
   } catch (err) {
     reader.cancel()
-    if (err.name === 'AbortError') throw new Error('Request timed out — the server did not respond.')
+    if (err.name === 'AbortError') throw new Error('Request timed out — Anthropic did not respond.')
     throw err
   } finally {
     clearTimeout(timeoutId)

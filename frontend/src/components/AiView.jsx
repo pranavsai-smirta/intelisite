@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { useAi } from '../contexts/AiContext'
-import { streamChat } from '../lib/anthropic'
+import { streamChat, buildSystemPrompt } from '../lib/anthropic'
 
 const FAQ_CHIPS = [
   'What is the single biggest thing to fix?',
@@ -455,8 +455,9 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
     try {
       const apiMessages = nextMessages.map(m => ({ role: m.role, content: m.content }))
+      const systemPrompt = buildSystemPrompt(chatbotContext, currentMonthData)
 
-      for await (const chunk of streamChat(apiMessages, clinicName, activeMonth)) {
+      for await (const chunk of streamChat(apiMessages, systemPrompt)) {
         accumulated += chunk
         // Schedule a single flush for this animation frame; ignore further
         // chunks until the frame fires — they'll be included in `accumulated`
