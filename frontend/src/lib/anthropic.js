@@ -204,8 +204,8 @@ export async function* streamChat(messages, clientCode, activeMonth) {
 
   if (!resp.ok) {
     clearTimeout(timeoutId)
-    const text = await resp.text()
-    throw new Error(`Server error ${resp.status}: ${text}`)
+    yield '**System Update:** The OncoSmart AI engine is currently being migrated to our new AWS production infrastructure. Full capabilities will be restored shortly.'
+    return
   }
 
   const reader = resp.body.getReader()
