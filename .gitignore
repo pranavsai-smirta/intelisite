@@ -34,3 +34,10 @@ certbot/www/*
 
 # macOS
 .DS_Store
+
+# Raw data CSVs and reference docs — kept local only
+1 week raw data/
+CLAUDE_CODE_PROMPT.md
+PROJECT_REFERENCE_FULL.md
+PROJECT_REFERENCE_PART1.md
+PROJECT_REFERENCE_PART2.md

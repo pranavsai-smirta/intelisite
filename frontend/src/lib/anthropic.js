@@ -2,7 +2,16 @@ const API_URL = 'https://api.anthropic.com/v1/messages'
 const MODEL = 'claude-sonnet-4-6'
 
 export function buildSystemPrompt(chatbotContext, currentMonthData) {
-  const { kpi_definitions = {}, data_notes = '', historical_kpis = [] } = chatbotContext ?? {}
+  const {
+    kpi_definitions = {},
+    data_notes = '',
+    historical_kpis = [],
+    raw_data_context = {},
+  } = chatbotContext ?? {}
+  const rawMonthly = Array.isArray(raw_data_context.monthly_summaries)
+    ? raw_data_context.monthly_summaries : []
+  const rawWeekly = Array.isArray(raw_data_context.weekly_summaries)
+    ? raw_data_context.weekly_summaries : []
 
   const kpiText = Object.entries(kpi_definitions)
     .map(([k, v]) => {
@@ -73,6 +82,14 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
       const flags = Object.entries(r.vs_company).map(([k, v]) => `${k}: ${v}`).join(', ')
       return `  ${r.location}: ${flags}`
     })
+    .join('\n')
+
+  const rawMonthlyText = rawMonthly
+    .map(r => `  ${r.location} | ${r.period} | ${r.category}: ${r.summary}`)
+    .join('\n')
+
+  const rawWeeklyText = rawWeekly
+    .map(r => `  ${r.location} | week of ${r.period} | ${r.category}: ${r.summary}`)
     .join('\n')
 
   return [
@@ -173,6 +190,14 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
     '',
     '## HISTORICAL KPIs (last 6 months)',
     historyText || '(no historical data)',
+    '',
+    '## RAW DAILY-DATA NARRATIVES \u2014 monthly rollups (per location)',
+    'These come from per-day operational CSVs (scheduler productivity, nurse utilization, time-block distribution, etc.). Use them to explain WHY metrics moved \u2014 frontloaded scheduling, MD/Tx coordination gaps, peak overtime days.',
+    rawMonthlyText || '(no raw monthly summaries available)',
+    '',
+    '## RAW DAILY-DATA NARRATIVES \u2014 weekly rollups (per location)',
+    'Quote these only when the user asks about a specific week or recent operational variance.',
+    rawWeeklyText || '(no raw weekly summaries available)',
   ].join('\n')
 }
 

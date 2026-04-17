@@ -11,6 +11,7 @@ Pipeline:
 """
 import json
 import os
+import re
 from typing import AsyncIterator, Optional
 
 from dotenv import load_dotenv
@@ -65,7 +66,150 @@ def _latest_run_month(session, client_code: Optional[str]) -> Optional[str]:
     return row[0] if row else None
 
 
-def _build_db_context(session, client_code: str, run_month: str) -> str:
+# ─── Raw daily data context ───────────────────────────────────────────────────
+
+# Detect dates / day references in user messages so we can decide whether to
+# surface daily-detail rows in addition to the always-on weekly+monthly summaries.
+_DATE_HINT_RE = re.compile(
+    r"\b(?:\d{4}-\d{1,2}-\d{1,2}|"
+    r"jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|jun(?:e)?|"
+    r"jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?|"
+    r"mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?|"
+    r"daily|each\s+day|per\s+day|specific\s+day|on\s+the\s+\d{1,2}(?:st|nd|rd|th)?)\b",
+    re.IGNORECASE,
+)
+
+
+def _wants_daily_detail(user_message: Optional[str]) -> bool:
+    if not user_message:
+        return False
+    return bool(_DATE_HINT_RE.search(user_message))
+
+
+def _build_raw_data_context(
+    session, client_code: str, run_month: str, user_message: Optional[str] = None
+) -> str:
+    """
+    Three-tier raw data context injection:
+      Tier 1 — monthly narratives (always on)
+      Tier 2 — weekly narratives (always on; lets the AI talk about within-month patterns)
+      Tier 3 — daily detail (only when the user mentions specific dates / days / 'daily')
+    """
+    from app.db.models import (
+        ChrRawDataSummary, ChrRawDailyOperations, ChrRawServiceTotals,
+    )
+
+    sections: list[str] = []
+
+    # ── Tier 1: monthly summaries ─────────────────────────────────────
+    monthly = (
+        session.query(ChrRawDataSummary)
+        .filter(
+            ChrRawDataSummary.client_name == client_code,
+            ChrRawDataSummary.period_type == "monthly",
+        )
+        .order_by(
+            ChrRawDataSummary.location_name,
+            ChrRawDataSummary.period_start.desc(),
+            ChrRawDataSummary.category,
+        )
+        .all()
+    )
+    if monthly:
+        lines = ["## RAW OPERATIONAL DATA \u2014 Monthly Summaries"]
+        for row in monthly:
+            label = row.period_start.strftime("%b %Y")
+            lines.append(
+                f"  {row.location_name} | {label} | {row.category}: {row.narrative_text}"
+            )
+        sections.append("\n".join(lines))
+
+    # ── Tier 2: weekly summaries (latest 4 weeks per location) ────────
+    weekly = (
+        session.query(ChrRawDataSummary)
+        .filter(
+            ChrRawDataSummary.client_name == client_code,
+            ChrRawDataSummary.period_type == "weekly",
+        )
+        .order_by(
+            ChrRawDataSummary.location_name,
+            ChrRawDataSummary.period_start.desc(),
+            ChrRawDataSummary.category,
+        )
+        .all()
+    )
+    if weekly:
+        lines = ["## RAW OPERATIONAL DATA \u2014 Weekly Patterns"]
+        for row in weekly:
+            label = row.period_start.strftime("Week of %b %d, %Y")
+            lines.append(
+                f"  {row.location_name} | {label} | {row.category}: {row.narrative_text}"
+            )
+        sections.append("\n".join(lines))
+
+    # ── Tier 3: daily detail (only when user message asks about dates/days) ──
+    if _wants_daily_detail(user_message):
+        daily_ops = (
+            session.query(ChrRawDailyOperations)
+            .filter(
+                ChrRawDailyOperations.client_name == client_code,
+                ChrRawDailyOperations.service_name == "Treatment",
+            )
+            .order_by(
+                ChrRawDailyOperations.location_name,
+                ChrRawDailyOperations.schedule_date,
+            )
+            .limit(200)
+            .all()
+        )
+        if daily_ops:
+            lines = ["## RAW DAILY DETAIL \u2014 Treatment service, per-day"]
+            lines.append(
+                "Location | Date | AvgDelay | OvertimePts | OvertimeMin | ChairUtil%"
+            )
+            for r in daily_ops:
+                lines.append(
+                    f"  {r.location_name} | {r.schedule_date.strftime('%Y-%m-%d')} | "
+                    f"{_f(r.avg_service_delay)} | {r.overtime_patients_per_day or 0} | "
+                    f"{_f(r.overtime_mins_per_patient)} | {_f(r.chair_utilization_pct)}"
+                )
+            sections.append("\n".join(lines))
+
+        daily_totals = (
+            session.query(ChrRawServiceTotals)
+            .filter(
+                ChrRawServiceTotals.client_name == client_code,
+                ChrRawServiceTotals.service_name == "Treatment",
+            )
+            .order_by(
+                ChrRawServiceTotals.location_name,
+                ChrRawServiceTotals.schedule_date,
+            )
+            .limit(200)
+            .all()
+        )
+        if daily_totals:
+            lines = ["## RAW DAILY DETAIL \u2014 Treatment service totals, per-day"]
+            lines.append(
+                "Location | Date | DOW | Treatments | OvertimeMins | OvertimeCount | VisitMinTotal"
+            )
+            for r in daily_totals:
+                lines.append(
+                    f"  {r.location_name} | {r.schedule_date.strftime('%Y-%m-%d')} | "
+                    f"{r.day_name or '\u2014'} | {r.service_count or 0} | "
+                    f"{_f(r.mins_past_closing)} | {r.count_past_closing or 0} | "
+                    f"{_f(r.visit_duration_mins)}"
+                )
+            sections.append("\n".join(lines))
+
+    return "\n\n".join(sections)
+
+
+# ─── DB context builder ───────────────────────────────────────────────────────
+
+def _build_db_context(
+    session, client_code: str, run_month: str, user_message: Optional[str] = None
+) -> str:
     from app.db.models import (
         ChrKpiWide, ChrMLAnalytics, ChrComparisonResult, RowType,
     )
@@ -235,6 +379,11 @@ def _build_db_context(session, client_code: str, run_month: str) -> str:
                 f"CU={_f(r.chair_util_avg)}%"
             )
         sections.append("\n".join(lines))
+
+    # ── 6. Raw daily operational data context (3-tier) ──────────────────
+    raw = _build_raw_data_context(session, client_code, run_month, user_message)
+    if raw:
+        sections.append(raw)
 
     return "\n\n".join(sections) if sections else "(no data found in database for this client/month)"
 
@@ -406,6 +555,14 @@ def _build_system_prompt(client_code: Optional[str], run_month: str, db_context:
         "- Tx Past Close/Day: lower is better. Zero is ideal. High values drive staff overtime.",
         "- Patients/Nurse: context-dependent. Too high = understaffing. Too low = inefficiency.",
         "",
+        "## RAW DAILY OPERATIONAL DATA",
+        "You also have access to raw daily operational data in addition to monthly KPIs.",
+        "Use it to explain WHY metrics behave the way they do \u2014 which days drove delays,",
+        "which schedulers had low compliance, whether treatments were frontloaded, how MD/Tx",
+        "coordination affected throughput, and how nurse and chair capacity actually played out.",
+        "Surface daily-level detail ONLY when the user asks about specific dates or when it",
+        "explains an anomaly. Otherwise quote the monthly and weekly narratives.",
+        "",
         "=" * 64,
         "DATABASE CONTEXT  (live data from PostgreSQL \u2014 treat as ground truth)",
         "=" * 64,
@@ -451,6 +608,11 @@ async def _sse_stream(
 async def chat_endpoint(req: ChatRequest):
     from app.db.session import get_session
 
+    # Latest user message — used to decide whether to surface raw daily detail
+    latest_user_msg = next(
+        (m.content for m in reversed(req.messages) if m.role == "user"), None
+    )
+
     with get_session() as session:
         run_month = req.run_month or _latest_run_month(session, req.client_code)
         if not run_month:
@@ -461,7 +623,9 @@ async def chat_endpoint(req: ChatRequest):
             )
             raise HTTPException(status_code=404, detail=detail)
         if req.client_code:
-            db_context = _build_db_context(session, req.client_code, run_month)
+            db_context = _build_db_context(
+                session, req.client_code, run_month, user_message=latest_user_msg
+            )
         else:
             db_context = _build_network_context(session, run_month)
 

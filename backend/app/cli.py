@@ -268,5 +268,110 @@ def import_history():
     console.print("[dim]Now run: python -m app.cli run --month 2026-01 --skip-github[/dim]")
 
 
+@app.command("ingest-raw")
+def ingest_raw(
+    client: str = typer.Option(None, "--client", help="Client code (e.g., DEMO)"),
+    path: str = typer.Option(None, "--path", help="Directory containing CSV files"),
+    dry_run: bool = typer.Option(False, "--dry-run", help="Parse and validate only"),
+    skip_aggregation: bool = typer.Option(False, "--skip-aggregation", help="Skip rollup computation"),
+):
+    """Ingest raw daily operational CSVs into the chr_raw_* tables + rollups."""
+    from datetime import datetime
+    load_dotenv()
+
+    if not client or not path:
+        console.print("[red]❌ --client and --path are both required[/red]")
+        raise typer.Exit(1)
+
+    from app.db.session import get_session
+    from app.parsers.raw_data_parser import find_csv_files, ingest_csv
+    from app.engine.raw_data_aggregator import compute_rollups
+
+    ingest_id = f"ingest_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+    console.print(Panel.fit(
+        f"[bold cyan]Raw Data Ingestion[/bold cyan]\n"
+        f"Client: [yellow]{client}[/yellow]\n"
+        f"Path:   [yellow]{path}[/yellow]\n"
+        f"Ingest ID: [yellow]{ingest_id}[/yellow]\n"
+        f"Mode: [yellow]{'DRY RUN' if dry_run else 'LIVE'}[/yellow]",
+        border_style="cyan"
+    ))
+
+    try:
+        csv_files = find_csv_files(path)
+    except FileNotFoundError as exc:
+        console.print(f"[red]❌ {exc}[/red]")
+        raise typer.Exit(1)
+
+    if not csv_files:
+        console.print("[red]❌ No CSV files found under path[/red]")
+        raise typer.Exit(1)
+
+    console.print(f"\n[cyan]Found {len(csv_files)} CSV file(s)[/cyan]")
+
+    from rich.table import Table as RichTable
+    results_table = RichTable(
+        title="Ingestion Results", show_header=True, header_style="bold cyan"
+    )
+    results_table.add_column("File")
+    results_table.add_column("Type")
+    results_table.add_column("Parsed", justify="right")
+    results_table.add_column("Inserted", justify="right")
+    results_table.add_column("Status")
+
+    type_counts: dict = {}
+    total_parsed = 0
+    total_inserted = 0
+
+    with get_session() as session:
+        for csv_path in csv_files:
+            result = ingest_csv(session, client, csv_path, ingest_id, dry_run=dry_run)
+            short = csv_path.name
+            csv_type = result.csv_type or "[red]UNKNOWN[/red]"
+            status = "[green]✓[/green]" if not result.errors else f"[red]✗ {result.errors[0]}[/red]"
+            results_table.add_row(
+                short, str(csv_type),
+                str(result.rows_parsed), str(result.rows_inserted), status,
+            )
+            total_parsed += result.rows_parsed
+            total_inserted += result.rows_inserted
+            if result.csv_type:
+                type_counts[result.csv_type] = type_counts.get(result.csv_type, 0) + result.rows_inserted
+
+        console.print(results_table)
+
+        if dry_run:
+            console.print("\n[yellow]⚠️  DRY RUN — no rows committed, no rollups computed[/yellow]")
+            return
+
+        # Aggregation
+        if skip_aggregation:
+            console.print("\n[yellow]--skip-aggregation set, not computing rollups[/yellow]")
+        else:
+            console.print("\n[cyan]Computing weekly + monthly rollups...[/cyan]")
+            rollup_counts = compute_rollups(session, client, ingest_id)
+            rt = RichTable(title="Rollup Summary", show_header=True, header_style="bold cyan")
+            rt.add_column("Category × Period")
+            rt.add_column("Rows", justify="right")
+            for key in sorted(rollup_counts):
+                rt.add_row(key, str(rollup_counts[key]))
+            console.print(rt)
+
+    # Final summary
+    summary = RichTable(title="Ingestion Summary", show_header=True, header_style="bold cyan")
+    summary.add_column("Metric")
+    summary.add_column("Value", justify="right")
+    summary.add_row("CSV files",      str(len(csv_files)))
+    summary.add_row("Total parsed",   str(total_parsed))
+    summary.add_row("Total inserted", str(total_inserted))
+    for t, n in sorted(type_counts.items()):
+        summary.add_row(f"  {t}", str(n))
+    console.print(summary)
+
+    console.print(f"\n[bold green]✅ Raw data ingest complete![/bold green]")
+    console.print(f"[dim]ingest_id = {ingest_id}[/dim]")
+
+
 if __name__ == "__main__":
     app()

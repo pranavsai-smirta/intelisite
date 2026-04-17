@@ -469,7 +469,38 @@ def _build_context_for_client(session, client_name: str, run_month: str) -> dict
     # Compute the biggest gap-to-benchmark for specific recommendations
     context['biggest_gap'] = _find_biggest_gap(context)
 
+    # Raw daily-data narratives — gives Claude richer per-location material.
+    context['raw_data_narratives'] = _collect_raw_data_narratives(session, client_name)
+
     return context
+
+
+def _collect_raw_data_narratives(session, client_name: str) -> List[dict]:
+    """Pull the latest monthly summaries from chr_raw_data_summary, if present."""
+    from app.db.models import ChrRawDataSummary
+    rows = (
+        session.query(ChrRawDataSummary)
+        .filter(
+            ChrRawDataSummary.client_name == client_name,
+            ChrRawDataSummary.period_type == "monthly",
+        )
+        .order_by(
+            ChrRawDataSummary.location_name,
+            ChrRawDataSummary.period_start.desc(),
+            ChrRawDataSummary.category,
+        )
+        .all()
+    )
+    return [
+        {
+            "location": r.location_name,
+            "period": r.period_start.strftime("%Y-%m") if r.period_start else "",
+            "category": r.category,
+            "narrative": r.narrative_text or "",
+        }
+        for r in rows
+        if r.narrative_text
+    ]
 
 
 def _find_biggest_gap(context: dict) -> Optional[dict]:
@@ -615,6 +646,20 @@ def _build_prompt(client_name: str, run_month: str, context: dict) -> str:
             f"Chair Utilization: {on.get('avg_chair_utilization')}%\n"
         )
 
+    # Raw daily-data narratives — give Claude per-location operational evidence
+    raw_section = ""
+    raw_rows = context.get('raw_data_narratives') or []
+    if raw_rows:
+        raw_section = "\nRAW DAILY-DATA NARRATIVES (monthly rollups from per-day operational CSVs):\n"
+        for n in raw_rows:
+            raw_section += (
+                f"  {n['location']} | {n['period']} | {n['category']}: {n['narrative']}\n"
+            )
+        raw_section += (
+            "  (Use these to explain WHY metrics moved \u2014 frontloaded scheduling, "
+            "low scheduler compliance days, MD/Tx coordination gaps, peak overtime days.)\n"
+        )
+
     return f"""You are a senior clinical operations analyst at OncoSmart writing the {month_label} performance summary for {client_name}. You are writing directly to the COO.
 
 WHAT THE METRICS MEAN:
@@ -631,7 +676,7 @@ COMPANY AVERAGES ({month_label}):
 {onco_section}
 CLINIC DATA:
 {locations_text}
-{mom_text}{trend_text}{corr_text}{outlier_text}{gap_text}
+{mom_text}{trend_text}{corr_text}{outlier_text}{gap_text}{raw_section}
 
 IMPORTANT — NON-CLINIC NAMES:
 "Global Avg", "Company Avg", "Onco" etc. are BENCHMARKS, NOT real clinics. NEVER reference them by name as if they are a clinic location. Use the benchmark numbers in comparisons but never say "Global Avg showed..." or "Global Avg's performance..."

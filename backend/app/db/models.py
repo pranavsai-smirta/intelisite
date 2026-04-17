@@ -477,3 +477,234 @@ class ChrReportArtifact(Base):
         Index("ix_artifact_client_month", "client_name", "run_month"),
         Index("ix_artifact_type", "artifact_type"),
     )
+
+
+# ─────────────────────────────────────────────────────────────
+# RAW DAILY DATA LAYER (Tables 10–18)
+# Purpose: Ingest raw per-day operational CSVs so the AI chatbot
+#          and AI insight engine have deeper context than the
+#          monthly-aggregated KPIs in ChrKpiWide alone.
+# All tables are ADDITIVE and keyed by ingest_id for idempotency.
+# ─────────────────────────────────────────────────────────────
+
+class ChrClinicConfig(Base):
+    """Per-clinic operational config (chairs, hours) broken out by service_name."""
+    __tablename__ = "chr_clinic_config"
+
+    id            = Column(Integer, primary_key=True)
+    client_name   = Column(String(100), nullable=False, index=True)
+    location_name = Column(String(100), nullable=False, index=True)
+    service_type  = Column(String(100), nullable=False)  # Treatment, Injection, etc.
+    service_name  = Column(String(100), nullable=False)  # Green Pod, Satellite Infusion, etc.
+    tx_start_time = Column(String(10),  nullable=True)   # "08:00"
+    tx_end_time   = Column(String(10),  nullable=True)   # "17:00"
+    chair_count   = Column(Integer, nullable=True)
+    notes         = Column(Text, nullable=True)
+    is_active     = Column(Boolean, default=True)
+    ingest_id     = Column(String(50), nullable=False)
+    created_at    = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at    = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    __table_args__ = (
+        UniqueConstraint("client_name", "location_name", "service_name", name="uq_clinic_config"),
+    )
+
+
+class ChrRawDailyOperations(Base):
+    """Per-day × service row from 'Delay, Overtime and Utilization by Day.csv'."""
+    __tablename__ = "chr_raw_daily_operations"
+
+    id                         = Column(Integer, primary_key=True)
+    client_name                = Column(String(100), nullable=False, index=True)
+    location_name              = Column(String(100), nullable=False, index=True)
+    schedule_date              = Column(DateTime(timezone=True), nullable=False, index=True)
+    service_type               = Column(String(100), nullable=False)
+    service_name               = Column(String(100), nullable=False)
+    avg_service_delay          = Column(Float,   nullable=True)
+    median_avg_delay           = Column(Float,   nullable=True)
+    overtime_patients_per_day  = Column(Integer, nullable=True)
+    median_overtime_patients   = Column(Integer, nullable=True)
+    overtime_mins_per_patient  = Column(Float,   nullable=True)
+    median_overtime_mins       = Column(Float,   nullable=True)
+    chair_utilization_pct      = Column(Float,   nullable=True)
+    median_chair_utilization   = Column(Float,   nullable=True)
+    ingest_id                  = Column(String(50), nullable=False, index=True)
+    created_at                 = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "schedule_date", "service_name", "ingest_id",
+            name="uq_raw_daily_ops",
+        ),
+        Index("ix_raw_daily_ops_client_date", "client_name", "schedule_date"),
+    )
+
+
+class ChrRawSchedulerProductivity(Base):
+    """One row per location × scheduler × appt type (E/A/M)."""
+    __tablename__ = "chr_raw_scheduler_productivity"
+
+    id             = Column(Integer, primary_key=True)
+    client_name    = Column(String(100), nullable=False, index=True)
+    location_name  = Column(String(100), nullable=False, index=True)
+    scheduler_name = Column(String(200), nullable=False)
+    appt_type      = Column(String(5),   nullable=False)  # E, A, or M
+    patient_count  = Column(Integer, nullable=False, default=0)
+    ingest_id      = Column(String(50), nullable=False, index=True)
+    created_at     = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "scheduler_name", "appt_type", "ingest_id",
+            name="uq_raw_scheduler",
+        ),
+        Index("ix_raw_scheduler_client", "client_name", "location_name"),
+    )
+
+
+class ChrRawNurseUtilization(Base):
+    """One row per location × date with nurse utilization %."""
+    __tablename__ = "chr_raw_nurse_utilization"
+
+    id                        = Column(Integer, primary_key=True)
+    client_name               = Column(String(100), nullable=False, index=True)
+    location_name             = Column(String(100), nullable=False, index=True)
+    schedule_date             = Column(DateTime(timezone=True), nullable=False, index=True)
+    fractional_minutes        = Column(Float, nullable=True)
+    shift_mins                = Column(Float, nullable=True)
+    nurse_utilization_pct     = Column(Float, nullable=True)
+    median_nurse_utilization  = Column(Float, nullable=True)
+    ingest_id                 = Column(String(50), nullable=False, index=True)
+    created_at                = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "schedule_date", "ingest_id",
+            name="uq_raw_nurse_util",
+        ),
+    )
+
+
+class ChrRawStaffingMetrics(Base):
+    """One row per location × date with staffing ratios."""
+    __tablename__ = "chr_raw_staffing_metrics"
+
+    id                    = Column(Integer, primary_key=True)
+    client_name           = Column(String(100), nullable=False, index=True)
+    location_name         = Column(String(100), nullable=False, index=True)
+    schedule_date         = Column(DateTime(timezone=True), nullable=False, index=True)
+    avg_chairs_per_rn     = Column(Float, nullable=True)
+    median_chairs_per_rn  = Column(Float, nullable=True)
+    avg_patients          = Column(Float, nullable=True)
+    median_avg_patients   = Column(Float, nullable=True)
+    ingest_id             = Column(String(50), nullable=False, index=True)
+    created_at            = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "schedule_date", "ingest_id",
+            name="uq_raw_staffing",
+        ),
+    )
+
+
+class ChrRawServiceDistribution(Base):
+    """MD + treatment + injection coordination per location × date."""
+    __tablename__ = "chr_raw_service_distribution"
+
+    id                    = Column(Integer, primary_key=True)
+    client_name           = Column(String(100), nullable=False, index=True)
+    location_name         = Column(String(100), nullable=False, index=True)
+    schedule_date         = Column(DateTime(timezone=True), nullable=False, index=True)
+    md_count              = Column(Integer, nullable=True, default=0)
+    md_without_tx_inj     = Column(Integer, nullable=True, default=0)
+    md_with_tx            = Column(Integer, nullable=True, default=0)
+    md_with_inj           = Column(Integer, nullable=True, default=0)
+    treatment_without_md  = Column(Integer, nullable=True, default=0)
+    injection_without_md  = Column(Integer, nullable=True, default=0)
+    ingest_id             = Column(String(50), nullable=False, index=True)
+    created_at            = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "schedule_date", "ingest_id",
+            name="uq_raw_service_dist",
+        ),
+    )
+
+
+class ChrRawServiceTotals(Base):
+    """Per-day × service summary row from 'Monthly Service Totals.csv'."""
+    __tablename__ = "chr_raw_service_totals"
+
+    id                   = Column(Integer, primary_key=True)
+    client_name          = Column(String(100), nullable=False, index=True)
+    location_name        = Column(String(100), nullable=False, index=True)
+    schedule_date        = Column(DateTime(timezone=True), nullable=False, index=True)
+    day_name             = Column(String(10),  nullable=True)
+    service_type         = Column(String(100), nullable=False)
+    service_name         = Column(String(100), nullable=False)
+    delay_mins_total     = Column(Float,   nullable=True, default=0)
+    service_count        = Column(Integer, nullable=True, default=0)
+    mins_past_closing    = Column(Float,   nullable=True, default=0)
+    count_past_closing   = Column(Integer, nullable=True, default=0)
+    visit_duration_mins  = Column(Float,   nullable=True, default=0)
+    ingest_id            = Column(String(50), nullable=False, index=True)
+    created_at           = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "schedule_date", "service_name", "ingest_id",
+            name="uq_raw_service_totals",
+        ),
+    )
+
+
+class ChrRawTimeBlockDistribution(Base):
+    """Fraction of services (by duration) that fall in each time block."""
+    __tablename__ = "chr_raw_time_block_distribution"
+
+    id                   = Column(Integer, primary_key=True)
+    client_name          = Column(String(100), nullable=False, index=True)
+    location_name        = Column(String(100), nullable=False, index=True)
+    service_type         = Column(String(100), nullable=False)
+    service_name         = Column(String(100), nullable=False)
+    duration_mins        = Column(Integer, nullable=False)
+    schedule_date        = Column(DateTime(timezone=True), nullable=False, index=True)
+    fraction_numerator   = Column(Integer, nullable=True)
+    fraction_denominator = Column(Integer, nullable=True)
+    time_block           = Column(String(50), nullable=False)
+    ingest_id            = Column(String(50), nullable=False, index=True)
+    created_at           = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "service_name", "duration_mins",
+            "schedule_date", "time_block", "ingest_id",
+            name="uq_raw_time_block",
+        ),
+    )
+
+
+class ChrRawDataSummary(Base):
+    """Weekly / monthly rollup narratives — what the AI reads first."""
+    __tablename__ = "chr_raw_data_summary"
+
+    id             = Column(Integer, primary_key=True)
+    client_name    = Column(String(100), nullable=False, index=True)
+    location_name  = Column(String(100), nullable=False, index=True)
+    period_type    = Column(String(20),  nullable=False)  # weekly, monthly
+    period_start   = Column(DateTime(timezone=True), nullable=False)
+    period_end     = Column(DateTime(timezone=True), nullable=False)
+    category       = Column(String(50),  nullable=False)  # operations, scheduler, nurse, staffing, service_dist, service_totals, time_blocks
+    metrics_json   = Column(Text, nullable=True)
+    narrative_text = Column(Text, nullable=True)
+    ingest_id      = Column(String(50), nullable=False, index=True)
+    created_at     = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "period_type", "period_start", "category", "ingest_id",
+            name="uq_raw_summary",
+        ),
+    )

@@ -37,6 +37,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Set base path for GitHub Pages
+        working-directory: frontend
+        run: sed -i "s|base: '/'|base: '/intellisite/'|g" vite.config.js
+
       - name: Build
         run: npm run build
 

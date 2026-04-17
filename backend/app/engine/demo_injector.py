@@ -124,6 +124,22 @@ def inject_demo_practice(hogonc_payload: Dict) -> Dict:
         if entry.get("location") in keep_set
     ]
 
+    # raw_data_context narratives -- filter to kept locations, rename, scrub prose
+    raw_ctx = demo.get("chatbot_context", {}).get("raw_data_context", {}) or {}
+    for bucket in ("monthly_summaries", "weekly_summaries"):
+        cleaned = []
+        for entry in raw_ctx.get(bucket, []) or []:
+            loc = entry.get("location", "")
+            if loc not in keep_set:
+                continue
+            cleaned.append({
+                **entry,
+                "location": rename[loc],
+                "summary": _scrub(entry.get("summary", "") or "", rename, original_client),
+            })
+        raw_ctx[bucket] = cleaned
+    demo["chatbot_context"]["raw_data_context"] = raw_ctx
+
     log.info(
         "demo_injector: DEMO payload ready -- %d locations: %s",
         len(rename),

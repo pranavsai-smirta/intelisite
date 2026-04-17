@@ -18,7 +18,7 @@ from sqlalchemy.orm import Session
 
 from app.db.models import (
     ChrAiInsight, ChrComparisonResult, ChrKpiWide, ChrMLAnalytics,
-    KpiSource, RowType,
+    ChrRawDataSummary, KpiSource, RowType,
 )
 from app.engine.demo_injector import (
     inject_demo_practice, DEMO_CODE, DEMO_DISPLAY_NAME, KEEP_LOCATIONS,
@@ -451,6 +451,39 @@ def _ml_analytics(session: Session, client_name: str, month: str) -> Dict:
     return payload
 
 
+def _raw_data_context(session: Session, client_name: str) -> Dict[str, List[Dict]]:
+    """Package monthly + weekly narratives from chr_raw_data_summary for chatbot use."""
+    rows = (
+        session.query(ChrRawDataSummary)
+        .filter(ChrRawDataSummary.client_name == client_name)
+        .filter(ChrRawDataSummary.period_type.in_(("monthly", "weekly")))
+        .order_by(
+            ChrRawDataSummary.period_type,
+            ChrRawDataSummary.location_name,
+            ChrRawDataSummary.period_start.desc(),
+            ChrRawDataSummary.category,
+        )
+        .all()
+    )
+    monthly: List[Dict] = []
+    weekly: List[Dict] = []
+    for r in rows:
+        if not r.narrative_text:
+            continue
+        entry = {
+            "location": _clean(r.location_name),
+            "period": r.period_start.strftime("%Y-%m-%d") if r.period_start else "",
+            "category": r.category,
+            "summary": r.narrative_text,
+        }
+        if r.period_type == "monthly":
+            entry["period"] = r.period_start.strftime("%Y-%m") if r.period_start else ""
+            monthly.append(entry)
+        else:
+            weekly.append(entry)
+    return {"monthly_summaries": monthly, "weekly_summaries": weekly}
+
+
 def build_client_json(
     session: Session, client_name: str, run_month: str
 ) -> Dict:
@@ -482,6 +515,7 @@ def build_client_json(
             "kpi_definitions": KPI_DEFINITIONS,
             "data_notes": DATA_NOTES,
             "historical_kpis": _historical_kpis(session, client_name, months),
+            "raw_data_context": _raw_data_context(session, client_name),
         },
     }
 
