@@ -1,0 +1,2326 @@
+{
+  "meta": {
+    "client_code": "LOA",
+    "generated_at": "2026-04-14T03:21:02.615132Z",
+    "months_available": [
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-10": {
+      "composite_score": 35.4,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 28.79,
+          "avg_delay_median": 26.63,
+          "chair_utilization_avg": 68.24,
+          "chair_utilization_median": 75.63,
+          "tx_past_close_avg": 1.18,
+          "tx_past_close_median": 0.5,
+          "tx_mins_past_close_avg": 17.89,
+          "tx_mins_past_close_median": 0.5,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 25.09,
+          "avg_delay_median": 21.92,
+          "chair_utilization_avg": 67.58,
+          "chair_utilization_median": 75.63,
+          "tx_past_close_avg": 0.17,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 12.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "NorthCharleston",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 26.17,
+          "avg_delay_median": 25.31,
+          "chair_utilization_avg": 72.43,
+          "chair_utilization_median": 72.6,
+          "tx_past_close_avg": 2.78,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 18.26,
+          "tx_mins_past_close_median": 18.08,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 26.35,
+          "avg_delay_median": 28.24,
+          "chair_utilization_avg": 80.22,
+          "chair_utilization_median": 88.19,
+          "tx_past_close_avg": 1.17,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.85,
+          "tx_mins_past_close_median": 6.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshley",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 37.55,
+          "avg_delay_median": 39.74,
+          "chair_utilization_avg": 71.75,
+          "chair_utilization_median": 68.27,
+          "tx_past_close_avg": 0.61,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 23.45,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.85,
+          "patients_per_nurse_median": 4.8,
+          "chairs_per_nurse_avg": 2.69,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 49.21,
+          "nurse_utilization_median": 49.43,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.46,
+          "patients_per_nurse_median": 4.5,
+          "chairs_per_nurse_avg": 2.49,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 43.02,
+          "nurse_utilization_median": 41.66,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "NorthCharleston",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.08,
+          "patients_per_nurse_median": 5.17,
+          "chairs_per_nurse_avg": 2.89,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 50.76,
+          "nurse_utilization_median": 50.06,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.53,
+          "patients_per_nurse_median": 4.6,
+          "chairs_per_nurse_avg": 2.38,
+          "chairs_per_nurse_median": 2.2,
+          "nurse_utilization_avg": 49.45,
+          "nurse_utilization_median": 50.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshley",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.35,
+          "patients_per_nurse_median": 5.2,
+          "chairs_per_nurse_avg": 3.0,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 52.19,
+          "nurse_utilization_median": 53.8,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 28.79,
+          "chair_utilization_avg": 68.24,
+          "tx_past_close_avg": 1.18
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-11": {
+      "composite_score": 37.0,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 28.61,
+          "avg_delay_median": 28.61,
+          "chair_utilization_avg": 68.77,
+          "chair_utilization_median": 73.07,
+          "tx_past_close_avg": 0.92,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.77,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 26.51,
+          "avg_delay_median": 23.89,
+          "chair_utilization_avg": 75.38,
+          "chair_utilization_median": 74.69,
+          "tx_past_close_avg": 0.22,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 11.5,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 7.8,
+            "avg_delay_mins": 1.42,
+            "avg_treatment_mins_per_patient": -0.5,
+            "avg_treatments_per_day": 0.05,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": 1.48,
+            "avg_patients_per_nurse": 0.08,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "NorthCharleston",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 25.7,
+          "avg_delay_median": 27.0,
+          "chair_utilization_avg": 67.22,
+          "chair_utilization_median": 68.42,
+          "tx_past_close_avg": 1.13,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 15.12,
+          "tx_mins_past_close_median": 7.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -5.21,
+            "avg_delay_mins": -0.47,
+            "avg_treatment_mins_per_patient": -3.14,
+            "avg_treatments_per_day": -1.65,
+            "avg_chairs_per_nurse": 0.04,
+            "avg_nurse_to_patient_chair_time": 0.56,
+            "avg_patients_per_nurse": -0.31,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 27.4,
+          "avg_delay_median": 30.7,
+          "chair_utilization_avg": 75.39,
+          "chair_utilization_median": 80.07,
+          "tx_past_close_avg": 1.72,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.35,
+          "tx_mins_past_close_median": 7.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.83,
+            "avg_delay_mins": 1.05,
+            "avg_treatment_mins_per_patient": -0.5,
+            "avg_treatments_per_day": 0.55,
+            "avg_chairs_per_nurse": 0.19,
+            "avg_nurse_to_patient_chair_time": -0.01,
+            "avg_patients_per_nurse": 0.42,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshley",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 34.84,
+          "avg_delay_median": 35.28,
+          "chair_utilization_avg": 65.44,
+          "chair_utilization_median": 63.85,
+          "tx_past_close_avg": 0.6,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.11,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -6.31,
+            "avg_delay_mins": -2.71,
+            "avg_treatment_mins_per_patient": -8.34,
+            "avg_treatments_per_day": -0.01,
+            "avg_chairs_per_nurse": 0.2,
+            "avg_nurse_to_patient_chair_time": 0.54,
+            "avg_patients_per_nurse": 0.13,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.93,
+          "patients_per_nurse_median": 4.86,
+          "chairs_per_nurse_avg": 2.78,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 49.71,
+          "nurse_utilization_median": 49.21,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.54,
+          "patients_per_nurse_median": 4.67,
+          "chairs_per_nurse_avg": 2.44,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 44.5,
+          "nurse_utilization_median": 43.95,
+          "mom_deltas": {
+            "avg_chair_utilization": 7.8,
+            "avg_delay_mins": 1.42,
+            "avg_treatment_mins_per_patient": -0.5,
+            "avg_treatments_per_day": 0.05,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": 1.48,
+            "avg_patients_per_nurse": 0.08,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "NorthCharleston",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.77,
+          "patients_per_nurse_median": 4.67,
+          "chairs_per_nurse_avg": 2.93,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 51.32,
+          "nurse_utilization_median": 51.26,
+          "mom_deltas": {
+            "avg_chair_utilization": -5.21,
+            "avg_delay_mins": -0.47,
+            "avg_treatment_mins_per_patient": -3.14,
+            "avg_treatments_per_day": -1.65,
+            "avg_chairs_per_nurse": 0.04,
+            "avg_nurse_to_patient_chair_time": 0.56,
+            "avg_patients_per_nurse": -0.31,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.95,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 2.57,
+          "chairs_per_nurse_median": 2.4,
+          "nurse_utilization_avg": 49.44,
+          "nurse_utilization_median": 49.21,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.83,
+            "avg_delay_mins": 1.05,
+            "avg_treatment_mins_per_patient": -0.5,
+            "avg_treatments_per_day": 0.55,
+            "avg_chairs_per_nurse": 0.19,
+            "avg_nurse_to_patient_chair_time": -0.01,
+            "avg_patients_per_nurse": 0.42,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshley",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.48,
+          "patients_per_nurse_median": 5.5,
+          "chairs_per_nurse_avg": 3.2,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 52.73,
+          "nurse_utilization_median": 50.93,
+          "mom_deltas": {
+            "avg_chair_utilization": -6.31,
+            "avg_delay_mins": -2.71,
+            "avg_treatment_mins_per_patient": -8.34,
+            "avg_treatments_per_day": -0.01,
+            "avg_chairs_per_nurse": 0.2,
+            "avg_nurse_to_patient_chair_time": 0.54,
+            "avg_patients_per_nurse": 0.13,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 28.61,
+          "chair_utilization_avg": 68.77,
+          "tx_past_close_avg": 0.92
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-12": {
+      "composite_score": 36.3,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 28.15,
+          "avg_delay_median": 28.17,
+          "chair_utilization_avg": 74.02,
+          "chair_utilization_median": 77.72,
+          "tx_past_close_avg": 1.13,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.46,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 24.45,
+          "avg_delay_median": 23.42,
+          "chair_utilization_avg": 82.71,
+          "chair_utilization_median": 91.25,
+          "tx_past_close_avg": 0.29,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 6.5,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 7.33,
+            "avg_delay_mins": -2.06,
+            "avg_treatment_mins_per_patient": -5.0,
+            "avg_treatments_per_day": 0.07,
+            "avg_chairs_per_nurse": -0.07,
+            "avg_nurse_to_patient_chair_time": 1.33,
+            "avg_patients_per_nurse": 0.28,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "North Charleston",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 26.78,
+          "avg_delay_median": 28.63,
+          "chair_utilization_avg": 65.72,
+          "chair_utilization_median": 67.39,
+          "tx_past_close_avg": 2.11,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 18.42,
+          "tx_mins_past_close_median": 12.5,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 26.54,
+          "avg_delay_median": 24.61,
+          "chair_utilization_avg": 88.79,
+          "chair_utilization_median": 93.75,
+          "tx_past_close_avg": 1.76,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.92,
+          "tx_mins_past_close_median": 7.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 13.4,
+            "avg_delay_mins": -0.86,
+            "avg_treatment_mins_per_patient": 0.57,
+            "avg_treatments_per_day": 0.04,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 6.3,
+            "avg_patients_per_nurse": 0.6,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "West Ashley",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 34.84,
+          "avg_delay_median": 33.46,
+          "chair_utilization_avg": 70.24,
+          "chair_utilization_median": 65.58,
+          "tx_past_close_avg": 0.39,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.28,
+          "patients_per_nurse_median": 5.23,
+          "chairs_per_nurse_avg": 2.84,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 55.2,
+          "nurse_utilization_median": 51.85,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.82,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 2.37,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 45.83,
+          "nurse_utilization_median": 48.43,
+          "mom_deltas": {
+            "avg_chair_utilization": 7.33,
+            "avg_delay_mins": -2.06,
+            "avg_treatment_mins_per_patient": -5.0,
+            "avg_treatments_per_day": 0.07,
+            "avg_chairs_per_nurse": -0.07,
+            "avg_nurse_to_patient_chair_time": 1.33,
+            "avg_patients_per_nurse": 0.28,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "North Charleston",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.06,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 3.15,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 50.95,
+          "nurse_utilization_median": 52.31,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.55,
+          "patients_per_nurse_median": 5.25,
+          "chairs_per_nurse_avg": 2.57,
+          "chairs_per_nurse_median": 2.4,
+          "nurse_utilization_avg": 55.74,
+          "nurse_utilization_median": 54.54,
+          "mom_deltas": {
+            "avg_chair_utilization": 13.4,
+            "avg_delay_mins": -0.86,
+            "avg_treatment_mins_per_patient": 0.57,
+            "avg_treatments_per_day": 0.04,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 6.3,
+            "avg_patients_per_nurse": 0.6,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "West Ashley",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.69,
+          "patients_per_nurse_median": 5.9,
+          "chairs_per_nurse_avg": 3.3,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 55.67,
+          "nurse_utilization_median": 55.4,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 28.15,
+          "chair_utilization_avg": 74.02,
+          "tx_past_close_avg": 1.13
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-01": {
+      "composite_score": 30.1,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 44.93,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 29.51,
+          "avg_delay_median": 30.18,
+          "chair_utilization_avg": 68.91,
+          "chair_utilization_median": 74.31,
+          "tx_past_close_avg": 0.93,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 19.34,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "scheduler_compliance_avg": 39.43,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 25.58,
+          "avg_delay_median": 26.27,
+          "chair_utilization_avg": 72.52,
+          "chair_utilization_median": 82.5,
+          "tx_past_close_avg": 0.25,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 19.2,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -10.19,
+            "avg_delay_mins": 1.13,
+            "avg_treatment_mins_per_patient": 12.7,
+            "avg_treatments_per_day": -0.04,
+            "avg_chairs_per_nurse": 0.31,
+            "avg_nurse_to_patient_chair_time": 2.17,
+            "avg_patients_per_nurse": -0.01,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "North Charleston",
+          "scheduler_compliance_avg": 47.28,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 29.16,
+          "avg_delay_median": 28.2,
+          "chair_utilization_avg": 66.55,
+          "chair_utilization_median": 67.78,
+          "tx_past_close_avg": 1.82,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 20.68,
+          "tx_mins_past_close_median": 12.75,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.83,
+            "avg_delay_mins": 2.38,
+            "avg_treatment_mins_per_patient": 2.26,
+            "avg_treatments_per_day": -0.29,
+            "avg_chairs_per_nurse": -0.38,
+            "avg_nurse_to_patient_chair_time": -2.83,
+            "avg_patients_per_nurse": -0.19,
+            "iassign_utilization": -5.88
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "Summerville",
+          "scheduler_compliance_avg": 46.66,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 27.44,
+          "avg_delay_median": 31.42,
+          "chair_utilization_avg": 74.33,
+          "chair_utilization_median": 78.75,
+          "tx_past_close_avg": 0.75,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 16.13,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -14.46,
+            "avg_delay_mins": 0.9,
+            "avg_treatment_mins_per_patient": -1.79,
+            "avg_treatments_per_day": -1.01,
+            "avg_chairs_per_nurse": -0.07,
+            "avg_nurse_to_patient_chair_time": -9.15,
+            "avg_patients_per_nurse": -0.92,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "West Ashley",
+          "scheduler_compliance_avg": 44.44,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 35.89,
+          "avg_delay_median": 38.55,
+          "chair_utilization_avg": 68.85,
+          "chair_utilization_median": 68.47,
+          "tx_past_close_avg": 0.88,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 21.36,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.39,
+            "avg_delay_mins": 1.05,
+            "avg_treatment_mins_per_patient": 6.36,
+            "avg_treatments_per_day": 0.49,
+            "avg_chairs_per_nurse": -0.2,
+            "avg_nurse_to_patient_chair_time": -4.45,
+            "avg_patients_per_nurse": -0.53,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 99.0,
+          "patients_per_nurse_avg": 4.86,
+          "patients_per_nurse_median": 4.78,
+          "chairs_per_nurse_avg": 2.76,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 48.31,
+          "nurse_utilization_median": 47.74,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Mt Pleasant",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.81,
+          "patients_per_nurse_median": 4.75,
+          "chairs_per_nurse_avg": 2.68,
+          "chairs_per_nurse_median": 2.67,
+          "nurse_utilization_avg": 48.0,
+          "nurse_utilization_median": 46.15,
+          "mom_deltas": {
+            "avg_chair_utilization": -10.19,
+            "avg_delay_mins": 1.13,
+            "avg_treatment_mins_per_patient": 12.7,
+            "avg_treatments_per_day": -0.04,
+            "avg_chairs_per_nurse": 0.31,
+            "avg_nurse_to_patient_chair_time": 2.17,
+            "avg_patients_per_nurse": -0.01,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "North Charleston",
+          "iassign_utilization_avg": 94.12,
+          "patients_per_nurse_avg": 4.87,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 2.77,
+          "chairs_per_nurse_median": 2.79,
+          "nurse_utilization_avg": 48.12,
+          "nurse_utilization_median": 48.39,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.83,
+            "avg_delay_mins": 2.38,
+            "avg_treatment_mins_per_patient": 2.26,
+            "avg_treatments_per_day": -0.29,
+            "avg_chairs_per_nurse": -0.38,
+            "avg_nurse_to_patient_chair_time": -2.83,
+            "avg_patients_per_nurse": -0.19,
+            "iassign_utilization": -5.88
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "Summerville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.63,
+          "patients_per_nurse_median": 4.68,
+          "chairs_per_nurse_avg": 2.5,
+          "chairs_per_nurse_median": 2.4,
+          "nurse_utilization_avg": 46.59,
+          "nurse_utilization_median": 46.43,
+          "mom_deltas": {
+            "avg_chair_utilization": -14.46,
+            "avg_delay_mins": 0.9,
+            "avg_treatment_mins_per_patient": -1.79,
+            "avg_treatments_per_day": -1.01,
+            "avg_chairs_per_nurse": -0.07,
+            "avg_nurse_to_patient_chair_time": -9.15,
+            "avg_patients_per_nurse": -0.92,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "West Ashley",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.16,
+          "patients_per_nurse_median": 4.68,
+          "chairs_per_nurse_avg": 3.1,
+          "chairs_per_nurse_median": 2.4,
+          "nurse_utilization_avg": 51.22,
+          "nurse_utilization_median": 51.09,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.39,
+            "avg_delay_mins": 1.05,
+            "avg_treatment_mins_per_patient": 6.36,
+            "avg_treatments_per_day": 0.49,
+            "avg_chairs_per_nurse": -0.2,
+            "avg_nurse_to_patient_chair_time": -4.45,
+            "avg_patients_per_nurse": -0.53,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 44.93,
+          "avg_delay_avg": 29.51,
+          "chair_utilization_avg": 68.91,
+          "tx_past_close_avg": 0.93
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-02": {
+      "composite_score": 22.5,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 61.11,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 26.39,
+          "avg_delay_median": 25.86,
+          "chair_utilization_avg": 70.19,
+          "chair_utilization_median": 72.81,
+          "tx_past_close_avg": 1.24,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 25.05,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "MtPleasant",
+          "scheduler_compliance_avg": 52.65,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 20.93,
+          "avg_delay_median": 21.31,
+          "chair_utilization_avg": 70.05,
+          "chair_utilization_median": 65.84,
+          "tx_past_close_avg": 0.11,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 45.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "NorthCharleston",
+          "scheduler_compliance_avg": 63.95,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 23.91,
+          "avg_delay_median": 24.08,
+          "chair_utilization_avg": 73.69,
+          "chair_utilization_median": 72.66,
+          "tx_past_close_avg": 2.8,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 19.38,
+          "tx_mins_past_close_median": 16.83,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Summerville",
+          "scheduler_compliance_avg": 61.29,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 25.48,
+          "avg_delay_median": 27.27,
+          "chair_utilization_avg": 81.14,
+          "chair_utilization_median": 84.17,
+          "tx_past_close_avg": 1.32,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 18.28,
+          "tx_mins_past_close_median": 10.75,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": -1.19,
+            "scheduler_compliance": 14.63,
+            "avg_delay_mins": -1.96,
+            "avg_treatments_per_day": 0.57,
+            "avg_treatment_mins_per_patient": 2.15,
+            "avg_chair_utilization": 6.81
+          },
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshely",
+          "scheduler_compliance_avg": 64.54,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 35.26,
+          "avg_delay_median": 32.71,
+          "chair_utilization_avg": 60.51,
+          "chair_utilization_median": 58.08,
+          "tx_past_close_avg": 0.73,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 17.55,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.96,
+          "patients_per_nurse_median": 4.93,
+          "chairs_per_nurse_avg": 2.78,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 47.66,
+          "nurse_utilization_median": 46.53,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "MtPleasant",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.06,
+          "patients_per_nurse_median": 4.75,
+          "chairs_per_nurse_avg": 2.65,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 45.12,
+          "nurse_utilization_median": 42.31,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "NorthCharleston",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.06,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 2.85,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 51.29,
+          "nurse_utilization_median": 50.71,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "Summerville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.58,
+          "patients_per_nurse_median": 4.75,
+          "chairs_per_nurse_avg": 2.4,
+          "chairs_per_nurse_median": 2.4,
+          "nurse_utilization_avg": 45.4,
+          "nurse_utilization_median": 47.05,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": -1.19,
+            "scheduler_compliance": 14.63,
+            "avg_delay_mins": -1.96,
+            "avg_treatments_per_day": 0.57,
+            "avg_treatment_mins_per_patient": 2.15,
+            "avg_chair_utilization": 6.81
+          },
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshely",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.14,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 3.25,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 47.98,
+          "nurse_utilization_median": 46.67,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 61.11,
+          "avg_delay_avg": 26.39,
+          "chair_utilization_avg": 70.19,
+          "tx_past_close_avg": 1.24
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "The LOA network posted a composite Performance Score of 22.75 out of 100 (where 50 represents the network average), reflecting persistent operational headwinds across all four clinics. While scheduler compliance and iAssign adoption remain solid, patient delays and chair utilization patterns reveal structural scheduling and workflow challenges that warrant targeted intervention over the next quarter.",
+        "highlights": [
+          "Summerville delivered the month's strongest turnaround, with scheduler compliance climbing 31.4 percentage points from 46.7% in January to 61.3% in February, alongside a 9.2% gain in chair utilization to 81.1%. NorthCharleston's average patient delay has improved steadily over three consecutive months, reaching 23.9 minutes in February (3-month average of 25.3 minutes), which now sits below the company average of 26.39 minutes and suggests sustainable progress in patient flow discipline."
+        ],
+        "concerns": [
+          "We noticed that WestAshely's average patient delay stands at 35.3 minutes, a gap of 34% above the company average of 26.39 minutes\u2014the largest single performance gap across the network. At the same time, WestAshely's chair utilization of 60.5% remains the lowest in the LOA group and substantially trails the company benchmark of 70.19%, suggesting that scheduling density and template alignment may both merit review. Additionally, NorthCharleston's treatments running past closing time average 2.8 per day (1.6 standard deviations above the group mean of 1.2), which has grown alongside improved delay metrics\u2014worth exploring whether scheduling discipline has shifted end-of-day workload upstream rather than eliminating it."
+        ],
+        "recommendations": [
+          "We recommend that WestAshely's leadership team conduct a focused audit of its scheduling templates against iOptimize recommendations, with particular attention to the appointment density and sequencing that may be coinciding with both the elevated delay and underutilized chair capacity. This could involve a brief template review session with the scheduler and clinical leadership to identify any manual overrides or booking patterns that are diverging from system recommendations, paired with a refresher on iOptimize calibration for the clinic's specific patient mix."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-03": {
+      "composite_score": 24.0,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 68.48,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 28.01,
+          "avg_delay_median": 26.95,
+          "chair_utilization_avg": 73.16,
+          "chair_utilization_median": 75.76,
+          "tx_past_close_avg": 1.1,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 17.93,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "MtPleasant",
+          "scheduler_compliance_avg": 64.09,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 23.97,
+          "avg_delay_median": 26.4,
+          "chair_utilization_avg": 66.54,
+          "chair_utilization_median": 65.0,
+          "tx_past_close_avg": 0.14,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 4.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -3.51,
+            "avg_delay_mins": 3.04,
+            "avg_treatment_mins_per_patient": -40.33,
+            "avg_treatments_per_day": 0.03,
+            "scheduler_compliance": 11.44,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.54,
+            "avg_chairs_per_nurse": -0.14,
+            "avg_nurse_to_patient_chair_time": -3.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "NorthCharleston",
+          "scheduler_compliance_avg": 70.58,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 28.93,
+          "avg_delay_median": 28.73,
+          "chair_utilization_avg": 78.14,
+          "chair_utilization_median": 76.01,
+          "tx_past_close_avg": 2.0,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 30.69,
+          "tx_mins_past_close_median": 16.2,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.45,
+            "avg_treatment_mins_per_patient": 11.31,
+            "avg_treatments_per_day": -0.8,
+            "scheduler_compliance": 6.63,
+            "avg_delay_mins": 5.02,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.35,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": 2.79
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "scheduler_compliance_avg": 67.65,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 27.26,
+          "avg_delay_median": 26.82,
+          "chair_utilization_avg": 80.15,
+          "chair_utilization_median": 83.34,
+          "tx_past_close_avg": 1.59,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.69,
+          "tx_mins_past_close_median": 12.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.99,
+            "avg_treatment_mins_per_patient": -0.59,
+            "scheduler_compliance": 6.36,
+            "avg_delay_mins": 1.78,
+            "avg_treatments_per_day": 0.27,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.16,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": -1.17
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshely",
+          "scheduler_compliance_avg": 70.22,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 31.88,
+          "avg_delay_median": 32.28,
+          "chair_utilization_avg": 70.59,
+          "chair_utilization_median": 70.58,
+          "tx_past_close_avg": 0.67,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 18.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": -3.38,
+            "avg_treatment_mins_per_patient": 1.12,
+            "avg_treatments_per_day": -0.06,
+            "scheduler_compliance": 5.68,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.42,
+            "avg_chairs_per_nurse": -0.12,
+            "avg_nurse_to_patient_chair_time": 5.01,
+            "avg_chair_utilization": 10.08
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.05,
+          "patients_per_nurse_median": 5.0,
+          "chairs_per_nurse_avg": 2.69,
+          "chairs_per_nurse_median": 2.57,
+          "nurse_utilization_avg": 48.61,
+          "nurse_utilization_median": 49.35,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "MtPleasant",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.52,
+          "patients_per_nurse_median": 4.33,
+          "chairs_per_nurse_avg": 2.51,
+          "chairs_per_nurse_median": 2.25,
+          "nurse_utilization_avg": 42.12,
+          "nurse_utilization_median": 39.82,
+          "mom_deltas": {
+            "avg_chair_utilization": -3.51,
+            "avg_delay_mins": 3.04,
+            "avg_treatment_mins_per_patient": -40.33,
+            "avg_treatments_per_day": 0.03,
+            "scheduler_compliance": 11.44,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.54,
+            "avg_chairs_per_nurse": -0.14,
+            "avg_nurse_to_patient_chair_time": -3.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "NorthCharleston",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.41,
+          "patients_per_nurse_median": 5.23,
+          "chairs_per_nurse_avg": 2.75,
+          "chairs_per_nurse_median": 2.57,
+          "nurse_utilization_avg": 54.08,
+          "nurse_utilization_median": 53.73,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.45,
+            "avg_treatment_mins_per_patient": 11.31,
+            "avg_treatments_per_day": -0.8,
+            "scheduler_compliance": 6.63,
+            "avg_delay_mins": 5.02,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.35,
+            "avg_chairs_per_nurse": -0.1,
+            "avg_nurse_to_patient_chair_time": 2.79
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Summerville",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.74,
+          "patients_per_nurse_median": 4.7,
+          "chairs_per_nurse_avg": 2.4,
+          "chairs_per_nurse_median": 2.4,
+          "nurse_utilization_avg": 44.23,
+          "nurse_utilization_median": 45.3,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.99,
+            "avg_treatment_mins_per_patient": -0.59,
+            "scheduler_compliance": 6.36,
+            "avg_delay_mins": 1.78,
+            "avg_treatments_per_day": 0.27,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.16,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": -1.17
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "WestAshely",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.56,
+          "patients_per_nurse_median": 5.1,
+          "chairs_per_nurse_avg": 3.13,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 52.99,
+          "nurse_utilization_median": 52.34,
+          "mom_deltas": {
+            "avg_delay_mins": -3.38,
+            "avg_treatment_mins_per_patient": 1.12,
+            "avg_treatments_per_day": -0.06,
+            "scheduler_compliance": 5.68,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.42,
+            "avg_chairs_per_nurse": -0.12,
+            "avg_nurse_to_patient_chair_time": 5.01,
+            "avg_chair_utilization": 10.08
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 68.48,
+          "avg_delay_avg": 28.01,
+          "chair_utilization_avg": 73.16,
+          "tx_past_close_avg": 1.1
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "The LOA network posted a composite performance score of 24.0 out of 100 (where 50 represents the network average), reflecting persistent operational headwinds across all four clinics. However, March brought encouraging month-over-month gains: MtPleasant's scheduler compliance rose from 52.6% in February to 64.1% in March, a 21.7% improvement; NorthCharleston's treatments running past closing dropped from 2.8 per day in February to 2.0 in March, a 28.6% reduction; and WestAshely's chair utilization climbed from 60.5% in February to 70.6% in March, a 16.7% gain. These shifts suggest operational traction, though we remain well below the company scheduler compliance average of 68.48%.",
+        "highlights": [
+          "MtPleasant delivered the strongest March performance, with scheduler compliance of 64.1% (up from 52.6% in February) and minutes past close per patient falling dramatically from 45.0 in February to 4.7 in March\u2014a 89.6% reduction that nearly eliminates after-hours treatment spillover. WestAshely showed parallel momentum, with nurse utilization rising from 48.0% in February to 53.0% in March and average patient delay improving from 35.3 minutes in February to 31.9 minutes in March, both moves aligned with a 16.7% lift in chair utilization."
+        ],
+        "concerns": [
+          "We noticed WestAshely's average patient delay of 31.9 minutes sits 14% above the company average of 28.01 minutes, the largest performance gap in the network. At the same time, WestAshely's scheduler compliance of 70.2% remains only marginally above company average (68.48%), suggesting scheduling discipline may not yet be tight enough to compress wait times further. We also observed that nurse utilization across all four clinics remains low relative to optimal (Summerville at 44.2%, MtPleasant at 42.1%), a pattern worth exploring together to understand whether staffing deployment or scheduling alignment could improve chair-to-nurse pairing efficiency."
+        ],
+        "recommendations": [
+          "We recommend WestAshely conduct a targeted review of its scheduling templates and appointment spacing logic within iOptimize, with focus on how treatment duration estimates map to actual chair turnaround times. Given the clinic's recent gains in chair utilization and nurse staffing, tightening scheduler adherence to iOptimize recommendations\u2014currently at 70.2% versus the company average of 68.48%\u2014may be the lever to narrow the 31.9-minute delay gap and move closer to the 28.0-minute benchmark across the network."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "Global Avg": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.002541,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": -0.3767,
+            "lag_sc_to_chair_n": 6,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "MtPleasant": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.017736,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.004569,
+            "lag_sc_to_chair_r": -0.3767,
+            "lag_sc_to_chair_n": 6,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.295,
+                "lower_95": 63.4304,
+                "upper_95": 73.1596,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 22.45,
+                "lower_95": 18.2368,
+                "upper_95": 26.6632,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 24.835,
+                "lower_95": -31.0595,
+                "upper_95": 80.7295,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.125,
+                "lower_95": 0.0834,
+                "upper_95": 0.1666,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 58.37,
+                "lower_95": 42.515,
+                "upper_95": 74.225,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "NorthCharleston": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.048559,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.061337,
+            "lag_sc_to_chair_r": -0.3767,
+            "lag_sc_to_chair_n": 6,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 73.0167,
+                "lower_95": 62.2542,
+                "upper_95": 83.7791,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 26.18,
+                "lower_95": 21.1934,
+                "upper_95": 31.1666,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 21.73,
+                "lower_95": 5.9586,
+                "upper_95": 37.5014,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.9767,
+                "lower_95": 0.3396,
+                "upper_95": 3.6137,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 67.265,
+                "lower_95": 58.0763,
+                "upper_95": 76.4537,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Summerville": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.080955,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.073118,
+            "lag_sc_to_chair_r": -0.3767,
+            "lag_sc_to_chair_n": 6,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 78.54,
+                "lower_95": 71.3283,
+                "upper_95": 85.7517,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 26.7267,
+                "lower_95": 24.6032,
+                "upper_95": 28.8501,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 17.3667,
+                "lower_95": 15.1894,
+                "upper_95": 19.544,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.22,
+                "lower_95": 0.3795,
+                "upper_95": 2.0605,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 58.5333,
+                "lower_95": 37.4376,
+                "upper_95": 79.629,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "WestAshely": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.095669,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.065194,
+            "lag_sc_to_chair_r": -0.3767,
+            "lag_sc_to_chair_n": 6,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 65.55,
+                "lower_95": 51.5798,
+                "upper_95": 79.5202,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 33.57,
+                "lower_95": 28.8856,
+                "upper_95": 38.2544,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 18.11,
+                "lower_95": 16.5578,
+                "upper_95": 19.6622,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.7,
+                "lower_95": 0.6168,
+                "upper_95": 0.7832,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 67.38,
+                "lower_95": 59.5079,
+                "upper_95": 75.2521,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-10",
+        "location": "Mt Pleasant",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 25.09,
+        "chair_utilization_avg": 67.58,
+        "tx_past_close_avg": 0.17
+      },
+      {
+        "month": "2025-10",
+        "location": "NorthCharleston",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 26.17,
+        "chair_utilization_avg": 72.43,
+        "tx_past_close_avg": 2.78
+      },
+      {
+        "month": "2025-10",
+        "location": "Summerville",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 26.35,
+        "chair_utilization_avg": 80.22,
+        "tx_past_close_avg": 1.17
+      },
+      {
+        "month": "2025-10",
+        "location": "WestAshley",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 37.55,
+        "chair_utilization_avg": 71.75,
+        "tx_past_close_avg": 0.61
+      },
+      {
+        "month": "2025-11",
+        "location": "Mt Pleasant",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 26.51,
+        "chair_utilization_avg": 75.38,
+        "tx_past_close_avg": 0.22
+      },
+      {
+        "month": "2025-11",
+        "location": "NorthCharleston",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 25.7,
+        "chair_utilization_avg": 67.22,
+        "tx_past_close_avg": 1.13
+      },
+      {
+        "month": "2025-11",
+        "location": "Summerville",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 27.4,
+        "chair_utilization_avg": 75.39,
+        "tx_past_close_avg": 1.72
+      },
+      {
+        "month": "2025-11",
+        "location": "WestAshley",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 34.84,
+        "chair_utilization_avg": 65.44,
+        "tx_past_close_avg": 0.6
+      },
+      {
+        "month": "2025-12",
+        "location": "Mt Pleasant",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 24.45,
+        "chair_utilization_avg": 82.71,
+        "tx_past_close_avg": 0.29
+      },
+      {
+        "month": "2025-12",
+        "location": "North Charleston",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 26.78,
+        "chair_utilization_avg": 65.72,
+        "tx_past_close_avg": 2.11
+      },
+      {
+        "month": "2025-12",
+        "location": "Summerville",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 26.54,
+        "chair_utilization_avg": 88.79,
+        "tx_past_close_avg": 1.76
+      },
+      {
+        "month": "2025-12",
+        "location": "West Ashley",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 34.84,
+        "chair_utilization_avg": 70.24,
+        "tx_past_close_avg": 0.39
+      },
+      {
+        "month": "2026-01",
+        "location": "Mt Pleasant",
+        "scheduler_compliance_avg": 39.43,
+        "avg_delay_avg": 25.58,
+        "chair_utilization_avg": 72.52,
+        "tx_past_close_avg": 0.25
+      },
+      {
+        "month": "2026-01",
+        "location": "North Charleston",
+        "scheduler_compliance_avg": 47.28,
+        "avg_delay_avg": 29.16,
+        "chair_utilization_avg": 66.55,
+        "tx_past_close_avg": 1.82
+      },
+      {
+        "month": "2026-01",
+        "location": "Summerville",
+        "scheduler_compliance_avg": 46.66,
+        "avg_delay_avg": 27.44,
+        "chair_utilization_avg": 74.33,
+        "tx_past_close_avg": 0.75
+      },
+      {
+        "month": "2026-01",
+        "location": "West Ashley",
+        "scheduler_compliance_avg": 44.44,
+        "avg_delay_avg": 35.89,
+        "chair_utilization_avg": 68.85,
+        "tx_past_close_avg": 0.88
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "MtPleasant",
+        "scheduler_compliance_avg": 52.65,
+        "avg_delay_avg": 20.93,
+        "chair_utilization_avg": 70.05,
+        "tx_past_close_avg": 0.11
+      },
+      {
+        "month": "2026-02",
+        "location": "NorthCharleston",
+        "scheduler_compliance_avg": 63.95,
+        "avg_delay_avg": 23.91,
+        "chair_utilization_avg": 73.69,
+        "tx_past_close_avg": 2.8
+      },
+      {
+        "month": "2026-02",
+        "location": "Summerville",
+        "scheduler_compliance_avg": 61.29,
+        "avg_delay_avg": 25.48,
+        "chair_utilization_avg": 81.14,
+        "tx_past_close_avg": 1.32
+      },
+      {
+        "month": "2026-02",
+        "location": "WestAshely",
+        "scheduler_compliance_avg": 64.54,
+        "avg_delay_avg": 35.26,
+        "chair_utilization_avg": 60.51,
+        "tx_past_close_avg": 0.73
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "MtPleasant",
+        "scheduler_compliance_avg": 64.09,
+        "avg_delay_avg": 23.97,
+        "chair_utilization_avg": 66.54,
+        "tx_past_close_avg": 0.14
+      },
+      {
+        "month": "2026-03",
+        "location": "NorthCharleston",
+        "scheduler_compliance_avg": 70.58,
+        "avg_delay_avg": 28.93,
+        "chair_utilization_avg": 78.14,
+        "tx_past_close_avg": 2.0
+      },
+      {
+        "month": "2026-03",
+        "location": "Summerville",
+        "scheduler_compliance_avg": 67.65,
+        "avg_delay_avg": 27.26,
+        "chair_utilization_avg": 80.15,
+        "tx_past_close_avg": 1.59
+      },
+      {
+        "month": "2026-03",
+        "location": "WestAshely",
+        "scheduler_compliance_avg": 70.22,
+        "avg_delay_avg": 31.88,
+        "chair_utilization_avg": 70.59,
+        "tx_past_close_avg": 0.67
+      }
+    ]
+  }
+}

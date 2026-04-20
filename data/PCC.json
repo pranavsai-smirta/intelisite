@@ -1,0 +1,893 @@
+{
+  "meta": {
+    "client_code": "PCC",
+    "generated_at": "2026-04-14T03:21:02.592747Z",
+    "months_available": [
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-10": {
+      "composite_score": 55.6,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.85,
+          "avg_delay_median": 16.0,
+          "chair_utilization_avg": 98.36,
+          "chair_utilization_median": 100.33,
+          "tx_past_close_avg": 3.91,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 23.58,
+          "tx_mins_past_close_median": 21.5,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery office",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.85,
+          "avg_delay_median": 16.0,
+          "chair_utilization_avg": 98.36,
+          "chair_utilization_median": 100.33,
+          "tx_past_close_avg": 3.91,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 23.58,
+          "tx_mins_past_close_median": 21.5,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 95.65,
+          "patients_per_nurse_avg": 7.95,
+          "patients_per_nurse_median": 7.79,
+          "chairs_per_nurse_avg": 2.9,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 82.95,
+          "nurse_utilization_median": 83.6,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery office",
+          "iassign_utilization_avg": 95.65,
+          "patients_per_nurse_avg": 7.95,
+          "patients_per_nurse_median": 7.79,
+          "chairs_per_nurse_avg": 2.9,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 82.95,
+          "nurse_utilization_median": 83.6,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.85,
+          "chair_utilization_avg": 98.36,
+          "tx_past_close_avg": 3.91
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-11": {
+      "composite_score": 59.0,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.47,
+          "avg_delay_median": 12.96,
+          "chair_utilization_avg": 93.47,
+          "chair_utilization_median": 93.39,
+          "tx_past_close_avg": 2.88,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 23.34,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Monterey Office",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.47,
+          "avg_delay_median": 12.96,
+          "chair_utilization_avg": 93.47,
+          "chair_utilization_median": 93.39,
+          "tx_past_close_avg": 2.88,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 23.34,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Copany Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.65,
+          "patients_per_nurse_median": 7.47,
+          "chairs_per_nurse_avg": 2.88,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 77.08,
+          "nurse_utilization_median": 77.47,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.65,
+          "patients_per_nurse_median": 7.47,
+          "chairs_per_nurse_avg": 2.88,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 77.08,
+          "nurse_utilization_median": 77.47,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.47,
+          "chair_utilization_avg": 93.47,
+          "tx_past_close_avg": 2.88
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-12": {
+      "composite_score": 64.2,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.68,
+          "avg_delay_median": 12.47,
+          "chair_utilization_avg": 91.38,
+          "chair_utilization_median": 94.35,
+          "tx_past_close_avg": 2.38,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 26.74,
+          "tx_mins_past_close_median": 17.6,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.68,
+          "avg_delay_median": 12.47,
+          "chair_utilization_avg": 91.38,
+          "chair_utilization_median": 94.35,
+          "tx_past_close_avg": 2.38,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 26.74,
+          "tx_mins_past_close_median": 17.6,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": 0.31,
+            "avg_nurse_to_patient_chair_time": 8.45,
+            "avg_patients_per_nurse": 0.64,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.29,
+          "patients_per_nurse_median": 8.14,
+          "chairs_per_nurse_avg": 3.19,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 85.53,
+          "nurse_utilization_median": 85.46,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.29,
+          "patients_per_nurse_median": 8.14,
+          "chairs_per_nurse_avg": 3.19,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 85.53,
+          "nurse_utilization_median": 85.46,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": 0.31,
+            "avg_nurse_to_patient_chair_time": 8.45,
+            "avg_patients_per_nurse": 0.64,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 13.68,
+          "chair_utilization_avg": 91.38,
+          "tx_past_close_avg": 2.38
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-01": {
+      "composite_score": 54.8,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 50.0,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.65,
+          "avg_delay_median": 13.47,
+          "chair_utilization_avg": 93.73,
+          "chair_utilization_median": 85.58,
+          "tx_past_close_avg": 1.61,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 30.35,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Monterey office",
+          "scheduler_compliance_avg": 50.0,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.65,
+          "avg_delay_median": 13.47,
+          "chair_utilization_avg": 93.73,
+          "chair_utilization_median": 85.58,
+          "tx_past_close_avg": 1.61,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 30.35,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.59,
+          "patients_per_nurse_median": 8.67,
+          "chairs_per_nurse_avg": 3.09,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 81.74,
+          "nurse_utilization_median": 81.3,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Monterey office",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.59,
+          "patients_per_nurse_median": 8.67,
+          "chairs_per_nurse_avg": 3.09,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 81.74,
+          "nurse_utilization_median": 81.3,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 50.0,
+          "avg_delay_avg": 13.65,
+          "chair_utilization_avg": 93.73,
+          "tx_past_close_avg": 1.61
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-02": {
+      "composite_score": 55.8,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 81.14,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.5,
+          "avg_delay_median": 12.76,
+          "chair_utilization_avg": 86.96,
+          "chair_utilization_median": 84.01,
+          "tx_past_close_avg": 2.5,
+          "tx_past_close_median": 2.5,
+          "tx_mins_past_close_avg": 21.42,
+          "tx_mins_past_close_median": 13.75,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "scheduler_compliance_avg": 81.14,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.5,
+          "avg_delay_median": 12.76,
+          "chair_utilization_avg": 86.96,
+          "chair_utilization_median": 84.01,
+          "tx_past_close_avg": 2.5,
+          "tx_past_close_median": 2.5,
+          "tx_mins_past_close_avg": 21.42,
+          "tx_mins_past_close_median": 13.75,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.46,
+          "patients_per_nurse_median": 8.46,
+          "chairs_per_nurse_avg": 3.16,
+          "chairs_per_nurse_median": 3.06,
+          "nurse_utilization_avg": 80.35,
+          "nurse_utilization_median": 80.22,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.46,
+          "patients_per_nurse_median": 8.46,
+          "chairs_per_nurse_avg": 3.16,
+          "chairs_per_nurse_median": 3.06,
+          "nurse_utilization_avg": 80.35,
+          "nurse_utilization_median": 80.22,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 81.14,
+          "avg_delay_avg": 13.5,
+          "chair_utilization_avg": 86.96,
+          "tx_past_close_avg": 2.5
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "Monterey Office delivered a Performance Score of 56 out of 100 (where 50 represents the network average), positioning the clinic slightly above the midpoint benchmark. Core scheduling and chair utilization metrics align closely with company averages\u2014Scheduler Compliance at 81.1% versus the network benchmark of 81.14%, and Chair Utilization at 87.0% versus 86.96%\u2014indicating solid operational discipline in appointment adherence and asset allocation. The clinic's primary operational challenge centers on treatments extending beyond closing time, at 2.5 daily, which warrants collaborative exploration.",
+        "highlights": [
+          "Monterey achieved perfect iAssign Utilization at 100.0%, demonstrating exceptional adoption of the assignment system across all treatment scheduling. Nurse Utilization at 80.3% reflects thoughtful capacity management, preserving headroom while maintaining effective staffing alignment with patient volume."
+        ],
+        "concerns": [
+          "We noticed that Monterey averages 2.5 treatments running past closing time daily, which stands as the most pressing operational lever for the clinic. The association between this pattern and the overall Performance Score (56 out of 100, just above the 50-point network benchmark) suggests that addressing schedule runover could yield meaningful uplift across the composite score. A review of end-of-day scheduling windows, particularly for longer treatment durations, could help the team optimize closing-time compliance without sacrificing appointment availability."
+        ],
+        "recommendations": [
+          "We recommend working directly with the Monterey scheduling team to audit the final two hours of each operating day and identify which appointment types most frequently extend past closing. A pilot adjustment\u2014such as reserving the final 90-minute window for shorter, lower-complexity treatments or introducing a 15-minute buffer before the nominal close\u2014could test whether schedule restructuring reduces daily overtime without compromising chair utilization (currently 87.0%, well-aligned with company benchmarks)."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-03": {
+      "composite_score": 53.7,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 86.04,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.46,
+          "avg_delay_median": 14.84,
+          "chair_utilization_avg": 97.98,
+          "chair_utilization_median": 95.21,
+          "tx_past_close_avg": 4.36,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 22.58,
+          "tx_mins_past_close_median": 5.5,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "scheduler_compliance_avg": 86.04,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.46,
+          "avg_delay_median": 14.84,
+          "chair_utilization_avg": 97.98,
+          "chair_utilization_median": 95.21,
+          "tx_past_close_avg": 4.36,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 22.58,
+          "tx_mins_past_close_median": 5.5,
+          "mom_deltas": {
+            "avg_chair_utilization": 11.02,
+            "avg_delay_mins": 1.96,
+            "avg_treatment_mins_per_patient": 1.16,
+            "avg_treatments_per_day": 1.86,
+            "scheduler_compliance": 4.9,
+            "avg_chairs_per_nurse": -0.01,
+            "avg_nurse_to_patient_chair_time": 6.72,
+            "avg_patients_per_nurse": 0.44,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.9,
+          "patients_per_nurse_median": 8.83,
+          "chairs_per_nurse_avg": 3.15,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 87.07,
+          "nurse_utilization_median": 88.87,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Montery Office",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 8.9,
+          "patients_per_nurse_median": 8.83,
+          "chairs_per_nurse_avg": 3.15,
+          "chairs_per_nurse_median": 3.0,
+          "nurse_utilization_avg": 87.07,
+          "nurse_utilization_median": 88.87,
+          "mom_deltas": {
+            "avg_chair_utilization": 11.02,
+            "avg_delay_mins": 1.96,
+            "avg_treatment_mins_per_patient": 1.16,
+            "avg_treatments_per_day": 1.86,
+            "scheduler_compliance": 4.9,
+            "avg_chairs_per_nurse": -0.01,
+            "avg_nurse_to_patient_chair_time": 6.72,
+            "avg_patients_per_nurse": 0.44,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 86.04,
+          "avg_delay_avg": 15.46,
+          "chair_utilization_avg": 97.98,
+          "tx_past_close_avg": 4.36
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "Monterey Office delivered a performance score of 54 out of 100 in March 2026, where 50 represents the network average, marking a solid contribution to clinic operations. The office achieved scheduler compliance of 86.0% and chair utilization of 98.0%, both aligned with company averages of 86.04% and 97.98% respectively. month-over-month gains in scheduler compliance (up from 81.1% in February) and chair utilization (up from 87.0% in February) demonstrate operational traction, though two metrics warrant attention.",
+        "highlights": [
+          "Scheduler compliance rose from 81.1% in February to 86.0% in March, a 4.9-percentage-point improvement that now matches the company average of 86.04%. Chair utilization climbed from 87.0% in February to 98.0% in March, a healthy normalisation toward optimal capacity that reflects stronger scheduling discipline and patient flow management. Nurse utilization also improved, moving from 80.3% in February to 87.1% in March, indicating more balanced workload distribution across the clinical team."
+        ],
+        "concerns": [
+          "We noticed that treatments running past closing time rose from 2.5 per day in February to 4.4 in March\u2014a 1.9-incident increase that represents a reversal of the positive trend seen over the prior three months (3-month average: 3.1 daily overruns). At the same time, average patient delay moved from 13.5 minutes in February to 15.5 minutes in March, now exceeding the company average of 15.46 minutes. We'd like to explore whether the increased chair utilization at 98.0% may be creating scheduling compression that affects same-day flow, even as longer-term trends for both metrics remain directionally positive."
+        ],
+        "recommendations": [
+          "We suggest convening a brief operational huddle with the Monterey team to examine the March uptick in treatments past closing and delays\u2014not as a performance failure, but as a calibration opportunity. One concrete action worth testing: reviewing the iOptimize recommendations that produced the scheduler compliance gain, to ensure slot-packing at 98% utilization still preserves buffer time for patient transitions and unforeseen delays. This collaborative review could help sustain the compliance and utilization wins while bringing treatments past closing back toward the three-month norm of 3.1 daily."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "Global Avg": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.0,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 2,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Montery Office": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.0,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.07861,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 2,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 92.1067,
+                "lower_95": 81.2369,
+                "upper_95": 102.9765,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 14.2133,
+                "lower_95": 12.0899,
+                "upper_95": 16.3368,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 23.58,
+                "lower_95": 18.097,
+                "upper_95": 29.063,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 3.08,
+                "lower_95": 0.9041,
+                "upper_95": 5.2559,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 83.59,
+                "lower_95": 76.7989,
+                "upper_95": 90.3811,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-10",
+        "location": "Montery office",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 14.85,
+        "chair_utilization_avg": 98.36,
+        "tx_past_close_avg": 3.91
+      },
+      {
+        "month": "2025-11",
+        "location": "Monterey Office",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 14.47,
+        "chair_utilization_avg": 93.47,
+        "tx_past_close_avg": 2.88
+      },
+      {
+        "month": "2025-12",
+        "location": "Montery Office",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 13.68,
+        "chair_utilization_avg": 91.38,
+        "tx_past_close_avg": 2.38
+      },
+      {
+        "month": "2026-01",
+        "location": "Monterey office",
+        "scheduler_compliance_avg": 50.0,
+        "avg_delay_avg": 13.65,
+        "chair_utilization_avg": 93.73,
+        "tx_past_close_avg": 1.61
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "Montery Office",
+        "scheduler_compliance_avg": 81.14,
+        "avg_delay_avg": 13.5,
+        "chair_utilization_avg": 86.96,
+        "tx_past_close_avg": 2.5
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "Montery Office",
+        "scheduler_compliance_avg": 86.04,
+        "avg_delay_avg": 15.46,
+        "chair_utilization_avg": 97.98,
+        "tx_past_close_avg": 4.36
+      }
+    ]
+  }
+}

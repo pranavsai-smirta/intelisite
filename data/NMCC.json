@@ -1,0 +1,885 @@
+{
+  "meta": {
+    "client_code": "NMCC",
+    "generated_at": "2026-04-14T03:21:02.636273Z",
+    "months_available": [
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-10": {
+      "composite_score": 68.3,
+      "ioptimize": [
+        {
+          "location": "Alburquerque",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.49,
+          "avg_delay_median": 13.03,
+          "chair_utilization_avg": 100.59,
+          "chair_utilization_median": 98.25,
+          "tx_past_close_avg": 1.83,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 27.24,
+          "tx_mins_past_close_median": 12.5,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.49,
+          "avg_delay_median": 13.03,
+          "chair_utilization_avg": 100.59,
+          "chair_utilization_median": 98.25,
+          "tx_past_close_avg": 1.83,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 27.24,
+          "tx_mins_past_close_median": 12.5,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Alburquerque",
+          "iassign_utilization_avg": 86.96,
+          "patients_per_nurse_avg": 7.37,
+          "patients_per_nurse_median": 7.3,
+          "chairs_per_nurse_avg": 3.37,
+          "chairs_per_nurse_median": 3.22,
+          "nurse_utilization_avg": 75.28,
+          "nurse_utilization_median": 74.43,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 86.96,
+          "patients_per_nurse_avg": 7.37,
+          "patients_per_nurse_median": 7.3,
+          "chairs_per_nurse_avg": 3.37,
+          "chairs_per_nurse_median": 3.22,
+          "nurse_utilization_avg": 75.28,
+          "nurse_utilization_median": 74.43,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 13.49,
+          "chair_utilization_avg": 100.59,
+          "tx_past_close_avg": 1.83
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-11": {
+      "composite_score": null,
+      "ioptimize": [],
+      "iassign": [
+        {
+          "location": "Alberquerque",
+          "iassign_utilization_avg": 58.33,
+          "patients_per_nurse_avg": 6.97,
+          "patients_per_nurse_median": 7.33,
+          "chairs_per_nurse_avg": 3.26,
+          "chairs_per_nurse_median": 3.22,
+          "nurse_utilization_avg": 70.81,
+          "nurse_utilization_median": 71.86,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 58.33,
+          "patients_per_nurse_avg": 6.97,
+          "patients_per_nurse_median": 7.33,
+          "chairs_per_nurse_avg": 3.26,
+          "chairs_per_nurse_median": 3.22,
+          "nurse_utilization_avg": 70.81,
+          "nurse_utilization_median": 71.86,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {},
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-12": {
+      "composite_score": 72.0,
+      "ioptimize": [
+        {
+          "location": "Alberquerque",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.59,
+          "avg_delay_median": 14.12,
+          "chair_utilization_avg": 104.25,
+          "chair_utilization_median": 105.98,
+          "tx_past_close_avg": 1.45,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 26.25,
+          "tx_mins_past_close_median": 13.08,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": -0.04,
+            "avg_nurse_to_patient_chair_time": 2.99,
+            "avg_patients_per_nurse": 0.36,
+            "iassign_utilization": 41.67
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.59,
+          "avg_delay_median": 14.12,
+          "chair_utilization_avg": 104.25,
+          "chair_utilization_median": 105.98,
+          "tx_past_close_avg": 1.45,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 26.25,
+          "tx_mins_past_close_median": 13.08,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Alberquerque",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.33,
+          "patients_per_nurse_median": 7.42,
+          "chairs_per_nurse_avg": 3.22,
+          "chairs_per_nurse_median": 3.22,
+          "nurse_utilization_avg": 73.8,
+          "nurse_utilization_median": 74.37,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": -0.04,
+            "avg_nurse_to_patient_chair_time": 2.99,
+            "avg_patients_per_nurse": 0.36,
+            "iassign_utilization": 41.67
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.33,
+          "patients_per_nurse_median": 7.42,
+          "chairs_per_nurse_avg": 3.22,
+          "chairs_per_nurse_median": 3.22,
+          "nurse_utilization_avg": 73.8,
+          "nurse_utilization_median": 74.37,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.59,
+          "chair_utilization_avg": 104.25,
+          "tx_past_close_avg": 1.45
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-01": {
+      "composite_score": 68.4,
+      "ioptimize": [
+        {
+          "location": "Alberquerque",
+          "scheduler_compliance_avg": 70.61,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.49,
+          "avg_delay_median": 13.99,
+          "chair_utilization_avg": 102.74,
+          "chair_utilization_median": 106.28,
+          "tx_past_close_avg": 1.18,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 33.77,
+          "tx_mins_past_close_median": 7.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.51,
+            "avg_delay_mins": 0.9,
+            "avg_treatment_mins_per_patient": 7.52,
+            "avg_treatments_per_day": -0.27,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": -3.62,
+            "avg_patients_per_nurse": -0.47,
+            "iassign_utilization": -4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 70.61,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.49,
+          "avg_delay_median": 13.99,
+          "chair_utilization_avg": 102.74,
+          "chair_utilization_median": 106.28,
+          "tx_past_close_avg": 1.18,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 33.77,
+          "tx_mins_past_close_median": 7.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Alberquerque",
+          "iassign_utilization_avg": 95.45,
+          "patients_per_nurse_avg": 6.86,
+          "patients_per_nurse_median": 6.89,
+          "chairs_per_nurse_avg": 3.17,
+          "chairs_per_nurse_median": 3.14,
+          "nurse_utilization_avg": 70.18,
+          "nurse_utilization_median": 70.41,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.51,
+            "avg_delay_mins": 0.9,
+            "avg_treatment_mins_per_patient": 7.52,
+            "avg_treatments_per_day": -0.27,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": -3.62,
+            "avg_patients_per_nurse": -0.47,
+            "iassign_utilization": -4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 95.45,
+          "patients_per_nurse_avg": 6.86,
+          "patients_per_nurse_median": 6.89,
+          "chairs_per_nurse_avg": 3.17,
+          "chairs_per_nurse_median": 3.14,
+          "nurse_utilization_avg": 70.18,
+          "nurse_utilization_median": 70.41,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 70.61,
+          "avg_delay_avg": 15.49,
+          "chair_utilization_avg": 102.74,
+          "tx_past_close_avg": 1.18
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-02": {
+      "composite_score": 62.6,
+      "ioptimize": [
+        {
+          "location": "Alberquerque",
+          "scheduler_compliance_avg": 79.58,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.8,
+          "avg_delay_median": 14.11,
+          "chair_utilization_avg": 102.61,
+          "chair_utilization_median": 101.37,
+          "tx_past_close_avg": 1.15,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 31.87,
+          "tx_mins_past_close_median": 19.5,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.13,
+            "avg_delay_mins": -1.69,
+            "avg_treatment_mins_per_patient": -1.9,
+            "avg_treatments_per_day": -0.03,
+            "scheduler_compliance": 8.97,
+            "avg_chairs_per_nurse": -0.02,
+            "avg_nurse_to_patient_chair_time": 1.41,
+            "avg_patients_per_nurse": 0.09,
+            "iassign_utilization": 4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 79.58,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.8,
+          "avg_delay_median": 14.11,
+          "chair_utilization_avg": 102.61,
+          "chair_utilization_median": 101.37,
+          "tx_past_close_avg": 1.15,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 31.87,
+          "tx_mins_past_close_median": 19.5,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Alberquerque",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.95,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 3.15,
+          "chairs_per_nurse_median": 3.1,
+          "nurse_utilization_avg": 71.59,
+          "nurse_utilization_median": 70.12,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.13,
+            "avg_delay_mins": -1.69,
+            "avg_treatment_mins_per_patient": -1.9,
+            "avg_treatments_per_day": -0.03,
+            "scheduler_compliance": 8.97,
+            "avg_chairs_per_nurse": -0.02,
+            "avg_nurse_to_patient_chair_time": 1.41,
+            "avg_patients_per_nurse": 0.09,
+            "iassign_utilization": 4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.95,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 3.15,
+          "chairs_per_nurse_median": 3.1,
+          "nurse_utilization_avg": 71.59,
+          "nurse_utilization_median": 70.12,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 79.58,
+          "avg_delay_avg": 13.8,
+          "chair_utilization_avg": 102.61,
+          "tx_past_close_avg": 1.15
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "Albuquerque delivered a performance score of 63 out of 100 (where 50 represents the network average) in February 2026, demonstrating solid operational fundamentals aligned with company-wide benchmarks. The clinic achieved scheduler compliance of 79.6% matching the company average of 79.58%, and average patient delay of 13.8 minutes also matching the company average, while maintaining perfect iAssign utilization at 100.0%.",
+        "highlights": [
+          "Scheduler compliance improved 9 percentage points from 70.6% in January to 79.6% in February, now tracking at parity with the company average of 79.58%. Average delay declined 1.7 minutes from 15.5 minutes in January to 13.8 minutes in February, a 10.9% improvement that coincided with the stronger scheduling discipline and now sits at the company benchmark of 13.8 minutes."
+        ],
+        "concerns": [
+          "We noticed chair utilization has declined consistently over three months (averaging 103.2% across the period, down from higher overbooking levels), which represents healthy normalisation toward the company average of 102.61% and suggests the clinic is moving toward more sustainable capacity management. One area worth exploring together is nurse utilization, which stands at 71.6% in February\u2014notably below optimal levels\u2014to understand whether this reflects staffing availability, scheduling patterns, or workflow dynamics that might be constraining throughput."
+        ],
+        "recommendations": [
+          "We'd recommend a brief operational review with the Albuquerque team focused on nurse capacity deployment: the 28.4-point gap between nurse utilization (71.6%) and the optimal 100% suggests potential to either increase patient volume safely or identify workflow adjustments that could better match nurse availability to demand, ultimately supporting the clinic's strong momentum in compliance and delay reduction."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-03": {
+      "composite_score": 51.1,
+      "ioptimize": [
+        {
+          "location": "Alberquerque",
+          "scheduler_compliance_avg": 78.96,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.38,
+          "avg_delay_median": 11.58,
+          "chair_utilization_avg": 100.89,
+          "chair_utilization_median": 100.67,
+          "tx_past_close_avg": 0.82,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 26.06,
+          "tx_mins_past_close_median": 12.5,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.72,
+            "avg_delay_mins": -1.42,
+            "avg_treatment_mins_per_patient": -5.81,
+            "avg_treatments_per_day": -0.33,
+            "scheduler_compliance": -0.62,
+            "avg_chairs_per_nurse": -0.08,
+            "avg_nurse_to_patient_chair_time": -2.66,
+            "avg_patients_per_nurse": -0.16,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 78.96,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.38,
+          "avg_delay_median": 11.58,
+          "chair_utilization_avg": 100.89,
+          "chair_utilization_median": 100.67,
+          "tx_past_close_avg": 0.82,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 26.06,
+          "tx_mins_past_close_median": 12.5,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Alberquerque",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.79,
+          "patients_per_nurse_median": 6.8,
+          "chairs_per_nurse_avg": 3.07,
+          "chairs_per_nurse_median": 3.1,
+          "nurse_utilization_avg": 68.93,
+          "nurse_utilization_median": 67.97,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.72,
+            "avg_delay_mins": -1.42,
+            "avg_treatment_mins_per_patient": -5.81,
+            "avg_treatments_per_day": -0.33,
+            "scheduler_compliance": -0.62,
+            "avg_chairs_per_nurse": -0.08,
+            "avg_nurse_to_patient_chair_time": -2.66,
+            "avg_patients_per_nurse": -0.16,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.79,
+          "patients_per_nurse_median": 6.8,
+          "chairs_per_nurse_avg": 3.07,
+          "chairs_per_nurse_median": 3.1,
+          "nurse_utilization_avg": 68.93,
+          "nurse_utilization_median": 67.97,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 78.96,
+          "avg_delay_avg": 12.38,
+          "chair_utilization_avg": 100.89,
+          "tx_past_close_avg": 0.82
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "Albuquerque delivered a performance score of 51 out of 100 (where 50 represents the network average) in March 2026, positioning the clinic at parity with overall company performance. The clinic showed meaningful operational gains month-over-month: treatments running past closing declined from 1.1 in February to 0.8 in March, and average patient delay fell from 13.8 minutes in February to 12.4 minutes in March, now aligning with the company average of 12.38 minutes. Chair utilization of 100.9% represents healthy normalization downward from a three-month average of 102.1%, suggesting better booking discipline.",
+        "highlights": [
+          "Albuquerque's average delay of 12.4 minutes in March matches the company average of 12.38 minutes, marking a 10.3% improvement from the 13.8 minutes recorded in February and reflecting strong patient flow management. The clinic achieved perfect iAssign utilization at 100.0%, demonstrating excellent adherence to the assignment tool, while treatments extending past closing time declined 28.7% from 1.1 daily in February to 0.8 in March, signaling better schedule discipline and reduced overtime exposure."
+        ],
+        "concerns": [
+          "We noticed that nurse utilization declined 3.7% from 71.6% in February to 68.9% in March, sitting notably below optimal capacity; this decline coincided with improvements in delay and overtime, and one area worth exploring together is whether staffing levels are appropriately right-sized for current patient volume or whether scheduling patterns may be underutilizing available nursing capacity. Scheduler compliance, while at 79.0% in March versus the company average of 78.96%, sits within a tight band, and the improving two-month trend (upward movement with R\u00b2=0.69) suggests that continued focus on iOptimize adoption could lift this metric further."
+        ],
+        "recommendations": [
+          "We recommend a brief operational review with Albuquerque's leadership focused on understanding the nurse utilization dip to 68.9%\u2014specifically, whether this reflects genuine understaffing, scheduling inefficiencies, or intentional rightsizing following the March improvements in delay and overtime. A 15-minute conversation pairing chair and nurse deployment data against patient volume patterns may reveal quick wins to optimize both resources without sacrificing the momentum already gained on patient flow."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "Alberquerque": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.0,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.108764,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 3,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 102.08,
+                "lower_95": 100.0561,
+                "upper_95": 104.1039,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 13.89,
+                "lower_95": 10.8384,
+                "upper_95": 16.9416,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 30.5667,
+                "lower_95": 22.6937,
+                "upper_95": 38.4397,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.05,
+                "lower_95": 0.6585,
+                "upper_95": 1.4415,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 76.3833,
+                "lower_95": 66.5648,
+                "upper_95": 86.2019,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Global Avg": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.0,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 3,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-10",
+        "location": "Alburquerque",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 13.49,
+        "chair_utilization_avg": 100.59,
+        "tx_past_close_avg": 1.83
+      },
+      {
+        "month": "2025-12",
+        "location": "Alberquerque",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 14.59,
+        "chair_utilization_avg": 104.25,
+        "tx_past_close_avg": 1.45
+      },
+      {
+        "month": "2026-01",
+        "location": "Alberquerque",
+        "scheduler_compliance_avg": 70.61,
+        "avg_delay_avg": 15.49,
+        "chair_utilization_avg": 102.74,
+        "tx_past_close_avg": 1.18
+      },
+      {
+        "month": "2026-02",
+        "location": "Alberquerque",
+        "scheduler_compliance_avg": 79.58,
+        "avg_delay_avg": 13.8,
+        "chair_utilization_avg": 102.61,
+        "tx_past_close_avg": 1.15
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-03",
+        "location": "Alberquerque",
+        "scheduler_compliance_avg": 78.96,
+        "avg_delay_avg": 12.38,
+        "chair_utilization_avg": 100.89,
+        "tx_past_close_avg": 0.82
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      }
+    ]
+  }
+}

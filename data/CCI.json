@@ -1,0 +1,3756 @@
+{
+  "meta": {
+    "client_code": "CCI",
+    "generated_at": "2026-04-14T03:21:02.662479Z",
+    "months_available": [
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-10": {
+      "composite_score": 49.7,
+      "ioptimize": [
+        {
+          "location": "14th Ave",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.44,
+          "avg_delay_median": 5.47,
+          "chair_utilization_avg": 68.67,
+          "chair_utilization_median": 81.91,
+          "tx_past_close_avg": 0.87,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 24.15,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI AB pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.46,
+          "avg_delay_median": 12.8,
+          "chair_utilization_avg": 73.78,
+          "chair_utilization_median": 77.23,
+          "tx_past_close_avg": 3.3,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 26.97,
+          "tx_mins_past_close_median": 26.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI Cd Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.65,
+          "avg_delay_median": 14.57,
+          "chair_utilization_avg": 70.95,
+          "chair_utilization_median": 74.18,
+          "tx_past_close_avg": 3.17,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 25.99,
+          "tx_mins_past_close_median": 26.6,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI drive",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 18.48,
+          "avg_delay_median": 16.04,
+          "chair_utilization_avg": 72.21,
+          "chair_utilization_median": 76.07,
+          "tx_past_close_avg": 2.55,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 27.24,
+          "tx_mins_past_close_median": 22.25,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_nurse_to_patient_chair_time"
+          ]
+        },
+        {
+          "location": "CCI E Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.45,
+          "avg_delay_median": 13.28,
+          "chair_utilization_avg": 81.96,
+          "chair_utilization_median": 83.61,
+          "tx_past_close_avg": 2.87,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 30.62,
+          "tx_mins_past_close_median": 20.2,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "CCI Gh Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 32.98,
+          "avg_delay_median": 33.98,
+          "chair_utilization_avg": 67.34,
+          "chair_utilization_median": 68.48,
+          "tx_past_close_avg": 0.87,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 25.4,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.26,
+          "avg_delay_median": 8.12,
+          "chair_utilization_avg": 62.1,
+          "chair_utilization_median": 62.5,
+          "tx_past_close_avg": 0.99,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.93,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.63,
+          "avg_delay_median": 5.82,
+          "chair_utilization_avg": 55.61,
+          "chair_utilization_median": 53.95,
+          "tx_past_close_avg": 0.39,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 2.32,
+          "avg_delay_median": 2.11,
+          "chair_utilization_avg": 60.76,
+          "chair_utilization_median": 61.36,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 0.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "One Hospital drive",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.47,
+          "avg_delay_median": 7.25,
+          "chair_utilization_avg": 53.28,
+          "chair_utilization_median": 52.74,
+          "tx_past_close_avg": 1.17,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.96,
+          "tx_mins_past_close_median": 4.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        }
+      ],
+      "iassign": [
+        {
+          "location": "14th Ave",
+          "iassign_utilization_avg": 89.47,
+          "patients_per_nurse_avg": 5.5,
+          "patients_per_nurse_median": 5.8,
+          "chairs_per_nurse_avg": 3.23,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 80.25,
+          "nurse_utilization_median": 81.64,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI drive",
+          "iassign_utilization_avg": 95.45,
+          "patients_per_nurse_avg": 7.89,
+          "patients_per_nurse_median": 8.13,
+          "chairs_per_nurse_avg": 3.93,
+          "chairs_per_nurse_median": 3.9,
+          "nurse_utilization_avg": 97.87,
+          "nurse_utilization_median": 96.91,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_nurse_to_patient_chair_time"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 96.89,
+          "patients_per_nurse_avg": 6.62,
+          "patients_per_nurse_median": 6.67,
+          "chairs_per_nurse_avg": 3.72,
+          "chairs_per_nurse_median": 4.39,
+          "nurse_utilization_avg": 90.82,
+          "nurse_utilization_median": 86.52,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.6,
+          "patients_per_nurse_median": 6.4,
+          "chairs_per_nurse_avg": 4.5,
+          "chairs_per_nurse_median": 4.6,
+          "nurse_utilization_avg": 87.21,
+          "nurse_utilization_median": 87.29,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "florence",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.57,
+          "patients_per_nurse_median": 6.6,
+          "chairs_per_nurse_avg": 5.19,
+          "chairs_per_nurse_median": 5.4,
+          "nurse_utilization_avg": 80.92,
+          "nurse_utilization_median": 76.92,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One hospital drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.58,
+          "patients_per_nurse_median": 6.34,
+          "chairs_per_nurse_avg": 5.64,
+          "chairs_per_nurse_median": 5.14,
+          "nurse_utilization_avg": 80.6,
+          "nurse_utilization_median": 77.38,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 8.26,
+          "chair_utilization_avg": 62.1,
+          "tx_past_close_avg": 0.99
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-11": {
+      "composite_score": 55.8,
+      "ioptimize": [
+        {
+          "location": "14th Ave",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.95,
+          "avg_delay_median": 7.04,
+          "chair_utilization_avg": 72.8,
+          "chair_utilization_median": 86.9,
+          "tx_past_close_avg": 0.95,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 23.78,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.13,
+            "avg_delay_mins": 0.51,
+            "avg_treatment_mins_per_patient": -0.37,
+            "avg_treatments_per_day": 0.08,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI AB pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.52,
+          "avg_delay_median": 12.15,
+          "chair_utilization_avg": 76.36,
+          "chair_utilization_median": 75.34,
+          "tx_past_close_avg": 3.89,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 34.32,
+          "tx_mins_past_close_median": 30.75,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.58,
+            "avg_delay_mins": -0.94,
+            "avg_treatment_mins_per_patient": 7.35,
+            "avg_treatments_per_day": 0.59
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "CCI Cd Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.93,
+          "avg_delay_median": 15.91,
+          "chair_utilization_avg": 71.89,
+          "chair_utilization_median": 71.45,
+          "tx_past_close_avg": 3.63,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 24.42,
+          "tx_mins_past_close_median": 26.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.94,
+            "avg_delay_mins": 1.28,
+            "avg_treatment_mins_per_patient": -1.57,
+            "avg_treatments_per_day": 0.46
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "CCI drive",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 18.72,
+          "avg_delay_median": 15.88,
+          "chair_utilization_avg": 74.57,
+          "chair_utilization_median": 71.19,
+          "tx_past_close_avg": 2.13,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 28.34,
+          "tx_mins_past_close_median": 13.5,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.36,
+            "avg_delay_mins": 0.24,
+            "avg_treatment_mins_per_patient": 1.1,
+            "avg_treatments_per_day": -0.42,
+            "avg_chairs_per_nurse": 0.06,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_nurse_to_patient_chair_time"
+          ]
+        },
+        {
+          "location": "CCI E Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.8,
+          "avg_delay_median": 13.41,
+          "chair_utilization_avg": 62.59,
+          "chair_utilization_median": 62.72,
+          "tx_past_close_avg": 0.22,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 40.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -19.37,
+            "avg_delay_mins": -0.65,
+            "avg_treatment_mins_per_patient": 10.13,
+            "avg_treatments_per_day": -2.65
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "CCI Gh Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 33.61,
+          "avg_delay_median": 34.04,
+          "chair_utilization_avg": 65.87,
+          "chair_utilization_median": 66.5,
+          "tx_past_close_avg": 0.79,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 13.53,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -1.47,
+            "avg_delay_mins": 0.63,
+            "avg_treatment_mins_per_patient": -11.87,
+            "avg_treatments_per_day": -0.08
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": [
+            "avg_delay_mins"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.31,
+          "avg_delay_median": 8.15,
+          "chair_utilization_avg": 63.81,
+          "chair_utilization_median": 63.79,
+          "tx_past_close_avg": 0.74,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.72,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.92,
+          "avg_delay_median": 4.75,
+          "chair_utilization_avg": 61.45,
+          "chair_utilization_median": 61.6,
+          "tx_past_close_avg": 0.21,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 8.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 5.84,
+            "avg_delay_mins": -0.71,
+            "avg_treatment_mins_per_patient": -1.58,
+            "avg_treatments_per_day": -0.18,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 2.7,
+          "avg_delay_median": 3.17,
+          "chair_utilization_avg": 56.46,
+          "chair_utilization_median": 56.3,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 0.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -4.3,
+            "avg_delay_mins": 0.38,
+            "avg_treatment_mins_per_patient": 0.0,
+            "avg_treatments_per_day": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "One Hospital drive",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.28,
+          "avg_delay_median": 6.87,
+          "chair_utilization_avg": 53.75,
+          "chair_utilization_median": 51.13,
+          "tx_past_close_avg": 0.42,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 17.75,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.47,
+            "avg_delay_mins": -0.19,
+            "avg_treatment_mins_per_patient": -0.21,
+            "avg_treatments_per_day": -0.75
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        }
+      ],
+      "iassign": [
+        {
+          "location": "14th Ave",
+          "iassign_utilization_avg": 89.47,
+          "patients_per_nurse_avg": 5.5,
+          "patients_per_nurse_median": 5.8,
+          "chairs_per_nurse_avg": 3.23,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 80.25,
+          "nurse_utilization_median": 81.64,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.13,
+            "avg_delay_mins": 0.51,
+            "avg_treatment_mins_per_patient": -0.37,
+            "avg_treatments_per_day": 0.08,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.89,
+          "patients_per_nurse_median": 8.13,
+          "chairs_per_nurse_avg": 3.99,
+          "chairs_per_nurse_median": 3.9,
+          "nurse_utilization_avg": 97.87,
+          "nurse_utilization_median": 96.91,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.36,
+            "avg_delay_mins": 0.24,
+            "avg_treatment_mins_per_patient": 1.1,
+            "avg_treatments_per_day": -0.42,
+            "avg_chairs_per_nurse": 0.06,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 4.55
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_nurse_to_patient_chair_time"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 97.89,
+          "patients_per_nurse_avg": 6.62,
+          "patients_per_nurse_median": 6.67,
+          "chairs_per_nurse_avg": 4.51,
+          "chairs_per_nurse_median": 4.5,
+          "nurse_utilization_avg": 90.82,
+          "nurse_utilization_median": 86.52,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.6,
+          "patients_per_nurse_median": 6.4,
+          "chairs_per_nurse_avg": 4.5,
+          "chairs_per_nurse_median": 4.6,
+          "nurse_utilization_avg": 87.21,
+          "nurse_utilization_median": 87.29,
+          "mom_deltas": {
+            "avg_chair_utilization": 5.84,
+            "avg_delay_mins": -0.71,
+            "avg_treatment_mins_per_patient": -1.58,
+            "avg_treatments_per_day": -0.18,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "florence",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.57,
+          "patients_per_nurse_median": 6.6,
+          "chairs_per_nurse_avg": 5.19,
+          "chairs_per_nurse_median": 5.4,
+          "nurse_utilization_avg": 80.92,
+          "nurse_utilization_median": 76.92,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One hospital drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.58,
+          "patients_per_nurse_median": 6.34,
+          "chairs_per_nurse_avg": 5.64,
+          "chairs_per_nurse_median": 5.14,
+          "nurse_utilization_avg": 80.6,
+          "nurse_utilization_median": 77.38,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 8.31,
+          "chair_utilization_avg": 63.81,
+          "tx_past_close_avg": 0.74
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-12": {
+      "composite_score": 62.5,
+      "ioptimize": [
+        {
+          "location": "14th Ave",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.8,
+          "avg_delay_median": 6.18,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.14,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 12.71,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": -0.15,
+            "avg_treatment_mins_per_patient": -11.07,
+            "avg_treatments_per_day": 0.19,
+            "avg_chairs_per_nurse": -0.17,
+            "avg_nurse_to_patient_chair_time": 2.98,
+            "avg_patients_per_nurse": 0.89,
+            "iassign_utilization": -18.04
+          },
+          "vs_company": {
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI AB pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.16,
+          "avg_delay_median": 13.88,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 3.81,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 35.28,
+          "tx_mins_past_close_median": 30.75,
+          "mom_deltas": {
+            "avg_delay_mins": 0.64,
+            "avg_treatment_mins_per_patient": 0.96,
+            "avg_treatments_per_day": -0.08
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI Cd Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.09,
+          "avg_delay_median": 15.96,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 3.82,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 30.85,
+          "tx_mins_past_close_median": 25.0,
+          "mom_deltas": {
+            "avg_delay_mins": -0.84,
+            "avg_treatment_mins_per_patient": 6.43,
+            "avg_treatments_per_day": 0.19
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI drive",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.86,
+          "avg_delay_median": 12.17,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 3.47,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 32.4,
+          "tx_mins_past_close_median": 29.33,
+          "mom_deltas": {
+            "avg_delay_mins": -5.86,
+            "avg_treatment_mins_per_patient": 4.06,
+            "avg_treatments_per_day": 1.34
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI E Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.9,
+          "avg_delay_median": 10.59,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 4.38,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 39.23,
+          "tx_mins_past_close_median": 29.67,
+          "mom_deltas": {
+            "avg_delay_mins": -0.9,
+            "avg_treatment_mins_per_patient": -1.52,
+            "avg_treatments_per_day": 4.16
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI Gh Pod",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 11.47,
+          "avg_delay_median": 11.11,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.9,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 24.28,
+          "tx_mins_past_close_median": 12.75,
+          "mom_deltas": {
+            "avg_delay_mins": -22.14,
+            "avg_treatment_mins_per_patient": 10.75,
+            "avg_treatments_per_day": 1.11
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.04,
+          "avg_delay_median": 7.46,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 1.12,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 15.15,
+          "tx_mins_past_close_median": 10.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.74,
+          "avg_delay_median": 4.57,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 0.38,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.88,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": -0.18,
+            "avg_treatment_mins_per_patient": 7.13,
+            "avg_treatments_per_day": 0.17
+          },
+          "vs_company": {
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.7,
+          "avg_delay_median": 3.51,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 0.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": 1.0,
+            "avg_treatment_mins_per_patient": 0.0,
+            "avg_treatments_per_day": 0.0
+          },
+          "vs_company": {
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "One Hospital drive",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.12,
+          "avg_delay_median": 5.95,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": 0.62,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.77,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": -1.16,
+            "avg_treatment_mins_per_patient": -2.98,
+            "avg_treatments_per_day": 0.2
+          },
+          "vs_company": {
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "14th Ave",
+          "iassign_utilization_avg": 71.43,
+          "patients_per_nurse_avg": 6.39,
+          "patients_per_nurse_median": 6.25,
+          "chairs_per_nurse_avg": 3.06,
+          "chairs_per_nurse_median": 3.09,
+          "nurse_utilization_avg": 83.23,
+          "nurse_utilization_median": 80.87,
+          "mom_deltas": {
+            "avg_delay_mins": -0.15,
+            "avg_treatment_mins_per_patient": -11.07,
+            "avg_treatments_per_day": 0.19,
+            "avg_chairs_per_nurse": -0.17,
+            "avg_nurse_to_patient_chair_time": 2.98,
+            "avg_patients_per_nurse": 0.89,
+            "iassign_utilization": -18.04
+          },
+          "vs_company": {
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "Cci drive",
+          "iassign_utilization_avg": 95.45,
+          "patients_per_nurse_avg": 7.83,
+          "patients_per_nurse_median": 7.68,
+          "chairs_per_nurse_avg": 3.7,
+          "chairs_per_nurse_median": 3.73,
+          "nurse_utilization_avg": 96.39,
+          "nurse_utilization_median": 95.99,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 91.56,
+          "patients_per_nurse_avg": 7.01,
+          "patients_per_nurse_median": 7.2,
+          "chairs_per_nurse_avg": 4.33,
+          "chairs_per_nurse_median": 4.5,
+          "nurse_utilization_avg": 92.83,
+          "nurse_utilization_median": 90.07,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decatur",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.93,
+          "patients_per_nurse_median": 6.8,
+          "chairs_per_nurse_avg": 4.71,
+          "chairs_per_nurse_median": 4.6,
+          "nurse_utilization_avg": 88.58,
+          "nurse_utilization_median": 89.33,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "iassign_utilization_avg": 90.91,
+          "patients_per_nurse_avg": 6.97,
+          "patients_per_nurse_median": 7.2,
+          "chairs_per_nurse_avg": 4.91,
+          "chairs_per_nurse_median": 4.5,
+          "nurse_utilization_avg": 91.42,
+          "nurse_utilization_median": 88.59,
+          "mom_deltas": {
+            "avg_delay_mins": 1.0,
+            "avg_treatment_mins_per_patient": 0.0,
+            "avg_treatments_per_day": 0.0
+          },
+          "vs_company": {
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient"
+          ]
+        },
+        {
+          "location": "One hospital drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.92,
+          "patients_per_nurse_median": 7.08,
+          "chairs_per_nurse_avg": 5.27,
+          "chairs_per_nurse_median": 5.14,
+          "nurse_utilization_avg": 87.98,
+          "nurse_utilization_median": 90.31,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": -0.37,
+            "avg_nurse_to_patient_chair_time": 7.38,
+            "avg_patients_per_nurse": 0.34,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 7.04,
+          "chair_utilization_avg": null,
+          "tx_past_close_avg": 1.12
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": null,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-01": {
+      "composite_score": 45.4,
+      "ioptimize": [
+        {
+          "location": "14th Ave",
+          "scheduler_compliance_avg": 66.54,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.01,
+          "avg_delay_median": 5.0,
+          "chair_utilization_avg": 71.18,
+          "chair_utilization_median": 84.05,
+          "tx_past_close_avg": 0.65,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.54,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "iassign_utilization": -1.43,
+            "avg_patients_per_nurse": -0.14,
+            "avg_chairs_per_nurse": 0.16,
+            "avg_nurse_to_patient_chair_time": -13.5,
+            "avg_delay_mins": -1.79,
+            "avg_treatments_per_day": -0.49,
+            "avg_treatment_mins_per_patient": 2.83
+          },
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI AB pod",
+          "scheduler_compliance_avg": 26.03,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 12.15,
+          "avg_delay_median": 11.93,
+          "chair_utilization_avg": 67.39,
+          "chair_utilization_median": 69.77,
+          "tx_past_close_avg": 1.85,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 27.78,
+          "tx_mins_past_close_median": 13.33,
+          "mom_deltas": {
+            "avg_delay_mins": -1.01,
+            "avg_treatments_per_day": -1.96,
+            "avg_treatment_mins_per_patient": -7.5
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI Cd Pod",
+          "scheduler_compliance_avg": 34.51,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.66,
+          "avg_delay_median": 13.77,
+          "chair_utilization_avg": 68.93,
+          "chair_utilization_median": 70.76,
+          "tx_past_close_avg": 2.7,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 26.52,
+          "tx_mins_past_close_median": 24.83,
+          "mom_deltas": {
+            "avg_delay_mins": -0.43,
+            "avg_treatments_per_day": -1.12,
+            "avg_treatment_mins_per_patient": -4.33
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI drive",
+          "scheduler_compliance_avg": 28.82,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.28,
+          "avg_delay_median": 12.99,
+          "chair_utilization_avg": 70.19,
+          "chair_utilization_median": 71.87,
+          "tx_past_close_avg": 2.33,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 26.1,
+          "tx_mins_past_close_median": 18.58,
+          "mom_deltas": {
+            "avg_delay_mins": 0.42,
+            "avg_treatments_per_day": -1.14,
+            "avg_treatment_mins_per_patient": -6.3
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "CCI E Pod",
+          "scheduler_compliance_avg": 37.48,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.25,
+          "avg_delay_median": 12.37,
+          "chair_utilization_avg": 79.8,
+          "chair_utilization_median": 83.06,
+          "tx_past_close_avg": 3.05,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 31.3,
+          "tx_mins_past_close_median": 26.14,
+          "mom_deltas": {
+            "avg_delay_mins": 1.35,
+            "avg_treatments_per_day": -1.33,
+            "avg_treatment_mins_per_patient": -7.93
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI Gh Pod",
+          "scheduler_compliance_avg": 31.07,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 13.07,
+          "avg_delay_median": 12.83,
+          "chair_utilization_avg": 70.69,
+          "chair_utilization_median": 68.36,
+          "tx_past_close_avg": 1.75,
+          "tx_past_close_median": 1.5,
+          "tx_mins_past_close_avg": 18.8,
+          "tx_mins_past_close_median": 9.63,
+          "mom_deltas": {
+            "avg_delay_mins": 1.6,
+            "avg_treatments_per_day": -0.15,
+            "avg_treatment_mins_per_patient": -5.48
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 42.5,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.0,
+          "avg_delay_median": 7.59,
+          "chair_utilization_avg": 63.88,
+          "chair_utilization_median": 62.46,
+          "tx_past_close_avg": 0.69,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 17.53,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "scheduler_compliance_avg": 62.43,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.56,
+          "avg_delay_median": 5.0,
+          "chair_utilization_avg": 57.26,
+          "chair_utilization_median": 50.46,
+          "tx_past_close_avg": 0.2,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 13.25,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": 0.82,
+            "avg_treatments_per_day": -0.18,
+            "avg_treatment_mins_per_patient": -2.63
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "scheduler_compliance_avg": 55.81,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.84,
+          "avg_delay_median": 3.73,
+          "chair_utilization_avg": 61.76,
+          "chair_utilization_median": 55.19,
+          "tx_past_close_avg": 0.05,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 24.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "iassign_utilization": 9.09,
+            "avg_patients_per_nurse": -0.13,
+            "avg_chairs_per_nurse": 0.16,
+            "avg_nurse_to_patient_chair_time": -5.6,
+            "avg_delay_mins": 0.14,
+            "avg_treatments_per_day": 0.05,
+            "avg_treatment_mins_per_patient": 24.0
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One Hospital drive",
+          "scheduler_compliance_avg": 61.01,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.34,
+          "avg_delay_median": 6.46,
+          "chair_utilization_avg": 48.08,
+          "chair_utilization_median": 49.12,
+          "tx_past_close_avg": 0.25,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 8.8,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_delay_mins": 0.22,
+            "avg_treatments_per_day": -0.37,
+            "avg_treatment_mins_per_patient": -5.97
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient",
+            "avg_chair_utilization"
+          ]
+        }
+      ],
+      "iassign": [
+        {
+          "location": "14th Ave",
+          "iassign_utilization_avg": 70.0,
+          "patients_per_nurse_avg": 6.25,
+          "patients_per_nurse_median": 6.23,
+          "chairs_per_nurse_avg": 3.22,
+          "chairs_per_nurse_median": 3.14,
+          "nurse_utilization_avg": 69.73,
+          "nurse_utilization_median": 65.85,
+          "mom_deltas": {
+            "iassign_utilization": -1.43,
+            "avg_patients_per_nurse": -0.14,
+            "avg_chairs_per_nurse": 0.16,
+            "avg_nurse_to_patient_chair_time": -13.5,
+            "avg_delay_mins": -1.79,
+            "avg_treatments_per_day": -0.49,
+            "avg_treatment_mins_per_patient": 2.83
+          },
+          "vs_company": {
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.78,
+          "patients_per_nurse_median": 7.72,
+          "chairs_per_nurse_avg": 3.98,
+          "chairs_per_nurse_median": 3.9,
+          "nurse_utilization_avg": 92.91,
+          "nurse_utilization_median": 91.75,
+          "mom_deltas": {
+            "avg_delay_mins": 0.42,
+            "avg_treatments_per_day": -1.14,
+            "avg_treatment_mins_per_patient": -6.3
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 94.0,
+          "patients_per_nurse_avg": 6.77,
+          "patients_per_nurse_median": 6.99,
+          "chairs_per_nurse_avg": 4.57,
+          "chairs_per_nurse_median": 4.58,
+          "nurse_utilization_avg": 86.69,
+          "nurse_utilization_median": 83.97,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.69,
+          "patients_per_nurse_median": 6.76,
+          "chairs_per_nurse_avg": 5.02,
+          "chairs_per_nurse_median": 5.14,
+          "nurse_utilization_avg": 79.83,
+          "nurse_utilization_median": 80.65,
+          "mom_deltas": {
+            "avg_delay_mins": 0.82,
+            "avg_treatments_per_day": -0.18,
+            "avg_treatment_mins_per_patient": -2.63
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.84,
+          "patients_per_nurse_median": 7.0,
+          "chairs_per_nurse_avg": 5.07,
+          "chairs_per_nurse_median": 5.4,
+          "nurse_utilization_avg": 85.82,
+          "nurse_utilization_median": 84.3,
+          "mom_deltas": {
+            "iassign_utilization": 9.09,
+            "avg_patients_per_nurse": -0.13,
+            "avg_chairs_per_nurse": 0.16,
+            "avg_nurse_to_patient_chair_time": -5.6,
+            "avg_delay_mins": 0.14,
+            "avg_treatments_per_day": 0.05,
+            "avg_treatment_mins_per_patient": 24.0
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One Hospital drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.29,
+          "patients_per_nurse_median": 6.26,
+          "chairs_per_nurse_avg": 5.65,
+          "chairs_per_nurse_median": 5.45,
+          "nurse_utilization_avg": 77.39,
+          "nurse_utilization_median": 79.68,
+          "mom_deltas": {
+            "avg_delay_mins": 0.22,
+            "avg_treatments_per_day": -0.37,
+            "avg_treatment_mins_per_patient": -5.97
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient",
+            "avg_chair_utilization"
+          ]
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 42.5,
+          "avg_delay_avg": 7.0,
+          "chair_utilization_avg": 63.88,
+          "tx_past_close_avg": 0.69
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-02": {
+      "composite_score": 58.8,
+      "ioptimize": [
+        {
+          "location": "14th Ave",
+          "scheduler_compliance_avg": 92.86,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.48,
+          "avg_delay_median": 4.02,
+          "chair_utilization_avg": 73.36,
+          "chair_utilization_median": 86.31,
+          "tx_past_close_avg": 0.47,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.62,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.18,
+            "avg_delay_mins": 0.47,
+            "avg_treatments_per_day": -0.18,
+            "scheduler_compliance": 26.32,
+            "avg_treatment_mins_per_patient": -4.92,
+            "iassign_utilization": 12.35,
+            "avg_patients_per_nurse": 0.13,
+            "avg_chairs_per_nurse": 0.01,
+            "avg_nurse_to_patient_chair_time": 4.04
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "scheduler_compliance",
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI",
+          "scheduler_compliance_avg": 71.5,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.9,
+          "avg_delay_median": 13.94,
+          "chair_utilization_avg": 78.88,
+          "chair_utilization_median": 78.09,
+          "tx_past_close_avg": 1.67,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 25.6,
+          "tx_mins_past_close_median": 21.27,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "iassign_utilization": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "CCI-AB Pod",
+          "scheduler_compliance_avg": 71.66,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.37,
+          "avg_delay_median": 13.18,
+          "chair_utilization_avg": 78.01,
+          "chair_utilization_median": 73.55,
+          "tx_past_close_avg": 2.41,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 35.12,
+          "tx_mins_past_close_median": 23.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI-CD Pod",
+          "scheduler_compliance_avg": 74.01,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.98,
+          "avg_delay_median": 13.5,
+          "chair_utilization_avg": 76.27,
+          "chair_utilization_median": 75.24,
+          "tx_past_close_avg": 3.29,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 26.39,
+          "tx_mins_past_close_median": 25.33,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": [
+            "avg_treatments_per_day"
+          ]
+        },
+        {
+          "location": "CCI-E Pod",
+          "scheduler_compliance_avg": 75.29,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.57,
+          "avg_delay_median": 16.71,
+          "chair_utilization_avg": 90.39,
+          "chair_utilization_median": 84.17,
+          "tx_past_close_avg": 0.53,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 22.89,
+          "tx_mins_past_close_median": 24.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "CCI-Gh Pod",
+          "scheduler_compliance_avg": 73.85,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.68,
+          "avg_delay_median": 13.89,
+          "chair_utilization_avg": 77.83,
+          "chair_utilization_median": 72.97,
+          "tx_past_close_avg": 0.47,
+          "tx_past_close_median": 2.0,
+          "tx_mins_past_close_avg": 18.0,
+          "tx_mins_past_close_median": 17.8,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_treatment_mins_per_patient": "above",
+            "scheduler_compliance": "below",
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 78.27,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.31,
+          "avg_delay_median": 6.47,
+          "chair_utilization_avg": 71.91,
+          "chair_utilization_median": 64.61,
+          "tx_past_close_avg": 0.53,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 17.07,
+          "tx_mins_past_close_median": 3.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "scheduler_compliance_avg": 88.5,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.04,
+          "avg_delay_median": 4.47,
+          "chair_utilization_avg": 53.4,
+          "chair_utilization_median": 48.92,
+          "tx_past_close_avg": 0.29,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.8,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.09,
+            "avg_treatment_mins_per_patient": -2.45,
+            "avg_chair_utilization": -3.86,
+            "avg_delay_mins": -1.52,
+            "scheduler_compliance": 26.07,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.16,
+            "avg_chairs_per_nurse": -0.02,
+            "avg_nurse_to_patient_chair_time": 2.74
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "scheduler_compliance_avg": 88.09,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 2.22,
+          "avg_delay_median": 1.69,
+          "chair_utilization_avg": 63.8,
+          "chair_utilization_median": 62.17,
+          "tx_past_close_avg": 0.06,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 33.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.01,
+            "scheduler_compliance": 32.28,
+            "avg_delay_mins": -1.62,
+            "avg_treatment_mins_per_patient": 9.0,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": 0.03,
+            "avg_nurse_to_patient_chair_time": 2.23,
+            "avg_chair_utilization": 2.04
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One Hospital Drive",
+          "scheduler_compliance_avg": 82.51,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 4.93,
+          "avg_delay_median": 4.4,
+          "chair_utilization_avg": 52.27,
+          "chair_utilization_median": 45.9,
+          "tx_past_close_avg": 0.18,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 5.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient",
+            "avg_chair_utilization"
+          ]
+        }
+      ],
+      "iassign": [
+        {
+          "location": "14th Ave",
+          "iassign_utilization_avg": 82.35,
+          "patients_per_nurse_avg": 6.38,
+          "patients_per_nurse_median": 6.58,
+          "chairs_per_nurse_avg": 3.23,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 73.77,
+          "nurse_utilization_median": 77.14,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.18,
+            "avg_delay_mins": 0.47,
+            "avg_treatments_per_day": -0.18,
+            "scheduler_compliance": 26.32,
+            "avg_treatment_mins_per_patient": -4.92,
+            "iassign_utilization": 12.35,
+            "avg_patients_per_nurse": 0.13,
+            "avg_chairs_per_nurse": 0.01,
+            "avg_nurse_to_patient_chair_time": 4.04
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "iassign_utilization": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": [
+            "scheduler_compliance",
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.54,
+          "patients_per_nurse_median": 7.5,
+          "chairs_per_nurse_avg": 3.44,
+          "chairs_per_nurse_median": 3.42,
+          "nurse_utilization_avg": 90.49,
+          "nurse_utilization_median": 90.46,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "iassign_utilization": "above",
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above"
+          },
+          "outlier_flags": [
+            "avg_patients_per_nurse"
+          ]
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 96.47,
+          "patients_per_nurse_avg": 6.82,
+          "patients_per_nurse_median": 7.5,
+          "chairs_per_nurse_avg": 4.39,
+          "chairs_per_nurse_median": 3.42,
+          "nurse_utilization_avg": 86.84,
+          "nurse_utilization_median": 84.58,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.85,
+          "patients_per_nurse_median": 6.78,
+          "chairs_per_nurse_avg": 5.0,
+          "chairs_per_nurse_median": 5.18,
+          "nurse_utilization_avg": 82.57,
+          "nurse_utilization_median": 80.31,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.09,
+            "avg_treatment_mins_per_patient": -2.45,
+            "avg_chair_utilization": -3.86,
+            "avg_delay_mins": -1.52,
+            "scheduler_compliance": 26.07,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.16,
+            "avg_chairs_per_nurse": -0.02,
+            "avg_nurse_to_patient_chair_time": 2.74
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "scheduler_compliance": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.79,
+          "patients_per_nurse_median": 6.9,
+          "chairs_per_nurse_avg": 5.1,
+          "chairs_per_nurse_median": 5.4,
+          "nurse_utilization_avg": 88.05,
+          "nurse_utilization_median": 90.01,
+          "mom_deltas": {
+            "avg_treatments_per_day": 0.01,
+            "scheduler_compliance": 32.28,
+            "avg_delay_mins": -1.62,
+            "avg_treatment_mins_per_patient": 9.0,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.05,
+            "avg_chairs_per_nurse": 0.03,
+            "avg_nurse_to_patient_chair_time": 2.23,
+            "avg_chair_utilization": 2.04
+          },
+          "vs_company": {
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One Hospital Drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.56,
+          "patients_per_nurse_median": 6.56,
+          "chairs_per_nurse_avg": 5.19,
+          "chairs_per_nurse_median": 2.29,
+          "nurse_utilization_avg": 78.92,
+          "nurse_utilization_median": 77.89,
+          "mom_deltas": {},
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_chair_utilization": "below"
+          },
+          "outlier_flags": [
+            "avg_treatment_mins_per_patient",
+            "avg_chair_utilization"
+          ]
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 78.27,
+          "avg_delay_avg": 6.31,
+          "chair_utilization_avg": 71.91,
+          "tx_past_close_avg": 0.53
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "CCI's network delivered mixed results in February 2026, with a portfolio average performance score of 55.6 out of 100 (where 50 represents the network average), anchored by standout gains at Florence and 14th Ave but offset by persistent operational friction at the Pod locations. Florence's scheduler compliance improved 32.3 points from 55.8% in January to 88.1% in February, while 14th Ave's compliance rose 26.4 points from 66.5% in January to 92.9% in February\u2014both now tracking above the company average of 78.27%. However, three Pod facilities remain below the 50-point threshold, with CCI-E Pod's average delay of 15.6 minutes running 147% above the company benchmark of 6.31 minutes.",
+        "highlights": [
+          "Florence emerged as our strongest performer this month with a composite score of 85 out of 100, reflecting a 32.3-point gain in scheduler compliance from January (55.8%) to February (88.1%), alongside a concurrent 1.6-minute reduction in average delay from 3.8 minutes in January to 2.2 minutes in February. 14th Ave similarly demonstrated disciplined execution, advancing scheduler compliance 26.4 points from 66.5% in January to 92.9% in February\u2014the highest compliance rate across the network\u2014while reducing treatments running past closing from 0.7 daily in January to 0.5 daily in February, reflecting both tighter scheduling and improved end-of-day workflow. Both clinics achieved perfect or near-perfect iAssign utilization, suggesting that structured assignment protocols are accompanying the scheduling gains we see in the data."
+        ],
+        "concerns": [
+          "We noticed that the Pod network\u2014CCI-AB, CCI-E, CCI-CD, and CCI-Gh\u2014exhibits a consistent pattern worth exploring together: each runs chair utilization between 76.3% and 90.4%, significantly above the company average of 71.91%, yet simultaneously carries average delays of 14.4 to 15.6 minutes, more than double the company benchmark of 6.31 minutes. This association suggests that high chair utilization without corresponding scheduling discipline is creating bottlenecks rather than efficiency; CCI-CD Pod specifically logged 3.3 treatments past closing daily, a 230% outlier against the clinic-by-clinic average of 1.0. Additionally, one Hospital Drive's chair utilization of 52.3% sits 19.6 points below the company average, creating potential capacity headroom that may warrant a review of volume distribution or scheduling patterns relative to its strong delay performance of 4.9 minutes."
+        ],
+        "recommendations": [
+          "We recommend a focused operational audit at CCI-E Pod, where average delay of 15.6 minutes represents the largest performance gap in the network (147% above the company average of 6.31 minutes). Given that CCI-E's chair utilization is 90.4%\u2014among the highest\u2014yet iAssign data is unavailable, we suggest reviewing the clinic's scheduling template alignment with iOptimize recommendations and auditing whether nurse-to-chair ratios during peak hours are creating silent queues. A one-week pilot with tighter appointment spacing and iAssign enforcement could illuminate whether the delay stems from scheduling discipline or from capacity constraints masked by high utilization."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-03": {
+      "composite_score": 59.8,
+      "ioptimize": [
+        {
+          "location": "14th Ave",
+          "scheduler_compliance_avg": 98.95,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.31,
+          "avg_delay_median": 3.61,
+          "chair_utilization_avg": 69.43,
+          "chair_utilization_median": 76.22,
+          "tx_past_close_avg": 0.33,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.16,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "scheduler_compliance": 6.09,
+            "avg_delay_mins": -2.17,
+            "avg_treatments_per_day": -0.14,
+            "avg_patients_per_nurse": -0.58,
+            "avg_chairs_per_nurse": -0.09,
+            "avg_nurse_to_patient_chair_time": -9.47,
+            "iassign_utilization": 6.54,
+            "avg_chair_utilization": -3.93,
+            "avg_treatment_mins_per_patient": 4.54
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "iassign_utilization": "below",
+            "avg_chair_utilization": "below",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": [
+            "scheduler_compliance",
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI",
+          "scheduler_compliance_avg": 83.88,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.29,
+          "avg_delay_median": 15.3,
+          "chair_utilization_avg": 83.31,
+          "chair_utilization_median": 84.99,
+          "tx_past_close_avg": 3.44,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 32.79,
+          "tx_mins_past_close_median": 27.83,
+          "mom_deltas": {
+            "scheduler_compliance": 12.38,
+            "avg_delay_mins": 0.39,
+            "avg_treatments_per_day": 1.77,
+            "avg_treatment_mins_per_patient": 7.19,
+            "avg_chair_utilization": 4.43,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.1,
+            "avg_chairs_per_nurse": -0.09,
+            "avg_nurse_to_patient_chair_time": 0.74
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI-AB Pod",
+          "scheduler_compliance_avg": 85.17,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.87,
+          "avg_delay_median": 15.02,
+          "chair_utilization_avg": 81.95,
+          "chair_utilization_median": 81.6,
+          "tx_past_close_avg": 3.5,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 36.29,
+          "tx_mins_past_close_median": 36.08,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.94,
+            "avg_delay_mins": 0.5,
+            "avg_treatment_mins_per_patient": 1.17,
+            "avg_treatments_per_day": 1.09,
+            "scheduler_compliance": 13.51
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI-CD Pod",
+          "scheduler_compliance_avg": 84.04,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.45,
+          "avg_delay_median": 15.74,
+          "chair_utilization_avg": 80.4,
+          "chair_utilization_median": 81.97,
+          "tx_past_close_avg": 2.89,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 24.46,
+          "tx_mins_past_close_median": 24.67,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.13,
+            "avg_delay_mins": 0.47,
+            "avg_treatment_mins_per_patient": -1.93,
+            "avg_treatments_per_day": -0.4,
+            "scheduler_compliance": 10.03
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "CCI-E Pod",
+          "scheduler_compliance_avg": 82.49,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.31,
+          "avg_delay_median": 14.85,
+          "chair_utilization_avg": 100.57,
+          "chair_utilization_median": 105.14,
+          "tx_past_close_avg": 3.67,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 37.61,
+          "tx_mins_past_close_median": 30.1,
+          "mom_deltas": {
+            "avg_chair_utilization": 10.18,
+            "avg_delay_mins": -0.26,
+            "avg_treatment_mins_per_patient": 14.72,
+            "avg_treatments_per_day": 3.14,
+            "scheduler_compliance": 7.2
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below"
+          },
+          "outlier_flags": [
+            "avg_chair_utilization"
+          ]
+        },
+        {
+          "location": "CCI-Gh Pod",
+          "scheduler_compliance_avg": 85.3,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 15.56,
+          "avg_delay_median": 16.53,
+          "chair_utilization_avg": 80.59,
+          "chair_utilization_median": 78.86,
+          "tx_past_close_avg": 3.72,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 32.82,
+          "tx_mins_past_close_median": 23.43,
+          "mom_deltas": {
+            "scheduler_compliance": 11.45,
+            "avg_chair_utilization": 2.76,
+            "avg_delay_mins": 0.88,
+            "avg_treatment_mins_per_patient": 14.82,
+            "avg_treatments_per_day": 3.25
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 88.14,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.38,
+          "avg_delay_median": 5.95,
+          "chair_utilization_avg": 76.1,
+          "chair_utilization_median": 67.84,
+          "tx_past_close_avg": 0.85,
+          "tx_past_close_median": 1.0,
+          "tx_mins_past_close_avg": 11.19,
+          "tx_mins_past_close_median": 1.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "scheduler_compliance_avg": 95.3,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.99,
+          "avg_delay_median": 3.65,
+          "chair_utilization_avg": 56.96,
+          "chair_utilization_median": 52.41,
+          "tx_past_close_avg": 0.44,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 7.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.32,
+            "avg_chairs_per_nurse": -0.34,
+            "avg_nurse_to_patient_chair_time": -1.78,
+            "avg_chair_utilization": 3.56,
+            "avg_delay_mins": -0.05,
+            "avg_treatment_mins_per_patient": -3.8,
+            "avg_treatments_per_day": 0.15,
+            "scheduler_compliance": 6.8
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "scheduler_compliance_avg": 93.6,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 3.24,
+          "avg_delay_median": 3.17,
+          "chair_utilization_avg": 68.22,
+          "chair_utilization_median": 64.63,
+          "tx_past_close_avg": 0.0,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 0.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.1,
+            "avg_chairs_per_nurse": -0.31,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_chair_utilization": 4.42,
+            "avg_delay_mins": 1.02,
+            "avg_treatment_mins_per_patient": -33.0,
+            "avg_treatments_per_day": -0.06,
+            "scheduler_compliance": 5.51
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One Hospital Drive",
+          "scheduler_compliance_avg": 90.67,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.07,
+          "avg_delay_median": 5.88,
+          "chair_utilization_avg": 55.25,
+          "chair_utilization_median": 51.33,
+          "tx_past_close_avg": 0.06,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 1.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "avg_chairs_per_nurse": 0.09,
+            "avg_nurse_to_patient_chair_time": 1.51,
+            "avg_chair_utilization": 2.98,
+            "avg_delay_mins": 1.14,
+            "avg_treatment_mins_per_patient": -4.33,
+            "avg_treatments_per_day": -0.12,
+            "scheduler_compliance": 8.16
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "14th Ave",
+          "iassign_utilization_avg": 88.89,
+          "patients_per_nurse_avg": 5.8,
+          "patients_per_nurse_median": 6.58,
+          "chairs_per_nurse_avg": 3.14,
+          "chairs_per_nurse_median": 3.25,
+          "nurse_utilization_avg": 64.3,
+          "nurse_utilization_median": 63.06,
+          "mom_deltas": {
+            "scheduler_compliance": 6.09,
+            "avg_delay_mins": -2.17,
+            "avg_treatments_per_day": -0.14,
+            "avg_patients_per_nurse": -0.58,
+            "avg_chairs_per_nurse": -0.09,
+            "avg_nurse_to_patient_chair_time": -9.47,
+            "iassign_utilization": 6.54,
+            "avg_chair_utilization": -3.93,
+            "avg_treatment_mins_per_patient": 4.54
+          },
+          "vs_company": {
+            "scheduler_compliance": "above",
+            "avg_delay_mins": "below",
+            "avg_treatments_per_day": "below",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "iassign_utilization": "below",
+            "avg_chair_utilization": "below",
+            "avg_treatment_mins_per_patient": "above"
+          },
+          "outlier_flags": [
+            "scheduler_compliance",
+            "iassign_utilization"
+          ]
+        },
+        {
+          "location": "CCI",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 7.44,
+          "patients_per_nurse_median": 7.5,
+          "chairs_per_nurse_avg": 3.35,
+          "chairs_per_nurse_median": 3.42,
+          "nurse_utilization_avg": 91.23,
+          "nurse_utilization_median": 91.35,
+          "mom_deltas": {
+            "scheduler_compliance": 12.38,
+            "avg_delay_mins": 0.39,
+            "avg_treatments_per_day": 1.77,
+            "avg_treatment_mins_per_patient": 7.19,
+            "avg_chair_utilization": 4.43,
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.1,
+            "avg_chairs_per_nurse": -0.09,
+            "avg_nurse_to_patient_chair_time": 0.74
+          },
+          "vs_company": {
+            "scheduler_compliance": "below",
+            "avg_delay_mins": "above",
+            "avg_treatments_per_day": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_chair_utilization": "above",
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 97.78,
+          "patients_per_nurse_avg": 6.6,
+          "patients_per_nurse_median": 6.94,
+          "chairs_per_nurse_avg": 4.24,
+          "chairs_per_nurse_median": 4.57,
+          "nurse_utilization_avg": 86.37,
+          "nurse_utilization_median": 82.54,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "Decautur",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.53,
+          "patients_per_nurse_median": 6.78,
+          "chairs_per_nurse_avg": 4.66,
+          "chairs_per_nurse_median": 5.18,
+          "nurse_utilization_avg": 80.79,
+          "nurse_utilization_median": 76.63,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.32,
+            "avg_chairs_per_nurse": -0.34,
+            "avg_nurse_to_patient_chair_time": -1.78,
+            "avg_chair_utilization": 3.56,
+            "avg_delay_mins": -0.05,
+            "avg_treatment_mins_per_patient": -3.8,
+            "avg_treatments_per_day": 0.15,
+            "scheduler_compliance": 6.8
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "Florence",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.69,
+          "patients_per_nurse_median": 6.9,
+          "chairs_per_nurse_avg": 4.79,
+          "chairs_per_nurse_median": 5.4,
+          "nurse_utilization_avg": 88.05,
+          "nurse_utilization_median": 89.42,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": -0.1,
+            "avg_chairs_per_nurse": -0.31,
+            "avg_nurse_to_patient_chair_time": 0.0,
+            "avg_chair_utilization": 4.42,
+            "avg_delay_mins": 1.02,
+            "avg_treatment_mins_per_patient": -33.0,
+            "avg_treatments_per_day": -0.06,
+            "scheduler_compliance": 5.51
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "One Hospital Drive",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.56,
+          "patients_per_nurse_median": 6.56,
+          "chairs_per_nurse_avg": 5.28,
+          "chairs_per_nurse_median": 5.28,
+          "nurse_utilization_avg": 80.43,
+          "nurse_utilization_median": 79.81,
+          "mom_deltas": {
+            "iassign_utilization": 0.0,
+            "avg_patients_per_nurse": 0.0,
+            "avg_chairs_per_nurse": 0.09,
+            "avg_nurse_to_patient_chair_time": 1.51,
+            "avg_chair_utilization": 2.98,
+            "avg_delay_mins": 1.14,
+            "avg_treatment_mins_per_patient": -4.33,
+            "avg_treatments_per_day": -0.12,
+            "scheduler_compliance": 8.16
+          },
+          "vs_company": {
+            "iassign_utilization": "above",
+            "avg_patients_per_nurse": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 88.14,
+          "avg_delay_avg": 6.38,
+          "chair_utilization_avg": 76.1,
+          "tx_past_close_avg": 0.85
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "CCI's composite performance score of 44 out of 100 (where 50 represents the network average) reflects a clinic operating under significant operational strain. While scheduler compliance improved notably\u2014rising from 71.5% in February to 83.9% in March, a 17.3 percentage point gain\u2014this improvement has not yet coincided with the patient flow metrics or overtime control seen at higher-performing sites like Florence (81/100) and 14th Ave (82/100). The core challenge remains CCI's 15.3-minute average delay paired with 3.4 daily treatments running past closing, both substantially elevated relative to the company average of 6.38 minutes and near-zero overtime at top performers.",
+        "highlights": [
+          "CCI's scheduler compliance climb from 71.5% in February to 83.9% in March demonstrates strong execution momentum, narrowing the gap toward the company average of 88.14%. Within CCI's pod structure, the AB Pod showed particularly strong discipline, improving from 71.7% scheduler compliance in February to 85.2% in March\u2014a decisive 18.9 percentage point move that suggests the scheduling interventions are taking root across the network."
+        ],
+        "concerns": [
+          "We noticed that CCI's chair utilization sits at 83.3%, well above the company average of 76.1%, yet patient delays remain 2.4 times higher than the 6.38-minute company average. This pattern suggests the clinic may be operating near or at capacity without the scheduling precision needed to distribute that load smoothly; one area worth exploring together is whether appointment spacing templates are creating bunching later in the day that iOptimize recommendations would mitigate. Additionally, nurse utilization at 91.2%\u2014the highest across all clinics\u2014sits very close to maximum; this elevated staffing burn alongside persistent delays warrants a review of whether nurse-to-chair assignments are optimized or whether scheduling adjustments might reduce per-patient handling time."
+        ],
+        "recommendations": [
+          "We recommend CCI focus immediate attention on the Gh Pod, which is experiencing a 15.6-minute average delay\u2014144% above the company average of 6.38 minutes and the worst performance in the network. Specifically, we suggest auditing that pod's appointment scheduling templates within iOptimize to identify whether consecutive bookings are spaced to allow buffer time for setup and patient flow; even modest reductions in back-to-back stacking can compress delays without reducing volume. This targeted review aligns with CCI's recent 17.3-point compliance gain and positions the pod to convert that scheduling discipline into measurable relief in patient wait times."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "14th Ave": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.026709,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.127656,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 71.3233,
+                "lower_95": 67.4643,
+                "upper_95": 75.1824,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 4.6,
+                "lower_95": 2.3624,
+                "upper_95": 6.8376,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 13.7733,
+                "lower_95": 8.4079,
+                "upper_95": 19.1388,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.4833,
+                "lower_95": 0.1689,
+                "upper_95": 0.7977,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 86.1167,
+                "lower_95": 52.3553,
+                "upper_95": 119.878,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "CCI": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.073933,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.128419,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 81.095,
+                "lower_95": 74.9553,
+                "upper_95": 87.2347,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 15.095,
+                "lower_95": 14.5545,
+                "upper_95": 15.6355,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 29.195,
+                "lower_95": 19.2302,
+                "upper_95": 39.1598,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 2.555,
+                "lower_95": 0.1019,
+                "upper_95": 5.0081,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 77.69,
+                "lower_95": 60.5322,
+                "upper_95": 94.8478,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "CCI-AB Pod": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.049477,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.123232,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 79.98,
+                "lower_95": 74.5194,
+                "upper_95": 85.4406,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 14.62,
+                "lower_95": 13.927,
+                "upper_95": 15.313,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 35.705,
+                "lower_95": 34.0835,
+                "upper_95": 37.3265,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 2.955,
+                "lower_95": 1.4443,
+                "upper_95": 4.4657,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 78.415,
+                "lower_95": 59.6911,
+                "upper_95": 97.1389,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "CCI-CD Pod": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.042939,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.152011,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 78.335,
+                "lower_95": 72.6111,
+                "upper_95": 84.0589,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 15.215,
+                "lower_95": 14.5636,
+                "upper_95": 15.8664,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 25.425,
+                "lower_95": 22.7502,
+                "upper_95": 28.0998,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 3.09,
+                "lower_95": 2.5356,
+                "upper_95": 3.6444,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 79.025,
+                "lower_95": 65.1241,
+                "upper_95": 92.9259,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "CCI-E Pod": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.055388,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.075343,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 95.48,
+                "lower_95": 81.3712,
+                "upper_95": 109.5888,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 15.44,
+                "lower_95": 15.0797,
+                "upper_95": 15.8003,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 30.25,
+                "lower_95": 9.8491,
+                "upper_95": 50.6509,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 2.1,
+                "lower_95": -2.2518,
+                "upper_95": 6.4518,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 78.89,
+                "lower_95": 68.9113,
+                "upper_95": 88.8687,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "CCI-Gh Pod": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.036,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.130689,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 79.21,
+                "lower_95": 75.3848,
+                "upper_95": 83.0352,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 15.12,
+                "lower_95": 13.9004,
+                "upper_95": 16.3396,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 25.41,
+                "lower_95": 4.8705,
+                "upper_95": 45.9495,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 2.095,
+                "lower_95": -2.4093,
+                "upper_95": 6.5993,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 79.575,
+                "lower_95": 63.7061,
+                "upper_95": 95.4439,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Decautur": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.039059,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.145502,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 55.8733,
+                "lower_95": 51.6648,
+                "upper_95": 60.0819,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 4.53,
+                "lower_95": 2.781,
+                "upper_95": 6.279,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 10.35,
+                "lower_95": 4.1776,
+                "upper_95": 16.5224,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.31,
+                "lower_95": 0.0724,
+                "upper_95": 0.5476,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 82.0767,
+                "lower_95": 48.0689,
+                "upper_95": 116.0844,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Florence": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.0077,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.085099,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 64.5933,
+                "lower_95": 58.1209,
+                "upper_95": 71.0658,
+                "n_months": 5,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 3.1,
+                "lower_95": 1.4947,
+                "upper_95": 4.7053,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.0,
+                "lower_95": -14.4351,
+                "upper_95": 52.4351,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.0367,
+                "lower_95": -0.0263,
+                "upper_95": 0.0997,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 79.1667,
+                "lower_95": 39.1548,
+                "upper_95": 119.1785,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Global Avg": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.02129,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "One Hospital Drive": {
+            "is_anomaly_client": true,
+            "anomaly_score_client": -0.045662,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.122925,
+            "lag_sc_to_chair_r": -0.0783,
+            "lag_sc_to_chair_n": 13,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 53.76,
+                "lower_95": 49.6299,
+                "upper_95": 57.8901,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 5.5,
+                "lower_95": 3.92,
+                "upper_95": 7.08,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 3.165,
+                "lower_95": -2.8361,
+                "upper_95": 9.1661,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.12,
+                "lower_95": -0.0463,
+                "upper_95": 0.2863,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 86.59,
+                "lower_95": 75.2808,
+                "upper_95": 97.8992,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-10",
+        "location": "14th Ave",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.44,
+        "chair_utilization_avg": 68.67,
+        "tx_past_close_avg": 0.87
+      },
+      {
+        "month": "2025-10",
+        "location": "CCI AB pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 13.46,
+        "chair_utilization_avg": 73.78,
+        "tx_past_close_avg": 3.3
+      },
+      {
+        "month": "2025-10",
+        "location": "CCI Cd Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 14.65,
+        "chair_utilization_avg": 70.95,
+        "tx_past_close_avg": 3.17
+      },
+      {
+        "month": "2025-10",
+        "location": "CCI drive",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 18.48,
+        "chair_utilization_avg": 72.21,
+        "tx_past_close_avg": 2.55
+      },
+      {
+        "month": "2025-10",
+        "location": "CCI E Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 13.45,
+        "chair_utilization_avg": 81.96,
+        "tx_past_close_avg": 2.87
+      },
+      {
+        "month": "2025-10",
+        "location": "CCI Gh Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 32.98,
+        "chair_utilization_avg": 67.34,
+        "tx_past_close_avg": 0.87
+      },
+      {
+        "month": "2025-10",
+        "location": "Decautur",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 5.63,
+        "chair_utilization_avg": 55.61,
+        "tx_past_close_avg": 0.39
+      },
+      {
+        "month": "2025-10",
+        "location": "Florence",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 2.32,
+        "chair_utilization_avg": 60.76,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2025-10",
+        "location": "One Hospital drive",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 8.47,
+        "chair_utilization_avg": 53.28,
+        "tx_past_close_avg": 1.17
+      },
+      {
+        "month": "2025-11",
+        "location": "14th Ave",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.95,
+        "chair_utilization_avg": 72.8,
+        "tx_past_close_avg": 0.95
+      },
+      {
+        "month": "2025-11",
+        "location": "CCI AB pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 12.52,
+        "chair_utilization_avg": 76.36,
+        "tx_past_close_avg": 3.89
+      },
+      {
+        "month": "2025-11",
+        "location": "CCI Cd Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 15.93,
+        "chair_utilization_avg": 71.89,
+        "tx_past_close_avg": 3.63
+      },
+      {
+        "month": "2025-11",
+        "location": "CCI drive",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 18.72,
+        "chair_utilization_avg": 74.57,
+        "tx_past_close_avg": 2.13
+      },
+      {
+        "month": "2025-11",
+        "location": "CCI E Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 12.8,
+        "chair_utilization_avg": 62.59,
+        "tx_past_close_avg": 0.22
+      },
+      {
+        "month": "2025-11",
+        "location": "CCI Gh Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 33.61,
+        "chair_utilization_avg": 65.87,
+        "tx_past_close_avg": 0.79
+      },
+      {
+        "month": "2025-11",
+        "location": "Decautur",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.92,
+        "chair_utilization_avg": 61.45,
+        "tx_past_close_avg": 0.21
+      },
+      {
+        "month": "2025-11",
+        "location": "Florence",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 2.7,
+        "chair_utilization_avg": 56.46,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2025-11",
+        "location": "One Hospital drive",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 8.28,
+        "chair_utilization_avg": 53.75,
+        "tx_past_close_avg": 0.42
+      },
+      {
+        "month": "2025-12",
+        "location": "14th Ave",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.8,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 1.14
+      },
+      {
+        "month": "2025-12",
+        "location": "CCI AB pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 13.16,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 3.81
+      },
+      {
+        "month": "2025-12",
+        "location": "CCI Cd Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 15.09,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 3.82
+      },
+      {
+        "month": "2025-12",
+        "location": "CCI drive",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 12.86,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 3.47
+      },
+      {
+        "month": "2025-12",
+        "location": "CCI E Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 4.38
+      },
+      {
+        "month": "2025-12",
+        "location": "CCI Gh Pod",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 11.47,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 1.9
+      },
+      {
+        "month": "2025-12",
+        "location": "Decautur",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 4.74,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 0.38
+      },
+      {
+        "month": "2025-12",
+        "location": "Florence",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 3.7,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2025-12",
+        "location": "One Hospital drive",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 7.12,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": 0.62
+      },
+      {
+        "month": "2026-01",
+        "location": "14th Ave",
+        "scheduler_compliance_avg": 66.54,
+        "avg_delay_avg": 5.01,
+        "chair_utilization_avg": 71.18,
+        "tx_past_close_avg": 0.65
+      },
+      {
+        "month": "2026-01",
+        "location": "CCI AB pod",
+        "scheduler_compliance_avg": 26.03,
+        "avg_delay_avg": 12.15,
+        "chair_utilization_avg": 67.39,
+        "tx_past_close_avg": 1.85
+      },
+      {
+        "month": "2026-01",
+        "location": "CCI Cd Pod",
+        "scheduler_compliance_avg": 34.51,
+        "avg_delay_avg": 14.66,
+        "chair_utilization_avg": 68.93,
+        "tx_past_close_avg": 2.7
+      },
+      {
+        "month": "2026-01",
+        "location": "CCI drive",
+        "scheduler_compliance_avg": 28.82,
+        "avg_delay_avg": 13.28,
+        "chair_utilization_avg": 70.19,
+        "tx_past_close_avg": 2.33
+      },
+      {
+        "month": "2026-01",
+        "location": "CCI E Pod",
+        "scheduler_compliance_avg": 37.48,
+        "avg_delay_avg": 13.25,
+        "chair_utilization_avg": 79.8,
+        "tx_past_close_avg": 3.05
+      },
+      {
+        "month": "2026-01",
+        "location": "CCI Gh Pod",
+        "scheduler_compliance_avg": 31.07,
+        "avg_delay_avg": 13.07,
+        "chair_utilization_avg": 70.69,
+        "tx_past_close_avg": 1.75
+      },
+      {
+        "month": "2026-01",
+        "location": "Decautur",
+        "scheduler_compliance_avg": 62.43,
+        "avg_delay_avg": 5.56,
+        "chair_utilization_avg": 57.26,
+        "tx_past_close_avg": 0.2
+      },
+      {
+        "month": "2026-01",
+        "location": "Florence",
+        "scheduler_compliance_avg": 55.81,
+        "avg_delay_avg": 3.84,
+        "chair_utilization_avg": 61.76,
+        "tx_past_close_avg": 0.05
+      },
+      {
+        "month": "2026-01",
+        "location": "One Hospital drive",
+        "scheduler_compliance_avg": 61.01,
+        "avg_delay_avg": 7.34,
+        "chair_utilization_avg": 48.08,
+        "tx_past_close_avg": 0.25
+      },
+      {
+        "month": "2026-02",
+        "location": "14th Ave",
+        "scheduler_compliance_avg": 92.86,
+        "avg_delay_avg": 5.48,
+        "chair_utilization_avg": 73.36,
+        "tx_past_close_avg": 0.47
+      },
+      {
+        "month": "2026-02",
+        "location": "CCI",
+        "scheduler_compliance_avg": 71.5,
+        "avg_delay_avg": 14.9,
+        "chair_utilization_avg": 78.88,
+        "tx_past_close_avg": 1.67
+      },
+      {
+        "month": "2026-02",
+        "location": "CCI-AB Pod",
+        "scheduler_compliance_avg": 71.66,
+        "avg_delay_avg": 14.37,
+        "chair_utilization_avg": 78.01,
+        "tx_past_close_avg": 2.41
+      },
+      {
+        "month": "2026-02",
+        "location": "CCI-CD Pod",
+        "scheduler_compliance_avg": 74.01,
+        "avg_delay_avg": 14.98,
+        "chair_utilization_avg": 76.27,
+        "tx_past_close_avg": 3.29
+      },
+      {
+        "month": "2026-02",
+        "location": "CCI-E Pod",
+        "scheduler_compliance_avg": 75.29,
+        "avg_delay_avg": 15.57,
+        "chair_utilization_avg": 90.39,
+        "tx_past_close_avg": 0.53
+      },
+      {
+        "month": "2026-02",
+        "location": "CCI-Gh Pod",
+        "scheduler_compliance_avg": 73.85,
+        "avg_delay_avg": 14.68,
+        "chair_utilization_avg": 77.83,
+        "tx_past_close_avg": 0.47
+      },
+      {
+        "month": "2026-02",
+        "location": "Decautur",
+        "scheduler_compliance_avg": 88.5,
+        "avg_delay_avg": 4.04,
+        "chair_utilization_avg": 53.4,
+        "tx_past_close_avg": 0.29
+      },
+      {
+        "month": "2026-02",
+        "location": "Florence",
+        "scheduler_compliance_avg": 88.09,
+        "avg_delay_avg": 2.22,
+        "chair_utilization_avg": 63.8,
+        "tx_past_close_avg": 0.06
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "One Hospital Drive",
+        "scheduler_compliance_avg": 82.51,
+        "avg_delay_avg": 4.93,
+        "chair_utilization_avg": 52.27,
+        "tx_past_close_avg": 0.18
+      },
+      {
+        "month": "2026-03",
+        "location": "14th Ave",
+        "scheduler_compliance_avg": 98.95,
+        "avg_delay_avg": 3.31,
+        "chair_utilization_avg": 69.43,
+        "tx_past_close_avg": 0.33
+      },
+      {
+        "month": "2026-03",
+        "location": "CCI",
+        "scheduler_compliance_avg": 83.88,
+        "avg_delay_avg": 15.29,
+        "chair_utilization_avg": 83.31,
+        "tx_past_close_avg": 3.44
+      },
+      {
+        "month": "2026-03",
+        "location": "CCI-AB Pod",
+        "scheduler_compliance_avg": 85.17,
+        "avg_delay_avg": 14.87,
+        "chair_utilization_avg": 81.95,
+        "tx_past_close_avg": 3.5
+      },
+      {
+        "month": "2026-03",
+        "location": "CCI-CD Pod",
+        "scheduler_compliance_avg": 84.04,
+        "avg_delay_avg": 15.45,
+        "chair_utilization_avg": 80.4,
+        "tx_past_close_avg": 2.89
+      },
+      {
+        "month": "2026-03",
+        "location": "CCI-E Pod",
+        "scheduler_compliance_avg": 82.49,
+        "avg_delay_avg": 15.31,
+        "chair_utilization_avg": 100.57,
+        "tx_past_close_avg": 3.67
+      },
+      {
+        "month": "2026-03",
+        "location": "CCI-Gh Pod",
+        "scheduler_compliance_avg": 85.3,
+        "avg_delay_avg": 15.56,
+        "chair_utilization_avg": 80.59,
+        "tx_past_close_avg": 3.72
+      },
+      {
+        "month": "2026-03",
+        "location": "Decautur",
+        "scheduler_compliance_avg": 95.3,
+        "avg_delay_avg": 3.99,
+        "chair_utilization_avg": 56.96,
+        "tx_past_close_avg": 0.44
+      },
+      {
+        "month": "2026-03",
+        "location": "Florence",
+        "scheduler_compliance_avg": 93.6,
+        "avg_delay_avg": 3.24,
+        "chair_utilization_avg": 68.22,
+        "tx_past_close_avg": 0.0
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "One Hospital Drive",
+        "scheduler_compliance_avg": 90.67,
+        "avg_delay_avg": 6.07,
+        "chair_utilization_avg": 55.25,
+        "tx_past_close_avg": 0.06
+      }
+    ]
+  }
+}

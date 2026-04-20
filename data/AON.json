@@ -1,0 +1,972 @@
+{
+  "meta": {
+    "client_code": "AON",
+    "generated_at": "2026-04-14T03:21:02.552331Z",
+    "months_available": [
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-12": {
+      "composite_score": 42.3,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 25.86,
+          "avg_delay_median": 18.13,
+          "chair_utilization_avg": 86.2,
+          "chair_utilization_median": 85.64,
+          "tx_past_close_avg": 4.89,
+          "tx_past_close_median": 5.0,
+          "tx_mins_past_close_avg": 33.95,
+          "tx_mins_past_close_median": 30.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN CGCC Macon",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 41.84,
+          "avg_delay_median": 42.11,
+          "chair_utilization_avg": 70.3,
+          "chair_utilization_median": 73.7,
+          "tx_past_close_avg": 6.33,
+          "tx_past_close_median": 7.0,
+          "tx_mins_past_close_avg": 39.3,
+          "tx_mins_past_close_median": 38.28,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR Harcourt",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 9.88,
+          "avg_delay_median": 8.88,
+          "chair_utilization_avg": 108.8,
+          "chair_utilization_median": 106.7,
+          "tx_past_close_avg": 3.45,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 28.61,
+          "tx_mins_past_close_median": 21.93,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 61.9,
+          "patients_per_nurse_avg": 5.41,
+          "patients_per_nurse_median": 5.5,
+          "chairs_per_nurse_avg": 3.67,
+          "chairs_per_nurse_median": 2.28,
+          "nurse_utilization_avg": 57.12,
+          "nurse_utilization_median": 58.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN CGCC Macon",
+          "iassign_utilization_avg": 23.81,
+          "patients_per_nurse_avg": 5.14,
+          "patients_per_nurse_median": 4.6,
+          "chairs_per_nurse_avg": 5.06,
+          "chairs_per_nurse_median": 5.0,
+          "nurse_utilization_avg": 58.21,
+          "nurse_utilization_median": 54.66,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR Harcourt",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.69,
+          "patients_per_nurse_median": 5.56,
+          "chairs_per_nurse_avg": 2.29,
+          "chairs_per_nurse_median": 2.28,
+          "nurse_utilization_avg": 56.94,
+          "nurse_utilization_median": 58.49,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 25.86,
+          "chair_utilization_avg": 86.2,
+          "tx_past_close_avg": 4.89
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-01": {
+      "composite_score": 40.2,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 50.41,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 23.99,
+          "avg_delay_median": 13.94,
+          "chair_utilization_avg": 82.52,
+          "chair_utilization_median": 81.33,
+          "tx_past_close_avg": 4.15,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 29.51,
+          "tx_mins_past_close_median": 28.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN Macon",
+          "scheduler_compliance_avg": 53.45,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 40.42,
+          "avg_delay_median": 42.92,
+          "chair_utilization_avg": 62.28,
+          "chair_utilization_median": 58.97,
+          "tx_past_close_avg": 4.6,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 32.33,
+          "tx_mins_past_close_median": 30.96,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR",
+          "scheduler_compliance_avg": 45.4,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.57,
+          "avg_delay_median": 6.91,
+          "chair_utilization_avg": 111.63,
+          "chair_utilization_median": 113.71,
+          "tx_past_close_avg": 3.7,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 26.69,
+          "tx_mins_past_close_median": 21.5,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.46,
+          "patients_per_nurse_median": 5.5,
+          "chairs_per_nurse_avg": 3.72,
+          "chairs_per_nurse_median": 3.2,
+          "nurse_utilization_avg": 57.1,
+          "nurse_utilization_median": 55.55,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN Macon",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.22,
+          "patients_per_nurse_median": 5.26,
+          "chairs_per_nurse_avg": 5.1,
+          "chairs_per_nurse_median": 4.95,
+          "nurse_utilization_avg": 55.98,
+          "nurse_utilization_median": 55.83,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.7,
+          "patients_per_nurse_median": 5.85,
+          "chairs_per_nurse_avg": 2.35,
+          "chairs_per_nurse_median": 2.28,
+          "nurse_utilization_avg": 57.88,
+          "nurse_utilization_median": 55.35,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 50.41,
+          "avg_delay_avg": 23.99,
+          "chair_utilization_avg": 82.52,
+          "tx_past_close_avg": 4.15
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-02": {
+      "composite_score": 36.4,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 73.12,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 20.69,
+          "avg_delay_median": 12.85,
+          "chair_utilization_avg": 81.84,
+          "chair_utilization_median": 86.64,
+          "tx_past_close_avg": 3.92,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 26.51,
+          "tx_mins_past_close_median": 25.01,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN CGCC Macon",
+          "scheduler_compliance_avg": 78.45,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 32.22,
+          "avg_delay_median": 30.63,
+          "chair_utilization_avg": 59.72,
+          "chair_utilization_median": 58.97,
+          "tx_past_close_avg": 3.8,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 25.88,
+          "tx_mins_past_close_median": 27.66,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR Harcourt",
+          "scheduler_compliance_avg": 63.54,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 9.16,
+          "avg_delay_median": 9.2,
+          "chair_utilization_avg": 113.68,
+          "chair_utilization_median": 113.42,
+          "tx_past_close_avg": 4.05,
+          "tx_past_close_median": 3.5,
+          "tx_mins_past_close_avg": 27.15,
+          "tx_mins_past_close_median": 18.7,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.24,
+          "patients_per_nurse_median": 5.01,
+          "chairs_per_nurse_avg": 3.42,
+          "chairs_per_nurse_median": 3.52,
+          "nurse_utilization_avg": 57.81,
+          "nurse_utilization_median": 56.93,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN CGCC Macon",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.48,
+          "patients_per_nurse_median": 4.55,
+          "chairs_per_nurse_avg": 4.52,
+          "chairs_per_nurse_median": 4.5,
+          "nurse_utilization_avg": 48.8,
+          "nurse_utilization_median": 51.36,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR Harcourt",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.0,
+          "patients_per_nurse_median": 5.86,
+          "chairs_per_nurse_avg": 2.32,
+          "chairs_per_nurse_median": 2.28,
+          "nurse_utilization_avg": 65.39,
+          "nurse_utilization_median": 58.33,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 73.12,
+          "avg_delay_avg": 20.69,
+          "chair_utilization_avg": 81.84,
+          "tx_past_close_avg": 3.92
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "AON's February 2026 performance reflects a network operating near the company average across most metrics, with a composite performance score of 36 out of 100 (where 50 represents the network average). Both GAMCN CGCC Macon and INHAR Harcourt are tracking below the 50-point benchmark, though each clinic presents distinct operational challenges that warrant targeted attention.",
+        "highlights": [
+          "INHAR Harcourt's average patient delay of 9.2 minutes sits well below the company average of 20.69 minutes, reflecting strong patient flow management despite overbooking pressure. Both clinics achieved 100.0% iAssign utilization, exceeding the network's adoption baseline and demonstrating full alignment with our assignment protocol."
+        ],
+        "concerns": [
+          "GAMCN CGCC Macon's average delay of 32.2 minutes exceeds the company average of 20.69 minutes by 56 percent, the largest performance gap across AON, and may be associated with the clinic's low chair utilization of 59.7 percent relative to the company average of 81.84 percent. We also noticed that INHAR Harcourt's chair utilization stands at 113.7 percent (overbooking), and while a gradual normalisation toward 100 percent would be healthy, the clinic is currently managing 4.0 treatments past closing daily, which alongside the 9.2-minute delay suggests scheduling pressure that warrants monitoring."
+        ],
+        "recommendations": [
+          "We recommend that GAMCN CGCC Macon review its scheduling templates and nurse-to-chair assignment workflows to identify capacity bottlenecks. The 56 percent delay gap is the most pressing opportunity for improvement across the network, and auditing how nurse utilization (currently 48.8 percent) aligns with chair assignment patterns may surface concrete improvements to patient flow."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-03": {
+      "composite_score": 37.2,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 81.42,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 23.39,
+          "avg_delay_median": 18.53,
+          "chair_utilization_avg": 83.41,
+          "chair_utilization_median": 88.83,
+          "tx_past_close_avg": 4.09,
+          "tx_past_close_median": 4.0,
+          "tx_mins_past_close_avg": 26.98,
+          "tx_mins_past_close_median": 25.22,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN CGCC Macon",
+          "scheduler_compliance_avg": 85.74,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 38.37,
+          "avg_delay_median": 39.17,
+          "chair_utilization_avg": 64.44,
+          "chair_utilization_median": 67.83,
+          "tx_past_close_avg": 5.36,
+          "tx_past_close_median": 5.0,
+          "tx_mins_past_close_avg": 34.08,
+          "tx_mins_past_close_median": 35.6,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.72,
+            "avg_delay_mins": 6.15,
+            "avg_treatment_mins_per_patient": 8.2,
+            "avg_treatments_per_day": 1.56,
+            "scheduler_compliance": 7.29,
+            "avg_chairs_per_nurse": 0.1,
+            "avg_nurse_to_patient_chair_time": 6.92,
+            "avg_patients_per_nurse": 0.74,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR Harcourt",
+          "scheduler_compliance_avg": 72.44,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.42,
+          "avg_delay_median": 8.14,
+          "chair_utilization_avg": 110.69,
+          "chair_utilization_median": 113.42,
+          "tx_past_close_avg": 2.82,
+          "tx_past_close_median": 3.0,
+          "tx_mins_past_close_avg": 19.89,
+          "tx_mins_past_close_median": 13.62,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.99,
+            "avg_delay_mins": -0.74,
+            "avg_treatment_mins_per_patient": -7.26,
+            "avg_treatments_per_day": -1.23,
+            "scheduler_compliance": 8.9,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": -4.75,
+            "avg_patients_per_nurse": -0.84,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.19,
+          "patients_per_nurse_median": 5.14,
+          "chairs_per_nurse_avg": 3.47,
+          "chairs_per_nurse_median": 3.52,
+          "nurse_utilization_avg": 58.39,
+          "nurse_utilization_median": 58.7,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "GAMCN CGCC Macon",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.22,
+          "patients_per_nurse_median": 5.16,
+          "chairs_per_nurse_avg": 4.62,
+          "chairs_per_nurse_median": 4.6,
+          "nurse_utilization_avg": 55.72,
+          "nurse_utilization_median": 56.81,
+          "mom_deltas": {
+            "avg_chair_utilization": 4.72,
+            "avg_delay_mins": 6.15,
+            "avg_treatment_mins_per_patient": 8.2,
+            "avg_treatments_per_day": 1.56,
+            "scheduler_compliance": 7.29,
+            "avg_chairs_per_nurse": 0.1,
+            "avg_nurse_to_patient_chair_time": 6.92,
+            "avg_patients_per_nurse": 0.74,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "INHAR Harcourt",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 5.16,
+          "patients_per_nurse_median": 5.14,
+          "chairs_per_nurse_avg": 2.32,
+          "chairs_per_nurse_median": 2.28,
+          "nurse_utilization_avg": 60.64,
+          "nurse_utilization_median": 59.77,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.99,
+            "avg_delay_mins": -0.74,
+            "avg_treatment_mins_per_patient": -7.26,
+            "avg_treatments_per_day": -1.23,
+            "scheduler_compliance": 8.9,
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": -4.75,
+            "avg_patients_per_nurse": -0.84,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 81.42,
+          "avg_delay_avg": 23.39,
+          "chair_utilization_avg": 83.41,
+          "tx_past_close_avg": 4.09
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "Both clinics showed meaningful month-over-month improvements in March 2026, with INHAR Harcourt demonstrating particularly strong progress in scheduling discipline and after-hours management, while GAMCN CGCC Macon gained ground on chair utilization and nurse deployment. However, GAMCN CGCC Macon's composite performance score of 29 out of 100 (where 50 represents the network average) reflects underlying constraints that warrant focused attention, particularly around patient wait times.",
+        "highlights": [
+          "INHAR Harcourt reduced treatments running past closing time by 30.4 percent, from 4.0 in February 2026 to 2.8 in March 2026, alongside a parallel 26.7 percent reduction in minutes past close per patient (from 27.1 to 19.9 minutes), demonstrating tighter operational control. Scheduler compliance improved at both clinics\u2014INHAR Harcourt gained 14.0 percentage points from February to March (63.5% to 72.4%), while GAMCN CGCC Macon gained 9.3 percentage points over the same period (78.5% to 85.7%), with GAMCN CGCC Macon now exceeding the company average of 81.42 percent."
+        ],
+        "concerns": [
+          "We noticed that GAMCN CGCC Macon's average patient delay of 38.4 minutes substantially exceeds the company average of 23.39 minutes\u2014a 64 percent gap\u2014despite solid scheduler compliance and improving chair utilization. This pattern suggests the delay may be rooted in factors beyond scheduling discipline, such as nurse-to-chair workflow sequencing or patient intake process timing. Additionally, GAMCN CGCC Macon saw treatments past closing time rise 41.0 percent from February to March (3.8 to 5.4 daily), which alongside rising chair utilization and nurse deployment suggests potential tension between volume growth and closing-time buffer management."
+        ],
+        "recommendations": [
+          "We recommend that GAMCN CGCC Macon conduct a structured audit of nurse-to-chair assignment workflows and patient intake sequencing, with particular focus on the 38.4-minute average delay. The clinic's strong iAssign adoption (100 percent) and improving scheduler compliance provide a solid foundation; a brief review of how assigned nurses transition patients between intake and treatment chairs may reveal bottlenecks that scheduling compliance alone cannot resolve. This could be paired with a small-group session with the team to map the actual time spent in each phase of the patient journey."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "GAMCN CGCC Macon": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.089276,
+            "is_anomaly_network": true,
+            "anomaly_score_network": -0.062334,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 3,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 64.82,
+                "lower_95": 54.4316,
+                "upper_95": 75.2084,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 37.4767,
+                "lower_95": 27.9279,
+                "upper_95": 47.0254,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 33.0867,
+                "lower_95": 19.8274,
+                "upper_95": 46.3459,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 5.1633,
+                "lower_95": 2.6616,
+                "upper_95": 7.6651,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 82.095,
+                "lower_95": 71.9916,
+                "upper_95": 92.1984,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "Global Avg": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.169777,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 3,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "INHAR Harcourt": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.082141,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.057791,
+            "lag_sc_to_chair_r": null,
+            "lag_sc_to_chair_n": 3,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 111.0567,
+                "lower_95": 106.2339,
+                "upper_95": 115.8794,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 9.1533,
+                "lower_95": 7.7225,
+                "upper_95": 10.5842,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 25.2167,
+                "lower_95": 16.0626,
+                "upper_95": 34.3707,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 3.44,
+                "lower_95": 2.2345,
+                "upper_95": 4.6455,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 67.99,
+                "lower_95": 55.6552,
+                "upper_95": 80.3248,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-12",
+        "location": "GAMCN CGCC Macon",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 41.84,
+        "chair_utilization_avg": 70.3,
+        "tx_past_close_avg": 6.33
+      },
+      {
+        "month": "2025-12",
+        "location": "INHAR Harcourt",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 9.88,
+        "chair_utilization_avg": 108.8,
+        "tx_past_close_avg": 3.45
+      },
+      {
+        "month": "2026-01",
+        "location": "GAMCN Macon",
+        "scheduler_compliance_avg": 53.45,
+        "avg_delay_avg": 40.42,
+        "chair_utilization_avg": 62.28,
+        "tx_past_close_avg": 4.6
+      },
+      {
+        "month": "2026-01",
+        "location": "INHAR",
+        "scheduler_compliance_avg": 45.4,
+        "avg_delay_avg": 7.57,
+        "chair_utilization_avg": 111.63,
+        "tx_past_close_avg": 3.7
+      },
+      {
+        "month": "2026-02",
+        "location": "GAMCN CGCC Macon",
+        "scheduler_compliance_avg": 78.45,
+        "avg_delay_avg": 32.22,
+        "chair_utilization_avg": 59.72,
+        "tx_past_close_avg": 3.8
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "INHAR Harcourt",
+        "scheduler_compliance_avg": 63.54,
+        "avg_delay_avg": 9.16,
+        "chair_utilization_avg": 113.68,
+        "tx_past_close_avg": 4.05
+      },
+      {
+        "month": "2026-03",
+        "location": "GAMCN CGCC Macon",
+        "scheduler_compliance_avg": 85.74,
+        "avg_delay_avg": 38.37,
+        "chair_utilization_avg": 64.44,
+        "tx_past_close_avg": 5.36
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "INHAR Harcourt",
+        "scheduler_compliance_avg": 72.44,
+        "avg_delay_avg": 8.42,
+        "chair_utilization_avg": 110.69,
+        "tx_past_close_avg": 2.82
+      }
+    ]
+  }
+}

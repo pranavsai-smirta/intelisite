@@ -1,0 +1,1334 @@
+{
+  "meta": {
+    "client_code": "MOASD",
+    "generated_at": "2026-04-14T03:21:02.799890Z",
+    "months_available": [
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03"
+    ]
+  },
+  "months": {
+    "2025-10": {
+      "composite_score": 64.5,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.44,
+          "avg_delay_median": 5.88,
+          "chair_utilization_avg": 69.58,
+          "chair_utilization_median": 62.86,
+          "tx_past_close_avg": 0.2,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 27.9,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "I Assign Stats",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": null,
+          "avg_delay_median": null,
+          "chair_utilization_avg": null,
+          "chair_utilization_median": null,
+          "tx_past_close_avg": null,
+          "tx_past_close_median": null,
+          "tx_mins_past_close_avg": null,
+          "tx_mins_past_close_median": null,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La Jolla",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.25,
+          "avg_delay_median": 6.75,
+          "chair_utilization_avg": 49.84,
+          "chair_utilization_median": 47.86,
+          "tx_past_close_avg": 0.28,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 41.2,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.63,
+          "avg_delay_median": 5.67,
+          "chair_utilization_avg": 70.5,
+          "chair_utilization_median": 73.16,
+          "tx_past_close_avg": 0.13,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 14.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 6.44,
+          "chair_utilization_avg": 69.58,
+          "tx_past_close_avg": 0.2
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-11": {
+      "composite_score": 65.5,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.28,
+          "avg_delay_median": 6.43,
+          "chair_utilization_avg": 65.61,
+          "chair_utilization_median": 62.11,
+          "tx_past_close_avg": 0.25,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 86.83,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.55,
+          "avg_delay_median": 9.0,
+          "chair_utilization_avg": 48.76,
+          "chair_utilization_median": 47.15,
+          "tx_past_close_avg": 0.4,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 28.66,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.01,
+          "avg_delay_median": 5.5,
+          "chair_utilization_avg": 67.34,
+          "chair_utilization_median": 67.11,
+          "tx_past_close_avg": 0.11,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 145.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -3.16,
+            "avg_delay_mins": 0.38,
+            "avg_treatment_mins_per_patient": 130.33,
+            "avg_treatments_per_day": -0.02
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 83.33,
+          "patients_per_nurse_avg": 5.2,
+          "patients_per_nurse_median": 5.98,
+          "chairs_per_nurse_avg": 3.15,
+          "chairs_per_nurse_median": 3.19,
+          "nurse_utilization_avg": 53.48,
+          "nurse_utilization_median": 50.05,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "LA jolla",
+          "iassign_utilization_avg": 66.67,
+          "patients_per_nurse_avg": 3.7,
+          "patients_per_nurse_median": 3.83,
+          "chairs_per_nurse_avg": 3.2,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 37.22,
+          "nurse_utilization_median": 35.9,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.71,
+          "patients_per_nurse_median": 6.89,
+          "chairs_per_nurse_avg": 3.1,
+          "chairs_per_nurse_median": 3.18,
+          "nurse_utilization_avg": 56.65,
+          "nurse_utilization_median": 56.64,
+          "mom_deltas": {
+            "avg_chair_utilization": -3.16,
+            "avg_delay_mins": 0.38,
+            "avg_treatment_mins_per_patient": 130.33,
+            "avg_treatments_per_day": -0.02
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 7.28,
+          "chair_utilization_avg": 65.61,
+          "tx_past_close_avg": 0.25
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2025-12": {
+      "composite_score": 54.3,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 9.9,
+          "avg_delay_median": 6.67,
+          "chair_utilization_avg": 68.19,
+          "chair_utilization_median": 62.86,
+          "tx_past_close_avg": 0.21,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 9.7,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 14.17,
+          "avg_delay_median": 14.14,
+          "chair_utilization_avg": 52.32,
+          "chair_utilization_median": 62.86,
+          "tx_past_close_avg": 0.19,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 9.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.56,
+            "avg_delay_mins": 5.62,
+            "avg_treatment_mins_per_patient": -19.66,
+            "avg_treatments_per_day": -0.21
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "scheduler_compliance_avg": null,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.64,
+          "avg_delay_median": 5.41,
+          "chair_utilization_avg": 67.52,
+          "chair_utilization_median": 67.37,
+          "tx_past_close_avg": 0.24,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.4,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.18,
+            "avg_delay_mins": -0.37,
+            "avg_treatment_mins_per_patient": -134.6,
+            "avg_treatments_per_day": 0.13,
+            "avg_chairs_per_nurse": -0.22,
+            "avg_nurse_to_patient_chair_time": -4.14,
+            "avg_patients_per_nurse": -0.5,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 87.5,
+          "patients_per_nurse_avg": 5.18,
+          "patients_per_nurse_median": 5.88,
+          "chairs_per_nurse_avg": 3.35,
+          "chairs_per_nurse_median": 3.18,
+          "nurse_utilization_avg": 51.22,
+          "nurse_utilization_median": 49.39,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "iassign_utilization_avg": 75.0,
+          "patients_per_nurse_avg": 4.14,
+          "patients_per_nurse_median": 4.0,
+          "chairs_per_nurse_avg": 3.82,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 43.32,
+          "nurse_utilization_median": 42.27,
+          "mom_deltas": {
+            "avg_chair_utilization": 3.56,
+            "avg_delay_mins": 5.62,
+            "avg_treatment_mins_per_patient": -19.66,
+            "avg_treatments_per_day": -0.21
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.21,
+          "patients_per_nurse_median": 6.33,
+          "chairs_per_nurse_avg": 2.88,
+          "chairs_per_nurse_median": 2.71,
+          "nurse_utilization_avg": 52.51,
+          "nurse_utilization_median": 54.42,
+          "mom_deltas": {
+            "avg_chair_utilization": 0.18,
+            "avg_delay_mins": -0.37,
+            "avg_treatment_mins_per_patient": -134.6,
+            "avg_treatments_per_day": 0.13,
+            "avg_chairs_per_nurse": -0.22,
+            "avg_nurse_to_patient_chair_time": -4.14,
+            "avg_patients_per_nurse": -0.5,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 9.9,
+          "chair_utilization_avg": 68.19,
+          "tx_past_close_avg": 0.21
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": null,
+          "avg_delay_avg": 14.03,
+          "chair_utilization_avg": 73.48,
+          "tx_past_close_avg": 1.72
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-01": {
+      "composite_score": 59.0,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 46.91,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.17,
+          "avg_delay_median": 6.51,
+          "chair_utilization_avg": 66.98,
+          "chair_utilization_median": 54.29,
+          "tx_past_close_avg": 0.12,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 8.16,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "LaJolla",
+          "scheduler_compliance_avg": 71.6,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.49,
+          "avg_delay_median": 7.0,
+          "chair_utilization_avg": 48.29,
+          "chair_utilization_median": 54.29,
+          "tx_past_close_avg": 0.19,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 10.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "scheduler_compliance_avg": 42.8,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.86,
+          "avg_delay_median": 6.25,
+          "chair_utilization_avg": 67.01,
+          "chair_utilization_median": 63.16,
+          "tx_past_close_avg": 0.05,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 6.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.51,
+            "avg_delay_mins": 0.22,
+            "avg_treatment_mins_per_patient": -4.4,
+            "avg_treatments_per_day": -0.19,
+            "avg_chairs_per_nurse": 0.18,
+            "avg_nurse_to_patient_chair_time": 3.02,
+            "avg_patients_per_nurse": 0.52,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 93.75,
+          "patients_per_nurse_avg": 5.15,
+          "patients_per_nurse_median": 6.0,
+          "chairs_per_nurse_avg": 3.28,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 51.81,
+          "nurse_utilization_median": 50.88,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "iassign_utilization_avg": 87.5,
+          "patients_per_nurse_avg": 3.57,
+          "patients_per_nurse_median": 4.0,
+          "chairs_per_nurse_avg": 3.5,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 35.29,
+          "nurse_utilization_median": 36.02,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": -0.32,
+            "avg_nurse_to_patient_chair_time": -8.03,
+            "avg_patients_per_nurse": -0.57,
+            "iassign_utilization": 12.5
+          },
+          "vs_company": {
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.73,
+          "patients_per_nurse_median": 6.71,
+          "chairs_per_nurse_avg": 3.06,
+          "chairs_per_nurse_median": 3.17,
+          "nurse_utilization_avg": 55.53,
+          "nurse_utilization_median": 57.11,
+          "mom_deltas": {
+            "avg_chair_utilization": -0.51,
+            "avg_delay_mins": 0.22,
+            "avg_treatment_mins_per_patient": -4.4,
+            "avg_treatments_per_day": -0.19,
+            "avg_chairs_per_nurse": 0.18,
+            "avg_nurse_to_patient_chair_time": 3.02,
+            "avg_patients_per_nurse": 0.52,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 46.91,
+          "avg_delay_avg": 7.17,
+          "chair_utilization_avg": 66.98,
+          "tx_past_close_avg": 0.12
+        },
+        "onco_benchmark": {
+          "scheduler_compliance_avg": 58.16,
+          "avg_delay_avg": 14.29,
+          "chair_utilization_avg": 69.01,
+          "tx_past_close_avg": 1.08
+        }
+      },
+      "ai_insights": {
+        "executive_summary": "",
+        "highlights": [],
+        "concerns": [],
+        "recommendations": []
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-02": {
+      "composite_score": 62.7,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 74.86,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.11,
+          "avg_delay_median": 6.69,
+          "chair_utilization_avg": 67.46,
+          "chair_utilization_median": 55.76,
+          "tx_past_close_avg": 0.28,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 15.33,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "scheduler_compliance_avg": 88.24,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.2,
+          "avg_delay_median": 7.67,
+          "chair_utilization_avg": 45.61,
+          "chair_utilization_median": 47.15,
+          "tx_past_close_avg": 0.4,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 13.0,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.21,
+            "avg_patients_per_nurse": 0.11,
+            "iassign_utilization": 5.83
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "scheduler_compliance_avg": 72.78,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 6.03,
+          "avg_delay_median": 5.74,
+          "chair_utilization_avg": 69.33,
+          "chair_utilization_median": 72.64,
+          "tx_past_close_avg": 0.16,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 17.67,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.32,
+            "avg_delay_mins": 0.17,
+            "avg_treatment_mins_per_patient": 11.67,
+            "avg_treatments_per_day": 0.11,
+            "scheduler_compliance": 29.98,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": -0.28,
+            "avg_patients_per_nurse": 0.13,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 96.67,
+          "patients_per_nurse_avg": 5.27,
+          "patients_per_nurse_median": 6.0,
+          "chairs_per_nurse_avg": 3.25,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 51.42,
+          "nurse_utilization_median": 49.24,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "iassign_utilization_avg": 93.33,
+          "patients_per_nurse_avg": 3.68,
+          "patients_per_nurse_median": 3.5,
+          "chairs_per_nurse_avg": 3.5,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 35.5,
+          "nurse_utilization_median": 36.76,
+          "mom_deltas": {
+            "avg_chairs_per_nurse": 0.0,
+            "avg_nurse_to_patient_chair_time": 0.21,
+            "avg_patients_per_nurse": 0.11,
+            "iassign_utilization": 5.83
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.86,
+          "patients_per_nurse_median": 7.2,
+          "chairs_per_nurse_avg": 3.01,
+          "chairs_per_nurse_median": 3.17,
+          "nurse_utilization_avg": 55.25,
+          "nurse_utilization_median": 55.0,
+          "mom_deltas": {
+            "avg_chair_utilization": 2.32,
+            "avg_delay_mins": 0.17,
+            "avg_treatment_mins_per_patient": 11.67,
+            "avg_treatments_per_day": 0.11,
+            "scheduler_compliance": 29.98,
+            "avg_chairs_per_nurse": -0.05,
+            "avg_nurse_to_patient_chair_time": -0.28,
+            "avg_patients_per_nurse": 0.13,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "above"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 74.86,
+          "avg_delay_avg": 7.11,
+          "chair_utilization_avg": 67.46,
+          "tx_past_close_avg": 0.28
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "MOASD delivered a performance score of 59 out of 100 (where 50 represents the network average) in February 2026, with a transformative month-over-month jump in scheduler compliance from 42.8% in January to 72.8% in February. This 30-point gain brings MOASD to within 2.1 percentage points of the company average of 74.86%, demonstrating strong operational discipline in scheduling adherence. However, the clinic faces an underutilization challenge in nursing capacity at 55.2% and chair utilization at 69.3%\u2014both areas where sustained focus could unlock capacity gains.",
+        "highlights": [
+          "MOASD's scheduler compliance rose 30 percentage points from 42.8% in January to 72.8% in February, now nearly matching the company average of 74.86% and reflecting a decisive operational turnaround. iAssign utilization reached 100% in February, demonstrating complete adoption of assignment protocols and likely accompanying efficiency gains in nurse-to-chair workflow optimization. Average patient delay of 6.0 minutes sits well below the company average of 7.11 minutes, signaling strong patient flow discipline despite the compliance rebuild."
+        ],
+        "concerns": [
+          "We noticed that MOASD's chair utilization of 69.3% sits just above the company average of 67.46%, yet nurse utilization remains at 55.2%\u2014suggesting available clinical capacity that is not yet fully deployed. La Jolla presents a more acute opportunity: chair utilization of 45.6% falls 21.9 percentage points below MOASD and 22 percentage points below the company average, indicating significant untapped asset capacity. Together with La Jolla's strong scheduler compliance of 88.2% and perfect iAssign adoption of 93.3%, the clinic appears well-positioned to absorb additional patient volume without operational strain."
+        ],
+        "recommendations": [
+          "We recommend that La Jolla conduct a targeted audit of scheduling templates and patient intake patterns to identify barriers to chair utilization. The clinic's compliance discipline (88.2%) and assignment efficiency (93.3% iAssign) provide a stable foundation\u2014the focus should be on volume growth through referral source analysis and template optimization to move chair utilization closer to the 67.5% company average."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {}
+      }
+    },
+    "2026-03": {
+      "composite_score": 57.9,
+      "ioptimize": [
+        {
+          "location": "Company Avg",
+          "scheduler_compliance_avg": 83.09,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 7.06,
+          "avg_delay_median": 6.23,
+          "chair_utilization_avg": 64.13,
+          "chair_utilization_median": 56.06,
+          "tx_past_close_avg": 0.56,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 30.59,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "scheduler_compliance_avg": 97.65,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 8.62,
+          "avg_delay_median": 9.37,
+          "chair_utilization_avg": 42.94,
+          "chair_utilization_median": 42.15,
+          "tx_past_close_avg": 0.67,
+          "tx_past_close_median": 0.5,
+          "tx_mins_past_close_avg": 30.58,
+          "tx_mins_past_close_median": 3.5,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.67,
+            "avg_delay_mins": 0.42,
+            "avg_treatment_mins_per_patient": 17.58,
+            "avg_treatments_per_day": 0.27,
+            "scheduler_compliance": 9.41,
+            "avg_chairs_per_nurse": 0.1,
+            "avg_nurse_to_patient_chair_time": -0.85,
+            "avg_patients_per_nurse": -0.11,
+            "iassign_utilization": 6.67
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "scheduler_compliance_avg": 81.43,
+          "scheduler_compliance_median": null,
+          "avg_delay_avg": 5.5,
+          "avg_delay_median": 5.53,
+          "chair_utilization_avg": 66.84,
+          "chair_utilization_median": 62.9,
+          "tx_past_close_avg": 0.45,
+          "tx_past_close_median": 0.0,
+          "tx_mins_past_close_avg": 30.6,
+          "tx_mins_past_close_median": 0.0,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.49,
+            "avg_delay_mins": -0.53,
+            "avg_treatment_mins_per_patient": 12.93,
+            "avg_treatments_per_day": 0.29,
+            "scheduler_compliance": 8.65,
+            "avg_chairs_per_nurse": -0.19,
+            "avg_nurse_to_patient_chair_time": -4.92,
+            "avg_patients_per_nurse": -0.57,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "iassign": [
+        {
+          "location": "Company Avg",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 4.93,
+          "patients_per_nurse_median": 5.62,
+          "chairs_per_nurse_avg": 3.21,
+          "chairs_per_nurse_median": 3.17,
+          "nurse_utilization_avg": 47.6,
+          "nurse_utilization_median": 44.59,
+          "mom_deltas": {},
+          "vs_company": {},
+          "outlier_flags": []
+        },
+        {
+          "location": "La jolla",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 3.57,
+          "patients_per_nurse_median": 3.5,
+          "chairs_per_nurse_avg": 3.6,
+          "chairs_per_nurse_median": 3.5,
+          "nurse_utilization_avg": 34.65,
+          "nurse_utilization_median": 32.35,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.67,
+            "avg_delay_mins": 0.42,
+            "avg_treatment_mins_per_patient": 17.58,
+            "avg_treatments_per_day": 0.27,
+            "scheduler_compliance": 9.41,
+            "avg_chairs_per_nurse": 0.1,
+            "avg_nurse_to_patient_chair_time": -0.85,
+            "avg_patients_per_nurse": -0.11,
+            "iassign_utilization": 6.67
+          },
+          "vs_company": {
+            "avg_chair_utilization": "below",
+            "avg_delay_mins": "above",
+            "avg_treatment_mins_per_patient": "below",
+            "avg_treatments_per_day": "above",
+            "scheduler_compliance": "above",
+            "avg_chairs_per_nurse": "above",
+            "avg_nurse_to_patient_chair_time": "below",
+            "avg_patients_per_nurse": "below",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        },
+        {
+          "location": "MOASD",
+          "iassign_utilization_avg": 100.0,
+          "patients_per_nurse_avg": 6.29,
+          "patients_per_nurse_median": 6.01,
+          "chairs_per_nurse_avg": 2.82,
+          "chairs_per_nurse_median": 2.71,
+          "nurse_utilization_avg": 50.33,
+          "nurse_utilization_median": 48.21,
+          "mom_deltas": {
+            "avg_chair_utilization": -2.49,
+            "avg_delay_mins": -0.53,
+            "avg_treatment_mins_per_patient": 12.93,
+            "avg_treatments_per_day": 0.29,
+            "scheduler_compliance": 8.65,
+            "avg_chairs_per_nurse": -0.19,
+            "avg_nurse_to_patient_chair_time": -4.92,
+            "avg_patients_per_nurse": -0.57,
+            "iassign_utilization": 0.0
+          },
+          "vs_company": {
+            "avg_chair_utilization": "above",
+            "avg_delay_mins": "below",
+            "avg_treatment_mins_per_patient": "above",
+            "avg_treatments_per_day": "below",
+            "scheduler_compliance": "below",
+            "avg_chairs_per_nurse": "below",
+            "avg_nurse_to_patient_chair_time": "above",
+            "avg_patients_per_nurse": "above",
+            "iassign_utilization": "below"
+          },
+          "outlier_flags": []
+        }
+      ],
+      "benchmarks": {
+        "company_avg": {
+          "scheduler_compliance_avg": 83.09,
+          "avg_delay_avg": 7.06,
+          "chair_utilization_avg": 64.13,
+          "tx_past_close_avg": 0.56
+        },
+        "onco_benchmark": {}
+      },
+      "ai_insights": {
+        "executive_summary": "MOASD delivered a composite performance score of 54 out of 100 (where 50 represents the network average), positioning the clinic slightly above the midline. The clinic demonstrated meaningful progress on patient flow, with average delay improving 8.8% from 6.0 minutes in February to 5.5 minutes in March\u2014well below the company average of 7.06 minutes. However, the clinic faces headwinds on scheduling compliance and nurse capacity, warranting collaborative attention to balance operational efficiency.",
+        "highlights": [
+          "MOASD's average patient delay of 5.5 minutes in March outperforms the company average of 7.06 minutes, reflecting solid patient flow discipline. Scheduler Compliance has shown a robust upward trend, improving from 65.7% in the 3-month rolling average to 81.4% in March, demonstrating consistent month-over-month gains and a strong R\u00b2 of 0.91 across the past three months. Both metrics underscore the clinic's commitment to timely care delivery."
+        ],
+        "concerns": [
+          "We noticed that treatments running past closing time rose from 0.2 per day in February to 0.5 per day in March\u2014a 181.2% increase worth examining to ensure scheduling templates are not booking too tightly during peak hours. Alongside this, nurse utilization declined 8.9% from 55.2% in February to 50.3% in March, and patients per nurse fell from 6.9 to 6.3 in the same period; one area worth exploring together is whether recent staffing changes or patient acuity shifts may be affecting nurse-to-chair assignment efficiency, particularly given MOASD's 100.0% iAssign adoption."
+        ],
+        "recommendations": [
+          "La Jolla's chair utilization of 42.9% sits 33% below the company average of 64.13%, creating a material efficiency gap; we recommend reviewing the clinic's scheduling templates and chair-to-appointment mapping in iOptimize to identify whether appointment density, session length assumptions, or patient no-show patterns are underutilizing available capacity. This focused audit would help La Jolla move toward the productivity benchmark without compromising the quality gains it has achieved."
+        ]
+      },
+      "ml_analytics": {
+        "locations": {
+          "Global Avg": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.109958,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.22115,
+            "lag_sc_to_chair_r": -0.6654,
+            "lag_sc_to_chair_n": 4,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 68.2,
+                "lower_95": 67.507,
+                "upper_95": 68.893,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 11.79,
+                "lower_95": 11.4851,
+                "upper_95": 12.0949,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 19.24,
+                "lower_95": 18.6579,
+                "upper_95": 19.8221,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 1.145,
+                "lower_95": 0.9094,
+                "upper_95": 1.3806,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 80.14,
+                "lower_95": 70.688,
+                "upper_95": 89.592,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "La jolla": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.103182,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.088613,
+            "lag_sc_to_chair_r": -0.6654,
+            "lag_sc_to_chair_n": 4,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 46.9567,
+                "lower_95": 37.4843,
+                "upper_95": 56.429,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 10.33,
+                "lower_95": 3.799,
+                "upper_95": 16.861,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 17.5267,
+                "lower_95": -4.9743,
+                "upper_95": 40.0276,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.42,
+                "lower_95": -0.0516,
+                "upper_95": 0.8916,
+                "n_months": 4,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 92.945,
+                "lower_95": 79.9034,
+                "upper_95": 105.9866,
+                "n_months": 2,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          },
+          "MOASD": {
+            "is_anomaly_client": false,
+            "anomaly_score_client": 0.133827,
+            "is_anomaly_network": false,
+            "anomaly_score_network": 0.152922,
+            "lag_sc_to_chair_r": -0.6654,
+            "lag_sc_to_chair_n": 4,
+            "forecasts": {
+              "avg_chair_utilization": {
+                "forecast": 67.7267,
+                "lower_95": 65.0001,
+                "upper_95": 70.4533,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_delay_mins": {
+                "forecast": 5.7967,
+                "lower_95": 5.2663,
+                "upper_95": 6.3271,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatment_mins_per_patient": {
+                "forecast": 18.09,
+                "lower_95": -6.0285,
+                "upper_95": 42.2085,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "avg_treatments_per_day": {
+                "forecast": 0.22,
+                "lower_95": -0.185,
+                "upper_95": 0.625,
+                "n_months": 6,
+                "method": "moving_avg",
+                "converged": false
+              },
+              "scheduler_compliance": {
+                "forecast": 65.67,
+                "lower_95": 25.9355,
+                "upper_95": 105.4045,
+                "n_months": 3,
+                "method": "moving_avg",
+                "converged": false
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "chatbot_context": {
+    "kpi_definitions": {
+      "scheduler_compliance": {
+        "label": "Scheduler Compliance",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of appointments scheduled following iOptimize recommendations. Higher is better. Company average is typically 60-70%. OncoSmart benchmark target is 75%."
+      },
+      "avg_delay_mins": {
+        "label": "Avg Delay",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average daily schedule delay in minutes. Lower is better. Measures how far behind the clinic is running on average."
+      },
+      "avg_treatments_per_day": {
+        "label": "Tx Past Close/Day",
+        "unit": "count",
+        "higher_is_better": false,
+        "explanation": "Average treatments running past treatment close per day (overtime patients per day). Lower is better."
+      },
+      "avg_treatment_mins_per_patient": {
+        "label": "Tx Mins Past Close/Patient",
+        "unit": "mins",
+        "higher_is_better": false,
+        "explanation": "Average treatment minutes past closing time per patient. Lower is better."
+      },
+      "avg_chair_utilization": {
+        "label": "Chair Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average chair utilization rate. Higher is better."
+      },
+      "iassign_utilization": {
+        "label": "iAssign Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Percentage of nurse assignments completed via iAssign. Higher means more consistent, optimized assignments."
+      },
+      "avg_patients_per_nurse": {
+        "label": "Patients/Nurse/Day",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average patients per nurse per day. Context-dependent -- too high means understaffing, too low means inefficiency."
+      },
+      "avg_chairs_per_nurse": {
+        "label": "Chairs/Nurse",
+        "unit": "count",
+        "higher_is_better": null,
+        "explanation": "Average chairs assigned per nurse. Context-dependent."
+      },
+      "avg_nurse_to_patient_chair_time": {
+        "label": "Nurse Utilization",
+        "unit": "%",
+        "higher_is_better": true,
+        "explanation": "Average nurse-to-patient in-chair time per day. Higher is better."
+      }
+    },
+    "data_notes": "Company Avg rows represent the network average across all locations for this client in the given month. Onco rows are global oncology benchmarks from the OncoSmart network. Rows named Global Avg, Network Avg, Total, or Overall are network-wide aggregates, not individual clinic locations. MoM (Month-over-Month) deltas compare the current month to the prior month. Composite scores are weighted 0 to 100 where 100 is best-in-class performance.",
+    "historical_kpis": [
+      {
+        "month": "2025-10",
+        "location": "I Assign Stats",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": null,
+        "chair_utilization_avg": null,
+        "tx_past_close_avg": null
+      },
+      {
+        "month": "2025-10",
+        "location": "La Jolla",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 7.25,
+        "chair_utilization_avg": 49.84,
+        "tx_past_close_avg": 0.28
+      },
+      {
+        "month": "2025-10",
+        "location": "MOASD",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 5.63,
+        "chair_utilization_avg": 70.5,
+        "tx_past_close_avg": 0.13
+      },
+      {
+        "month": "2025-11",
+        "location": "La jolla",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 8.55,
+        "chair_utilization_avg": 48.76,
+        "tx_past_close_avg": 0.4
+      },
+      {
+        "month": "2025-11",
+        "location": "MOASD",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 6.01,
+        "chair_utilization_avg": 67.34,
+        "tx_past_close_avg": 0.11
+      },
+      {
+        "month": "2025-12",
+        "location": "La jolla",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 14.17,
+        "chair_utilization_avg": 52.32,
+        "tx_past_close_avg": 0.19
+      },
+      {
+        "month": "2025-12",
+        "location": "MOASD",
+        "scheduler_compliance_avg": null,
+        "avg_delay_avg": 5.64,
+        "chair_utilization_avg": 67.52,
+        "tx_past_close_avg": 0.24
+      },
+      {
+        "month": "2026-01",
+        "location": "LaJolla",
+        "scheduler_compliance_avg": 71.6,
+        "avg_delay_avg": 8.49,
+        "chair_utilization_avg": 48.29,
+        "tx_past_close_avg": 0.19
+      },
+      {
+        "month": "2026-01",
+        "location": "MOASD",
+        "scheduler_compliance_avg": 42.8,
+        "avg_delay_avg": 5.86,
+        "chair_utilization_avg": 67.01,
+        "tx_past_close_avg": 0.05
+      },
+      {
+        "month": "2026-02",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 76.73,
+        "avg_delay_avg": 11.68,
+        "chair_utilization_avg": 67.95,
+        "tx_past_close_avg": 1.06
+      },
+      {
+        "month": "2026-02",
+        "location": "La jolla",
+        "scheduler_compliance_avg": 88.24,
+        "avg_delay_avg": 8.2,
+        "chair_utilization_avg": 45.61,
+        "tx_past_close_avg": 0.4
+      },
+      {
+        "month": "2026-02",
+        "location": "MOASD",
+        "scheduler_compliance_avg": 72.78,
+        "avg_delay_avg": 6.03,
+        "chair_utilization_avg": 69.33,
+        "tx_past_close_avg": 0.16
+      },
+      {
+        "month": "2026-03",
+        "location": "Global Avg",
+        "scheduler_compliance_avg": 83.55,
+        "avg_delay_avg": 11.9,
+        "chair_utilization_avg": 68.45,
+        "tx_past_close_avg": 1.23
+      },
+      {
+        "month": "2026-03",
+        "location": "La jolla",
+        "scheduler_compliance_avg": 97.65,
+        "avg_delay_avg": 8.62,
+        "chair_utilization_avg": 42.94,
+        "tx_past_close_avg": 0.67
+      },
+      {
+        "month": "2026-03",
+        "location": "MOASD",
+        "scheduler_compliance_avg": 81.43,
+        "avg_delay_avg": 5.5,
+        "chair_utilization_avg": 66.84,
+        "tx_past_close_avg": 0.45
+      }
+    ]
+  }
+}
