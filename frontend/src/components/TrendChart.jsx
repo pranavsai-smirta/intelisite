@@ -3,10 +3,10 @@ import {
 } from 'recharts'
 
 const KPI_CONFIG = {
-  scheduler_compliance_avg: { label: 'Scheduler Compliance', unit: '%', color: '#0D9488', higherIsBetter: true },
+  scheduler_compliance_avg: { label: 'Scheduler Compliance', unit: '%', color: '#FE6325', higherIsBetter: true },
   avg_delay_avg:            { label: 'Avg Delay',             unit: 'min', color: '#DC2626', higherIsBetter: false },
   chair_utilization_avg:    { label: 'Chair Utilization',     unit: '%', color: '#6366F1', higherIsBetter: true },
-  composite_score:          { label: 'Composite Score',       unit: '', color: '#0F172A', higherIsBetter: true },
+  composite_score:          { label: 'Composite Score',       unit: '', color: '#FE6325', higherIsBetter: true },
 }
 
 function formatMonth(m) {
@@ -17,7 +17,7 @@ function formatMonth(m) {
 }
 
 export default function TrendChart({ historicalKpis, compositeByMonth, kpiKey = 'scheduler_compliance_avg' }) {
-  const cfg = KPI_CONFIG[kpiKey] ?? { label: kpiKey, unit: '', color: '#0D9488', higherIsBetter: true }
+  const cfg = KPI_CONFIG[kpiKey] ?? { label: kpiKey, unit: '', color: '#FE6325', higherIsBetter: true }
 
   const monthMap = {}
 

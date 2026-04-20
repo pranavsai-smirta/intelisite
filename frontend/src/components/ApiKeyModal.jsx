@@ -41,20 +41,21 @@ export default function ApiKeyModal({ onSubmit }) {
       aria-labelledby="apikey-modal-title"
     >
       <div
-        className="w-full max-w-md rounded-2xl bg-slate-900 p-8"
+        className="w-full max-w-md bg-white p-8"
         style={{
-          border: '1px solid rgba(13,148,136,0.3)',
-          boxShadow: '0 24px 64px rgba(0,0,0,0.6), 0 0 0 1px rgba(13,148,136,0.08)',
+          borderRadius: '11px',
+          border: '1px solid rgba(254,99,37,0.2)',
+          boxShadow: '0 24px 64px rgba(0,0,0,0.18), 0 0 0 1px rgba(254,99,37,0.06)',
         }}
       >
         <div className="mb-6">
-          <div className="text-xs font-semibold uppercase tracking-widest text-teal-400 mb-2">
+          <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>
             AI Intelligence
           </div>
-          <h2 id="apikey-modal-title" className="text-xl font-bold text-white mb-2">
+          <h2 id="apikey-modal-title" className="text-xl font-bold text-[#1A1A2E] mb-2">
             Connect AI Analyst
           </h2>
-          <p className="text-sm text-slate-400 leading-relaxed">
+          <p className="text-sm text-[#64748B] leading-relaxed">
             Enter your Anthropic API key to enable the AI analyst. Your key is stored
             only in this browser&apos;s local storage and is sent directly to Anthropic —
             it never touches our servers.
@@ -64,7 +65,7 @@ export default function ApiKeyModal({ onSubmit }) {
         <form onSubmit={handleSubmit} noValidate>
           <label
             htmlFor="apikey-input"
-            className="block text-xs font-semibold uppercase tracking-wide text-slate-300 mb-2"
+            className="block text-xs font-semibold uppercase tracking-wide text-[#64748B] mb-2"
           >
             Anthropic API Key
           </label>
@@ -80,12 +81,12 @@ export default function ApiKeyModal({ onSubmit }) {
             autoFocus
             autoComplete="off"
             spellCheck={false}
-            className="w-full px-4 py-3 rounded-lg text-white text-sm font-mono outline-none transition-colors"
+            className="w-full px-4 py-3 rounded-lg text-[#1A1A2E] text-sm font-mono outline-none transition-colors"
             style={{
-              background: 'rgba(15, 23, 42, 0.9)',
+              background: '#F5F0EB',
               border: error
                 ? '1px solid rgba(220, 38, 38, 0.6)'
-                : '1px solid rgba(148, 163, 184, 0.2)',
+                : '1px solid rgba(0,0,0,0.08)',
             }}
           />
 
@@ -98,13 +99,13 @@ export default function ApiKeyModal({ onSubmit }) {
           <button
             type="submit"
             disabled={submitting}
-            className="mt-5 w-full py-3 rounded-lg font-semibold text-sm text-white transition-all disabled:opacity-60"
+            className="mt-5 w-full py-3 rounded-full font-semibold text-sm text-white transition-all disabled:opacity-60"
             style={{
-              background: 'linear-gradient(135deg, #0D9488 0%, #0F766E 100%)',
-              boxShadow: '0 4px 16px rgba(13,148,136,0.25)',
+              background: '#FE6325',
+              boxShadow: '0 4px 16px rgba(254,99,37,0.25)',
             }}
           >
-            {submitting ? 'Connecting…' : 'Connect AI Analyst'}
+            {submitting ? 'Connecting\u2026' : 'Connect AI Analyst'}
           </button>
         </form>
 
@@ -114,7 +115,8 @@ export default function ApiKeyModal({ onSubmit }) {
             href="https://console.anthropic.com/settings/keys"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-teal-400 hover:text-teal-300 underline-offset-2 hover:underline"
+            className="hover:underline underline-offset-2"
+            style={{ color: '#FE6325' }}
           >
             console.anthropic.com
           </a>

@@ -1,7 +1,7 @@
 function CellValue({ value, unit, vsCompany, isOutlier, delta, higherIsBetter }) {
   const bgColor =
     vsCompany === 'above'
-      ? 'bg-teal-50 text-teal-800'
+      ? 'bg-green-50 text-green-800'
       : vsCompany === 'below'
       ? 'bg-red-50 text-red-800'
       : 'bg-white text-slate-900'
@@ -18,7 +18,7 @@ function CellValue({ value, unit, vsCompany, isOutlier, delta, higherIsBetter })
     higherIsBetter === null || delta === null || delta === undefined
       ? 'text-slate-400'
       : (higherIsBetter && delta > 0) || (!higherIsBetter && delta < 0)
-      ? 'text-teal-600'
+      ? 'text-[#FE6325]'
       : 'text-red-600'
 
   return (
@@ -69,10 +69,10 @@ function Table({ rows, cols, title }) {
   return (
     <div className="mb-6">
       <h3 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-2">{title}</h3>
-      <div className="overflow-x-auto rounded-lg border border-slate-200">
+      <div className="overflow-x-auto rounded-xl" style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
         <table className="min-w-full text-sm">
           <thead>
-            <tr className="bg-slate-50 border-b border-slate-200">
+            <tr className="border-b border-slate-100" style={{ background: '#FAFAF8' }}>
               <th className="px-3 py-2 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Location</th>
               {cols.map(col => (
                 <th key={col.key} className="px-3 py-2 text-right text-xs font-semibold text-slate-500 uppercase tracking-wider">
@@ -88,7 +88,7 @@ function Table({ rows, cols, title }) {
                 <tr
                   key={row.location}
                   className={isAvg
-                    ? 'bg-slate-100 border-t-2 border-slate-300'
+                    ? 'bg-slate-100 border-t-2 border-slate-200'
                     : 'hover:bg-slate-50 transition-colors'
                   }
                 >

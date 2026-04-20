@@ -67,7 +67,7 @@ function TableBlock({ lines }) {
   return (
     <div
       className="overflow-x-auto my-3 rounded-xl"
-      style={{ border: '1px solid rgba(13,148,136,0.2)' }}
+      style={{ border: '1px solid rgba(0,0,0,0.08)' }}
     >
       <table className="w-full text-xs border-collapse">
         <thead>
@@ -75,10 +75,11 @@ function TableBlock({ lines }) {
             {headers.map((h, i) => (
               <th
                 key={i}
-                className="px-3 py-2.5 text-left text-teal-400 font-semibold uppercase tracking-wide whitespace-nowrap"
+                className="px-3 py-2.5 text-left font-semibold uppercase tracking-wide whitespace-nowrap"
                 style={{
-                  background: 'rgba(13,148,136,0.1)',
-                  borderBottom: '1px solid rgba(13,148,136,0.2)',
+                  color: '#FE6325',
+                  background: 'rgba(254,99,37,0.08)',
+                  borderBottom: '1px solid rgba(254,99,37,0.15)',
                 }}
               >
                 {h}
@@ -90,14 +91,16 @@ function TableBlock({ lines }) {
           {rows.map((row, ri) => (
             <tr
               key={ri}
-              className="transition-colors hover:bg-white/[0.03]"
-              style={{ background: ri % 2 === 1 ? 'rgba(255,255,255,0.02)' : 'transparent' }}
+              className="transition-colors"
+              style={{ background: ri % 2 === 1 ? 'rgba(0,0,0,0.015)' : 'transparent' }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(254,99,37,0.03)')}
+              onMouseLeave={e => (e.currentTarget.style.background = ri % 2 === 1 ? 'rgba(0,0,0,0.015)' : 'transparent')}
             >
               {row.map((cell, ci) => (
                 <td
                   key={ci}
-                  className="px-3 py-2 text-slate-300"
-                  style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}
+                  className="px-3 py-2 text-[#1A1A2E]"
+                  style={{ borderBottom: '1px solid rgba(0,0,0,0.04)' }}
                 >
                   {renderInline(cell)}
                 </td>
@@ -113,7 +116,7 @@ function TableBlock({ lines }) {
 function renderInline(text) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((p, i) =>
     p.startsWith('**') && p.endsWith('**')
-      ? <strong key={i} className="font-semibold text-white">{p.slice(2, -2)}</strong>
+      ? <strong key={i} className="font-semibold text-[#1A1A2E]">{p.slice(2, -2)}</strong>
       : p
   )
 }
@@ -136,8 +139,8 @@ function renderMarkdown(text) {
       out.push(
         <pre
           key={`code-${i}`}
-          className="my-2 rounded-xl px-4 py-3 text-xs font-mono text-slate-300 overflow-x-auto"
-          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+          className="my-2 rounded-xl px-4 py-3 text-xs font-mono text-[#1A1A2E] overflow-x-auto"
+          style={{ background: '#F1F5F9', border: '1px solid #E2E8F0' }}
         >
           {codeLines.join('\n')}
         </pre>
@@ -161,19 +164,19 @@ function renderMarkdown(text) {
     // Headers
     if (line.startsWith('## ')) {
       out.push(
-        <p key={i} className="text-xs font-semibold text-teal-400 uppercase tracking-wider mt-4 mb-1.5">
+        <p key={i} className="text-xs font-semibold uppercase tracking-wider mt-4 mb-1.5" style={{ color: '#FE6325' }}>
           {line.slice(3)}
         </p>
       )
     } else if (line.startsWith('# ')) {
       out.push(
-        <p key={i} className="text-sm font-bold text-white mt-3 mb-1">{line.slice(2)}</p>
+        <p key={i} className="text-sm font-bold text-[#1A1A2E] mt-3 mb-1">{line.slice(2)}</p>
       )
     // Bullet list
     } else if (/^[-*] /.test(line)) {
       out.push(
         <div key={i} className="flex gap-2 my-0.5 ml-1">
-          <span className="text-teal-500 flex-shrink-0 select-none">{'\u00b7'}</span>
+          <span className="flex-shrink-0 select-none" style={{ color: '#FE6325' }}>{'\u00b7'}</span>
           <span>{renderInline(line.slice(2))}</span>
         </div>
       )
@@ -182,7 +185,7 @@ function renderMarkdown(text) {
       const [num, ...rest] = line.split('. ')
       out.push(
         <div key={i} className="flex gap-2 my-0.5 ml-1">
-          <span className="text-teal-500 flex-shrink-0 w-4 text-right select-none">{num}.</span>
+          <span className="flex-shrink-0 w-4 text-right select-none" style={{ color: '#FE6325' }}>{num}.</span>
           <span>{renderInline(rest.join('. '))}</span>
         </div>
       )
@@ -209,18 +212,18 @@ function ChartTooltip({ active, payload, label }) {
     <div
       className="rounded-xl px-3 py-2.5 min-w-[120px]"
       style={{
-        background: 'rgba(10,17,32,0.97)',
-        border: '1px solid rgba(13,148,136,0.35)',
-        boxShadow: '0 8px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(13,148,136,0.1)',
+        background: 'rgba(255,255,255,0.97)',
+        border: '1px solid rgba(0,0,0,0.08)',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
         backdropFilter: 'blur(12px)',
       }}
     >
-      <p className="text-xs font-semibold text-teal-400 mb-2 uppercase tracking-wide">{label}</p>
+      <p className="text-xs font-semibold uppercase tracking-wide mb-2" style={{ color: '#FE6325' }}>{label}</p>
       {payload.map((entry, i) => (
         <div key={i} className="flex items-center gap-2 py-0.5">
           <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: entry.color }} />
-          <span className="text-xs text-slate-400 flex-1">{entry.name}</span>
-          <span className="text-xs font-semibold text-white pl-2">{entry.value}</span>
+          <span className="text-xs text-[#64748B] flex-1">{entry.name}</span>
+          <span className="text-xs font-semibold text-[#1A1A2E] pl-2">{entry.value}</span>
         </div>
       ))}
     </div>
@@ -231,8 +234,8 @@ function ChartTooltip({ active, payload, label }) {
 // Chart block
 // ---------------------------------------------------------------------------
 
-const TICK = { fill: '#475569', fontSize: 11 }
-const GRID = 'rgba(255,255,255,0.05)'
+const TICK = { fill: '#64748B', fontSize: 11 }
+const GRID = '#E2E8F0'
 
 function ChartBlock({ spec }) {
   const { type = 'BarChart', title, data, xAxisKey = 'name', series = [] } = spec
@@ -250,7 +253,7 @@ function ChartBlock({ spec }) {
       <CartesianGrid strokeDasharray="3 3" stroke={GRID} vertical={isBar ? false : true} />
       <XAxis dataKey={xAxisKey} tick={TICK} axisLine={false} tickLine={false} />
       <YAxis tick={TICK} axisLine={false} tickLine={false} width={40} />
-      <Tooltip content={<ChartTooltip />} cursor={{ fill: 'rgba(255,255,255,0.04)' }} />
+      <Tooltip content={<ChartTooltip />} cursor={{ fill: 'rgba(254,99,37,0.04)' }} />
       {series.length > 1 && (
         <Legend
           iconType="circle"
@@ -264,10 +267,10 @@ function ChartBlock({ spec }) {
   return (
     <div
       className="rounded-xl p-4 my-2"
-      style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
+      style={{ background: '#FFFFFF', border: '1px solid rgba(0,0,0,0.06)' }}
     >
       {title && (
-        <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">{title}</p>
+        <p className="text-xs font-semibold text-[#64748B] uppercase tracking-wider mb-3">{title}</p>
       )}
       <ResponsiveContainer width="100%" height={224}>
         {isBar ? (
@@ -320,11 +323,11 @@ function TypingIndicator() {
     <div className="flex justify-start mb-4">
       <div
         className="flex items-center gap-1.5 px-4 py-3 rounded-2xl rounded-tl-sm"
-        style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+        style={{ background: '#FFFFFF', border: '1px solid rgba(0,0,0,0.06)' }}
       >
         {[0, 1, 2].map(i => (
-          <span key={i} className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-bounce"
-            style={{ animationDelay: `${i * 0.15}s` }} />
+          <span key={i} className="w-1.5 h-1.5 rounded-full animate-bounce"
+            style={{ background: '#FE6325', animationDelay: `${i * 0.15}s` }} />
         ))}
       </div>
     </div>
@@ -351,7 +354,7 @@ function Message({ role, content, isStreaming }) {
       <div className="flex justify-end mb-5">
         <div
           className="max-w-[72%] text-sm leading-relaxed rounded-2xl rounded-tr-sm px-4 py-3 text-white"
-          style={{ background: 'linear-gradient(135deg, #0D9488, #0F766E)' }}
+          style={{ background: 'linear-gradient(135deg, #FE6325, #E85520)' }}
         >
           {content}
         </div>
@@ -370,8 +373,8 @@ function Message({ role, content, isStreaming }) {
           ) : (
             <div
               key={i}
-              className="text-sm leading-relaxed rounded-2xl rounded-tl-sm px-4 py-3 text-slate-100"
-              style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+              className="text-sm leading-relaxed rounded-2xl rounded-tl-sm px-4 py-3 text-[#1A1A2E]"
+              style={{ background: '#FFFFFF', border: '1px solid rgba(0,0,0,0.06)' }}
             >
               {renderMarkdown(seg.content)}
             </div>
@@ -379,7 +382,7 @@ function Message({ role, content, isStreaming }) {
         )}
         {hasContent && !isStreaming && (
           <div className="flex items-center gap-1.5 text-xs px-1 mt-0.5"
-            style={{ color: 'rgba(100,116,139,0.5)' }}>
+            style={{ color: 'rgba(100,116,139,0.6)' }}>
             <span>Clinic performance data</span>
             <span>{'\u00b7'}</span>
             <span>Claude Sonnet</span>
@@ -515,35 +518,56 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
       {/* Hero header */}
       <div
-        className="flex-shrink-0 bg-slate-900 px-6 py-6"
-        style={{ boxShadow: '0 4px 24px rgba(13,148,136,0.1)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+        className="flex-shrink-0 bg-white px-6 py-4"
+        style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-4xl mx-auto">
           <button onClick={closeAi}
-            className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-teal-400 transition-colors mb-4">
+            className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors mb-2">
             {'\u2190'} Back
           </button>
-          <div className="text-xs font-semibold text-teal-400 uppercase tracking-widest mb-2">AI Intelligence</div>
-          <h1 className="text-2xl font-bold text-white mb-1.5">What do you want to know?</h1>
-          <p className="text-sm text-slate-500">{contextLabel}</p>
+          <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>AI Intelligence</div>
+          <h1 className="text-2xl font-bold text-[#1A1A2E] mb-1.5">What do you want to know?</h1>
+          <p className="text-sm text-[#64748B]">{contextLabel}</p>
         </div>
       </div>
 
       {/* Messages — ref on the scrollable container, not a sentinel div */}
       <div
         ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto"
-        style={{ background: '#0B1220' }}
+        className="flex-1 overflow-y-auto relative"
+        style={{ background: '#F5F0EB' }}
       >
-        <div className="max-w-4xl mx-auto px-6 py-6">
+        {/* ai-hero ghost watermark behind messages */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0, bottom: 0,
+            backgroundImage: 'url(/ai-hero.png)',
+            backgroundPosition: 'center center',
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            opacity: 0.05,
+            pointerEvents: 'none',
+            zIndex: 0,
+          }}
+        />
+        <div className="max-w-4xl mx-auto px-6 py-4" style={{ position: 'relative', zIndex: 1 }}>
 
           {messages.length === 0 && (
             <div className="text-center py-12">
-              <div className="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
-                style={{ background: 'rgba(13,148,136,0.12)', border: '1px solid rgba(13,148,136,0.2)' }}>
+              <img
+                src="/ai-hero.png"
+                alt=""
+                style={{ maxWidth: 320, width: '100%', opacity: 0.6, margin: '0 auto 24px' }}
+              />
+              <div
+                className="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
+                style={{ background: 'rgba(254,99,37,0.08)', border: '1px solid rgba(254,99,37,0.15)' }}
+              >
                 <span style={{ fontSize: '20px' }}>{'\u2726'}</span>
               </div>
-              <p className="text-slate-500 text-sm">Select a question below or type your own.</p>
+              <p className="text-sm text-[#64748B]">Select a question below or type your own.</p>
             </div>
           )}
 
@@ -565,9 +589,9 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
       {/* FAQ chips */}
       {messages.length === 0 && (
-        <div className="flex-shrink-0" style={{ background: '#0B1220', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <div className="max-w-4xl mx-auto px-6 py-4">
-            <p className="text-xs text-slate-600 font-medium uppercase tracking-wider mb-3">Suggested questions</p>
+        <div className="flex-shrink-0" style={{ background: '#F5F0EB', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
+          <div className="max-w-4xl mx-auto px-6 py-3">
+            <p className="text-xs text-[#64748B] font-medium uppercase tracking-wider mb-3">Suggested questions</p>
             <div className="flex flex-wrap gap-2">
               {FAQ_CHIPS.map(q => <FaqChip key={q} label={q} onClick={() => handleSend(q)} />)}
             </div>
@@ -577,7 +601,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
       {/* Input bar */}
       <div className="flex-shrink-0 px-6 py-4"
-        style={{ background: 'rgba(15,23,42,0.95)', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+        style={{ background: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
         <div className="max-w-4xl mx-auto">
           <div className="flex gap-3 items-end">
             <textarea ref={inputRef} value={input}
@@ -585,15 +609,15 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
               onKeyDown={handleChatKeyDown}
               rows={1} disabled={streaming}
               placeholder="Ask about performance data, trends, or benchmarks\u2026"
-              className="flex-1 text-slate-100 text-sm rounded-xl px-4 py-3 resize-none outline-none placeholder-slate-600 transition-colors"
-              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.10)' }}
-              onFocus={e => (e.currentTarget.style.border = '1px solid rgba(13,148,136,0.5)')}
-              onBlur={e => (e.currentTarget.style.border = '1px solid rgba(255,255,255,0.10)')} />
+              className="flex-1 text-[#1A1A2E] text-sm rounded-xl px-4 py-3 resize-none outline-none transition-colors placeholder-[#94A3B8]"
+              style={{ background: '#F5F0EB', border: '1px solid rgba(0,0,0,0.08)' }}
+              onFocus={e => (e.currentTarget.style.border = '1px solid rgba(254,99,37,0.5)')}
+              onBlur={e => (e.currentTarget.style.border = '1px solid rgba(0,0,0,0.08)')} />
             <button onClick={() => handleSend()} disabled={!input.trim() || streaming}
               className="text-sm px-5 py-3 rounded-xl font-medium transition-all flex-shrink-0"
               style={{
-                background: !input.trim() || streaming ? 'rgba(255,255,255,0.08)' : 'linear-gradient(135deg, #0D9488, #0F766E)',
-                color: !input.trim() || streaming ? 'rgba(255,255,255,0.3)' : 'white',
+                background: !input.trim() || streaming ? 'rgba(0,0,0,0.04)' : '#FE6325',
+                color: !input.trim() || streaming ? 'rgba(0,0,0,0.2)' : 'white',
               }}>
               {streaming ? '\u22ef' : '\u2191'}
             </button>
@@ -613,9 +637,9 @@ function FaqChip({ label, onClick }) {
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       className="text-xs rounded-full px-3 py-2 transition-all text-left"
       style={{
-        background: hovered ? 'rgba(13,148,136,0.12)' : 'rgba(255,255,255,0.04)',
-        border: hovered ? '1px solid rgba(13,148,136,0.3)' : '1px solid rgba(255,255,255,0.09)',
-        color: hovered ? '#2DD4BF' : '#94A3B8',
+        background: hovered ? 'rgba(254,99,37,0.06)' : '#FFFFFF',
+        border: hovered ? '1px solid rgba(254,99,37,0.25)' : '1px solid rgba(0,0,0,0.08)',
+        color: hovered ? '#FE6325' : '#64748B',
       }}>
       {label}
     </button>

@@ -3,9 +3,9 @@ export default function ScoreBadge({ score, size = 'md' }) {
     score === null || score === undefined
       ? 'bg-slate-600 text-slate-300'
       : score >= 75
-      ? 'bg-teal-500 text-white'
+      ? 'bg-green-500 text-white'
       : score >= 60
-      ? 'bg-amber-500 text-white'
+      ? 'bg-orange-400 text-white'
       : 'bg-red-600 text-white'
 
   const sizeClass = size === 'lg'

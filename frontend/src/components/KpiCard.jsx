@@ -1,4 +1,4 @@
-export default function KpiCard({ label, value, unit, delta, higherIsBetter, subtitle }) {
+export default function KpiCard({ label, value, unit, delta, higherIsBetter, subtitle, showTrendLink, heroAccent }) {
   const hasDelta = delta !== null && delta !== undefined
   const deltaPositive = hasDelta && delta > 0
   const deltaGood = higherIsBetter === null
@@ -8,7 +8,7 @@ export default function KpiCard({ label, value, unit, delta, higherIsBetter, sub
   const deltaColor = deltaGood === null
     ? 'text-slate-400'
     : deltaGood
-    ? 'text-teal-400'
+    ? 'text-green-500'
     : 'text-red-400'
 
   const deltaArrow = hasDelta
@@ -19,18 +19,20 @@ export default function KpiCard({ label, value, unit, delta, higherIsBetter, sub
 
   return (
     <div
-      className="relative rounded-2xl overflow-hidden p-5 flex flex-col gap-2"
+      className="relative overflow-hidden p-5 flex flex-col gap-2"
       style={{
-        background: '#0F172A',
-        boxShadow: '0 0 0 1px rgba(255,255,255,0.06), 0 4px 24px rgba(13,148,136,0.12)',
+        background: '#FFFFFF',
+        borderRadius: '11px',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
+        ...(heroAccent && { borderTop: '2px solid #FE6325' }),
       }}
     >
-      <div className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{label}</div>
+      <div className="text-xs font-semibold text-[#64748B] uppercase tracking-wider">{label}</div>
       <div className="flex items-end gap-2">
-        <span className="text-3xl font-bold text-white">
+        <span className="text-3xl font-bold text-[#1A1A2E]">
           {value !== null && value !== undefined ? value : '\u2014'}
         </span>
-        {unit && <span className="text-slate-400 text-sm mb-1">{unit}</span>}
+        {unit && <span className="text-[#64748B] text-sm mb-1">{unit}</span>}
       </div>
       {hasDelta && (
         <div className={`text-sm font-medium ${deltaColor} flex items-center gap-1`}>
@@ -38,7 +40,16 @@ export default function KpiCard({ label, value, unit, delta, higherIsBetter, sub
           <span>{Math.abs(delta).toFixed(1)} MoM</span>
         </div>
       )}
-      {subtitle && <div className="text-xs text-slate-500 mt-1">{subtitle}</div>}
+      {subtitle && <div className="text-xs text-[#94A3B8] mt-1">{subtitle}</div>}
+      {showTrendLink && (
+        <button
+          onClick={() => document.getElementById('trend-charts')?.scrollIntoView({ behavior: 'smooth' })}
+          className="text-xs mt-1 text-left transition-colors"
+          style={{ color: '#FE6325' }}
+        >
+          View Trend {'\u2197'}
+        </button>
+      )}
     </div>
   )
 }

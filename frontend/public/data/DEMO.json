@@ -1,7 +1,7 @@
 {
   "meta": {
     "client_code": "DEMO",
-    "generated_at": "2026-04-14T03:21:02.683906Z",
+    "generated_at": "2026-04-20T02:05:21.339519+00:00",
     "months_available": [
       "2025-10",
       "2025-11",
@@ -1735,6 +1735,348 @@
         "chair_utilization_avg": 54.83,
         "tx_past_close_avg": 0.12
       }
-    ]
+    ],
+    "raw_data_context": {
+      "monthly_summaries": [
+        {
+          "location": "Clinic 1",
+          "category": "nurse",
+          "summary": "Clinic 1 nurse utilization averaged 53.8% in Mar 2026 (range 45.0%\u201360.5%).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "operations",
+          "summary": "Clinic 1 Mar 2026: Treatment avg delay 8.7 min, peak 13.8 min on Mar 25, 48 overtime patients. Chair util averaged 87.6% (peak 110.9% on Mar 25).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "scheduler",
+          "summary": "Clinic 1 scheduler compliance: 81.1% across 9 schedulers in Mar 2026. Best: Amberlynn Waldman (100.0%); Worst: Alistair Gannon (0.0%). 279 Exact, 276 Approx, 129 Manual appointments.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "service_dist",
+          "summary": "Clinic 1 in Mar 2026: 1065 total MD visits, 243 MD+TX same-day, 777 treatments without same-day MD visit.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "service_totals",
+          "summary": "Clinic 1 in Mar 2026: 987 treatments, avg visit duration 128.0 min, 909 overtime mins past closing. Avg delay by service type: Injection avg delay 3.9 min/visit (345 visits); Lab avg delay 1.8 min/visit (1833 visits); MD avg delay 8.6 min/visit (1065 visits); Outside Infusion avg delay 2.6 min/visit (33 visits); Treatment avg delay 8.4 min/visit (987 visits).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "staffing",
+          "summary": "Clinic 1 averaged 2.94 chairs/RN and 6.9 patients/nurse in Mar 2026.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "time_blocks",
+          "summary": "Clinic 1 Treatment distribution in Mar 2026: 28% before 10am, 30% 10am - 12pm, 32% 12pm - 2pm, 21% 2pm and later.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "nurse",
+          "summary": "Clinic 2 nurse utilization averaged 53.6% in Mar 2026 (range 45.5%\u201367.0%).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "operations",
+          "summary": "Clinic 2 Mar 2026: Treatment avg delay 6.2 min, peak 10.4 min on Mar 23, 3 overtime patients. Chair util averaged 50.0% (peak 63.6% on Mar 24).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "scheduler",
+          "summary": "Clinic 2 scheduler compliance: 89.3% across 5 schedulers in Mar 2026. Best: Clara Munoz (100.0%); Worst: Jaymie Duda (50.0%). 267 Exact, 183 Approx, 54 Manual appointments.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "service_dist",
+          "summary": "Clinic 2 in Mar 2026: 1209 total MD visits, 123 MD+TX same-day, 699 treatments without same-day MD visit.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "service_totals",
+          "summary": "Clinic 2 in Mar 2026: 804 treatments, avg visit duration 130.9 min, 9 overtime mins past closing. Avg delay by service type: Injection avg delay 4.0 min/visit (309 visits); Lab avg delay 2.1 min/visit (1515 visits); MD avg delay 8.7 min/visit (1209 visits); Outside Infusion avg delay 5.7 min/visit (18 visits); Treatment avg delay 6.6 min/visit (804 visits).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "staffing",
+          "summary": "Clinic 2 averaged 6.08 chairs/RN and 6.0 patients/nurse in Mar 2026.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "time_blocks",
+          "summary": "Clinic 2 Treatment distribution in Mar 2026: 36% before 10am, 26% 10am - 12pm, 30% 12pm - 2pm, 19% 2pm and later.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "nurse",
+          "summary": "Clinic 3 nurse utilization averaged 48.7% in Mar 2026 (range 39.9%\u201361.9%).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "operations",
+          "summary": "Clinic 3 Mar 2026: Treatment avg delay 2.9 min, peak 6.1 min on Mar 27, 6 overtime patients. Chair util averaged 54.4% (peak 84.8% on Mar 25).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "scheduler",
+          "summary": "Clinic 3 scheduler compliance: 82.1% across 8 schedulers in Mar 2026. Best: Clara Munoz (100.0%); Worst: Tylin Shetler (0.0%). 81 Exact, 180 Approx, 57 Manual appointments.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "service_dist",
+          "summary": "Clinic 3 in Mar 2026: 384 total MD visits, 90 MD+TX same-day, 630 treatments without same-day MD visit.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "service_totals",
+          "summary": "Clinic 3 in Mar 2026: 669 treatments, avg visit duration 79.8 min, 21 overtime mins past closing. Avg delay by service type: Injection avg delay 0.0 min/visit (21 visits); Lab avg delay 1.2 min/visit (753 visits); MD avg delay 11.5 min/visit (384 visits); Outside Infusion avg delay 3.1 min/visit (51 visits); Treatment avg delay 3.0 min/visit (669 visits).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "staffing",
+          "summary": "Clinic 3 averaged 3.70 chairs/RN and 7.2 patients/nurse in Mar 2026.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "time_blocks",
+          "summary": "Clinic 3 Treatment distribution in Mar 2026: 32% before 10am, 28% 10am - 12pm, 42% 12pm - 2pm, 25% 2pm and later.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "nurse",
+          "summary": "Clinic 4 nurse utilization averaged 43.7% in Mar 2026 (range 17.7%\u201356.8%).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "operations",
+          "summary": "Clinic 4 Mar 2026: Treatment avg delay 10.7 min, peak 18.5 min on Mar 23, 15 overtime patients. Chair util averaged 77.9% (peak 105.9% on Mar 25).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "scheduler",
+          "summary": "Clinic 4 scheduler compliance: 90.4% across 5 schedulers in Mar 2026. Best: Jesse Becker (92.7%); Worst: Evanna Kratz (80.0%). 93 Exact, 219 Approx, 33 Manual appointments.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "service_dist",
+          "summary": "Clinic 4 in Mar 2026: 651 total MD visits, 273 MD+TX same-day, 282 treatments without same-day MD visit.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "service_totals",
+          "summary": "Clinic 4 in Mar 2026: 549 treatments, avg visit duration 89.9 min, 342 overtime mins past closing. Avg delay by service type: Injection avg delay 3.8 min/visit (147 visits); Lab avg delay 3.2 min/visit (864 visits); MD avg delay 4.2 min/visit (651 visits); Outside Infusion avg delay 5.0 min/visit (6 visits); Treatment avg delay 12.0 min/visit (549 visits).",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "staffing",
+          "summary": "Clinic 4 averaged 4.82 chairs/RN and 6.1 patients/nurse in Mar 2026.",
+          "period": "2026-03"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "time_blocks",
+          "summary": "Clinic 4 Treatment distribution in Mar 2026: 35% before 10am, 40% 10am - 12pm, 30% 12pm - 2pm, 16% 2pm and later.",
+          "period": "2026-03"
+        }
+      ],
+      "weekly_summaries": [
+        {
+          "location": "Clinic 1",
+          "category": "nurse",
+          "summary": "Clinic 1 nurse utilization averaged 53.8% in 2026-W13 (range 45.0%\u201360.5%).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "operations",
+          "summary": "Clinic 1 2026-W13: Treatment avg delay 8.7 min, peak 13.8 min on Mar 25, 48 overtime patients. Chair util averaged 87.6% (peak 110.9% on Mar 25).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "scheduler",
+          "summary": "Clinic 1 scheduler compliance: 81.1% across 9 schedulers in 2026-W13. Best: Amberlynn Waldman (100.0%); Worst: Alistair Gannon (0.0%). 279 Exact, 276 Approx, 129 Manual appointments.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "service_dist",
+          "summary": "Clinic 1 in 2026-W13: 1065 total MD visits, 243 MD+TX same-day, 777 treatments without same-day MD visit.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "service_totals",
+          "summary": "Clinic 1 in 2026-W13: 987 treatments, avg visit duration 128.0 min, 909 overtime mins past closing. Avg delay by service type: Injection avg delay 3.9 min/visit (345 visits); Lab avg delay 1.8 min/visit (1833 visits); MD avg delay 8.6 min/visit (1065 visits); Outside Infusion avg delay 2.6 min/visit (33 visits); Treatment avg delay 8.4 min/visit (987 visits).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "staffing",
+          "summary": "Clinic 1 averaged 2.94 chairs/RN and 6.9 patients/nurse in 2026-W13.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 1",
+          "category": "time_blocks",
+          "summary": "Clinic 1 Treatment distribution in 2026-W13: 28% before 10am, 30% 10am - 12pm, 32% 12pm - 2pm, 21% 2pm and later.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "nurse",
+          "summary": "Clinic 2 nurse utilization averaged 53.6% in 2026-W13 (range 45.5%\u201367.0%).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "operations",
+          "summary": "Clinic 2 2026-W13: Treatment avg delay 6.2 min, peak 10.4 min on Mar 23, 3 overtime patients. Chair util averaged 50.0% (peak 63.6% on Mar 24).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "scheduler",
+          "summary": "Clinic 2 scheduler compliance: 89.3% across 5 schedulers in 2026-W13. Best: Clara Munoz (100.0%); Worst: Jaymie Duda (50.0%). 267 Exact, 183 Approx, 54 Manual appointments.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "service_dist",
+          "summary": "Clinic 2 in 2026-W13: 1209 total MD visits, 123 MD+TX same-day, 699 treatments without same-day MD visit.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "service_totals",
+          "summary": "Clinic 2 in 2026-W13: 804 treatments, avg visit duration 130.9 min, 9 overtime mins past closing. Avg delay by service type: Injection avg delay 4.0 min/visit (309 visits); Lab avg delay 2.1 min/visit (1515 visits); MD avg delay 8.7 min/visit (1209 visits); Outside Infusion avg delay 5.7 min/visit (18 visits); Treatment avg delay 6.6 min/visit (804 visits).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "staffing",
+          "summary": "Clinic 2 averaged 6.08 chairs/RN and 6.0 patients/nurse in 2026-W13.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 2",
+          "category": "time_blocks",
+          "summary": "Clinic 2 Treatment distribution in 2026-W13: 36% before 10am, 26% 10am - 12pm, 30% 12pm - 2pm, 19% 2pm and later.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "nurse",
+          "summary": "Clinic 3 nurse utilization averaged 48.7% in 2026-W13 (range 39.9%\u201361.9%).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "operations",
+          "summary": "Clinic 3 2026-W13: Treatment avg delay 2.9 min, peak 6.1 min on Mar 27, 6 overtime patients. Chair util averaged 54.4% (peak 84.8% on Mar 25).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "scheduler",
+          "summary": "Clinic 3 scheduler compliance: 82.1% across 8 schedulers in 2026-W13. Best: Clara Munoz (100.0%); Worst: Tylin Shetler (0.0%). 81 Exact, 180 Approx, 57 Manual appointments.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "service_dist",
+          "summary": "Clinic 3 in 2026-W13: 384 total MD visits, 90 MD+TX same-day, 630 treatments without same-day MD visit.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "service_totals",
+          "summary": "Clinic 3 in 2026-W13: 669 treatments, avg visit duration 79.8 min, 21 overtime mins past closing. Avg delay by service type: Injection avg delay 0.0 min/visit (21 visits); Lab avg delay 1.2 min/visit (753 visits); MD avg delay 11.5 min/visit (384 visits); Outside Infusion avg delay 3.1 min/visit (51 visits); Treatment avg delay 3.0 min/visit (669 visits).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "staffing",
+          "summary": "Clinic 3 averaged 3.70 chairs/RN and 7.2 patients/nurse in 2026-W13.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 3",
+          "category": "time_blocks",
+          "summary": "Clinic 3 Treatment distribution in 2026-W13: 32% before 10am, 28% 10am - 12pm, 42% 12pm - 2pm, 25% 2pm and later.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "nurse",
+          "summary": "Clinic 4 nurse utilization averaged 43.7% in 2026-W13 (range 17.7%\u201356.8%).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "operations",
+          "summary": "Clinic 4 2026-W13: Treatment avg delay 10.7 min, peak 18.5 min on Mar 23, 15 overtime patients. Chair util averaged 77.9% (peak 105.9% on Mar 25).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "scheduler",
+          "summary": "Clinic 4 scheduler compliance: 90.4% across 5 schedulers in 2026-W13. Best: Jesse Becker (92.7%); Worst: Evanna Kratz (80.0%). 93 Exact, 219 Approx, 33 Manual appointments.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "service_dist",
+          "summary": "Clinic 4 in 2026-W13: 651 total MD visits, 273 MD+TX same-day, 282 treatments without same-day MD visit.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "service_totals",
+          "summary": "Clinic 4 in 2026-W13: 549 treatments, avg visit duration 89.9 min, 342 overtime mins past closing. Avg delay by service type: Injection avg delay 3.8 min/visit (147 visits); Lab avg delay 3.2 min/visit (864 visits); MD avg delay 4.2 min/visit (651 visits); Outside Infusion avg delay 5.0 min/visit (6 visits); Treatment avg delay 12.0 min/visit (549 visits).",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "staffing",
+          "summary": "Clinic 4 averaged 4.82 chairs/RN and 6.1 patients/nurse in 2026-W13.",
+          "period": "2026-03-23"
+        },
+        {
+          "location": "Clinic 4",
+          "category": "time_blocks",
+          "summary": "Clinic 4 Treatment distribution in 2026-W13: 35% before 10am, 40% 10am - 12pm, 30% 12pm - 2pm, 16% 2pm and later.",
+          "period": "2026-03-23"
+        }
+      ]
+    }
   }
 }

@@ -319,31 +319,59 @@ def _build_service_dist(rows: List[ChrRawServiceDistribution], location: str, pe
 def _build_service_totals(rows: List[ChrRawServiceTotals], location: str, period_label: str):
     if not rows:
         return None, None
-    treatments = [r for r in rows if r.service_name == "Treatment"]
-    source = treatments or rows
-    total_count = int(_sum(r.service_count for r in source))
-    overtime_mins = int(_sum(r.mins_past_closing for r in source))
-    # Visit duration avg: weight by service_count
-    weighted_num = sum(
-        (r.visit_duration_mins or 0) for r in source
-    )
-    weighted_den = sum(1 for r in source if r.visit_duration_mins is not None)
-    avg_duration_per_day = (weighted_num / weighted_den) if weighted_den else None
-    # Rough per-treatment average
-    per_treatment = (weighted_num / total_count) if total_count else None
+
+    # Per-service-type breakdown (delay, count, overtime)
+    from collections import defaultdict
+    by_svc: Dict[str, list] = defaultdict(list)
+    for r in rows:
+        by_svc[r.service_name].append(r)
+
+    svc_metrics: Dict[str, dict] = {}
+    for svc, svc_rows in sorted(by_svc.items()):
+        total_delay = _sum(r.delay_mins_total for r in svc_rows)
+        total_count = int(_sum(r.service_count for r in svc_rows))
+        total_overtime = int(_sum(r.mins_past_closing for r in svc_rows))
+        avg_delay = total_delay / total_count if total_count else None
+        svc_metrics[svc] = {
+            "total_count": total_count,
+            "total_delay_mins": total_delay,
+            "avg_delay_per_visit_mins": round(avg_delay, 2) if avg_delay is not None else None,
+            "total_overtime_mins": total_overtime,
+        }
+
+    # Treatment-specific volume/duration summary (primary metric)
+    tx_rows = by_svc.get("Treatment", rows)
+    tx_count = int(_sum(r.service_count for r in tx_rows))
+    tx_overtime = int(_sum(r.mins_past_closing for r in tx_rows))
+    weighted_num = sum((r.visit_duration_mins or 0) for r in tx_rows)
+    weighted_den = sum(1 for r in tx_rows if r.visit_duration_mins is not None)
+    per_treatment = (weighted_num / tx_count) if tx_count else None
 
     metrics = {
-        "total_treatments": total_count,
-        "avg_visit_duration_per_day_mins": avg_duration_per_day,
+        "total_treatments": tx_count,
         "avg_visit_duration_per_treatment_mins": per_treatment,
-        "total_overtime_mins": overtime_mins,
-        "days_observed": len({r.schedule_date for r in source}),
+        "total_overtime_mins": tx_overtime,
+        "days_observed": len({r.schedule_date for r in rows}),
+        "by_service_type": svc_metrics,
     }
-    narrative = (
-        f"{location} in {period_label}: {total_count} treatments, "
+
+    # Build narrative: treatment summary + all service-type delays
+    parts = [
+        f"{location} in {period_label}: {tx_count} treatments, "
         f"avg visit duration {_fmt(per_treatment, 1, ' min')}, "
-        f"{overtime_mins} total overtime mins past closing."
-    )
+        f"{tx_overtime} overtime mins past closing."
+    ]
+    delay_parts = []
+    for svc, sm in sorted(svc_metrics.items()):
+        if sm["avg_delay_per_visit_mins"] is not None:
+            delay_parts.append(
+                f"{svc} avg delay {_fmt(sm['avg_delay_per_visit_mins'], 1, ' min/visit')} "
+                f"({sm['total_count']} visits)"
+            )
+    if delay_parts:
+        parts.append(f"Avg delay by service type: {'; '.join(delay_parts)}.")
+
+    narrative = " ".join(parts)
     return metrics, narrative
 
 
@@ -448,12 +476,22 @@ def compute_rollups(
     session: Session,
     client: str,
     ingest_id: str,
+    all_ingests: bool = False,
 ) -> Dict[str, int]:
     """
     Compute monthly and weekly rollups for every category and write to
     chr_raw_data_summary. Returns a dict of counts per category (monthly+weekly combined).
+
+    When all_ingests=True, queries ALL rows for the client regardless of ingest_id
+    (used for full recomputes after aggregator logic changes).
     """
     counts: Dict[str, int] = defaultdict(int)
+
+    def _q(model):
+        q = session.query(model).filter_by(client_name=client)
+        if not all_ingests:
+            q = q.filter_by(ingest_id=ingest_id)
+        return q.all()
 
     # Helper to process one category for one period granularity
     def process(period_type: str, rows: list, category: str, builder):
@@ -474,51 +512,37 @@ def compute_rollups(
                 counts[f"{category}_{period_type}"] += 1
 
     # ── operations ──
-    ops_rows = session.query(ChrRawDailyOperations).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    ops_rows = _q(ChrRawDailyOperations)
     process(PERIOD_MONTHLY, ops_rows, "operations", _build_operations)
     process(PERIOD_WEEKLY,  ops_rows, "operations", _build_operations)
 
     # ── nurse ──
-    nurse_rows = session.query(ChrRawNurseUtilization).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    nurse_rows = _q(ChrRawNurseUtilization)
     process(PERIOD_MONTHLY, nurse_rows, "nurse", _build_nurse)
     process(PERIOD_WEEKLY,  nurse_rows, "nurse", _build_nurse)
 
     # ── staffing ──
-    staffing_rows = session.query(ChrRawStaffingMetrics).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    staffing_rows = _q(ChrRawStaffingMetrics)
     process(PERIOD_MONTHLY, staffing_rows, "staffing", _build_staffing)
     process(PERIOD_WEEKLY,  staffing_rows, "staffing", _build_staffing)
 
     # ── service_dist ──
-    dist_rows = session.query(ChrRawServiceDistribution).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    dist_rows = _q(ChrRawServiceDistribution)
     process(PERIOD_MONTHLY, dist_rows, "service_dist", _build_service_dist)
     process(PERIOD_WEEKLY,  dist_rows, "service_dist", _build_service_dist)
 
     # ── service_totals ──
-    totals_rows = session.query(ChrRawServiceTotals).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    totals_rows = _q(ChrRawServiceTotals)
     process(PERIOD_MONTHLY, totals_rows, "service_totals", _build_service_totals)
     process(PERIOD_WEEKLY,  totals_rows, "service_totals", _build_service_totals)
 
     # ── time_blocks ──
-    tb_rows = session.query(ChrRawTimeBlockDistribution).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    tb_rows = _q(ChrRawTimeBlockDistribution)
     process(PERIOD_MONTHLY, tb_rows, "time_blocks", _build_time_blocks)
     process(PERIOD_WEEKLY,  tb_rows, "time_blocks", _build_time_blocks)
 
     # ── scheduler (no schedule_date on these rows — span the full ingest) ──
-    sched_rows = session.query(ChrRawSchedulerProductivity).filter_by(
-        client_name=client, ingest_id=ingest_id
-    ).all()
+    sched_rows = _q(ChrRawSchedulerProductivity)
     if sched_rows:
         # Anchor the scheduler rollup to the month covered by the operations rows
         # (scheduler CSV has no explicit date column).

@@ -1,3 +1,7 @@
+@import '@fontsource/outfit/400.css';
+@import '@fontsource/outfit/500.css';
+@import '@fontsource/outfit/600.css';
+@import '@fontsource/outfit/700.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
@@ -8,21 +12,24 @@
 @tailwind utilities;
 
 :root {
-  --color-text-primary: #0F172A;
+  --color-text-primary: #1A1A2E;
   --color-text-secondary: #64748B;
-  --color-accent: #0D9488;
+  --color-accent: #FE6325;
+  --color-accent-hover: #E85520;
+  --color-accent-light: rgba(254, 99, 37, 0.08);
+  --color-accent-glow: rgba(254, 99, 37, 0.15);
   --color-danger: #DC2626;
-  --color-warning: #D97706;
-  --color-bg: #FFFFFF;
-  --color-surface: #F8FAFC;
+  --color-warning: #FE6325;
+  --color-bg: #F5F0EB;
+  --color-surface: #FFFFFF;
   --color-border: #E2E8F0;
-  --color-hero-bg: #0F172A;
-  --color-hero-glow: rgba(13, 148, 136, 0.15);
+  --color-hero-bg: #FFFFFF;
+  --color-hero-glow: rgba(254, 99, 37, 0.15);
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Outfit', 'Inter', system-ui, sans-serif;
   color: var(--color-text-primary);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
