@@ -543,7 +543,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
           style={{
             position: 'absolute',
             top: 0, left: 0, right: 0, bottom: 0,
-            backgroundImage: 'url(/ai-hero.png)',
+            backgroundImage: `url(${import.meta.env.BASE_URL}ai-hero.png)`,
             backgroundPosition: 'center center',
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
@@ -557,7 +557,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
           {messages.length === 0 && (
             <div className="text-center py-12">
               <img
-                src="/ai-hero.png"
+                src={`${import.meta.env.BASE_URL}ai-hero.png`}
                 alt=""
                 style={{ maxWidth: 320, width: '100%', opacity: 0.6, margin: '0 auto 24px' }}
               />

@@ -12,7 +12,7 @@ export default function NavBar() {
       style={{ background: 'linear-gradient(135deg, #FE6325, #E85520)' }}
     >
       <Link to="/" className="flex items-center gap-4" onClick={() => aiOpen && closeAi()}>
-        <img src="/smirta-logo.png" alt="Smirta" style={{ height: 52, objectFit: 'contain' }} />
+        <img src={`${import.meta.env.BASE_URL}smirta-logo.png`} alt="Smirta" style={{ height: 52, objectFit: 'contain' }} />
         <span className="text-white font-semibold" style={{ fontSize: '22px', letterSpacing: '-0.01em' }}>iNtellisite</span>
       </Link>
 

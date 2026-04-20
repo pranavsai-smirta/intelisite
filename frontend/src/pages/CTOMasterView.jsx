@@ -154,7 +154,7 @@ export default function CTOMasterView() {
       {/* ── Background layers ── */}
       <div style={{
         position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-        backgroundImage: 'url(/dashboard-bg.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}dashboard-bg.png)`,
         backgroundPosition: 'center center',
         backgroundSize: 'cover',
         opacity: 0.04,
