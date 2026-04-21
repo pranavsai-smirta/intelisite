@@ -1,12 +1,15 @@
+import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useAi } from '../contexts/AiContext'
 import { useAuth } from '../contexts/AuthContext'
+import CtoUnlockModal from './CtoUnlockModal'
 
 export default function NavBar() {
   const location = useLocation()
   const isHome = location.pathname === '/'
   const { aiOpen, openAi, closeAi } = useAi()
-  const { logout } = useAuth()
+  const { role, logout } = useAuth()
+  const [ctoModalOpen, setCtoModalOpen] = useState(false)
 
   return (
     <nav
@@ -26,6 +29,16 @@ export default function NavBar() {
           >
             {'\u2190'} All Clinics
           </Link>
+        )}
+
+        {role === 'demo' && (
+          <button
+            onClick={() => setCtoModalOpen(true)}
+            className="text-white/70 hover:text-white text-xs transition-colors"
+            title="Unlock the full CTO dashboard"
+          >
+            CTO Access
+          </button>
         )}
 
         <button
@@ -59,6 +72,8 @@ export default function NavBar() {
           <span>{aiOpen ? 'Close AI' : 'Ask AI'}</span>
         </button>
       </div>
+
+      {ctoModalOpen && <CtoUnlockModal onClose={() => setCtoModalOpen(false)} />}
     </nav>
   )
 }

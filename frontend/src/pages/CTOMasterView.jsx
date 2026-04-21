@@ -2,9 +2,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useManifest } from '../hooks/useManifest'
 import { useAi } from '../contexts/AiContext'
+import { useAuth } from '../contexts/AuthContext'
 import NavBar from '../components/NavBar'
 import ScoreBadge from '../components/ScoreBadge'
 import AiView from '../components/AiView'
+
+const DEMO_CLIENT_CODE = 'DEMO'
+const TREND_LABEL = { up: 'Improving', down: 'Declining', flat: 'Stable' }
 
 const TREND_ICON = { up: '\u2191', down: '\u2193', flat: '\u2192' }
 const TREND_COLOR = { up: 'text-green-500', down: 'text-red-500', flat: 'text-slate-400' }
@@ -70,6 +74,8 @@ export default function CTOMasterView() {
   const [sortDir, setSortDir] = useState('desc')
   const [trendFilter, setTrendFilter] = useState('all')
   const { aiOpen } = useAi()
+  const { role } = useAuth()
+  const isDemoMode = role === 'demo'
 
   if (loading) return (
     <div className="min-h-screen" style={{ background: '#F5F0EB' }}>
@@ -85,7 +91,13 @@ export default function CTOMasterView() {
     </div>
   )
 
-  const { clients = [], network_summary = {}, latest_month } = manifest
+  const { clients: allClients = [], network_summary: fullNetworkSummary = {}, latest_month } = manifest
+
+  const clients = isDemoMode
+    ? allClients.filter(c => c.code === DEMO_CLIENT_CODE)
+    : allClients
+  const demoClient = isDemoMode ? clients[0] : null
+  const network_summary = isDemoMode ? {} : fullNetworkSummary
 
   const improving = clients.filter(c => c.mom_trend === 'up').length
   const belowThreshold = clients.filter(c => c.composite_score !== null && c.composite_score < 65).length
@@ -104,14 +116,20 @@ export default function CTOMasterView() {
         explanation: 'Weighted aggregate performance score (0-100) combining Scheduler Compliance, Avg Delay, Chair Utilization, and Tx Past Close metrics.',
       },
     },
-    data_notes: [
-      `Network of ${clients.length} clinics. Report period: ${latest_month}.`,
-      `Network average composite score: ${network_summary.avg_composite_score ?? '\u2014'}.`,
-      `Top performer: ${network_summary.top_performer ?? '\u2014'}.`,
-      `Most improved: ${network_summary.most_improved ?? '\u2014'}.`,
-      `${belowThreshold} clinic${belowThreshold !== 1 ? 's' : ''} below the 65-point threshold.`,
-      `${improving} clinic${improving !== 1 ? 's' : ''} improving month-over-month.`,
-    ].join(' '),
+    data_notes: isDemoMode
+      ? [
+          `Demo view. Single practice: ${demoClient?.display_name ?? 'Demo Practice'} with ${demoClient?.location_count ?? 0} locations. Report period: ${latest_month}.`,
+          `Composite score: ${demoClient?.composite_score ?? '\u2014'}.`,
+          `Month-over-month trend: ${TREND_LABEL[demoClient?.mom_trend ?? 'flat']}.`,
+        ].join(' ')
+      : [
+          `Network of ${clients.length} clinics. Report period: ${latest_month}.`,
+          `Network average composite score: ${network_summary.avg_composite_score ?? '\u2014'}.`,
+          `Top performer: ${network_summary.top_performer ?? '\u2014'}.`,
+          `Most improved: ${network_summary.most_improved ?? '\u2014'}.`,
+          `${belowThreshold} clinic${belowThreshold !== 1 ? 's' : ''} below the 65-point threshold.`,
+          `${improving} clinic${improving !== 1 ? 's' : ''} improving month-over-month.`,
+        ].join(' '),
     historical_kpis: [],
   }
 
@@ -141,12 +159,19 @@ export default function CTOMasterView() {
     )
   }
 
-  const heroStats = [
-    { label: 'Avg Composite Score', value: network_summary.avg_composite_score ?? '\u2014' },
-    { label: 'Top Performer',       value: network_summary.top_performer ?? '\u2014' },
-    { label: 'Most Improved',       value: network_summary.most_improved ?? '\u2014' },
-    { label: 'Clinics Below 65',    value: belowThreshold },
-  ]
+  const heroStats = isDemoMode
+    ? [
+        { label: 'Composite Score', value: demoClient?.composite_score ?? '\u2014' },
+        { label: 'Practice',        value: demoClient?.display_name ?? 'Demo Practice' },
+        { label: 'MoM Trend',       value: TREND_LABEL[demoClient?.mom_trend ?? 'flat'] },
+        { label: 'Locations',       value: demoClient?.location_count ?? 0 },
+      ]
+    : [
+        { label: 'Avg Composite Score', value: network_summary.avg_composite_score ?? '\u2014' },
+        { label: 'Top Performer',       value: network_summary.top_performer ?? '\u2014' },
+        { label: 'Most Improved',       value: network_summary.most_improved ?? '\u2014' },
+        { label: 'Clinics Below 65',    value: belowThreshold },
+      ]
 
   return (
     <div className="min-h-screen" style={{ background: '#F5F0EB' }}>
@@ -235,10 +260,10 @@ export default function CTOMasterView() {
 
           <div className="max-w-7xl mx-auto" style={{ position: 'relative', zIndex: 1 }}>
             <div style={{ fontSize: '10px', fontWeight: 700, color: '#FE6325', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '6px' }}>
-              OncoSmart Network
+              {isDemoMode ? 'Smirta Intellisite' : 'OncoSmart Network'}
             </div>
             <h1 style={{ fontSize: '30px', fontWeight: 800, color: '#1A1A2E', margin: '0 0 4px', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-              CTO Dashboard
+              {isDemoMode ? 'Practice Dashboard' : 'CTO Dashboard'}
             </h1>
             <div style={{ fontSize: '13px', color: '#64748B' }}>Report period: {latest_month}</div>
 
@@ -272,34 +297,45 @@ export default function CTOMasterView() {
 
         {/* Controls */}
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-4 flex-wrap">
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-500 font-medium">Sort:</span>
-            <button
-              onClick={() => setSortDir(d => d === 'desc' ? 'asc' : 'desc')}
-              className="text-xs px-3 py-1.5 rounded-lg bg-white text-slate-700 transition-colors"
-              style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
-            >
-              Score {sortDir === 'desc' ? '\u2193' : '\u2191'}
-            </button>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-500 font-medium">Filter:</span>
-            {['all','up','down'].map(f => (
-              <button
-                key={f}
-                onClick={() => setTrendFilter(f)}
-                className="text-xs px-3 py-1.5 rounded-lg transition-colors"
-                style={
-                  trendFilter === f
-                    ? { background: '#FE6325', color: 'white', boxShadow: '0 2px 8px rgba(254,99,37,0.25)' }
-                    : { background: 'white', color: '#475569', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }
-                }
-              >
-                {f === 'all' ? 'All' : f === 'up' ? '\u2191 Improving' : '\u2193 Declining'}
-              </button>
-            ))}
-          </div>
-          <span className="ml-auto text-xs text-slate-400">{filtered.length} clinics</span>
+          {!isDemoMode && (
+            <>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-500 font-medium">Sort:</span>
+                <button
+                  onClick={() => setSortDir(d => d === 'desc' ? 'asc' : 'desc')}
+                  className="text-xs px-3 py-1.5 rounded-lg bg-white text-slate-700 transition-colors"
+                  style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}
+                >
+                  Score {sortDir === 'desc' ? '\u2193' : '\u2191'}
+                </button>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-500 font-medium">Filter:</span>
+                {['all','up','down'].map(f => (
+                  <button
+                    key={f}
+                    onClick={() => setTrendFilter(f)}
+                    className="text-xs px-3 py-1.5 rounded-lg transition-colors"
+                    style={
+                      trendFilter === f
+                        ? { background: '#FE6325', color: 'white', boxShadow: '0 2px 8px rgba(254,99,37,0.25)' }
+                        : { background: 'white', color: '#475569', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }
+                    }
+                  >
+                    {f === 'all' ? 'All' : f === 'up' ? '\u2191 Improving' : '\u2193 Declining'}
+                  </button>
+                ))}
+              </div>
+            </>
+          )}
+          {!isDemoMode && (
+            <span className="ml-auto text-xs text-slate-400">{filtered.length} clinics</span>
+          )}
+          {isDemoMode && (
+            <span className="ml-auto text-xs text-slate-400">
+              Click the tile to explore the demo
+            </span>
+          )}
         </div>
 
         {/* Clinic grid */}

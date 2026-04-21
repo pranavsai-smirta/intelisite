@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, Navigate } from 'react-router-dom'
 import { useClinicData } from '../hooks/useClinicData'
 import { useAi } from '../contexts/AiContext'
+import { useAuth } from '../contexts/AuthContext'
 import NavBar from '../components/NavBar'
 import ScoreBadge from '../components/ScoreBadge'
 import KpiCard from '../components/KpiCard'
@@ -15,6 +16,11 @@ export default function ClinicView() {
   const { data, loading, error } = useClinicData(clientCode)
   const [selectedMonth, setSelectedMonth] = useState(null)
   const { aiOpen } = useAi()
+  const { role } = useAuth()
+
+  if (role === 'demo' && clientCode !== 'DEMO') {
+    return <Navigate to="/" replace />
+  }
 
   if (loading) return (
     <div className="min-h-screen" style={{ background: '#F5F0EB' }}>
