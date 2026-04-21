@@ -1,10 +1,12 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAi } from '../contexts/AiContext'
+import { useAuth } from '../contexts/AuthContext'
 
 export default function NavBar() {
   const location = useLocation()
   const isHome = location.pathname === '/'
   const { aiOpen, openAi, closeAi } = useAi()
+  const { logout } = useAuth()
 
   return (
     <nav
@@ -25,6 +27,14 @@ export default function NavBar() {
             {'\u2190'} All Clinics
           </Link>
         )}
+
+        <button
+          onClick={logout}
+          className="text-white/70 hover:text-white text-xs transition-colors"
+          title="Sign out"
+        >
+          Sign out
+        </button>
 
         <button
           onClick={aiOpen ? closeAi : openAi}
