@@ -569,110 +569,122 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         </div>
       </div>
 
-      {/* Messages — ref on the scrollable container, not a sentinel div */}
-      <div
-        ref={scrollContainerRef}
-        className="flex-1 overflow-y-auto relative"
-        style={{ background: '#F5F0EB' }}
-      >
-        {/* ai-hero ghost watermark behind messages */}
+      {/* Two-column body: messages (left ~70%) + sidebar (right ~30%) */}
+      <div className="flex-1 flex min-h-0">
+
+        {/* LEFT — messages scroll area */}
         <div
-          style={{
-            position: 'absolute',
-            top: 0, left: 0, right: 0, bottom: 0,
-            backgroundImage: `url(${import.meta.env.BASE_URL}ai-hero.png)`,
-            backgroundPosition: 'center center',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.05,
-            pointerEvents: 'none',
-            zIndex: 0,
-          }}
-        />
-        <div className="max-w-4xl mx-auto px-6 py-4" style={{ position: 'relative', zIndex: 1 }}>
+          ref={scrollContainerRef}
+          className="flex-1 overflow-y-auto relative"
+          style={{ background: '#F5F0EB', flexBasis: '70%' }}
+        >
+          {/* ai-hero ghost watermark behind messages */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0, left: 0, right: 0, bottom: 0,
+              backgroundImage: `url(${import.meta.env.BASE_URL}ai-hero.png)`,
+              backgroundPosition: 'center center',
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+              opacity: 0.05,
+              pointerEvents: 'none',
+              zIndex: 0,
+            }}
+          />
+          <div className="max-w-4xl mx-auto px-6 py-4" style={{ position: 'relative', zIndex: 1 }}>
 
-          {messages.length === 0 && (
-            <div className="text-center py-12">
-              <img
-                src={`${import.meta.env.BASE_URL}ai-hero.png`}
-                alt=""
-                style={{ maxWidth: 320, width: '100%', opacity: 0.6, margin: '0 auto 24px' }}
-              />
-              <div
-                className="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
-                style={{ background: 'rgba(254,99,37,0.08)', border: '1px solid rgba(254,99,37,0.15)' }}
-              >
-                <span style={{ fontSize: '20px' }}>{'\u2726'}</span>
+            {messages.length === 0 && (
+              <div className="text-center py-12">
+                <img
+                  src={`${import.meta.env.BASE_URL}ai-hero.png`}
+                  alt=""
+                  style={{ maxWidth: 320, width: '100%', opacity: 0.6, margin: '0 auto 24px' }}
+                />
+                <div
+                  className="inline-flex w-12 h-12 rounded-full items-center justify-center mb-4"
+                  style={{ background: 'rgba(254,99,37,0.08)', border: '1px solid rgba(254,99,37,0.15)' }}
+                >
+                  <span style={{ fontSize: '20px' }}>{'\u2726'}</span>
+                </div>
+                <p className="text-sm text-[#64748B]">Select a question on the right or type your own.</p>
               </div>
-              <p className="text-sm text-[#64748B]">Select a question below or type your own.</p>
-            </div>
-          )}
+            )}
 
-          {messages.map((m, i) => {
-            if (m.role === 'assistant' && m.content === '' && streaming) return null
-            return (
-              <Message
-                key={i}
-                role={m.role}
-                content={m.content}
-                isStreaming={streaming && i === messages.length - 1 && m.role === 'assistant'}
-                onCopyEmail={m.role === 'assistant' ? handleCopyEmail : undefined}
-              />
-            )
-          })}
+            {messages.map((m, i) => {
+              if (m.role === 'assistant' && m.content === '' && streaming) return null
+              return (
+                <Message
+                  key={i}
+                  role={m.role}
+                  content={m.content}
+                  isStreaming={streaming && i === messages.length - 1 && m.role === 'assistant'}
+                  onCopyEmail={m.role === 'assistant' ? handleCopyEmail : undefined}
+                />
+              )
+            })}
 
-          {showTyping && <TypingIndicator />}
-        </div>
-      </div>
-
-      {/* FAQ chips — 3 pinned + up to 3 from recent history; always visible */}
-      {(
-        <div className="flex-shrink-0" style={{ background: '#F5F0EB', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-          <div className="max-w-4xl mx-auto px-6 py-3">
-            <p className="text-xs text-[#64748B] font-medium uppercase tracking-wider mb-3">Suggested questions</p>
-            <div className="flex flex-wrap gap-2">
-              {PINNED_CHIPS.map(q => <FaqChip key={q} label={q} onClick={() => handleSend(q)} />)}
-              {recentQuestions
-                .filter(q => !PINNED_CHIPS.includes(q))
-                .slice(0, 3)
-                .map(q => (
-                  <FaqChip
-                    key={q}
-                    label={q}
-                    onClick={() => handleSend(q)}
-                    isRecent
-                  />
-                ))}
-            </div>
+            {showTyping && <TypingIndicator />}
           </div>
         </div>
-      )}
 
-      {/* Input bar */}
-      <div className="flex-shrink-0 px-6 py-4"
-        style={{ background: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-        <div className="max-w-4xl mx-auto">
-          <div className="flex gap-3 items-end">
-            <textarea ref={inputRef} value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={handleChatKeyDown}
-              rows={1} disabled={streaming}
-              placeholder="Ask about performance data, trends, or benchmarks\u2026"
-              className="flex-1 text-[#1A1A2E] text-sm rounded-xl px-4 py-3 resize-none outline-none transition-colors placeholder-[#94A3B8]"
-              style={{ background: '#F5F0EB', border: '1px solid rgba(0,0,0,0.08)' }}
-              onFocus={e => (e.currentTarget.style.border = '1px solid rgba(254,99,37,0.5)')}
-              onBlur={e => (e.currentTarget.style.border = '1px solid rgba(0,0,0,0.08)')} />
-            <button onClick={() => handleSend()} disabled={!input.trim() || streaming}
-              className="text-sm px-5 py-3 rounded-xl font-medium transition-all flex-shrink-0"
-              style={{
-                background: !input.trim() || streaming ? 'rgba(0,0,0,0.04)' : '#FE6325',
-                color: !input.trim() || streaming ? 'rgba(0,0,0,0.2)' : 'white',
-              }}>
-              {streaming ? '\u22ef' : '\u2191'}
-            </button>
+        {/* RIGHT sidebar — suggested questions label + chips + input */}
+        <aside
+          className="flex-shrink-0 flex flex-col min-h-0"
+          style={{
+            flexBasis: '30%',
+            background: '#FAF6F1',
+            borderLeft: '1px solid rgba(26,26,46,0.08)',
+          }}
+        >
+          <div className="px-5 pt-5 pb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Suggested questions
           </div>
-          {error && <p className="mt-2 text-xs text-red-400">{error}</p>}
-        </div>
+
+          {/* Chips — vertical stack, right-aligned, scrollable */}
+          <div className="flex-1 overflow-y-auto px-5 pb-3 flex flex-col items-end gap-2">
+            {PINNED_CHIPS.map(q => <FaqChip key={q} label={q} onClick={() => handleSend(q)} />)}
+            {recentQuestions
+              .filter(q => !PINNED_CHIPS.includes(q))
+              .slice(0, 3)
+              .map(q => (
+                <FaqChip
+                  key={q}
+                  label={q}
+                  onClick={() => handleSend(q)}
+                  isRecent
+                />
+              ))}
+          </div>
+
+          {/* Input pinned to bottom of sidebar */}
+          <div
+            className="flex-shrink-0 px-5 py-4"
+            style={{ borderTop: '1px solid rgba(26,26,46,0.08)' }}
+          >
+            <div className="flex gap-2 items-end">
+              <textarea ref={inputRef} value={input}
+                onChange={e => setInput(e.target.value)}
+                onKeyDown={handleChatKeyDown}
+                rows={1} disabled={streaming}
+                placeholder="Ask about performance data, trends, or benchmarks\u2026"
+                className="flex-1 text-[#1A1A2E] text-sm rounded-xl px-4 py-3 resize-none outline-none transition-colors placeholder-[#94A3B8]"
+                style={{ background: '#F5F0EB', border: '1px solid rgba(0,0,0,0.08)' }}
+                onFocus={e => (e.currentTarget.style.border = '1px solid rgba(254,99,37,0.5)')}
+                onBlur={e => (e.currentTarget.style.border = '1px solid rgba(0,0,0,0.08)')} />
+              <button onClick={() => handleSend()} disabled={!input.trim() || streaming}
+                className="text-sm px-5 py-3 rounded-xl font-medium transition-all flex-shrink-0"
+                style={{
+                  background: !input.trim() || streaming ? 'rgba(0,0,0,0.04)' : '#FE6325',
+                  color: !input.trim() || streaming ? 'rgba(0,0,0,0.2)' : 'white',
+                }}>
+                {streaming ? '\u22ef' : '\u2191'}
+              </button>
+            </div>
+            {error && <p className="mt-2 text-xs text-red-400">{error}</p>}
+          </div>
+        </aside>
+
       </div>
     </div>
     </>
