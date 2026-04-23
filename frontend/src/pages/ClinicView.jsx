@@ -157,15 +157,12 @@ export default function ClinicView() {
               onMouseEnter={e => (e.currentTarget.style.color = '#FE6325')}
               onMouseLeave={e => (e.currentTarget.style.color = '#94A3B8')}
             >
-              {'\u2190'} Back to CTO Dashboard
+              {'\u2190'} Back to Admin Dashboard
             </Link>
-            <div style={{ fontSize: '10px', fontWeight: 700, color: '#FE6325', textTransform: 'uppercase', letterSpacing: '0.14em', marginBottom: '6px' }}>
-              Clinic Detail
-            </div>
             <div className="flex items-start gap-5 flex-wrap">
               <div className="flex-1 min-w-0">
                 <h1 style={{ fontSize: '26px', fontWeight: 800, color: '#1A1A2E', margin: '0 0 4px', letterSpacing: '-0.02em' }}>
-                  {clientCode}
+                  {clientCode} Practice
                 </h1>
                 <div style={{ fontSize: '13px', color: '#64748B' }}>
                   {filteredLocations.length} location{filteredLocations.length !== 1 ? 's' : ''} {'\u00b7'} Report period: {activeMonth}
@@ -200,7 +197,6 @@ export default function ClinicView() {
                 unit="min"
                 delta={ioptimize[0]?.mom_deltas?.avg_delay_mins ?? null}
                 higherIsBetter={false}
-                subtitle={`Global: ${companyAvg.avg_delay_avg ?? '\u2014'} min`}
                 showTrendLink={true}
                 heroAccent={true}
               />
@@ -210,7 +206,6 @@ export default function ClinicView() {
                 unit="%"
                 delta={ioptimize[0]?.mom_deltas?.avg_chair_utilization ?? null}
                 higherIsBetter={true}
-                subtitle={`Global: ${companyAvg.chair_utilization_avg ?? '\u2014'}%`}
                 showTrendLink={true}
                 heroAccent={true}
               />
@@ -220,7 +215,6 @@ export default function ClinicView() {
                 unit="/day"
                 delta={ioptimize[0]?.mom_deltas?.avg_treatments_per_day ?? null}
                 higherIsBetter={false}
-                subtitle={`Global: ${companyAvg.tx_past_close_avg ?? '\u2014'}`}
                 showTrendLink={true}
                 heroAccent={true}
               />
@@ -230,7 +224,6 @@ export default function ClinicView() {
                 unit="/nurse"
                 delta={iassign.filter(r => r.location !== 'Company Avg')[0]?.mom_deltas?.patients_per_nurse ?? null}
                 higherIsBetter={false}
-                subtitle={`Global: ${iassign.find(r => r.location === 'Company Avg')?.patients_per_nurse_avg ?? '\u2014'}`}
                 showTrendLink={true}
                 heroAccent={true}
               />

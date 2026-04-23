@@ -44,10 +44,22 @@ export default function KpiCard({ label, value, unit, delta, higherIsBetter, sub
       {showTrendLink && (
         <button
           onClick={() => document.getElementById('trend-charts')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-xs mt-1 text-left transition-colors"
-          style={{ color: '#FE6325' }}
+          className="mt-2 w-full text-xs font-semibold text-left px-3 py-2 rounded-lg transition-all"
+          style={{
+            background: 'rgba(254,99,37,0.08)',
+            color: '#FE6325',
+            border: '1px solid rgba(254,99,37,0.25)',
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = 'rgba(254,99,37,0.15)'
+            e.currentTarget.style.border = '1px solid rgba(254,99,37,0.5)'
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = 'rgba(254,99,37,0.08)'
+            e.currentTarget.style.border = '1px solid rgba(254,99,37,0.25)'
+          }}
         >
-          View Trend {'\u2197'}
+          {'\u2197'} Click here to know 6 month trend
         </button>
       )}
     </div>

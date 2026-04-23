@@ -18,7 +18,7 @@ export default function NavBar() {
     >
       <Link to="/" className="flex items-center gap-4" onClick={() => aiOpen && closeAi()}>
         <img src={`${import.meta.env.BASE_URL}smirta-logo.png`} alt="Smirta" style={{ height: 52, objectFit: 'contain' }} />
-        <span className="text-white font-semibold" style={{ fontSize: '22px', letterSpacing: '-0.01em' }}>iNtellisite</span>
+        <span className="text-white font-semibold" style={{ fontSize: '22px', letterSpacing: '-0.01em' }}>iNtellisite Next gen</span>
       </Link>
 
       <div className="ml-auto flex items-center gap-3">
@@ -27,7 +27,7 @@ export default function NavBar() {
             to="/"
             className="text-white/80 hover:text-white text-sm transition-colors"
           >
-            {'\u2190'} All Clinics
+            {'\u2190'} All Clients
           </Link>
         )}
 
@@ -37,7 +37,7 @@ export default function NavBar() {
             className="text-white/70 hover:text-white text-xs transition-colors"
             title="Unlock the full CTO dashboard"
           >
-            CTO Access
+            Admin Access
           </button>
         )}
 
