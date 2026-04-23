@@ -4,7 +4,6 @@ import { useClinicData } from '../hooks/useClinicData'
 import { useAi } from '../contexts/AiContext'
 import { useAuth } from '../contexts/AuthContext'
 import NavBar from '../components/NavBar'
-import ScoreBadge from '../components/ScoreBadge'
 import KpiCard from '../components/KpiCard'
 import KpiTable from '../components/KpiTable'
 import TrendChart from '../components/TrendChart'
@@ -172,32 +171,29 @@ export default function ClinicView() {
                   {filteredLocations.length} location{filteredLocations.length !== 1 ? 's' : ''} {'\u00b7'} Report period: {activeMonth}
                 </div>
               </div>
-              <ScoreBadge score={composite_score} size="lg" />
+              {availableMonths.length > 1 && (
+                <div className="flex items-center gap-2 flex-wrap flex-shrink-0">
+                  <span className="text-xs text-slate-400 font-medium">Month:</span>
+                  {availableMonths.map(m => (
+                    <button
+                      key={m}
+                      onClick={() => setSelectedMonth(m)}
+                      className="text-xs px-3 py-1.5 rounded-lg transition-colors"
+                      style={
+                        m === activeMonth
+                          ? { background: '#FE6325', color: 'white', boxShadow: '0 2px 8px rgba(254,99,37,0.25)' }
+                          : { background: 'rgba(0,0,0,0.05)', color: '#64748B', border: '1px solid rgba(0,0,0,0.06)' }
+                      }
+                    >
+                      {m}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
-            {/* Month selector */}
-            {availableMonths.length > 1 && (
-              <div className="mt-4 flex items-center gap-2 flex-wrap">
-                <span className="text-xs text-slate-400 font-medium">Month:</span>
-                {availableMonths.map(m => (
-                  <button
-                    key={m}
-                    onClick={() => setSelectedMonth(m)}
-                    className="text-xs px-3 py-1.5 rounded-lg transition-colors"
-                    style={
-                      m === activeMonth
-                        ? { background: '#FE6325', color: 'white', boxShadow: '0 2px 8px rgba(254,99,37,0.25)' }
-                        : { background: 'rgba(0,0,0,0.05)', color: '#64748B', border: '1px solid rgba(0,0,0,0.06)' }
-                    }
-                  >
-                    {m}
-                  </button>
-                ))}
-              </div>
-            )}
-
             {/* KPI hero cards — L3 order, heroAccent for orange top bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-3">
               <KpiCard
                 label="Avg Delay"
                 value={ioptimize[0]?.avg_delay_avg ?? null}
