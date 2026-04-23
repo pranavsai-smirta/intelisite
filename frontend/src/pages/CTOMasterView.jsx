@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useManifest } from '../hooks/useManifest'
+import { useClinicData } from '../hooks/useClinicData'
 import { useAi } from '../contexts/AiContext'
 import { useAuth } from '../contexts/AuthContext'
 import NavBar from '../components/NavBar'
@@ -76,6 +77,7 @@ export default function CTOMasterView() {
   const { aiOpen } = useAi()
   const { role } = useAuth()
   const isDemoMode = role === 'demo'
+  const { data: demoData } = useClinicData(isDemoMode ? 'DEMO' : null)
 
   if (loading) return (
     <div className="min-h-screen" style={{ background: '#F5F0EB' }}>
@@ -108,6 +110,8 @@ export default function CTOMasterView() {
     const sb = b.composite_score ?? 0
     return sortDir === 'desc' ? sb - sa : sa - sb
   })
+
+  const demoChatbotContext = demoData?.chatbot_context ?? null
 
   const networkChatbotContext = {
     kpi_definitions: {
@@ -150,9 +154,9 @@ export default function CTOMasterView() {
       <div className="h-screen flex flex-col" style={{ background: '#F5F0EB' }}>
         <NavBar />
         <AiView
-          chatbotContext={networkChatbotContext}
+          chatbotContext={isDemoMode && demoChatbotContext ? demoChatbotContext : networkChatbotContext}
           currentMonthData={networkMonthData}
-          clinicName={null}
+          clinicName={isDemoMode ? 'DEMO' : null}
           activeMonth={latest_month}
         />
       </div>
