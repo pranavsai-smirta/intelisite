@@ -9507,6 +9507,848 @@
         }
       ]
     },
-    "client_name": "DEMO"
+    "client_name": "DEMO",
+    "service_type_delays": [
+      {
+        "location": "Clinic 1",
+        "month": "2025-10",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 8.8,
+        "total_visits": 638
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-10",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.2,
+        "total_visits": 3722
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-10",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 11.1,
+        "total_visits": 2796
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-10",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 6.1,
+        "total_visits": 69
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-10",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 9.1,
+        "total_visits": 1679
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-11",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 9.2,
+        "total_visits": 510
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-11",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.1,
+        "total_visits": 2868
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-11",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.8,
+        "total_visits": 2147
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-11",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 3.9,
+        "total_visits": 47
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-11",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 8.4,
+        "total_visits": 1345
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-12",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 7.1,
+        "total_visits": 617
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-12",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.7,
+        "total_visits": 3363
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-12",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 11.2,
+        "total_visits": 2342
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-12",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 5.4,
+        "total_visits": 62
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2025-12",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 8.8,
+        "total_visits": 1645
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-01",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 6.6,
+        "total_visits": 491
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-01",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.5,
+        "total_visits": 2852
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-01",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 11.7,
+        "total_visits": 2144
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-01",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 8.5,
+        "total_visits": 39
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-01",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 9.4,
+        "total_visits": 1346
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-02",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 6.3,
+        "total_visits": 540
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-02",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.1,
+        "total_visits": 3103
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-02",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.5,
+        "total_visits": 2376
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-02",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 7.3,
+        "total_visits": 32
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-02",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 9.4,
+        "total_visits": 1504
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-03",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 6.9,
+        "total_visits": 625
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-03",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.2,
+        "total_visits": 3393
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-03",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 9.6,
+        "total_visits": 2428
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-03",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 4.4,
+        "total_visits": 40
+      },
+      {
+        "location": "Clinic 1",
+        "month": "2026-03",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 8.5,
+        "total_visits": 1613
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-10",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 8.5,
+        "total_visits": 576
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-10",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.9,
+        "total_visits": 3083
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-10",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 9.8,
+        "total_visits": 3637
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-10",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 5.2,
+        "total_visits": 29
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-10",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 13.0,
+        "total_visits": 1477
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-11",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 7.6,
+        "total_visits": 427
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-11",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.9,
+        "total_visits": 2522
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-11",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 9.6,
+        "total_visits": 2971
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-11",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 6.8,
+        "total_visits": 25
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-11",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 13.0,
+        "total_visits": 1224
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-12",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 6.6,
+        "total_visits": 586
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-12",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.7,
+        "total_visits": 3029
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-12",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.8,
+        "total_visits": 2974
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-12",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 7.9,
+        "total_visits": 41
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2025-12",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 11.7,
+        "total_visits": 1598
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-01",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 6.3,
+        "total_visits": 405
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-01",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.9,
+        "total_visits": 2505
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-01",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.8,
+        "total_visits": 2595
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-01",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 12.5,
+        "total_visits": 36
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-01",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 10.0,
+        "total_visits": 1274
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-02",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 8.1,
+        "total_visits": 445
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-02",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.1,
+        "total_visits": 2846
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-02",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.0,
+        "total_visits": 2975
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-02",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 13.6,
+        "total_visits": 40
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-02",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 10.9,
+        "total_visits": 1370
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-03",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 4.9,
+        "total_visits": 488
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-03",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.2,
+        "total_visits": 3005
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-03",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.0,
+        "total_visits": 3002
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-03",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 8.6,
+        "total_visits": 47
+      },
+      {
+        "location": "Clinic 2",
+        "month": "2026-03",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 10.4,
+        "total_visits": 1482
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-10",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 1.3,
+        "total_visits": 42
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-10",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.7,
+        "total_visits": 1668
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-10",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 7.4,
+        "total_visits": 1307
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-10",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 4.7,
+        "total_visits": 95
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-10",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 8.0,
+        "total_visits": 1064
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-11",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 1.4,
+        "total_visits": 37
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-11",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.3,
+        "total_visits": 1329
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-11",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 9.9,
+        "total_visits": 1017
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-11",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 6.7,
+        "total_visits": 81
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-11",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 9.7,
+        "total_visits": 842
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-12",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 0.2,
+        "total_visits": 46
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-12",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.4,
+        "total_visits": 1541
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-12",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 8.9,
+        "total_visits": 1147
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-12",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 5.6,
+        "total_visits": 73
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2025-12",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 9.5,
+        "total_visits": 953
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-01",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 0.0,
+        "total_visits": 32
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-01",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.9,
+        "total_visits": 1293
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-01",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 10.3,
+        "total_visits": 963
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-01",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 7.8,
+        "total_visits": 64
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-01",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 7.1,
+        "total_visits": 831
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-02",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 0.0,
+        "total_visits": 32
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-02",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.1,
+        "total_visits": 1561
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-02",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 7.9,
+        "total_visits": 1211
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-02",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 4.1,
+        "total_visits": 70
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-02",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 6.2,
+        "total_visits": 981
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-03",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 1.0,
+        "total_visits": 30
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-03",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 1.9,
+        "total_visits": 1514
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-03",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 8.6,
+        "total_visits": 1120
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-03",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 3.8,
+        "total_visits": 100
+      },
+      {
+        "location": "Clinic 3",
+        "month": "2026-03",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 5.6,
+        "total_visits": 1028
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-10",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 6.0,
+        "total_visits": 300
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-10",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.9,
+        "total_visits": 1473
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-10",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 9.1,
+        "total_visits": 1270
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-10",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 5.6,
+        "total_visits": 12
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-10",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 9.4,
+        "total_visits": 993
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-11",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 4.9,
+        "total_visits": 234
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-11",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.2,
+        "total_visits": 1213
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-11",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 8.2,
+        "total_visits": 1026
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-11",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 8.0,
+        "total_visits": 9
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-11",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 10.5,
+        "total_visits": 773
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-12",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 8.7,
+        "total_visits": 196
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-12",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.2,
+        "total_visits": 1421
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-12",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 11.6,
+        "total_visits": 1198
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-12",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 6.9,
+        "total_visits": 15
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2025-12",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 11.9,
+        "total_visits": 919
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-01",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 7.2,
+        "total_visits": 160
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-01",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.3,
+        "total_visits": 1124
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-01",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 9.2,
+        "total_visits": 906
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-01",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 9.2,
+        "total_visits": 8
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-01",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 10.8,
+        "total_visits": 664
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-02",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 9.6,
+        "total_visits": 159
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-02",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.4,
+        "total_visits": 1270
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-02",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 13.8,
+        "total_visits": 1064
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-02",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 5.2,
+        "total_visits": 12
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-02",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 13.2,
+        "total_visits": 790
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-03",
+        "service_type": "Injection",
+        "avg_delay_mins_per_visit": 5.8,
+        "total_visits": 218
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-03",
+        "service_type": "Lab",
+        "avg_delay_mins_per_visit": 2.2,
+        "total_visits": 1322
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-03",
+        "service_type": "MD",
+        "avg_delay_mins_per_visit": 11.6,
+        "total_visits": 1104
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-03",
+        "service_type": "Outside Infusion",
+        "avg_delay_mins_per_visit": 5.0,
+        "total_visits": 11
+      },
+      {
+        "location": "Clinic 4",
+        "month": "2026-03",
+        "service_type": "Treatment",
+        "avg_delay_mins_per_visit": 12.3,
+        "total_visits": 853
+      }
+    ]
   }
 }
