@@ -124,6 +124,7 @@ if DEMO_JSON.exists():
     if "chatbot_context" not in demo_data:
         demo_data["chatbot_context"] = {}
     ctx = demo_data["chatbot_context"]
+    ctx["client_name"]      = CLIENT
     ctx["kpi_definitions"]  = KPI_DEFINITIONS
     ctx["data_notes"]       = DATA_NOTES
     ctx["business_rules"]   = BUSINESS_RULES

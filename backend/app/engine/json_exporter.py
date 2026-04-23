@@ -936,6 +936,7 @@ def build_client_json(
         },
         "months": months_data,
         "chatbot_context": {
+            "client_name":      client_name,
             "kpi_definitions":  KPI_DEFINITIONS,
             "data_notes":       DATA_NOTES,
             "business_rules":   BUSINESS_RULES,

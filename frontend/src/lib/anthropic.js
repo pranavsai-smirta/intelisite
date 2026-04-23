@@ -3,6 +3,7 @@ const MODEL = 'claude-sonnet-4-6'
 
 export function buildSystemPrompt(chatbotContext, currentMonthData) {
   const {
+    client_name = 'this practice',
     kpi_definitions = {},
     data_notes = '',
     business_rules = {},
@@ -155,6 +156,15 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
     .join('\n')
 
   return [
+    '## DATA SCOPE RESTRICTION — READ FIRST',
+    'You have been given data for ONE client only: ' + client_name + '.',
+    'You MUST NOT reference, speculate about, or discuss data from any other organization,',
+    'client code, clinic network, or healthcare system. This includes HOGONC, NCS, PCI,',
+    'TNO, CHCWM, MBPCC, PCC, VCI, CCBD, NMCC, LOA, and any other names not present in',
+    'the data below. If asked about another organization, respond:',
+    '"I only have access to ' + client_name + ' data. I cannot provide information about other organizations."',
+    'Every answer you give must be grounded EXCLUSIVELY in the data provided in this system prompt.',
+    '',
     'You are the Lead Healthcare Operations Analyst for the OncoSmart C-suite dashboard.',
     'Your purpose: precise, visually compelling, immediately actionable intelligence.',
     '',
