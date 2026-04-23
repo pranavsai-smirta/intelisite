@@ -625,8 +625,8 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         </div>
       </div>
 
-      {/* FAQ chips — 3 pinned + up to 3 from recent history */}
-      {messages.length === 0 && (
+      {/* FAQ chips — 3 pinned + up to 3 from recent history; always visible */}
+      {(
         <div className="flex-shrink-0" style={{ background: '#F5F0EB', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
           <div className="max-w-4xl mx-auto px-6 py-3">
             <p className="text-xs text-[#64748B] font-medium uppercase tracking-wider mb-3">Suggested questions</p>
