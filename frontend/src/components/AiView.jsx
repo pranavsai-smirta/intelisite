@@ -667,7 +667,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={handleChatKeyDown}
                 rows={1} disabled={streaming}
-                placeholder="Ask about performance data, trends, or benchmarks\u2026"
+                placeholder="Ask about performance data, trends, or benchmarks…"
                 className="flex-1 text-[#1A1A2E] text-sm rounded-xl px-4 py-3 resize-none outline-none transition-colors placeholder-[#94A3B8]"
                 style={{ background: '#F5F0EB', border: '1px solid rgba(0,0,0,0.08)' }}
                 onFocus={e => (e.currentTarget.style.border = '1px solid rgba(254,99,37,0.5)')}
