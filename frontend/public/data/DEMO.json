@@ -10349,6 +10349,158 @@
         "avg_delay_mins_per_visit": 12.3,
         "total_visits": 853
       }
-    ]
+    ],
+    "duration_deviation_analysis": {
+      "source": "chr_raw_schedule_list JOIN chr_raw_visit_list on (patient_id, date, service_type=Treatment)",
+      "join_key": "(location, patient_id, date, service_type_name=Treatment)",
+      "total_matched_pairs": 19581,
+      "overall": {
+        "over_10pct_count": 3902,
+        "over_10pct_pct": 19.9,
+        "under_10pct_count": 11907,
+        "under_10pct_pct": 60.8,
+        "within_10pct_count": 3772,
+        "within_10pct_pct": 19.3,
+        "avg_deviation_pct": -12.8
+      },
+      "per_clinic": [
+        {
+          "location": "Clinic 1",
+          "pairs": 6959,
+          "over_count": 1541,
+          "over_pct": 22.1,
+          "under_count": 3887,
+          "under_pct": 55.9,
+          "within_count": 1531,
+          "within_pct": 22.0,
+          "avg_deviation_pct": -8.3
+        },
+        {
+          "location": "Clinic 2",
+          "pairs": 6516,
+          "over_count": 1450,
+          "over_pct": 22.3,
+          "under_count": 3853,
+          "under_pct": 59.1,
+          "within_count": 1213,
+          "within_pct": 18.6,
+          "avg_deviation_pct": -10.0
+        },
+        {
+          "location": "Clinic 3",
+          "pairs": 2871,
+          "over_count": 482,
+          "over_pct": 16.8,
+          "under_count": 1883,
+          "under_pct": 65.6,
+          "within_count": 506,
+          "within_pct": 17.6,
+          "avg_deviation_pct": -17.6
+        },
+        {
+          "location": "Clinic 4",
+          "pairs": 3235,
+          "over_count": 429,
+          "over_pct": 13.3,
+          "under_count": 2284,
+          "under_pct": 70.6,
+          "within_count": 522,
+          "within_pct": 16.1,
+          "avg_deviation_pct": -23.7
+        }
+      ],
+      "per_duration_bucket": [
+        {
+          "scheduled_duration_bucket": "0-60min",
+          "pairs": 89,
+          "over_pct": 22.5,
+          "under_pct": 59.6,
+          "within_pct": 18.0,
+          "avg_deviation_pct": -3.8
+        },
+        {
+          "scheduled_duration_bucket": "121-180min",
+          "pairs": 6600,
+          "over_pct": 15.4,
+          "under_pct": 69.6,
+          "within_pct": 15.0,
+          "avg_deviation_pct": -21.3
+        },
+        {
+          "scheduled_duration_bucket": "181-270min",
+          "pairs": 5011,
+          "over_pct": 12.6,
+          "under_pct": 65.4,
+          "within_pct": 22.0,
+          "avg_deviation_pct": -17.0
+        },
+        {
+          "scheduled_duration_bucket": "271min+",
+          "pairs": 1895,
+          "over_pct": 7.4,
+          "under_pct": 71.0,
+          "within_pct": 21.6,
+          "avg_deviation_pct": -28.3
+        },
+        {
+          "scheduled_duration_bucket": "61-120min",
+          "pairs": 5986,
+          "over_pct": 34.9,
+          "under_pct": 44.1,
+          "within_pct": 20.9,
+          "avg_deviation_pct": 5.1
+        }
+      ],
+      "per_month": [
+        {
+          "month": "2025-10",
+          "pairs": 3573,
+          "over_pct": 23.7,
+          "under_pct": 57.8,
+          "within_pct": 18.5,
+          "avg_deviation_pct": -8.1
+        },
+        {
+          "month": "2025-11",
+          "pairs": 2870,
+          "over_pct": 18.8,
+          "under_pct": 61.2,
+          "within_pct": 20.0,
+          "avg_deviation_pct": -13.0
+        },
+        {
+          "month": "2025-12",
+          "pairs": 3616,
+          "over_pct": 19.9,
+          "under_pct": 61.2,
+          "within_pct": 19.0,
+          "avg_deviation_pct": -13.9
+        },
+        {
+          "month": "2026-01",
+          "pairs": 2787,
+          "over_pct": 16.6,
+          "under_pct": 63.3,
+          "within_pct": 20.1,
+          "avg_deviation_pct": -16.9
+        },
+        {
+          "month": "2026-02",
+          "pairs": 3202,
+          "over_pct": 17.7,
+          "under_pct": 62.9,
+          "within_pct": 19.4,
+          "avg_deviation_pct": -14.3
+        },
+        {
+          "month": "2026-03",
+          "pairs": 3533,
+          "over_pct": 21.7,
+          "under_pct": 59.4,
+          "within_pct": 19.0,
+          "avg_deviation_pct": -11.4
+        }
+      ]
+    }
   }
 }

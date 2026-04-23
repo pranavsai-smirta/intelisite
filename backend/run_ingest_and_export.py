@@ -104,6 +104,7 @@ import json as _json
 from app.engine.json_exporter import (
     _raw_data_context as _get_raw_ctx,
     _service_type_delays as _get_svc_delays,
+    _duration_deviation_analysis as _get_dev_analysis,
     KPI_DEFINITIONS, DATA_NOTES, BUSINESS_RULES, GLOSSARY, DATA_LIMITATIONS,
 )
 from app.engine.precise_kpi_aggregator import compute_precise_kpis
@@ -120,6 +121,12 @@ with get_session() as session:
     weekly_precise  = len(precise_ctx.get("per_week", []))
     print(f"  Precise KPIs: {monthly_precise} monthly + {weekly_precise} weekly rows")
     print(f"  Service-type delays: {len(svc_delays)} rows (Lab, MD, Injection, Treatment, Outside Infusion)")
+    print("  Computing duration deviation analysis (actual vs scheduled, per-clinic + per-bucket)...")
+    dev_analysis = _get_dev_analysis(session, CLIENT)
+    print(f"  Duration deviation: {dev_analysis['total_matched_pairs']} matched pairs | "
+          f"over={dev_analysis['overall']['over_10pct_pct']}% "
+          f"under={dev_analysis['overall']['under_10pct_pct']}% "
+          f"within={dev_analysis['overall']['within_10pct_pct']}%")
 
 if DEMO_JSON.exists():
     with open(DEMO_JSON, "r", encoding="utf-8") as f:
@@ -133,9 +140,10 @@ if DEMO_JSON.exists():
     ctx["business_rules"]     = BUSINESS_RULES
     ctx["glossary"]           = GLOSSARY
     ctx["data_limitations"]   = DATA_LIMITATIONS
-    ctx["raw_data_context"]   = raw_ctx
-    ctx["service_type_delays"] = svc_delays
-    ctx["precise_kpis"]       = precise_ctx
+    ctx["raw_data_context"]          = raw_ctx
+    ctx["service_type_delays"]       = svc_delays
+    ctx["precise_kpis"]              = precise_ctx
+    ctx["duration_deviation_analysis"] = dev_analysis
     DEMO_JSON.write_text(
         _json.dumps(demo_data, ensure_ascii=True, indent=2, default=str),
         encoding="utf-8",

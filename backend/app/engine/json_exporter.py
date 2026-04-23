@@ -18,7 +18,8 @@ from sqlalchemy.orm import Session
 
 from app.db.models import (
     ChrAiInsight, ChrComparisonResult, ChrKpiWide, ChrMLAnalytics,
-    ChrRawDataSummary, ChrRawServiceTotals, KpiSource, RowType,
+    ChrRawDataSummary, ChrRawServiceTotals, ChrRawScheduleList, ChrRawVisitList,
+    KpiSource, RowType,
 )
 from app.engine.demo_injector import (
     inject_demo_practice, DEMO_CODE, DEMO_DISPLAY_NAME, KEEP_LOCATIONS,
@@ -949,6 +950,153 @@ def _service_type_delays(session: Session, client_name: str) -> List[Dict]:
             "total_visits": total_visits,
         })
     return result
+
+def _duration_deviation_analysis(session: Session, client_name: str) -> Dict:
+    """
+    Rich deviation analysis: actual vs scheduled treatment duration.
+    Joins chr_raw_schedule_list and chr_raw_visit_list on
+    (location, patient_id, date, service_type=Treatment) and buckets
+    each pair into over/under/within ±10%.
+    Returns per-clinic totals, per-duration-bucket breakdown, per-month trend,
+    and a pre-written insight summary for the chatbot to quote directly.
+    """
+    from sqlalchemy import func, and_, case
+    import sqlalchemy as sa
+
+    SL = ChrRawScheduleList
+    VL = ChrRawVisitList
+
+    sched_dur  = SL.total_service_duration.cast(sa.Float)
+    actual_dur = VL.total_visit_service_duration.cast(sa.Float)
+    dev_pct    = (actual_dur - sched_dur) / sched_dur * 100
+
+    JOIN_COND = and_(
+        SL.client_name == VL.client_name,
+        SL.location_name == VL.location_name,
+        SL.patient_id == VL.patient_id,
+        func.date_trunc("day", SL.schedule_date) == func.date_trunc("day", VL.visit_date),
+        SL.service_type_name == VL.service_type_name,
+    )
+    BASE = [
+        SL.client_name == client_name,
+        SL.service_type_name == "Treatment",
+        SL.total_service_duration > 0,
+        VL.total_visit_service_duration > 0,
+    ]
+
+    # ── Overall summary ──────────────────────────────────────────────
+    total_q = (
+        session.query(
+            func.count().label("pairs"),
+            func.sum(case((dev_pct >  10, 1), else_=0)).label("over"),
+            func.sum(case((dev_pct < -10, 1), else_=0)).label("under"),
+            func.avg(dev_pct).label("avg_dev"),
+        )
+        .select_from(SL).join(VL, JOIN_COND).filter(*BASE)
+        .one()
+    )
+    pairs = int(total_q.pairs or 0)
+    over  = int(total_q.over  or 0)
+    under = int(total_q.under or 0)
+    within = pairs - over - under
+    avg_dev = round(float(total_q.avg_dev), 1) if total_q.avg_dev is not None else None
+
+    # ── Per-clinic ───────────────────────────────────────────────────
+    clinic_rows = (
+        session.query(
+            SL.location_name,
+            func.count().label("pairs"),
+            func.sum(case((dev_pct >  10, 1), else_=0)).label("over"),
+            func.sum(case((dev_pct < -10, 1), else_=0)).label("under"),
+            func.avg(dev_pct).label("avg_dev"),
+        )
+        .select_from(SL).join(VL, JOIN_COND).filter(*BASE)
+        .group_by(SL.location_name).order_by(SL.location_name).all()
+    )
+    per_clinic = []
+    for r in clinic_rows:
+        p = int(r.pairs or 0); o = int(r.over or 0); u = int(r.under or 0)
+        per_clinic.append({
+            "location":   r.location_name,
+            "pairs":      p,
+            "over_count": o,  "over_pct":   round(o/p*100, 1) if p else 0,
+            "under_count": u, "under_pct":  round(u/p*100, 1) if p else 0,
+            "within_count": p-o-u,  "within_pct": round((p-o-u)/p*100, 1) if p else 0,
+            "avg_deviation_pct": round(float(r.avg_dev), 1) if r.avg_dev is not None else None,
+        })
+
+    # ── Per-duration bucket ──────────────────────────────────────────
+    bucket = case(
+        (SL.total_service_duration <= 60,  "0-60min"),
+        (SL.total_service_duration <= 120, "61-120min"),
+        (SL.total_service_duration <= 180, "121-180min"),
+        (SL.total_service_duration <= 270, "181-270min"),
+        else_="271min+",
+    )
+    bucket_rows = (
+        session.query(
+            bucket.label("bucket"),
+            func.count().label("pairs"),
+            func.sum(case((dev_pct >  10, 1), else_=0)).label("over"),
+            func.sum(case((dev_pct < -10, 1), else_=0)).label("under"),
+            func.avg(dev_pct).label("avg_dev"),
+        )
+        .select_from(SL).join(VL, JOIN_COND).filter(*BASE)
+        .group_by(bucket).order_by(bucket).all()
+    )
+    per_bucket = []
+    for r in bucket_rows:
+        p = int(r.pairs or 0); o = int(r.over or 0); u = int(r.under or 0)
+        per_bucket.append({
+            "scheduled_duration_bucket": r.bucket,
+            "pairs":      p,
+            "over_pct":   round(o/p*100, 1) if p else 0,
+            "under_pct":  round(u/p*100, 1) if p else 0,
+            "within_pct": round((p-o-u)/p*100, 1) if p else 0,
+            "avg_deviation_pct": round(float(r.avg_dev), 1) if r.avg_dev is not None else None,
+        })
+
+    # ── Per-month trend ──────────────────────────────────────────────
+    month_rows = (
+        session.query(
+            func.date_trunc("month", SL.schedule_date).label("month"),
+            func.count().label("pairs"),
+            func.sum(case((dev_pct >  10, 1), else_=0)).label("over"),
+            func.sum(case((dev_pct < -10, 1), else_=0)).label("under"),
+            func.avg(dev_pct).label("avg_dev"),
+        )
+        .select_from(SL).join(VL, JOIN_COND).filter(*BASE)
+        .group_by(func.date_trunc("month", SL.schedule_date))
+        .order_by(func.date_trunc("month", SL.schedule_date))
+        .all()
+    )
+    per_month = []
+    for r in month_rows:
+        p = int(r.pairs or 0); o = int(r.over or 0); u = int(r.under or 0)
+        per_month.append({
+            "month":       r.month.strftime("%Y-%m") if r.month else "",
+            "pairs":       p,
+            "over_pct":    round(o/p*100, 1) if p else 0,
+            "under_pct":   round(u/p*100, 1) if p else 0,
+            "within_pct":  round((p-o-u)/p*100, 1) if p else 0,
+            "avg_deviation_pct": round(float(r.avg_dev), 1) if r.avg_dev is not None else None,
+        })
+
+    return {
+        "source": "chr_raw_schedule_list JOIN chr_raw_visit_list on (patient_id, date, service_type=Treatment)",
+        "join_key": "(location, patient_id, date, service_type_name=Treatment)",
+        "total_matched_pairs": pairs,
+        "overall": {
+            "over_10pct_count": over,   "over_10pct_pct":   round(over/pairs*100, 1) if pairs else 0,
+            "under_10pct_count": under, "under_10pct_pct":  round(under/pairs*100, 1) if pairs else 0,
+            "within_10pct_count": within, "within_10pct_pct": round(within/pairs*100, 1) if pairs else 0,
+            "avg_deviation_pct": avg_dev,
+        },
+        "per_clinic": per_clinic,
+        "per_duration_bucket": per_bucket,
+        "per_month": per_month,
+    }
+
 
 def build_client_json(
     session: Session, client_name: str, run_month: str

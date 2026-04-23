@@ -11,6 +11,7 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
     glossary = {},
     data_limitations = {},
     precise_kpis = {},
+    duration_deviation_analysis = {},
     historical_kpis = [],
     raw_data_context = {},
   } = chatbotContext ?? {}
@@ -85,6 +86,41 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
           `long-dur threshold=${c.long_duration_threshold_minutes}min (90th pctile)`
         ).join('\n')
     : '(no clinic constants available)'
+
+  // Duration deviation analysis (actual vs scheduled treatment duration)
+  const devAna = duration_deviation_analysis || {}
+  const devOverall = devAna.overall || {}
+  const devPerClinic = Array.isArray(devAna.per_clinic) ? devAna.per_clinic : []
+  const devPerBucket = Array.isArray(devAna.per_duration_bucket) ? devAna.per_duration_bucket : []
+  const devPerMonth  = Array.isArray(devAna.per_month) ? devAna.per_month : []
+
+  const devOverallText = devOverall.over_10pct_count != null
+    ? ('Overall: ' + devOverall.over_10pct_count + ' over >10% (' + devOverall.over_10pct_pct + '%) | '
+       + devOverall.under_10pct_count + ' under <-10% (' + devOverall.under_10pct_pct + '%) | '
+       + devOverall.within_10pct_count + ' within +-10% (' + devOverall.within_10pct_pct + '%) | '
+       + 'avg deviation=' + devOverall.avg_deviation_pct + '% | '
+       + 'total matched pairs=' + devAna.total_matched_pairs)
+    : '(no deviation data)'
+
+  const devClinicText = devPerClinic.length
+    ? devPerClinic.map(c =>
+        '  ' + c.location + ': over=' + c.over_pct + '% (' + c.over_count + ') | '
+        + 'under=' + c.under_pct + '% (' + c.under_count + ') | '
+        + 'within=' + c.within_pct + '% | avg_dev=' + c.avg_deviation_pct + '%'
+      ).join('\n')
+    : '(no per-clinic data)'
+
+  const devBucketText = devPerBucket.length
+    ? devPerBucket.map(b =>
+        '  Scheduled ' + b.scheduled_duration_bucket + ': over=' + b.over_pct + '% | under=' + b.under_pct + '% | avg_dev=' + b.avg_deviation_pct + '%'
+      ).join('\n')
+    : '(no bucket data)'
+
+  const devMonthText = devPerMonth.length
+    ? devPerMonth.map(m =>
+        '  ' + m.month + ': over=' + m.over_pct + '% | under=' + m.under_pct + '% | avg_dev=' + m.avg_deviation_pct + '%'
+      ).join('\n')
+    : '(no monthly trend)'
 
   // Per-service-type delay table: Lab, MD, Injection, Treatment, Outside Infusion
   const svcDelayText = Array.isArray(service_type_delays) && service_type_delays.length
@@ -300,6 +336,24 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
     '',
     '### Per-month precise values (KPIs 2, 3, 4, 5 + duration)',
     preciseText,
+    '',
+    '## TREATMENT DURATION DEVIATION ANALYSIS (actual vs scheduled)',
+    'Source: ' + (devAna.source || 'chr_raw_schedule_list JOIN chr_raw_visit_list'),
+    'Join key: ' + (devAna.join_key || '(patient_id, date, service_type=Treatment)'),
+    'CRITICAL INSIGHT: Most treatments finish EARLY vs scheduled. Short infusions (61-120min) most often',
+    'run OVER schedule. Long infusions (271min+) most often finish early by large margins.',
+    'When a user asks about duration deviation, quote these numbers directly. Do NOT summarize vaguely.',
+    '',
+    devOverallText,
+    '',
+    '### Per-clinic breakdown',
+    devClinicText,
+    '',
+    '### By scheduled duration bucket (the key pattern for clinical insight)',
+    devBucketText,
+    '',
+    '### Monthly trend (all clinics combined)',
+    devMonthText,
     '',
     '## PER-SERVICE-TYPE DELAYS (Lab, MD, Injection, Treatment, Outside Infusion)',
     'This table contains avg delay per visit for EVERY service type — not just Treatment.',
