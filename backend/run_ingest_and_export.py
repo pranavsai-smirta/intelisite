@@ -151,4 +151,82 @@ else:
     print(f"  WARNING: {DEMO_JSON} not found -- skipping")
 
 print("\n=== Step 3 complete ===")
+
+# ── Step 4: Patch manifest.json with DEMO entry ────────────────────────────────
+# chr_kpi_wide is only populated by the full GitHub-issue pipeline (not run here),
+# so Step 2 always produces clients:[].  We derive the DEMO manifest entry from
+# DEMO.json itself so the frontend tile shows correctly.
+
+MANIFEST_JSON = Path(OUTPUT_DIR) / "manifest.json"
+print(f"\n=== Step 4: Patching manifest.json with DEMO entry ===")
+
+EXCLUDED_LOCATIONS = {
+    "company avg", "global avg", "network avg", "onco avg",
+    "company average", "global average", "network average", "onco average",
+    "onco", "total", "grand total", "overall",
+}
+
+if DEMO_JSON.exists() and MANIFEST_JSON.exists():
+    with open(DEMO_JSON, "r", encoding="utf-8") as f:
+        demo_data = _json.load(f)
+    with open(MANIFEST_JSON, "r", encoding="utf-8") as f:
+        manifest = _json.load(f)
+
+    months_available = demo_data.get("meta", {}).get("months_available", [])
+    latest_m = sorted(months_available)[-1] if months_available else ""
+    months_dict = demo_data.get("months", {})
+
+    # Location count from latest month ioptimize rows (exclude benchmarks)
+    latest_iopt = months_dict.get(latest_m, {}).get("ioptimize", [])
+    clinic_rows = [
+        r for r in latest_iopt
+        if r.get("location", "").strip().lower() not in EXCLUDED_LOCATIONS
+    ]
+    loc_count = len(clinic_rows)
+
+    # Composite score: average of clinic rows that have one
+    scores = [r["composite_score"] for r in clinic_rows if r.get("composite_score") is not None]
+    avg_score = round(sum(scores) / len(scores), 1) if scores else None
+
+    # MoM trend: compare latest vs prior month
+    sorted_months = sorted(months_available)
+    mom_trend = "flat"
+    if len(sorted_months) >= 2:
+        prior_m = sorted_months[-2]
+        prior_iopt = months_dict.get(prior_m, {}).get("ioptimize", [])
+        prior_rows = [
+            r for r in prior_iopt
+            if r.get("location", "").strip().lower() not in EXCLUDED_LOCATIONS
+        ]
+        prior_scores = [r["composite_score"] for r in prior_rows if r.get("composite_score") is not None]
+        prior_avg = sum(prior_scores) / len(prior_scores) if prior_scores else None
+        if avg_score is not None and prior_avg is not None:
+            if avg_score > prior_avg + 1:
+                mom_trend = "up"
+            elif avg_score < prior_avg - 1:
+                mom_trend = "down"
+
+    demo_entry = {
+        "code":           CLIENT,
+        "display_name":   "Demo Practice",
+        "latest_month":   latest_m,
+        "location_count": loc_count,
+        "composite_score": avg_score,
+        "mom_trend":       mom_trend,
+    }
+
+    # Replace or insert DEMO entry
+    existing = [c for c in manifest.get("clients", []) if c.get("code") != CLIENT]
+    manifest["clients"] = [demo_entry] + existing
+    if not manifest.get("latest_month"):
+        manifest["latest_month"] = latest_m
+
+    with open(MANIFEST_JSON, "w", encoding="utf-8") as f:
+        _json.dump(manifest, f, ensure_ascii=True, indent=2, default=str)
+
+    print(f"  DEMO entry: {loc_count} locations, score={avg_score}, trend={mom_trend}, month={latest_m}")
+else:
+    print("  WARNING: DEMO.json or manifest.json not found -- skipping")
+
+print("\n=== Step 4 complete ===")
 print("\nDone! Chatbot is now god-level. Refresh http://localhost:5173")
