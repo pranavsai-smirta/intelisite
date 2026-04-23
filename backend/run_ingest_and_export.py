@@ -103,6 +103,7 @@ print(f"\n=== Step 2 complete: {count} JSON files written ===")
 import json as _json
 from app.engine.json_exporter import (
     _raw_data_context as _get_raw_ctx,
+    _service_type_delays as _get_svc_delays,
     KPI_DEFINITIONS, DATA_NOTES, BUSINESS_RULES, GLOSSARY, DATA_LIMITATIONS,
 )
 from app.engine.precise_kpi_aggregator import compute_precise_kpis
@@ -112,11 +113,13 @@ print(f"\n=== Step 3: Patching DEMO.json with god-level chatbot_context ===")
 
 with get_session() as session:
     raw_ctx      = _get_raw_ctx(session, CLIENT)
+    svc_delays   = _get_svc_delays(session, CLIENT)
     print("  Computing precise KPIs from raw visit + schedule data...")
     precise_ctx  = compute_precise_kpis(session, CLIENT)
     monthly_precise = len(precise_ctx.get("per_month", []))
     weekly_precise  = len(precise_ctx.get("per_week", []))
     print(f"  Precise KPIs: {monthly_precise} monthly + {weekly_precise} weekly rows")
+    print(f"  Service-type delays: {len(svc_delays)} rows (Lab, MD, Injection, Treatment, Outside Infusion)")
 
 if DEMO_JSON.exists():
     with open(DEMO_JSON, "r", encoding="utf-8") as f:
@@ -124,14 +127,15 @@ if DEMO_JSON.exists():
     if "chatbot_context" not in demo_data:
         demo_data["chatbot_context"] = {}
     ctx = demo_data["chatbot_context"]
-    ctx["client_name"]      = CLIENT
-    ctx["kpi_definitions"]  = KPI_DEFINITIONS
-    ctx["data_notes"]       = DATA_NOTES
-    ctx["business_rules"]   = BUSINESS_RULES
-    ctx["glossary"]         = GLOSSARY
-    ctx["data_limitations"] = DATA_LIMITATIONS
-    ctx["raw_data_context"] = raw_ctx
-    ctx["precise_kpis"]     = precise_ctx
+    ctx["client_name"]        = CLIENT
+    ctx["kpi_definitions"]    = KPI_DEFINITIONS
+    ctx["data_notes"]         = DATA_NOTES
+    ctx["business_rules"]     = BUSINESS_RULES
+    ctx["glossary"]           = GLOSSARY
+    ctx["data_limitations"]   = DATA_LIMITATIONS
+    ctx["raw_data_context"]   = raw_ctx
+    ctx["service_type_delays"] = svc_delays
+    ctx["precise_kpis"]       = precise_ctx
     DEMO_JSON.write_text(
         _json.dumps(demo_data, ensure_ascii=True, indent=2, default=str),
         encoding="utf-8",

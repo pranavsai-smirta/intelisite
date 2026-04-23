@@ -18,7 +18,7 @@ from sqlalchemy.orm import Session
 
 from app.db.models import (
     ChrAiInsight, ChrComparisonResult, ChrKpiWide, ChrMLAnalytics,
-    ChrRawDataSummary, KpiSource, RowType,
+    ChrRawDataSummary, ChrRawServiceTotals, KpiSource, RowType,
 )
 from app.engine.demo_injector import (
     inject_demo_practice, DEMO_CODE, DEMO_DISPLAY_NAME, KEEP_LOCATIONS,
@@ -908,6 +908,48 @@ def _raw_data_context(session: Session, client_name: str) -> Dict[str, List[Dict
     return {"monthly_summaries": monthly, "weekly_summaries": weekly}
 
 
+def _service_type_delays(session: Session, client_name: str) -> List[Dict]:
+    """
+    Structured per-service-type delay table from chr_raw_service_totals.
+    Returns one row per (location, month, service_type) so the chatbot has
+    a clean lookup for Lab, MD, Injection, Treatment, Outside Infusion delays.
+    """
+    from sqlalchemy import func
+    rows = (
+        session.query(
+            ChrRawServiceTotals.location_name,
+            func.date_trunc("month", ChrRawServiceTotals.schedule_date).label("month"),
+            ChrRawServiceTotals.service_type,
+            func.sum(ChrRawServiceTotals.delay_mins_total).label("total_delay"),
+            func.sum(ChrRawServiceTotals.service_count).label("total_visits"),
+        )
+        .filter(ChrRawServiceTotals.client_name == client_name)
+        .group_by(
+            ChrRawServiceTotals.location_name,
+            func.date_trunc("month", ChrRawServiceTotals.schedule_date),
+            ChrRawServiceTotals.service_type,
+        )
+        .order_by(
+            ChrRawServiceTotals.location_name,
+            func.date_trunc("month", ChrRawServiceTotals.schedule_date),
+            ChrRawServiceTotals.service_type,
+        )
+        .all()
+    )
+    result = []
+    for r in rows:
+        total_visits = int(r.total_visits or 0)
+        total_delay = float(r.total_delay or 0)
+        avg_delay = round(total_delay / total_visits, 1) if total_visits > 0 else None
+        result.append({
+            "location": _clean(r.location_name),
+            "month": r.month.strftime("%Y-%m") if r.month else "",
+            "service_type": r.service_type or "",
+            "avg_delay_mins_per_visit": avg_delay,
+            "total_visits": total_visits,
+        })
+    return result
+
 def build_client_json(
     session: Session, client_name: str, run_month: str
 ) -> Dict:
@@ -944,6 +986,7 @@ def build_client_json(
             "data_limitations": DATA_LIMITATIONS,
             "historical_kpis":  _historical_kpis(session, client_name, months),
             "raw_data_context": _raw_data_context(session, client_name),
+            "service_type_delays": _service_type_delays(session, client_name),
             "precise_kpis":     compute_precise_kpis(session, client_name),
         },
     }

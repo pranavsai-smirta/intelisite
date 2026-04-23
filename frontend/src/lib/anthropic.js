@@ -4,6 +4,7 @@ const MODEL = 'claude-sonnet-4-6'
 export function buildSystemPrompt(chatbotContext, currentMonthData) {
   const {
     client_name = 'this practice',
+    service_type_delays = [],
     kpi_definitions = {},
     data_notes = '',
     business_rules = {},
@@ -84,6 +85,15 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
           `long-dur threshold=${c.long_duration_threshold_minutes}min (90th pctile)`
         ).join('\n')
     : '(no clinic constants available)'
+
+  // Per-service-type delay table: Lab, MD, Injection, Treatment, Outside Infusion
+  const svcDelayText = Array.isArray(service_type_delays) && service_type_delays.length
+    ? service_type_delays.map(r =>
+        '  ' + r.location + ' | ' + r.month + ' | ' + r.service_type +
+        ': avg ' + (r.avg_delay_mins_per_visit != null ? r.avg_delay_mins_per_visit : 'N/A') +
+        ' min/visit (' + r.total_visits + ' visits)'
+      ).join('\n')
+    : '(no per-service-type delay data available)'
 
   const historyText = historical_kpis
     .map(r =>
@@ -290,6 +300,13 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
     '',
     '### Per-month precise values (KPIs 2, 3, 4, 5 + duration)',
     preciseText,
+    '',
+    '## PER-SERVICE-TYPE DELAYS (Lab, MD, Injection, Treatment, Outside Infusion)',
+    'This table contains avg delay per visit for EVERY service type — not just Treatment.',
+    'Use this when users ask about Lab delay, MD delay, Injection delay, etc.',
+    'Source: chr_raw_service_totals (per-day CSV data, all 6 months).',
+    '',
+    svcDelayText,
     '',
     '## DATA NOTES (legacy pipeline)',
     data_notes || '(none)',
