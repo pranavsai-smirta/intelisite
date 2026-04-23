@@ -387,6 +387,17 @@ function Message({ role, content, isStreaming, onCopyEmail }) {
             </div>
           )
         )}
+        {isStreaming && hasContent && (
+          <div
+            className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl rounded-tl-sm self-start"
+            style={{ background: '#FFFFFF', border: '1px solid rgba(0,0,0,0.06)' }}
+          >
+            {[0, 1, 2].map(i => (
+              <span key={i} className="w-1.5 h-1.5 rounded-full animate-bounce"
+                style={{ background: '#FE6325', animationDelay: `${i * 0.15}s` }} />
+            ))}
+          </div>
+        )}
         {hasContent && !isStreaming && (
           <div className="flex items-center gap-2 text-xs px-1 mt-0.5"
             style={{ color: 'rgba(100,116,139,0.6)' }}>
