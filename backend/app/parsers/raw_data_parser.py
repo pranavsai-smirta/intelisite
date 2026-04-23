@@ -1,7 +1,7 @@
 """
 Raw Daily Data Parser
 
-Auto-detects and ingests 7 operational CSV types into the raw-data tables:
+Auto-detects and ingests 9 operational CSV types into the raw-data tables:
 
   daily_operations        → chr_raw_daily_operations
   scheduler_productivity  → chr_raw_scheduler_productivity
@@ -10,6 +10,8 @@ Auto-detects and ingests 7 operational CSV types into the raw-data tables:
   service_distribution    → chr_raw_service_distribution
   service_totals          → chr_raw_service_totals
   time_block_distribution → chr_raw_time_block_distribution
+  schedule_list           → chr_raw_schedule_list
+  visit_list              → chr_raw_visit_list
 
 Idempotent: a re-run for the same (client, ingest_id, csv_type) deletes
 existing rows with that ingest_id for that table before re-inserting.
@@ -20,7 +22,7 @@ import csv
 import logging
 import re
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, time as datetime_time
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
@@ -34,6 +36,8 @@ from app.db.models import (
     ChrRawServiceDistribution,
     ChrRawServiceTotals,
     ChrRawTimeBlockDistribution,
+    ChrRawScheduleList,
+    ChrRawVisitList,
 )
 
 log = logging.getLogger(__name__)
@@ -63,6 +67,8 @@ CSV_STAFFING_METRICS       = "staffing_metrics"
 CSV_SERVICE_DISTRIBUTION   = "service_distribution"
 CSV_SERVICE_TOTALS         = "service_totals"
 CSV_TIME_BLOCK             = "time_block_distribution"
+CSV_SCHEDULE_LIST          = "schedule_list"
+CSV_VISIT_LIST             = "visit_list"
 
 ALL_CSV_TYPES = (
     CSV_DAILY_OPERATIONS,
@@ -72,6 +78,8 @@ ALL_CSV_TYPES = (
     CSV_SERVICE_DISTRIBUTION,
     CSV_SERVICE_TOTALS,
     CSV_TIME_BLOCK,
+    CSV_SCHEDULE_LIST,
+    CSV_VISIT_LIST,
 )
 
 
@@ -87,12 +95,16 @@ def detect_csv_type(headers: Iterable[str]) -> Optional[str]:
         return CSV_NURSE_UTILIZATION
     if any("iassign_average_chairs_per_rn" in h for h in norm):
         return CSV_STAFFING_METRICS
-    if _has(norm, "md count"):
+    if _has(norm, "md count") or _has(norm, "total md"):
         return CSV_SERVICE_DISTRIBUTION
     if _has(norm, "delay (mins)") and _has(norm, "service count"):
         return CSV_SERVICE_TOTALS
     if any("fraction_by_time_block" in h for h in norm) or _has(norm, "timeblockdescription"):
         return CSV_TIME_BLOCK
+    if _has(norm, "scheduled_start_time"):
+        return CSV_SCHEDULE_LIST
+    if _has(norm, "visit_start_time"):
+        return CSV_VISIT_LIST
     return None
 
 
@@ -168,6 +180,20 @@ def _parse_date(val: Optional[str]) -> Optional[datetime]:
         except ValueError:
             continue
     log.warning("Could not parse date: %r", val)
+    return None
+
+
+def _parse_time(val: Optional[str]) -> Optional[datetime_time]:
+    """'1899-12-30 11:00:00' or '11:00:00' → datetime.time — Excel time-only encoding."""
+    if not val:
+        return None
+    s = str(val).strip()
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%H:%M:%S", "%H:%M"):
+        try:
+            return datetime.strptime(s, fmt).time()
+        except ValueError:
+            continue
+    log.warning("Could not parse time: %r", val)
     return None
 
 
@@ -409,7 +435,7 @@ def _ingest_service_distribution(
             client_name=client,
             location_name=loc,
             schedule_date=date,
-            md_count=_parse_int_zero(_get_row(row, "md count")),
+            md_count=_parse_int_zero(_get_row(row, "md count", "total md")),
             md_without_tx_inj=_parse_int_zero(_get_row(row, "md w/o tx/inj")),
             md_with_tx=_parse_int_zero(_get_row(row, "md with tx")),
             md_with_inj=_parse_int_zero(_get_row(row, "md with inj")),
@@ -428,7 +454,7 @@ def _ingest_service_totals(
     for row in rows:
         loc = _map_location(client, _get_row(row, "location") or "")
         date = _parse_date(_get_row(row, "date"))
-        svc_name = (_get_row(row, "type") or "").strip()
+        svc_name = (_get_row(row, "service name", "service_type_name", "type") or "").strip()
         if not loc or date is None or not svc_name:
             continue
         session.add(ChrRawServiceTotals(
@@ -456,7 +482,7 @@ def _ingest_time_block(
     for row in rows:
         loc = _map_location(client, _get_row(row, "location_name") or "")
         date = _parse_date(_get_row(row, "date"))
-        svc_name = (_get_row(row, "name") or "").strip()
+        svc_name = (_get_row(row, "service name", "service_type_name", "name") or "").strip()
         duration = _parse_int(_get_row(row, "duration in mins"))
         time_block = (_get_row(row, "timeblockdescription") or "").strip()
         if not loc or date is None or not svc_name or duration is None or not time_block:
@@ -480,6 +506,57 @@ def _ingest_time_block(
     return inserted
 
 
+def _ingest_schedule_list(
+    session: Session, client: str, rows: List[Dict[str, str]], ingest_id: str
+) -> int:
+    inserted = 0
+    for row in rows:
+        loc = _map_location(client, _get_row(row, "location_name") or "")
+        date = _parse_date(_get_row(row, "schedule_date"))
+        if not loc or date is None:
+            continue
+        session.add(ChrRawScheduleList(
+            client_name=client,
+            location_name=loc,
+            schedule_date=date,
+            service_type_name=(_get_row(row, "service_type_name") or "").strip() or None,
+            service_name=(_get_row(row, "service  name", "service name") or "").strip() or None,
+            patient_id=(_get_row(row, "patient_id") or "").strip() or None,
+            mrn_number=(_get_row(row, "mrn_number") or "").strip() or None,
+            scheduled_start_time=_parse_time(_get_row(row, "scheduled_start_time")),
+            total_service_duration=_parse_int(_get_row(row, "totalserviceduration")),
+            ingest_id=ingest_id,
+        ))
+        inserted += 1
+    return inserted
+
+
+def _ingest_visit_list(
+    session: Session, client: str, rows: List[Dict[str, str]], ingest_id: str
+) -> int:
+    inserted = 0
+    for row in rows:
+        loc = _map_location(client, _get_row(row, "location_name") or "")
+        date = _parse_date(_get_row(row, "date"))
+        if not loc or date is None:
+            continue
+        session.add(ChrRawVisitList(
+            client_name=client,
+            location_name=loc,
+            visit_date=date,
+            service_type_name=(_get_row(row, "service_type_name") or "").strip() or None,
+            service_name=(_get_row(row, "service name") or "").strip() or None,
+            patient_id=(_get_row(row, "patient_id") or "").strip() or None,
+            mrn_number=(_get_row(row, "mrn_number") or "").strip() or None,
+            visit_start_time=_parse_time(_get_row(row, "visit_start_time")),
+            visit_end_time=_parse_time(_get_row(row, "visit_end_time")),
+            total_visit_service_duration=_parse_int(_get_row(row, "totalvisitserviceduration")),
+            ingest_id=ingest_id,
+        ))
+        inserted += 1
+    return inserted
+
+
 _INGESTERS = {
     CSV_DAILY_OPERATIONS:       (ChrRawDailyOperations,        _ingest_daily_operations),
     CSV_SCHEDULER_PRODUCTIVITY: (ChrRawSchedulerProductivity,  _ingest_scheduler_productivity),
@@ -488,6 +565,8 @@ _INGESTERS = {
     CSV_SERVICE_DISTRIBUTION:   (ChrRawServiceDistribution,    _ingest_service_distribution),
     CSV_SERVICE_TOTALS:         (ChrRawServiceTotals,          _ingest_service_totals),
     CSV_TIME_BLOCK:             (ChrRawTimeBlockDistribution,  _ingest_time_block),
+    CSV_SCHEDULE_LIST:          (ChrRawScheduleList,           _ingest_schedule_list),
+    CSV_VISIT_LIST:             (ChrRawVisitList,              _ingest_visit_list),
 }
 
 

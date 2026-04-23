@@ -71,7 +71,7 @@ def _scrub_insights(month_data: Dict, rename: Dict[str, str], original_client: s
             ]
 
 
-def inject_demo_practice(hogonc_payload: Dict) -> Dict:
+def inject_demo_practice(hogonc_payload: Dict, session=None) -> Dict:
     """
     Return a deep copy of *hogonc_payload* transformed into a 'Demo Practice'
     client with four anonymised locations.
@@ -124,21 +124,13 @@ def inject_demo_practice(hogonc_payload: Dict) -> Dict:
         if entry.get("location") in keep_set
     ]
 
-    # raw_data_context narratives -- filter to kept locations, rename, scrub prose
-    raw_ctx = demo.get("chatbot_context", {}).get("raw_data_context", {}) or {}
-    for bucket in ("monthly_summaries", "weekly_summaries"):
-        cleaned = []
-        for entry in raw_ctx.get(bucket, []) or []:
-            loc = entry.get("location", "")
-            if loc not in keep_set:
-                continue
-            cleaned.append({
-                **entry,
-                "location": rename[loc],
-                "summary": _scrub(entry.get("summary", "") or "", rename, original_client),
-            })
-        raw_ctx[bucket] = cleaned
-    demo["chatbot_context"]["raw_data_context"] = raw_ctx
+    # raw_data_context: pull directly from DEMO's own ingested rows (already Clinic 1-4)
+    # HOGONC has no raw rows, so we bypass the HOGONC-scrub path for this field only.
+    if session is not None:
+        from app.engine.json_exporter import _raw_data_context  # local import avoids circular dep
+        demo["chatbot_context"]["raw_data_context"] = _raw_data_context(session, DEMO_CODE)
+    else:
+        demo["chatbot_context"]["raw_data_context"] = {"monthly_summaries": [], "weekly_summaries": []}
 
     log.info(
         "demo_injector: DEMO payload ready -- %d locations: %s",

@@ -9,14 +9,13 @@ import {
 import { useAi } from '../contexts/AiContext'
 import { streamChat, buildSystemPrompt } from '../lib/anthropic'
 import ApiKeyModal from './ApiKeyModal'
+import { useRecentQuestions } from '../lib/useRecentQuestions'
+import { copyAsEmail } from '../lib/shareAsEmail'
 
-const FAQ_CHIPS = [
+const PINNED_CHIPS = [
   'What is the single biggest thing to fix?',
-  'Why did the score drop this month?',
-  'Which clinic is underperforming and why?',
-  'How does NCS compare to company average?',
+  'Why is the infusion room overbooked on certain days?',
   'What improved the most this period?',
-  'Draft a summary I can share with my team.',
 ]
 
 // ---------------------------------------------------------------------------
@@ -338,7 +337,8 @@ function TypingIndicator() {
 // Message — useDeferredValue defers heavy parsing so the UI stays responsive
 // ---------------------------------------------------------------------------
 
-function Message({ role, content, isStreaming }) {
+function Message({ role, content, isStreaming, onCopyEmail }) {
+  const [copied, setCopied] = useState(false)
   const isUser = role === 'user'
 
   // Defer expensive markdown/chart parsing — React can skip intermediate
@@ -364,6 +364,13 @@ function Message({ role, content, isStreaming }) {
 
   const hasContent = !!content?.trim()
 
+  async function handleCopy() {
+    if (!onCopyEmail) return
+    await onCopyEmail(content)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2500)
+  }
+
   return (
     <div className="flex justify-start mb-5">
       <div className="flex flex-col gap-1" style={{ maxWidth: '90%', minWidth: '55%' }}>
@@ -381,13 +388,26 @@ function Message({ role, content, isStreaming }) {
           )
         )}
         {hasContent && !isStreaming && (
-          <div className="flex items-center gap-1.5 text-xs px-1 mt-0.5"
+          <div className="flex items-center gap-2 text-xs px-1 mt-0.5"
             style={{ color: 'rgba(100,116,139,0.6)' }}>
             <span>Clinic performance data</span>
-            <span>{'\u00b7'}</span>
+            <span style={{ color: 'rgba(100,116,139,0.3)' }}>{'\u00b7'}</span>
             <span>Claude Sonnet</span>
-            <span>{'\u00b7'}</span>
+            <span style={{ color: 'rgba(100,116,139,0.3)' }}>{'\u00b7'}</span>
             <span>Validate with clinical team</span>
+            {onCopyEmail && (
+              <>
+                <span style={{ color: 'rgba(100,116,139,0.3)' }}>{'\u00b7'}</span>
+                <button
+                  onClick={handleCopy}
+                  className="transition-colors hover:opacity-80"
+                  style={{ color: copied ? '#22C55E' : 'rgba(100,116,139,0.7)' }}
+                  title="Copy as email"
+                >
+                  {copied ? '\u2713 Copied' : '\u2709 Copy as Email'}
+                </button>
+              </>
+            )}
           </div>
         )}
       </div>
@@ -412,6 +432,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
       return false
     }
   })
+  const { recent: recentQuestions, logQuestion } = useRecentQuestions()
 
   // Scroll the overflow container directly — avoids scrollIntoView jank
   const scrollContainerRef = useRef(null)
@@ -437,6 +458,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
     if (!text || streaming) return
     setInput('')
     setError(null)
+    logQuestion(text)
 
     const userMsg = { role: 'user', content: text }
     const nextMessages = [...messages, userMsg]
@@ -504,6 +526,10 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
   function handleChatKeyDown(e) {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend() }
+  }
+
+  async function handleCopyEmail(content) {
+    await copyAsEmail(content, clinicName, activeMonth)
   }
 
   const showTyping = streaming && messages.length > 0 && messages[messages.length - 1]?.content === ''
@@ -579,6 +605,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
                 role={m.role}
                 content={m.content}
                 isStreaming={streaming && i === messages.length - 1 && m.role === 'assistant'}
+                onCopyEmail={m.role === 'assistant' ? handleCopyEmail : undefined}
               />
             )
           })}
@@ -587,13 +614,24 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         </div>
       </div>
 
-      {/* FAQ chips */}
+      {/* FAQ chips — 3 pinned + up to 3 from recent history */}
       {messages.length === 0 && (
         <div className="flex-shrink-0" style={{ background: '#F5F0EB', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
           <div className="max-w-4xl mx-auto px-6 py-3">
             <p className="text-xs text-[#64748B] font-medium uppercase tracking-wider mb-3">Suggested questions</p>
             <div className="flex flex-wrap gap-2">
-              {FAQ_CHIPS.map(q => <FaqChip key={q} label={q} onClick={() => handleSend(q)} />)}
+              {PINNED_CHIPS.map(q => <FaqChip key={q} label={q} onClick={() => handleSend(q)} />)}
+              {recentQuestions
+                .filter(q => !PINNED_CHIPS.includes(q))
+                .slice(0, 3)
+                .map(q => (
+                  <FaqChip
+                    key={q}
+                    label={q}
+                    onClick={() => handleSend(q)}
+                    isRecent
+                  />
+                ))}
             </div>
           </div>
         </div>
@@ -630,17 +668,18 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
   )
 }
 
-function FaqChip({ label, onClick }) {
+function FaqChip({ label, onClick, isRecent }) {
   const [hovered, setHovered] = useState(false)
   return (
     <button onClick={onClick}
       onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       className="text-xs rounded-full px-3 py-2 transition-all text-left"
       style={{
-        background: hovered ? 'rgba(254,99,37,0.06)' : '#FFFFFF',
-        border: hovered ? '1px solid rgba(254,99,37,0.25)' : '1px solid rgba(0,0,0,0.08)',
+        background: hovered ? 'rgba(254,99,37,0.06)' : isRecent ? 'rgba(254,99,37,0.03)' : '#FFFFFF',
+        border: hovered ? '1px solid rgba(254,99,37,0.25)' : isRecent ? '1px solid rgba(254,99,37,0.12)' : '1px solid rgba(0,0,0,0.08)',
         color: hovered ? '#FE6325' : '#64748B',
       }}>
+      {isRecent && <span style={{ color: 'rgba(254,99,37,0.5)', marginRight: '4px' }}>↩</span>}
       {label}
     </button>
   )

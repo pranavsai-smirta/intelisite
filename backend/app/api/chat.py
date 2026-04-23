@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
+from app.engine.json_exporter import KPI_DEFINITIONS, BUSINESS_RULES, GLOSSARY, DATA_LIMITATIONS
 
 # Belt-and-suspenders: server.py loads .env before importing this module,
 # but guard against direct `uvicorn app.api.chat:app` invocation too.
@@ -549,11 +550,34 @@ def _build_system_prompt(client_code: Optional[str], run_month: str, db_context:
         "Colors: #0D9488 teal | #6366F1 indigo | #DC2626 red | #F59E0B amber",
         "Rules: valid JSON only, no trailing commas, no comments, no newlines inside the block.",
         "",
-        "## METRIC-SPECIFIC RULES",
-        "- Chair Util >100%: overbooking (not a data error). Trending toward 100% = improving capacity management.",
-        "- Scheduler Compliance: frequently NULL. Absence \u2260 poor performance.",
-        "- Tx Past Close/Day: lower is better. Zero is ideal. High values drive staff overtime.",
-        "- Patients/Nurse: context-dependent. Too high = understaffing. Too low = inefficiency.",
+        "## FORMAL KPI SPECIFICATIONS",
+        "When asked HOW something is calculated, cite the formula. When DATA GAP is flagged, say so.",
+        "",
+        *[
+            line for kpi_id, v in KPI_DEFINITIONS.items()
+            for line in [
+                f"### {v['label']} ({kpi_id})",
+                v.get('explanation', ''),
+                (f"Formula: {v['formula']}" if v.get('formula') else ""),
+                (f"Filters: {chr(32).join(v['filters'])}" if v.get('filters') else ""),
+                (f"Edge cases: {chr(59).join(v['edge_cases'])}" if v.get('edge_cases') else ""),
+                (f"DATA GAP: {v['data_gap']}" if v.get('data_gap') else ""),
+                "",
+            ]
+            if line
+        ],
+        "## GLOBAL BUSINESS RULES",
+        *[f"- {k.replace('_', ' ')}: {v}" for k, v in BUSINESS_RULES.items()],
+        "",
+        "## GLOSSARY",
+        *[f"- {k}: {v}" for k, v in GLOSSARY.items()],
+        "",
+        "## DATA LIMITATIONS",
+        "Surface these caveats when answering questions about the affected KPIs.",
+        *[
+            f"  [{lim_id}] {lim.get('effect', '')}"
+            for lim_id, lim in DATA_LIMITATIONS.items()
+        ],
         "",
         "## RAW DAILY OPERATIONAL DATA",
         "You also have access to raw daily operational data in addition to monthly KPIs.",

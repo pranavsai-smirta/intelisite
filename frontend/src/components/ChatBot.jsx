@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react'
 import { streamChat, buildSystemPrompt } from '../lib/anthropic'
+import { useRecentQuestions } from '../lib/useRecentQuestions'
 
-const SUGGESTED_QUESTIONS = [
-  'Analyze scheduler compliance',
+const PINNED_QUESTIONS = [
+  'What is the single biggest thing to fix?',
   'Which location is underperforming?',
   'Summarize recent trends',
 ]
@@ -53,6 +54,7 @@ export default function ChatBot({ chatbotContext, currentMonthData }) {
   const [streaming, setStreaming] = useState(false)
   const [error, setError] = useState(null)
   const bottomRef = useRef(null)
+  const { recent: recentQuestions, logQuestion } = useRecentQuestions()
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -63,6 +65,7 @@ export default function ChatBot({ chatbotContext, currentMonthData }) {
     if (!text || streaming) return
     setInput('')
     setError(null)
+    logQuestion(text)
 
     const userMsg = { role: 'user', content: text }
     const nextMessages = [...messages, userMsg]
@@ -163,13 +166,16 @@ export default function ChatBot({ chatbotContext, currentMonthData }) {
             <div ref={bottomRef} />
           </div>
 
-          {/* FAQ pills -- only shown before first message */}
+          {/* FAQ pills -- 3 pinned + up to 3 from recent history */}
           {messages.length === 0 && (
             <div
               className="px-3 py-2 flex flex-wrap gap-2"
               style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
             >
-              {SUGGESTED_QUESTIONS.map(q => (
+              {[
+                ...PINNED_QUESTIONS,
+                ...recentQuestions.filter(q => !PINNED_QUESTIONS.includes(q)).slice(0, 3),
+              ].map(q => (
                 <button
                   key={q}
                   onClick={() => handleSend(q)}

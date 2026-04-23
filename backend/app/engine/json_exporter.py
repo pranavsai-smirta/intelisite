@@ -23,6 +23,7 @@ from app.db.models import (
 from app.engine.demo_injector import (
     inject_demo_practice, DEMO_CODE, DEMO_DISPLAY_NAME, KEEP_LOCATIONS,
 )
+from app.engine.precise_kpi_aggregator import compute_precise_kpis
 
 log = logging.getLogger(__name__)
 
@@ -55,6 +56,36 @@ KPI_DEFINITIONS: Dict[str, Any] = {
             "Higher is better. Company average is typically 60-70%. "
             "OncoSmart benchmark target is 75%."
         ),
+        "formula": (
+            "(count(appointment_type = 'E') + count(appointment_type = 'A')) "
+            "/ count(all appointments) * 100. "
+            "Per scheduler, take the LATEST entry per patient per day before counting."
+        ),
+        "filters": [
+            "Rows where scheduled_services contains 'Treatment'.",
+            "Appointment types: E = Exact (followed recommendation), "
+            "A = Approximate (close to recommendation), M = Manual (ignored). "
+            "E and A count as compliant.",
+        ],
+        "edge_cases": [
+            "Scheduler compliance is only valid for data from mid-October 2024 onward; "
+            "earlier data uses a pre-redefinition convention.",
+            "If a patient was rescheduled, only the LATEST scheduler entry for that "
+            "patient on that day counts.",
+            "NULL values mean the clinic did not submit scheduler data -- "
+            "absence does NOT equal poor performance.",
+        ],
+        "business_context": (
+            "Measures whether clinicians follow the OncoSmart AI scheduling "
+            "recommendation. Low SC often precedes higher delays as manual "
+            "scheduling packs the schedule suboptimally."
+        ),
+        "data_gap": (
+            "IMPORTANT: The values currently stored for this KPI were computed using "
+            "the pre-2024-10 formula (legacy scheduler_id method). The correct formula "
+            "requires a per-visit appointment_type (E/A/M) column that is not yet "
+            "ingested. Treat stored values as directional, not authoritative."
+        ),
     },
     "avg_delay_mins": {
         "label": "Avg Delay",
@@ -64,6 +95,27 @@ KPI_DEFINITIONS: Dict[str, Any] = {
             "Average daily schedule delay in minutes. Lower is better. "
             "Measures how far behind the clinic is running on average."
         ),
+        "formula": (
+            "AVG(actual_service_start_time - scheduled_service_start_time) in minutes, "
+            "computed across ALL Treatment visits in the period "
+            "(including zero-delay and early arrivals)."
+        ),
+        "filters": [
+            "service_type_name = 'Treatment' only. Lab, MD, MA, Injection excluded.",
+        ],
+        "edge_cases": [
+            "Denominator is TOTAL Treatment visits, not just delayed ones. "
+            "Zero-delay visits are included.",
+            "Negative delays (patient arrived early) are clamped to 0 -- "
+            "early arrivals do not credit the average.",
+            "Rounded to whole minutes; sub-minute delays register as 0.",
+        ],
+        "business_context": (
+            "Delay is the single most visible operational metric to patients. "
+            "It is operationally linked to Scheduler Compliance: "
+            "low SC tends to cause higher delays."
+        ),
+        "data_gap": None,
     },
     "avg_treatments_per_day": {
         "label": "Tx Past Close/Day",
@@ -73,6 +125,27 @@ KPI_DEFINITIONS: Dict[str, Any] = {
             "Average treatments running past treatment close per day "
             "(overtime patients per day). Lower is better."
         ),
+        "formula": (
+            "COUNT(Treatment visits where actual_end_time > preferred_treatment_end_time) "
+            "/ COUNT(DISTINCT schedule_date in schedule list). "
+            "Denominator = days clinic was open (from scheduled appointments), "
+            "NOT from visit list."
+        ),
+        "filters": [
+            "service_type_name = 'Treatment' only.",
+            "Only rows where minutes_past_closing > 0 count in the numerator.",
+        ],
+        "edge_cases": [
+            "Days-open denominator comes from chr_raw_schedule_list, not visit_list. "
+            "Walk-in visits on non-scheduled days are excluded from the denominator.",
+            "Sanity range: 2-3 patients/day past close is typical. "
+            ">10/day is a flag for investigation.",
+        ],
+        "business_context": (
+            "Directly drives staff overtime. Zero is ideal. "
+            "High values indicate poor capacity management or late-day scheduling."
+        ),
+        "data_gap": None,
     },
     "avg_treatment_mins_per_patient": {
         "label": "Tx Mins Past Close/Patient",
@@ -82,12 +155,58 @@ KPI_DEFINITIONS: Dict[str, Any] = {
             "Average treatment minutes past closing time per patient. "
             "Lower is better."
         ),
+        "formula": (
+            "SUM(minutes_past_closing) / COUNT(Treatment visits past close). "
+            "Both numerator and denominator are scoped to past-close rows only "
+            "(minutes_past_closing > 0)."
+        ),
+        "filters": [
+            "service_type_name = 'Treatment' only.",
+            "Only rows where minutes_past_closing > 0.",
+        ],
+        "edge_cases": [
+            "This is NOT the same as KPI 3. KPI 3 counts patients; KPI 4 measures minutes.",
+            "Denominator is count of past-close treatments, not days open.",
+        ],
+        "business_context": (
+            "Quantifies how far past close the clinic runs on overtime days. "
+            "Combined with KPI 3, it gives the total overtime burden."
+        ),
+        "data_gap": None,
     },
     "avg_chair_utilization": {
         "label": "Chair Utilization",
         "unit": "%",
         "higher_is_better": True,
         "explanation": "Average chair utilization rate. Higher is better.",
+        "formula": (
+            "SUM(total_visit_service_duration_minutes) / "
+            "((operating_minutes_per_day - 60_ramp_up - 45_ramp_down) * 0.80 * num_chairs * days_open) * 100. "
+            "Ramp-up = 60 min (first chair occupied), ramp-down = 45 min (last chair freed). "
+            "0.80 = usable capacity factor."
+        ),
+        "filters": [
+            "Treatment visits only (numerator from chr_raw_visit_list where service_type_name='Treatment').",
+        ],
+        "edge_cases": [
+            ">100% = overbooking, NOT a data error. "
+            "It means patients were scheduled beyond usable capacity.",
+            "Numerator and denominator must share the same time window. "
+            "Never divide a monthly total by a per-day denominator.",
+            "num_chairs is a clinic-specific constant. "
+            "Our system derives it from max-concurrent Treatment visits in 30-min windows; "
+            "the team should provide the authoritative chair count to override.",
+        ],
+        "business_context": (
+            "Measures infusion room efficiency. "
+            "Target: 85-95%. Below 70% suggests underutilized capacity. "
+            "Above 100% means overbooking and is a root cause of overtime."
+        ),
+        "data_gap": (
+            "Chair count (num_chairs) is derived from data, not provided by the team. "
+            "Values are directional. When the team provides exact chair counts per clinic, "
+            "override via config for authoritative utilization figures."
+        ),
     },
     "iassign_utilization": {
         "label": "iAssign Utilization",
@@ -96,6 +215,30 @@ KPI_DEFINITIONS: Dict[str, Any] = {
         "explanation": (
             "Percentage of nurse assignments completed via iAssign. "
             "Higher means more consistent, optimized assignments."
+        ),
+        "formula": (
+            "COUNT(DISTINCT schedule_date where iassign_used = 1) "
+            "/ COUNT(DISTINCT schedule_date) * 100. "
+            "iassign_used is a per-day binary flag: 1 if the tool's recommendation "
+            "was accepted that day."
+        ),
+        "filters": [
+            "Applies clinic-wide (not treatment-specific).",
+        ],
+        "edge_cases": [
+            "iassign_used is NOT the same as manual_entry_flag. "
+            "The prior implementation used manual_entry_flag -- this was explicitly "
+            "identified as wrong by Bhaskar (recording-2.txt:225-229).",
+        ],
+        "business_context": (
+            "Measures adoption of the AI nurse-assignment tool. "
+            "High utilization correlates with optimized nurse-to-patient ratios."
+        ),
+        "data_gap": (
+            "IMPORTANT: Stored values for this KPI were computed using "
+            "manual_entry_flag, which Bhaskar identified as the wrong formula. "
+            "The correct source column (iassign_used per day) is not yet ingested. "
+            "Treat stored values as directional, not authoritative."
         ),
     },
     "avg_patients_per_nurse": {
@@ -106,12 +249,56 @@ KPI_DEFINITIONS: Dict[str, Any] = {
             "Average patients per nurse per day. Context-dependent -- "
             "too high means understaffing, too low means inefficiency."
         ),
+        "formula": (
+            "patients_per_day / SUM(nurse_availability_fraction). "
+            "nurse_availability_fraction is a per-nurse fractional value "
+            "(0, 0.25, 0.5, 0.75, 1.0, 1.5+) derived from 15-minute time slots "
+            "across an 8-hour shift. 0 = nurse was closed-out / unavailable."
+        ),
+        "filters": [
+            "Denominator excludes nurses with fraction = 0.",
+        ],
+        "edge_cases": [
+            "If a clinic does not close out nurse schedules, fractions default to 1.0 "
+            "even when the nurse saw only one patient -- this inflates the denominator "
+            "and makes the metric appear better than it is.",
+            "Optimal range: 7-8 patients/nurse/day. Below 5 = overstaffing risk. Above 9 = understaffing.",
+        ],
+        "business_context": (
+            "Directly sets staffing levels. Used with KPI 8 "
+            "(chairs/nurse) to determine optimal nurse count for any given census."
+        ),
+        "data_gap": (
+            "Stored values are approximate -- computed from aggregate percentages, "
+            "not from per-nurse nurse_availability_fraction records. "
+            "Values may differ from the team's authoritative calculation."
+        ),
     },
     "avg_chairs_per_nurse": {
         "label": "Chairs/Nurse",
         "unit": "count",
         "higher_is_better": None,
         "explanation": "Average chairs assigned per nurse. Context-dependent.",
+        "formula": (
+            "total_chairs / SUM(nurse_availability_fraction per day). "
+            "Uses the same fractional denominator as KPI 7."
+        ),
+        "filters": [
+            "Same fractional-nurse denominator as Patients/Nurse/Day.",
+        ],
+        "edge_cases": [
+            "Inherits all data-quality caveats from KPI 7 "
+            "(closed-out nurses, inflate-to-1.0 problem).",
+            "Optimal range: 3-4 chairs/RN.",
+        ],
+        "business_context": (
+            "Staffing safety metric. Too many chairs per nurse means nurses are "
+            "spread thin and response times suffer."
+        ),
+        "data_gap": (
+            "Inherits KPI 7 data gap: aggregate percentages used instead of "
+            "per-nurse fractional records."
+        ),
     },
     "avg_nurse_to_patient_chair_time": {
         "label": "Nurse Utilization",
@@ -120,6 +307,243 @@ KPI_DEFINITIONS: Dict[str, Any] = {
         "explanation": (
             "Average nurse-to-patient in-chair time per day. Higher is better."
         ),
+        "formula": (
+            "Time nurse has >= 1 patient in chair / shift time. "
+            "Per-patient factor: 0.25 (1 patient = 25%, 2 patients = 50%, etc.). "
+            "Treatment START = 100% weight; Treatment STOP = 50% weight. "
+            "NOTE: definition deferred -- not finalized by team."
+        ),
+        "filters": [
+            "Treatment visits only.",
+        ],
+        "edge_cases": [
+            "Definition was deferred in the 2026-04 meeting. "
+            "Current values are computed on a provisional formula.",
+        ],
+        "business_context": (
+            "Measures how productively nurses use their time. "
+            "Minimum target: >= 50%. Below 50% = overstaffed."
+        ),
+        "data_gap": (
+            "KPI 9 definition was NOT finalized in the team meeting. "
+            "Any value shown is computed on a provisional basis. "
+            "Do not make precise comparisons until the definition is confirmed with Bhaskar."
+        ),
+    },
+}
+
+
+BUSINESS_RULES: Dict[str, str] = {
+    "treatment_filter": (
+        "Unless the user explicitly asks about a different service type, ALL KPI "
+        "computations filter to 'Treatment' rows (service_type_name = 'Treatment', "
+        "equivalent to service_type_id = 6 in the team's system). "
+        "Lab, MD, MA, and Injection visits are separate service types and MUST NOT "
+        "be included in KPI calculations unless requested."
+    ),
+    "days_clinic_open": (
+        "The canonical denominator 'days clinic open' = "
+        "COUNT(DISTINCT schedule_date FROM chr_raw_schedule_list) "
+        "for Treatment appointments. "
+        "Do NOT use visit_list for the denominator -- walk-in visits on non-scheduled "
+        "days would inflate the count and distort per-day KPIs."
+    ),
+    "time_range_normalization": (
+        "Numerator and denominator MUST share the same time window. "
+        "Never divide a monthly numerator by a per-day denominator or vice versa. "
+        "This was the root cause of the >100% utilization bug Bhaskar flagged in "
+        "recording-2.txt."
+    ),
+    "timestamp_1899_artifact": (
+        "Excel exports time-only columns (like scheduled_start_time, visit_start_time) "
+        "as '1899-12-30 HH:MM:SS'. The 1899-12-30 prefix is an Excel artifact and "
+        "should be ignored -- use only the HH:MM:SS portion. "
+        "The real date is in the accompanying schedule_date or visit_date column."
+    ),
+    "past_close_definition": (
+        "'Treatment past close' means the actual service end time exceeded the clinic's "
+        "preferred_treatment_end_time. In our data, this corresponds to rows where "
+        "minutes_past_closing > 0."
+    ),
+    "walk_in_vs_scheduled": (
+        "Walk-in visit = row present in visit_list but with no matching entry in "
+        "schedule_list for that patient + date. Walk-ins count toward chair utilization "
+        "(KPI 5) but NOT toward scheduler compliance (KPI 1). "
+        "No-show = row in schedule_list with no matching entry in visit_list for that date."
+    ),
+    "scheduler_data_freshness": (
+        "Scheduler Compliance (KPI 1) data is only valid from mid-October 2024 onward. "
+        "Data before this date used a different definition and should not be compared "
+        "directly to post-October 2024 values."
+    ),
+}
+
+
+GLOSSARY: Dict[str, str] = {
+    "Treatment": (
+        "Chemotherapy or infusion service. The primary service class for all KPI calculations. "
+        "In the team's system: service_type_id = 6, service_type_name = 'Treatment'. "
+        "Distinct from: Lab (blood draw), MD (physician visit), MA (medical assistant visit), "
+        "Injection."
+    ),
+    "Appointment Type (E/A/M)": (
+        "The three values for the scheduler compliance column: "
+        "E = Exact (clinician followed the scheduler's exact recommendation), "
+        "A = Approximate (clinician followed the spirit but not the exact slot), "
+        "M = Manual (clinician ignored the scheduler and made an independent choice). "
+        "E and A count as 'compliant' for KPI 1."
+    ),
+    "iAssign Used": (
+        "A per-day binary flag: 1 means the iAssign nurse-assignment tool's recommendation "
+        "was accepted for at least part of that day. "
+        "This is NOT the same as 'manual_entry_flag' -- the original implementation "
+        "confused these two. Bhaskar explicitly corrected this in the 2026-04 meeting."
+    ),
+    "Nurse Availability Fraction": (
+        "A fractional value per nurse per day representing shift coverage, derived from "
+        "15-minute time slots across an 8-hour shift. "
+        "Values: 0 = closed-out / unavailable, 0.25 = quarter-day, 0.5 = half-day, "
+        "0.75 = three-quarters, 1.0 = full day, 1.5+ = extended coverage. "
+        "0 means the nurse was scheduled but not available (shift closed out)."
+    ),
+    "Chair Utilization Denominator": (
+        "(operating_minutes_per_day - 60 ramp-up - 45 ramp-down) * 0.80 usable_factor * num_chairs. "
+        "The 60+45 = 105 minutes accounts for the time the infusion room is warming up and winding "
+        "down at the start and end of the day. The 0.80 factor reflects realistic sustainable capacity. "
+        "100% = the room is fully booked against realistic capacity."
+    ),
+    "Composite Score (0-100)": (
+        "Weighted overall performance score. 50 = network average. 65+ = strong performance. "
+        "<40 = needs attention. "
+        "Weights: SC 25%, Avg Delay 20%, Chair Utilization 20%, iAssign 15%, "
+        "Tx Past Close 10%, Nurse Utilization 10%. "
+        "Includes a volatility penalty -- inconsistent clinics score lower even with the same mean."
+    ),
+    "Company Average": (
+        "The mean across THIS client's own clinic locations for the given month. "
+        "NOT a network average or industry figure. "
+        "Serves as an internal benchmark."
+    ),
+    "Onco Benchmark": (
+        "The network-wide oncology standard computed across all OncoSmart clients. "
+        "The aspirational target. Higher than Company Average for most KPIs."
+    ),
+    "Long Duration Treatment": (
+        "A treatment visit whose actual duration exceeds the 90th-percentile duration "
+        "threshold for that clinic (computed over the full 6-month data window). "
+        "When answering questions about 'long' treatments, always cite the threshold in minutes."
+    ),
+    "Duration Deviation": (
+        "The difference between a visit's actual duration and its scheduled duration, "
+        "expressed as a ratio. "
+        ">110% = visit ran 10% longer than scheduled (over). "
+        "<90% = visit ended 10% shorter than scheduled (under). "
+        "Computed only for treatment visits where both scheduled and actual durations exist."
+    ),
+}
+
+
+DATA_LIMITATIONS: Dict[str, Dict[str, str]] = {
+    "kpi_1_scheduler_compliance": {
+        "issue": (
+            "The correct formula requires appointment_type (E/A/M) per scheduled visit. "
+            "Our chr_raw_scheduler_productivity table is aggregated (one row per scheduler, "
+            "not per visit) and does not have the appointment_type column."
+        ),
+        "effect": (
+            "Values shown for Scheduler Compliance pre-date the team's October 2024 "
+            "re-definition. They reflect a legacy formula based on scheduler_id, "
+            "which Bhaskar explicitly called incorrect (recording-3.txt:99-103). "
+            "Treat as directional only. If asked to compute a precise value, "
+            "decline and cite this limitation."
+        ),
+        "remediation": (
+            "Ask the team to export per-visit scheduler records with the "
+            "appointment_type column. Once ingested, the precise aggregator "
+            "can apply the (E+A)/(E+A+M) formula."
+        ),
+    },
+    "kpi_6_iassign_utilization": {
+        "issue": (
+            "The correct formula is COUNT(DISTINCT schedule_date where iassign_used=1) "
+            "/ days_clinic_open. Our chr_raw_nurse_utilization column was computed "
+            "from manual_entry_flag, which Bhaskar explicitly said was wrong "
+            "(recording-2.txt:225-229)."
+        ),
+        "effect": (
+            "Stored iAssign utilization values may not match the team's current "
+            "definition. Values are directional -- trend direction is likely correct "
+            "but absolute numbers should not be cited as precise."
+        ),
+        "remediation": (
+            "Ingest nurse_assignment_detail table with the iassign_used flag per day. "
+            "The precise aggregator is ready to compute this KPI once the column is available."
+        ),
+    },
+    "kpi_7_patients_per_nurse": {
+        "issue": (
+            "The correct formula requires nurse_availability_fraction (fractional shift "
+            "coverage) per nurse per day. Our chr_raw_staffing_metrics table has only "
+            "aggregate daily percentages, not per-nurse fractions."
+        ),
+        "effect": (
+            "Values are approximate. Additional caveat: if a clinic does not close out "
+            "nurse schedules at the end of the day, fractions default to 1.0 even when "
+            "the nurse saw only one patient -- inflating the denominator and "
+            "making the metric appear better than reality."
+        ),
+        "remediation": (
+            "Request per-nurse per-day fraction records from the team with "
+            "15-minute-slot granularity."
+        ),
+    },
+    "kpi_8_chairs_per_nurse": {
+        "issue": "Inherits the data gap from KPI 7 (nurse_availability_fraction).",
+        "effect": "Same approximation error as KPI 7. Treat as directional.",
+        "remediation": "Resolved when KPI 7 source data is ingested.",
+    },
+    "kpi_9_nurse_utilization": {
+        "issue": (
+            "The precise definition was deferred by the team in the April 2026 meeting. "
+            "The POC PDF describes it as 'time nurse has >= 1 patient in chair / shift time' "
+            "with a 0.25 per-patient factor, but the implementer found the definition unclear."
+        ),
+        "effect": (
+            "Any value shown for this KPI is provisional. "
+            "Do not make precise comparisons or cite this value in reports "
+            "until the definition is confirmed with Bhaskar."
+        ),
+        "remediation": "Confirm the exact definition with Bhaskar, then rebuild.",
+    },
+    "scheduler_narratives_date_gap": {
+        "issue": (
+            "The scheduler productivity CSV the team exports has no date column. "
+            "All 6 months of scheduler data collapse into a single October 2025 bucket "
+            "in chr_raw_data_summary."
+        ),
+        "effect": (
+            "When a user asks about scheduler behavior in November 2025 or later, "
+            "the chatbot can only reference October 2025 scheduler narratives. "
+            "Acknowledge this limitation explicitly when the user asks about a "
+            "specific month other than October 2025."
+        ),
+        "remediation": (
+            "Ask the team to export scheduler CSVs with a date column so "
+            "monthly scheduler narratives can be generated per period."
+        ),
+    },
+    "chair_count_derivation": {
+        "issue": (
+            "The infusion room chair count per clinic (num_chairs) is derived from data "
+            "(90th-percentile of max-concurrent Treatment visits in 30-minute windows) "
+            "rather than provided by the team as a hard constant."
+        ),
+        "effect": (
+            "Chair utilization values (KPI 5) are directionally correct but may differ "
+            "from the team's authoritative calculation. Always describe num_chairs as "
+            "'derived from data' and suggest the team override with the actual count."
+        ),
+        "remediation": "Team provides exact chair counts per clinic (single config entry).",
     },
 }
 
@@ -512,10 +936,14 @@ def build_client_json(
         },
         "months": months_data,
         "chatbot_context": {
-            "kpi_definitions": KPI_DEFINITIONS,
-            "data_notes": DATA_NOTES,
-            "historical_kpis": _historical_kpis(session, client_name, months),
+            "kpi_definitions":  KPI_DEFINITIONS,
+            "data_notes":       DATA_NOTES,
+            "business_rules":   BUSINESS_RULES,
+            "glossary":         GLOSSARY,
+            "data_limitations": DATA_LIMITATIONS,
+            "historical_kpis":  _historical_kpis(session, client_name, months),
             "raw_data_context": _raw_data_context(session, client_name),
+            "precise_kpis":     compute_precise_kpis(session, client_name),
         },
     }
 
@@ -629,7 +1057,7 @@ def export_json(
     # --- Demo Practice injection (in-memory only, no DB writes) ---
     demo_payload: Optional[Dict] = None
     if hogonc_payload is not None:
-        demo_payload = inject_demo_practice(hogonc_payload)
+        demo_payload = inject_demo_practice(hogonc_payload, session=session)
         demo_dest = out / f"{DEMO_CODE}.json"
         demo_dest.write_text(
             json.dumps(demo_payload, ensure_ascii=True, indent=2, default=str),

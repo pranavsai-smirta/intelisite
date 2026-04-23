@@ -6,7 +6,7 @@ Architecture: Two-layer storage
   Layer 3 (AI):   chr_comparison_result, chr_kpi_correlation, chr_ai_insight, chr_email_draft
 """
 from sqlalchemy import (
-    Column, Integer, String, DateTime, Text, Float,
+    Column, Integer, String, DateTime, Time, Text, Float,
     Boolean, UniqueConstraint, Index, Enum
 )
 from sqlalchemy.sql import func
@@ -707,4 +707,114 @@ class ChrRawDataSummary(Base):
             "client_name", "location_name", "period_type", "period_start", "category", "ingest_id",
             name="uq_raw_summary",
         ),
+    )
+
+
+class ChrRawScheduleList(Base):
+    """Per-appointment schedule row from 'Schedule list' CSVs (one row = one scheduled visit)."""
+    __tablename__ = "chr_raw_schedule_list"
+
+    id                      = Column(Integer, primary_key=True)
+    client_name             = Column(String(100), nullable=False, index=True)
+    location_name           = Column(String(100), nullable=False, index=True)
+    schedule_date           = Column(DateTime(timezone=True), nullable=False, index=True)
+    service_type_name       = Column(String(100), nullable=True)
+    service_name            = Column(String(100), nullable=True)
+    patient_id              = Column(String(50),  nullable=True, index=True)
+    mrn_number              = Column(String(50),  nullable=True)
+    scheduled_start_time    = Column(Time,         nullable=True)
+    total_service_duration  = Column(Integer,      nullable=True)
+    ingest_id               = Column(String(100), nullable=False, index=True)
+    created_at              = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "schedule_date",
+            "patient_id", "service_name", "ingest_id",
+            name="uq_raw_schedule_list",
+        ),
+        Index("ix_raw_schedule_list_client_date", "client_name", "schedule_date"),
+    )
+
+
+class ChrRawVisitList(Base):
+    """Per-visit row from 'Visit list' CSVs (one row = one completed visit with timestamps)."""
+    __tablename__ = "chr_raw_visit_list"
+
+    id                          = Column(Integer, primary_key=True)
+    client_name                 = Column(String(100), nullable=False, index=True)
+    location_name               = Column(String(100), nullable=False, index=True)
+    visit_date                  = Column(DateTime(timezone=True), nullable=False, index=True)
+    service_type_name           = Column(String(100), nullable=True)
+    service_name                = Column(String(100), nullable=True)
+    patient_id                  = Column(String(50),  nullable=True, index=True)
+    mrn_number                  = Column(String(50),  nullable=True)
+    visit_start_time            = Column(Time,         nullable=True)
+    visit_end_time              = Column(Time,         nullable=True)
+    total_visit_service_duration = Column(Integer,     nullable=True)
+    ingest_id                   = Column(String(100), nullable=False, index=True)
+    created_at                  = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "visit_date",
+            "patient_id", "service_name", "visit_start_time", "ingest_id",
+            name="uq_raw_visit_list",
+        ),
+        Index("ix_raw_visit_list_client_date", "client_name", "visit_date"),
+    )
+
+
+class ChrPreciseKpi(Base):
+    """
+    KPIs recomputed from chr_raw_schedule_list + chr_raw_visit_list using
+    Bhaskar's 2024-10 formulas. Separate from the legacy chr_kpi_wide values
+    which came from aggregated CSV exports.  KPIs 1, 6, 7, 8, 9 are absent
+    -- their source columns are not yet ingested.
+    """
+    __tablename__ = "chr_precise_kpi"
+
+    id              = Column(Integer, primary_key=True)
+    client_name     = Column(String(100), nullable=False, index=True)
+    location_name   = Column(String(100), nullable=False, index=True)
+    period_type     = Column(String(20),  nullable=False)   # monthly | weekly
+    period_start    = Column(DateTime(timezone=True), nullable=False)
+    period_label    = Column(String(20),  nullable=False)   # 2025-10 or 2025-W42
+    formula_version = Column(String(20),  nullable=False, default="2024-10")
+
+    # KPI 2 — Avg Delay (Treatment-only, zeros included, negatives clamped)
+    avg_delay_mins              = Column(Float,   nullable=True)
+    delay_treatment_count       = Column(Integer, nullable=True)
+    delay_days_open             = Column(Integer, nullable=True)
+
+    # KPI 3 — Tx Past Close / Day
+    tx_past_close_per_day       = Column(Float,   nullable=True)
+    tx_past_close_count         = Column(Integer, nullable=True)
+
+    # KPI 4 — Mins Past Close / Patient
+    mins_past_close_per_pt      = Column(Float,   nullable=True)
+    mins_past_close_total       = Column(Float,   nullable=True)
+    tx_past_close_for_mins      = Column(Integer, nullable=True)
+
+    # KPI 5 — Chair Utilization (num_chairs is data-derived)
+    chair_utilization_pct       = Column(Float,   nullable=True)
+    total_visit_duration_mins   = Column(Integer, nullable=True)
+    num_chairs_derived          = Column(Integer, nullable=True)
+    operating_mins_per_day      = Column(Integer, nullable=True)
+
+    # Duration analysis (CTO sample questions)
+    long_duration_treatment_pct    = Column(Float,   nullable=True)
+    long_duration_threshold_mins   = Column(Integer, nullable=True)
+    duration_deviation_over_count  = Column(Integer, nullable=True)
+    duration_deviation_under_count = Column(Integer, nullable=True)
+    duration_matched_pairs_count   = Column(Integer, nullable=True)
+
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    __table_args__ = (
+        UniqueConstraint(
+            "client_name", "location_name", "period_type", "period_start",
+            name="uq_precise_kpi",
+        ),
+        Index("ix_precise_kpi_client_period", "client_name", "period_start"),
     )

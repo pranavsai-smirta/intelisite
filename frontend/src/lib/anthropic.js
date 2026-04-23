@@ -5,6 +5,10 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
   const {
     kpi_definitions = {},
     data_notes = '',
+    business_rules = {},
+    glossary = {},
+    data_limitations = {},
+    precise_kpis = {},
     historical_kpis = [],
     raw_data_context = {},
   } = chatbotContext ?? {}
@@ -13,14 +17,72 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
   const rawWeekly = Array.isArray(raw_data_context.weekly_summaries)
     ? raw_data_context.weekly_summaries : []
 
+  // Rich KPI spec: label + direction + explanation + formula + filters + edge cases + data_gap
   const kpiText = Object.entries(kpi_definitions)
     .map(([k, v]) => {
       const dir = v.higher_is_better === true ? 'higher is better'
         : v.higher_is_better === false ? 'lower is better'
         : 'context-dependent'
-      return `- ${v.label} (${k}): ${v.explanation} [${dir}]`
+      const lines = [`### ${v.label} (${k}) [${dir}]`, v.explanation]
+      if (v.formula) lines.push(`Formula: ${v.formula}`)
+      if (Array.isArray(v.filters) && v.filters.length) {
+        lines.push(`Filters: ${v.filters.join(' | ')}`)
+      }
+      if (Array.isArray(v.edge_cases) && v.edge_cases.length) {
+        lines.push('Edge cases:')
+        v.edge_cases.forEach(e => lines.push(`  - ${e}`))
+      }
+      if (v.data_gap) lines.push(`DATA GAP: ${v.data_gap}`)
+      return lines.join('\n')
     })
+    .join('\n\n')
+
+  // Global business rules
+  const businessRulesText = Object.entries(business_rules)
+    .map(([k, v]) => `- **${k.replace(/_/g, ' ')}**: ${v}`)
     .join('\n')
+
+  // Glossary
+  const glossaryText = Object.entries(glossary)
+    .map(([k, v]) => `- **${k}**: ${v}`)
+    .join('\n')
+
+  // Data limitations
+  const dataLimitationsText = Object.entries(data_limitations)
+    .map(([k, v]) => {
+      const lines = [`### ${k.replace(/_/g, ' ')}`]
+      if (v.issue) lines.push(`Issue: ${v.issue}`)
+      if (v.effect) lines.push(`Effect on chatbot answers: ${v.effect}`)
+      if (v.remediation) lines.push(`Remediation: ${v.remediation}`)
+      return lines.join('\n')
+    })
+    .join('\n\n')
+
+  // Precise recomputed KPIs (per-month rows)
+  const preciseMonthly = Array.isArray(precise_kpis.per_month) ? precise_kpis.per_month : []
+  const preciseText = preciseMonthly.length
+    ? preciseMonthly.map(r => {
+        const parts = [`  ${r.location} | ${r.period}`]
+        if (r.avg_delay_mins != null) parts.push(`Delay=${r.avg_delay_mins}min`)
+        if (r.tx_past_close_per_day != null) parts.push(`TxClose=${r.tx_past_close_per_day}/day`)
+        if (r.mins_past_close_per_pt != null) parts.push(`MinsPastClose=${r.mins_past_close_per_pt}min/pt`)
+        if (r.chair_utilization_pct != null) parts.push(`CU=${r.chair_utilization_pct}%`)
+        if (r.long_duration_treatment_pct != null) parts.push(`LongDur=${r.long_duration_treatment_pct}%`)
+        if (r.duration_deviation_over_count != null) {
+          parts.push(`DurDev: +${r.duration_deviation_over_count}over/-${r.duration_deviation_under_count}under of ${r.duration_matched_pairs_count}`)
+        }
+        return parts.join(' | ')
+      }).join('\n')
+    : '(no precise KPIs computed)'
+
+  const clinicConstantsText = precise_kpis.clinic_constants
+    ? Object.entries(precise_kpis.clinic_constants)
+        .map(([loc, c]) =>
+          `  ${loc}: ${c.num_chairs_derived} chairs (derived), ` +
+          `${c.operating_minutes_per_day}min/day op, ` +
+          `long-dur threshold=${c.long_duration_threshold_minutes}min (90th pctile)`
+        ).join('\n')
+    : '(no clinic constants available)'
 
   const historyText = historical_kpis
     .map(r =>
@@ -184,10 +246,42 @@ export function buildSystemPrompt(chatbotContext, currentMonthData) {
     '- Output valid JSON only \u2014 no trailing commas, no comments, no newlines inside the block',
     '- One chart per topic; use multiple series in one chart for related metrics',
     '',
-    '## KPI DEFINITIONS',
-    kpiText || '(no definitions provided)',
+    '## FORMAL KPI SPECIFICATIONS',
+    'Each KPI below includes its exact formula, required filters, edge cases, and any data gaps.',
+    'When a user asks HOW something is calculated, cite the formula. When a DATA GAP is present,',
+    'state it explicitly and do not fabricate a precise value.',
     '',
-    '## DATA NOTES',
+    kpiText || '(no KPI definitions available)',
+    '',
+    '## GLOBAL BUSINESS RULES',
+    'Apply these rules to EVERY computation and answer unless the user explicitly overrides one.',
+    '',
+    businessRulesText || '(none)',
+    '',
+    '## GLOSSARY -- KEY TERMS',
+    'Quote these definitions verbatim when a user asks what a term means.',
+    '',
+    glossaryText || '(none)',
+    '',
+    '## DATA LIMITATIONS & CAVEATS',
+    'When a user asks about any of the following KPIs or data issues, you MUST surface the',
+    'relevant limitation rather than answering as if the data were clean.',
+    '',
+    dataLimitationsText || '(none)',
+    '',
+    '## PRECISE RECOMPUTED KPIs (Bhaskar 2024-10 formulas)',
+    precise_kpis.source || '',
+    'KPIs computed: ' + (Array.isArray(precise_kpis.kpis_computed) ? precise_kpis.kpis_computed.join(', ') : 'none'),
+    'Prefer these values over legacy KPI data when answering questions about Treatment delays,',
+    'chair utilization, and treatments-past-close. Always cite "precise computation" as the source.',
+    '',
+    '### Clinic constants',
+    clinicConstantsText,
+    '',
+    '### Per-month precise values (KPIs 2, 3, 4, 5 + duration)',
+    preciseText,
+    '',
+    '## DATA NOTES (legacy pipeline)',
     data_notes || '(none)',
     '',
     '## BENCHMARKS FOR THIS REPORTING PERIOD',
