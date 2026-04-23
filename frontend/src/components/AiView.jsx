@@ -430,7 +430,7 @@ function Message({ role, content, isStreaming, onCopyEmail }) {
 // AiView
 // ---------------------------------------------------------------------------
 
-export default function AiView({ chatbotContext, currentMonthData, clinicName, activeMonth }) {
+export default function AiView({ chatbotContext, currentMonthData, clinicName, activeMonth, panelMode = false }) {
   const { closeAi } = useAi()
   const [messages, setMessages] = useState([])
   const [input, setInput] = useState('')
@@ -553,20 +553,41 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
       {!hasApiKey && <ApiKeyModal onSubmit={() => setHasApiKey(true)} />}
     <div className="flex-1 flex flex-col min-h-0" style={{ animation: 'aiViewFadeIn 0.2s ease-out' }}>
 
-      {/* Hero header */}
+      {/* Header -- compact in panel mode, full hero otherwise */}
       <div
-        className="flex-shrink-0 bg-white px-6 py-4"
-        style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}
+        className="flex-shrink-0 bg-white"
+        style={{
+          padding: panelMode ? '12px 16px' : '16px 24px',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+          borderBottom: '1px solid rgba(0,0,0,0.06)',
+        }}
       >
-        <div className="max-w-4xl mx-auto">
-          <button onClick={closeAi}
-            className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors mb-2">
-            {'\u2190'} Back
-          </button>
-          <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>AI Intelligence</div>
-          <h1 className="text-2xl font-bold text-[#1A1A2E] mb-1.5">What do you want to know?</h1>
-          <p className="text-sm text-[#64748B]">{contextLabel}</p>
-        </div>
+        {panelMode ? (
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#FE6325' }}>AI Intelligence</div>
+              <div className="text-sm font-bold text-[#1A1A2E] mt-0.5">{contextLabel}</div>
+            </div>
+            <button
+              onClick={closeAi}
+              className="w-8 h-8 flex items-center justify-center rounded-full text-slate-400 hover:text-[#FE6325] transition-colors flex-shrink-0"
+              style={{ background: 'rgba(0,0,0,0.04)', fontSize: '20px', lineHeight: 1 }}
+              title="Close AI panel"
+            >
+              ×
+            </button>
+          </div>
+        ) : (
+          <div className="max-w-4xl mx-auto">
+            <button onClick={closeAi}
+              className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors mb-2">
+              {'\u2190'} Back
+            </button>
+            <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>AI Intelligence</div>
+            <h1 className="text-2xl font-bold text-[#1A1A2E] mb-1.5">What do you want to know?</h1>
+            <p className="text-sm text-[#64748B]">{contextLabel}</p>
+          </div>
+        )}
       </div>
 
       {/* Messages — ref on the scrollable container, not a sentinel div */}
