@@ -22,7 +22,7 @@ function BulletList({ items }) {
             className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
             style={{ background: ORANGE }}
           />
-          <span className="text-sm text-[#1A1A2E] leading-relaxed">{item}</span>
+          <span className="text-[15px] text-[#1A1A2E] leading-relaxed">{item}</span>
         </li>
       ))}
     </ul>
@@ -57,7 +57,7 @@ function CollapsibleSection({ title, items, accentColor, icon }) {
       >
         <div className="flex items-center gap-2.5">
           <span className="text-base">{icon}</span>
-          <span className={`text-sm font-semibold tracking-wide ${accentColor}`}>{title}</span>
+          <span className={`text-base font-semibold tracking-wide ${accentColor}`}>{title}</span>
           <span
             className="text-xs font-medium px-1.5 py-0.5 rounded-full"
             style={{ background: 'rgba(254,99,37,0.1)', color: ORANGE }}
@@ -106,7 +106,7 @@ export default function InsightPanel({ insights }) {
           }}
         >
           <p
-            className="text-xs font-semibold uppercase tracking-widest mb-3"
+            className="text-sm font-semibold uppercase tracking-widest mb-3"
             style={{ color: ORANGE }}
           >
             Executive Summary
