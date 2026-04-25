@@ -16,7 +16,7 @@ const PINNED_CHIPS = [
   'What is the single biggest thing to fix?',
   'Why is the infusion room overbooked on certain days?',
   'What improved the most this period?',
-  'Summarize this period\'s performance into a shareable team report.',
+  'Give me a briefing I can share with my team.',
 ]
 
 // ---------------------------------------------------------------------------
