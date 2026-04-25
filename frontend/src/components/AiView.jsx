@@ -564,9 +564,8 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
             className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors mb-2">
             {'\u2190'} Back
           </button>
-          <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>AI Intelligence</div>
-          <h1 className="text-2xl font-bold text-[#1A1A2E] mb-1.5">What do you want to know?</h1>
-          <p className="text-sm text-[#64748B]">{contextLabel}</p>
+          <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>Uncover Your Next Insight</div>
+          <h1 className="text-2xl font-bold text-[#1A1A2E] mb-1.5">Ask anything about your clinics.</h1>
         </div>
       </div>
 
