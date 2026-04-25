@@ -558,7 +558,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         className="flex-shrink-0 bg-white px-6 py-4"
         style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}
       >
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <button onClick={closeAi}
             className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors mb-2">
             {'\u2190'} Back
@@ -589,7 +589,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
             zIndex: 0,
           }}
         />
-        <div className="max-w-6xl mx-auto px-6 py-4" style={{ position: 'relative', zIndex: 1 }}>
+        <div className="max-w-7xl mx-auto px-6 py-4" style={{ position: 'relative', zIndex: 1 }}>
 
           {messages.length === 0 && (
             <div className="text-center py-12">
@@ -628,7 +628,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
       {/* FAQ chips — 3 pinned + up to 3 from recent history; always visible */}
       {(
         <div className="flex-shrink-0" style={{ background: '#F5F0EB', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
-          <div className="max-w-6xl mx-auto px-6 py-3">
+          <div className="max-w-7xl mx-auto px-6 py-3">
             <p className="text-xs text-[#64748B] font-medium uppercase tracking-wider mb-3">Suggested questions</p>
             <div className="flex flex-wrap gap-2">
               {PINNED_CHIPS.map(q => <FaqChip key={q} label={q} onClick={() => handleSend(q)} />)}
@@ -651,7 +651,7 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
       {/* Input bar */}
       <div className="flex-shrink-0 px-6 py-4"
         style={{ background: '#FFFFFF', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="flex gap-3 items-end">
             <textarea ref={inputRef} value={input}
               onChange={e => setInput(e.target.value)}
