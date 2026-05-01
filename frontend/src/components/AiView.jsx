@@ -529,7 +529,20 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
     } catch (err) {
       if (rafId !== null) cancelAnimationFrame(rafId)
-      setError(err.message)
+      // Detect depleted / invalid API key errors and re-show the key modal
+      const msg = err.message || ''
+      if (
+        msg.includes('credit balance is too low') ||
+        msg.includes('invalid x-api-key') ||
+        msg.includes('invalid_api_key') ||
+        /API error 40[01]/.test(msg)
+      ) {
+        try { localStorage.removeItem('anthropic_api_key') } catch {}
+        setHasApiKey(false)
+        setError('Your API key was rejected — please enter a new one.')
+      } else {
+        setError(msg)
+      }
       setMessages(prev => prev.filter((_, i) => i !== assistantIdx))
     } finally {
       setStreaming(false)
@@ -542,6 +555,12 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
 
   async function handleCopyEmail(content) {
     await copyAsEmail(content, clinicName, activeMonth)
+  }
+
+  function handleChangeKey() {
+    try { localStorage.removeItem('anthropic_api_key') } catch {}
+    setHasApiKey(false)
+    setError(null)
   }
 
   const showTyping = streaming && messages.length > 0 && messages[messages.length - 1]?.content === ''
@@ -560,10 +579,26 @@ export default function AiView({ chatbotContext, currentMonthData, clinicName, a
         style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.05)', borderBottom: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-7xl mx-auto">
-          <button onClick={closeAi}
-            className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors mb-2">
-            {'\u2190'} Back
-          </button>
+          <div className="flex items-center justify-between mb-2">
+            <button onClick={closeAi}
+              className="inline-flex items-center gap-1.5 text-sm text-slate-400 hover:text-[#FE6325] transition-colors">
+              {'\u2190'} Back
+            </button>
+            <button
+              onClick={handleChangeKey}
+              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full transition-all"
+              style={{
+                color: '#64748B',
+                background: 'rgba(0,0,0,0.03)',
+                border: '1px solid rgba(0,0,0,0.08)',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#FE6325'; e.currentTarget.style.borderColor = 'rgba(254,99,37,0.3)' }}
+              onMouseLeave={e => { e.currentTarget.style.color = '#64748B'; e.currentTarget.style.borderColor = 'rgba(0,0,0,0.08)' }}
+              title="Change your Anthropic API key"
+            >
+              {'\u2699'} Change API Key
+            </button>
+          </div>
           <div className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#FE6325' }}>Uncover Your Next Insight</div>
           <h1 className="text-2xl font-bold text-[#1A1A2E] mb-1.5">Ask anything about your clinics.</h1>
         </div>
