@@ -2,65 +2,6 @@ import { useState, useEffect } from 'react'
 
 const cache = {}
 
-// ─── TEMPORARY: Hide GAMCN locations from AON for INHAR meeting ───
-// Remove this entire block + the applyHiddenLocations call below to restore.
-const HIDDEN_LOCATIONS = {
-  AON: ['GAMCN'],  // hide any location whose name starts with "GAMCN"
-}
-
-function applyHiddenLocations(clientCode, json) {
-  const prefixes = HIDDEN_LOCATIONS[clientCode]
-  if (!prefixes) return json
-
-  const isHidden = (name) =>
-    prefixes.some(p => (name || '').toUpperCase().startsWith(p))
-
-  const filterRows = (rows) =>
-    rows ? rows.filter(r => !isHidden(r.location)) : rows
-
-  // Deep-clone so we never mutate the original
-  const out = JSON.parse(JSON.stringify(json))
-
-  // Filter every month's ioptimize, iassign, and ml_analytics
-  for (const [, monthData] of Object.entries(out.months || {})) {
-    monthData.ioptimize = filterRows(monthData.ioptimize)
-    monthData.iassign = filterRows(monthData.iassign)
-
-    // Scrub AI insight text — remove sentences mentioning hidden locations
-    if (monthData.ai_insights) {
-      const scrub = (text) => {
-        if (!text) return text
-        // Split into sentences, drop any that mention a hidden prefix
-        return text
-          .split(/(?<=[.!?])\s+/)
-          .filter(s => !prefixes.some(p => s.toUpperCase().includes(p)))
-          .join(' ')
-          .trim() || text  // fallback to original if everything got removed
-      }
-      monthData.ai_insights.executive_summary = scrub(monthData.ai_insights.executive_summary)
-      monthData.ai_insights.highlights = (monthData.ai_insights.highlights || []).map(scrub).filter(Boolean)
-      monthData.ai_insights.concerns = (monthData.ai_insights.concerns || []).map(scrub).filter(Boolean)
-      monthData.ai_insights.recommendations = (monthData.ai_insights.recommendations || []).map(scrub).filter(Boolean)
-    }
-
-    // Remove hidden locations from ml_analytics
-    if (monthData.ml_analytics?.locations) {
-      for (const key of Object.keys(monthData.ml_analytics.locations)) {
-        if (isHidden(key)) delete monthData.ml_analytics.locations[key]
-      }
-    }
-  }
-
-  // Filter chatbot_context historical KPIs
-  if (out.chatbot_context?.historical_kpis) {
-    out.chatbot_context.historical_kpis = out.chatbot_context.historical_kpis
-      .filter(r => !isHidden(r.location))
-  }
-
-  return out
-}
-// ─── END TEMPORARY ───
-
 export function useClinicData(clientCode) {
   const [data, setData] = useState(cache[clientCode] ?? null)
   const [loading, setLoading] = useState(!cache[clientCode])
@@ -81,10 +22,8 @@ export function useClinicData(clientCode) {
         return r.json()
       })
       .then(json => {
-        // TEMPORARY: apply location hiding for INHAR meeting
-        const filtered = applyHiddenLocations(clientCode, json)
-        cache[clientCode] = filtered
-        setData(filtered)
+        cache[clientCode] = json
+        setData(json)
         setLoading(false)
       })
       .catch(err => {
