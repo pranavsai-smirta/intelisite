@@ -59,6 +59,17 @@ NON_CLINIC_NAMES = {
     'onco', 'total', 'grand total', 'overall',
 }
 
+# ─── TEMPORARY: Hide these location prefixes per client (for INHAR meeting) ───
+# Remove this dict + the _is_hidden_location function to restore.
+HIDDEN_LOCATION_PREFIXES = {
+    'AON': ['gamcn'],
+}
+
+def _is_hidden_location(client_name: str, location_name: str) -> bool:
+    prefixes = HIDDEN_LOCATION_PREFIXES.get(client_name, [])
+    return any(location_name.strip().lower().startswith(p) for p in prefixes)
+# ─── END TEMPORARY ───
+
 
 def _is_real_clinic(location_name: str) -> bool:
     """Return True only if this is a real clinic, not an aggregate row."""
@@ -150,9 +161,9 @@ def generate_ai_insights(session: Session, run_month: str, run_id: str) -> int:
         for attempt in range(max_attempts):
             try:
                 response = client_ai.messages.create(
-                    model="claude-haiku-4-5-20251001",
-                    max_tokens=1500,
-                    timeout=60,
+                    model="claude-opus-4-7",
+                    max_tokens=3000,
+                    timeout=120,
                     messages=[{"role": "user", "content": prompt}]
                 )
                 raw      = response.content[0].text
@@ -361,6 +372,9 @@ def _build_context_for_client(session, client_name: str, run_month: str) -> dict
         # CRITICAL: Filter out non-clinic rows that leaked into RowType.CLINIC
         if not _is_real_clinic(row.location_name):
             continue
+        # TEMPORARY: skip hidden locations for INHAR meeting
+        if _is_hidden_location(client_name, row.location_name):
+            continue
         ia = iasg_rows.get(row.location_name)
         display_name = _clean_location_name(row.location_name)
         context['locations'].append({
@@ -390,7 +404,7 @@ def _build_context_for_client(session, client_name: str, run_month: str) -> dict
             'percentile':    o.percentile_rank,
         }
         for o in outliers
-        if _is_real_clinic(o.location_name)
+        if _is_real_clinic(o.location_name) and not _is_hidden_location(client_name, o.location_name)
     ]
 
     # Notable MoM changes — filter out non-clinic, convert month names
@@ -403,6 +417,9 @@ def _build_context_for_client(session, client_name: str, run_month: str) -> dict
 
     for c in all_comps:
         if not _is_real_clinic(c.location_name):
+            continue
+        # TEMPORARY: skip hidden locations
+        if _is_hidden_location(client_name, c.location_name):
             continue
         if c.mom_delta_avg_pct is not None and abs(c.mom_delta_avg_pct) >= 3:
             context['mom_changes'].append({
@@ -428,6 +445,9 @@ def _build_context_for_client(session, client_name: str, run_month: str) -> dict
 
     for t in trend_rows:
         if not _is_real_clinic(t.location_name):
+            continue
+        # TEMPORARY: skip hidden locations
+        if _is_hidden_location(client_name, t.location_name):
             continue
         context['trends'].append({
             'location':   _clean_location_name(t.location_name),
