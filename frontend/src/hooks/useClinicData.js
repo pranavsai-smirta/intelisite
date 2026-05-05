@@ -30,12 +30,27 @@ function applyHiddenLocations(clientCode, json) {
     if (monthData.ai_insights) {
       const scrub = (text) => {
         if (!text) return text
-        // Split into sentences, drop any that mention a hidden prefix
-        return text
+        // 1. Strip hidden location names inline (e.g. "GAMCN CGCC Macon", "GAMCN Macon")
+        let cleaned = text
+        for (const p of prefixes) {
+          // Remove the full location name (prefix + any trailing words until comma/period/semicolon)
+          cleaned = cleaned.replace(new RegExp(p + `[A-Za-z\\s]*`, 'gi'), '')
+        }
+        // 2. Clean up leftover artefacts from removal
+        cleaned = cleaned
+          .replace(/,\s*,/g, ',')               // double commas
+          .replace(/\bwhile\s*[.,]/gi, '')       // dangling "while ,"
+          .replace(/\band\s*[.,]/gi, '')         // dangling "and ,"
+          .replace(/\bboth\s+clinics\b/gi, 'the clinic')  // "Both clinics" → "the clinic"
+          .replace(/\s{2,}/g, ' ')               // collapse whitespace
+          .trim()
+        // 3. Drop any now-empty sentences
+        cleaned = cleaned
           .split(/(?<=[.!?])\s+/)
-          .filter(s => !prefixes.some(p => s.toUpperCase().includes(p)))
+          .filter(s => s.trim().length > 10)     // drop stubs
           .join(' ')
-          .trim() || text  // fallback to original if everything got removed
+          .trim()
+        return cleaned || ''
       }
       monthData.ai_insights.executive_summary = scrub(monthData.ai_insights.executive_summary)
       monthData.ai_insights.highlights = (monthData.ai_insights.highlights || []).map(scrub).filter(Boolean)
